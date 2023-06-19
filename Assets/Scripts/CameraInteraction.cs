@@ -20,7 +20,9 @@ public class CameraInteraction : MonoBehaviour
     {
 
         cameraa = transform.Find("Camera");
+
         //TextDetectInteractable = transform.Find("Interactuar").gameObject;
+        //TextDetectDragable = transform.Find("Recoger").gameObject;
         /*
         TextDetectInteractable.SetActive(false);
         TextDetectDragable.SetActive(false); */
