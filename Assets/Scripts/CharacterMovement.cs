@@ -18,16 +18,20 @@ public class CharacterMovement : MonoBehaviour
     // Variables Control Agacharse
     public Vector3 InitialPos;
     Vector3 controlPos;
-    bool EstaAgachado=false;
+    public bool EstaParado=true;
 
 
     //Variables Animaciones
     public Animator PlayerAnimatorController;
 
+    public bool AnimacionOn;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        AnimacionOn=true;
+
         InitialPos = transform.GetChild(0).position - transform.position;
         controlPos = transform.position - new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y-0.5f, transform.GetChild(0).position.z);
 
@@ -43,22 +47,24 @@ public class CharacterMovement : MonoBehaviour
     {
         
 
-        float hor = Input.GetAxisRaw("Horizontal");
-        float ver = Input.GetAxisRaw("Vertical");
+            float hor = Input.GetAxisRaw("Horizontal");
+            float ver = Input.GetAxisRaw("Vertical");
        
-        Vector3 velocity;
+            Vector3 velocity;
 
-        if (hor!=0 || ver!= 0){
-            velocity = (transform.forward * ver + transform.right * hor).normalized * speedUsar;
-        } else{
-            velocity = Vector3.zero;
-        }
+            if (hor!=0 || ver!= 0){
+                velocity = (transform.forward * ver + transform.right * hor).normalized * speedUsar;
+            } else{
+                velocity = Vector3.zero;
+            }
 
         //PlayerAnimatorController.SetFloat("WalkVelocity", velocity.magnitude * speedUsar);
 
-        velocity.y = rigidbody.velocity.y;
+            velocity.y = rigidbody.velocity.y;
         //PlayerAnimatorController.SetFloat("PlayerVerticalVelocity", velocity.y);
-        rigidbody.velocity = velocity;
+            rigidbody.velocity = velocity;
+
+        
 
         
   
@@ -77,22 +83,32 @@ public class CharacterMovement : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.LeftShift)){
-            speedUsar=Runspeed;
-            //Debug.Log("aqui");
-        }else if(Input.GetKeyUp(KeyCode.LeftShift)){
-            speedUsar=speed;
-        }
-        UpdateMovement();
-        UpdateJump();
+        if(AnimacionOn){
 
-        if(Input.GetButtonDown("Fire1") && EstaAgachado==false){
-            transform.GetChild(0).position = transform.position + InitialPos;
-            EstaAgachado=true;
-        }else if (Input.GetButtonDown("Fire1") && EstaAgachado==true){
-            EstaAgachado=false;
-            transform.GetChild(0).position = transform.position - controlPos;
+            if(Input.GetKeyDown(KeyCode.LeftShift)){
+                speedUsar=Runspeed;
+            //Debug.Log("aqui");
+            }else if(Input.GetKeyUp(KeyCode.LeftShift)){
+                speedUsar=speed;
+            }
+            UpdateMovement();
+            UpdateJump();
+
+            if(Input.GetButtonDown("Fire1")){
+                EstaParado=!EstaParado; // parte en start como true
+            }
+
+
+            if(EstaParado==true){
+                transform.GetChild(0).position = transform.position + InitialPos;
+            }else if (EstaParado==false){
+                transform.GetChild(0).position = transform.position - controlPos;
+            }
+
         }
+
+
+        
     }
 
     private void OnAnimatorMove() {
