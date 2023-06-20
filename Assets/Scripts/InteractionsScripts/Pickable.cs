@@ -6,6 +6,8 @@ public class Pickable : Interactable//, IPunObservable
 {
     public GameObject Jugador;
 
+    public string tipoBasura = null;
+
     public void Start(){
         Jugador = GameObject.Find("Player");
         //Invoke("Usar",2f);

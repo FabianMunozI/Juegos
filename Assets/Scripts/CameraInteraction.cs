@@ -14,6 +14,10 @@ public class CameraInteraction : MonoBehaviour
     public GameObject TextDetectDragable;
     GameObject ultimoReconocidoRecoger=null;
 
+
+    public GameObject TextDetectBasura;
+    public GameObject ultimoReconocidoBasura=null;
+
     GameObject Activar;
     // Start is called before the first frame update
     void Start()
@@ -67,8 +71,16 @@ public class CameraInteraction : MonoBehaviour
         else{
             Deselect2();
         }
-        
 
+
+
+        RaycastHit hit4;
+        if (Physics.Raycast(cameraa.position, cameraa.forward, out hit4, rayDistance, LayerMask.GetMask("basurero")) && this.GetComponent<PickUpObjects>().PickedObject!=null && GetComponent<PickUpObjects>().PickedObject.CompareTag("basura")){
+            SelectedObjet4(hit4.transform);
+        }
+        else{
+            Deselect4();
+        }
         
     }
 
@@ -92,6 +104,16 @@ public class CameraInteraction : MonoBehaviour
         }
     }
 
+    void SelectedObjet4(Transform transform){
+        ultimoReconocidoBasura = transform.gameObject;
+    }
+
+    void Deselect4(){
+        if(ultimoReconocidoBasura){
+            ultimoReconocidoBasura = null;
+        }
+    }
+
     void OnGUI() {
 
         if(ultimoReconocido){
@@ -104,6 +126,12 @@ public class CameraInteraction : MonoBehaviour
             TextDetectDragable.SetActive(true);
         }else{
             TextDetectDragable.SetActive(false);
+        }
+
+        if(ultimoReconocidoBasura){
+            TextDetectBasura.SetActive(true);
+        }else{
+            TextDetectBasura.SetActive(false);
         }
     }
 }
