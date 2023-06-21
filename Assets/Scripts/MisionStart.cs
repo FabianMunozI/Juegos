@@ -11,6 +11,9 @@ public class MisionStart : MonoBehaviour
 
     public GameObject BasuraActivar;
 
+    public GameObject NpcActivar;
+
+    ////////////////////////////////////////////
 
     public Material color1;
     public Material color2;
@@ -89,7 +92,7 @@ public class MisionStart : MonoBehaviour
 
                 
 
-
+                NpcActivar.SetActive(true);
                 BasuraActivar.SetActive(true);
                 objetosActivar.SetActive(true);
                 controller.SetTrigger("Start");
@@ -102,23 +105,35 @@ public class MisionStart : MonoBehaviour
             }
         }
 
-        if((Vidas==0 || TiempoPerdiste) && yaPerdio==false){ //o si el tiempo = 0
-            Debug.Log("perdiste");
+        if((Vidas==0 || TiempoPerdiste) && yaPerdio==false){ //o si el tiempo = 0 
+
+
 
             referenciaCanvas.transform.GetChild(1).gameObject.SetActive(false);
             referenciaCanvas.transform.GetChild(2).gameObject.SetActive(false);
             referenciaCanvas.transform.GetChild(3).gameObject.SetActive(false);
-            BasuraActivar.SetActive(false);
+            
             referenciaCanvas.transform.GetChild(4).gameObject.SetActive(true);
         }
 
         if(yaPerdio==true || yaGano==true){
+            GameObject pickedPlayer = Jugador.GetComponent<PickUpObjects>().PickedObject;
+            if(pickedPlayer != null){
+                if(pickedPlayer.CompareTag("basura")){
+                    pickedPlayer.GetComponent<Interactable>().Interact();
+                    pickedPlayer.SetActive(false);
+                }
+            }
+            BasuraActivar.SetActive(false);
+
+
             referenciaCanvas.SetActive(false);
 
             for(int i =0; i< objetosActivar.transform.childCount; i++){
                 objetosActivar.transform.GetChild(i).gameObject.GetComponent<Outline>().enabled=false;
             }
             //desactivar todo
+            GetComponent<MisionStart>().enabled=false;
         }
 
         if(ObjBienPuestos==target){
@@ -186,8 +201,8 @@ public class MisionStart : MonoBehaviour
             referenciaExclamacion.SetActive(false);
             this.GetComponent<MeshRenderer>().material.color=Color.green;
             estaSobreLaPlataforma = false;
-
-
+            
+            Invoke("NpcDesactivar", 22f);
             
             
             
@@ -205,5 +220,8 @@ public class MisionStart : MonoBehaviour
         TextVidas.text = texto;
     }
 
+    public void NpcDesactivar(){
+        NpcActivar.SetActive(false);
+    }
 
 }
