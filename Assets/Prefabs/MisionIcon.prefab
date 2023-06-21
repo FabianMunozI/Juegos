@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 5452517883549228131}
   - component: {fileID: 5452517883549228156}
   - component: {fileID: 5452517883549228157}
-  - component: {fileID: 5452517883549228130}
   m_Layer: 0
   m_Name: Plataforma
   m_TagString: Untagged
@@ -181,7 +180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5452517883549228159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: -4.69, z: 12.07}
+  m_LocalPosition: {x: -0.11, y: -4.434, z: 12.29}
   m_LocalScale: {x: 1.2563, y: 0.011266032, z: 1.2563}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -247,25 +246,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 5452517883549228159}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.7609899
   m_Height: 169.71931
   m_Direction: 1
   m_Center: {x: 0, y: 22.3, z: 0}
---- !u!114 &5452517883549228130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5452517883549228159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9eba866fc729544bf86c762d734932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color1: {fileID: 2100000, guid: 6add085be1c03d941a4c789f0693fd8e, type: 2}
-  color2: {fileID: 2100000, guid: a6c49c8f1f6b1524c894b0568741bdc9, type: 2}
 --- !u!1 &5452517883916714540
 GameObject:
   m_ObjectHideFlags: 0

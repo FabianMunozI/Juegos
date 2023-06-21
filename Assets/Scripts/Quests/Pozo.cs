@@ -20,6 +20,8 @@ public class Pozo : Interactable
         {
             if (! Balde_Agua.GetComponent<Balde_Comp>().tiene_agua)
             {   
+                Balde_Agua.GetComponent<Outline>().enabled = false;
+                this.GetComponent<Outline>().enabled = false;
                 base.Interact();
                 Balde_Agua.GetComponent<Balde_Comp>().tiene_agua = true;
             }
