@@ -13,6 +13,8 @@ public class MisionStart : MonoBehaviour
 
     public GameObject NpcActivar;
 
+    public GameObject NpcCompletadoActivar;
+
     ////////////////////////////////////////////
 
     public Material color1;
@@ -125,7 +127,7 @@ public class MisionStart : MonoBehaviour
                 }
             }
             BasuraActivar.SetActive(false);
-
+            NpcCompletadoActivar.SetActive(true);
 
             referenciaCanvas.SetActive(false);
 
