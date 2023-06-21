@@ -25,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
     public Animator PlayerAnimatorController;
 
     public bool AnimacionOn;
-
+    static public bool movementDialogue = false;
 
     // Start is called before the first frame update
     void Start()
@@ -91,19 +91,23 @@ public class CharacterMovement : MonoBehaviour
             }else if(Input.GetKeyUp(KeyCode.LeftShift)){
                 speedUsar=speed;
             }
-            UpdateMovement();
-            UpdateJump();
 
-            if(Input.GetButtonDown("Fire1")){
-                EstaParado=!EstaParado; // parte en start como true
+            if(!movementDialogue){
+                UpdateMovement();
+                UpdateJump();
             }
 
+                if(Input.GetButtonDown("Fire1")){
+                    EstaParado=!EstaParado; // parte en start como true
+                }
 
-            if(EstaParado==true){
-                transform.GetChild(0).position = transform.position + InitialPos;
-            }else if (EstaParado==false){
-                transform.GetChild(0).position = transform.position - controlPos;
-            }
+
+                if(EstaParado==true){
+                    transform.GetChild(0).position = transform.position + InitialPos;
+                }else if (EstaParado==false){
+                    transform.GetChild(0).position = transform.position - controlPos;
+                }
+            
 
         }
 
