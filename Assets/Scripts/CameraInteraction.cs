@@ -14,11 +14,16 @@ public class CameraInteraction : MonoBehaviour
     public GameObject TextDetectDragable;
     GameObject ultimoReconocidoRecoger=null;
 
+    public GameObject TextDetectDialogue;
+    GameObject ultimoReconocidoDialogue=null;
+
 
     public GameObject TextDetectBasura;
     public GameObject ultimoReconocidoBasura=null;
 
     GameObject Activar;
+
+    static public bool interactionDialogue = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,53 +40,71 @@ public class CameraInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Debug.DrawRay(cameraa.position, cameraa.forward * rayDistance, Color.red);
-        RaycastHit hit1;
-        if (Physics.Raycast(cameraa.position, cameraa.forward, out hit1, rayDistance, LayerMask.GetMask("interactable"))){
+        if(interactionDialogue){
             Deselect();
-            SelectedObjet(hit1.transform);
-            if(Input.GetButtonDown("Interactable")){ // letra e
-                hit1.transform.GetComponent<Interactable>().Interact();
-            }
-        }else{
-            Deselect();
-        }
-        RaycastHit hit2;
-        if (Physics.Raycast(cameraa.position, cameraa.forward, out hit2, rayDistance, LayerMask.GetMask("grabable"))){
             Deselect2();
-            if(this.GetComponent<PickUpObjects>().PickedObject ==null){
-                SelectedObjet2(hit2.transform);
-            }else{
-                Deselect2();
-                /* if(Input.GetKeyDown(KeyCode.F)){
-                    GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
-                } */
-            }
-            if(Input.GetKeyDown(KeyCode.F) && this.GetComponent<PickUpObjects>().PickedObject == null){ //agarrar objeto
-                hit2.transform.GetComponent<Interactable>().Interact();
-            }
-            else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
-                GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
-            }
-        }else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
-                    GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
-                    Deselect2();
-        }
-        else{
-            Deselect2();
-        }
-
-
-
-        RaycastHit hit4;
-        if (Physics.Raycast(cameraa.position, cameraa.forward, out hit4, rayDistance, LayerMask.GetMask("basurero")) && this.GetComponent<PickUpObjects>().PickedObject!=null && GetComponent<PickUpObjects>().PickedObject.CompareTag("basura")){
-            SelectedObjet4(hit4.transform);
-        }
-        else{
+            Deselect3();
             Deselect4();
         }
-        
+        else{
+            Debug.DrawRay(cameraa.position, cameraa.forward * rayDistance, Color.red);
+            RaycastHit hit1;
+            if (Physics.Raycast(cameraa.position, cameraa.forward, out hit1, rayDistance, LayerMask.GetMask("interactable"))){
+                Deselect();
+                SelectedObjet(hit1.transform);
+                if(Input.GetKeyDown(KeyCode.E)){ // letra e
+                    hit1.transform.GetComponent<Interactable>().Interact();
+                }
+            }else{
+                Deselect();
+            }
+            ///////////////////////////////////////////////////////////////////////////////
+            RaycastHit hit2;
+            if (Physics.Raycast(cameraa.position, cameraa.forward, out hit2, rayDistance, LayerMask.GetMask("grabable"))){
+                Deselect2();
+                if(this.GetComponent<PickUpObjects>().PickedObject ==null){
+                    SelectedObjet2(hit2.transform);
+                }else{
+                    Deselect2();
+                    /* if(Input.GetKeyDown(KeyCode.F)){
+                        GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
+                    } */
+                }
+                if(Input.GetKeyDown(KeyCode.F) && this.GetComponent<PickUpObjects>().PickedObject == null){ //agarrar objeto
+                    hit2.transform.GetComponent<Interactable>().Interact();
+                }
+                else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
+                    GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
+                }
+            }else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
+                        GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
+                        Deselect2();
+            }
+            else{
+                Deselect2();
+            }
+
+            ///////////////////////////////////////////////////////////////////////////////
+            RaycastHit hit3;
+            if (Physics.Raycast(cameraa.position, cameraa.forward, out hit3, rayDistance, LayerMask.GetMask("dialogable"))){
+                Deselect3();
+                SelectedObjet3(hit3.transform);
+                if(Input.GetKeyDown(KeyCode.E)){ // letra e
+                    hit3.transform.GetComponent<Interactable>().Interact();
+                }
+            }else{
+                Deselect3();
+            }
+            ///////////////////////////////////////////////////////////////////////////////
+            RaycastHit hit4;
+            if (Physics.Raycast(cameraa.position, cameraa.forward, out hit4, rayDistance, LayerMask.GetMask("basurero")) && this.GetComponent<PickUpObjects>().PickedObject!=null && GetComponent<PickUpObjects>().PickedObject.CompareTag("basura")){
+                SelectedObjet4(hit4.transform);
+            }
+            else{
+                Deselect4();
+            }
+
+        }
     }
 
     void SelectedObjet(Transform transform){
@@ -103,6 +126,15 @@ public class CameraInteraction : MonoBehaviour
             ultimoReconocidoRecoger = null;
         }
     }
+
+    void SelectedObjet3(Transform transform){
+        ultimoReconocidoDialogue = transform.gameObject;
+    }
+    void Deselect3(){
+        if(ultimoReconocidoDialogue){
+            ultimoReconocidoDialogue = null;
+        }
+    } 
 
     void SelectedObjet4(Transform transform){
         ultimoReconocidoBasura = transform.gameObject;
@@ -126,6 +158,12 @@ public class CameraInteraction : MonoBehaviour
             TextDetectDragable.SetActive(true);
         }else{
             TextDetectDragable.SetActive(false);
+        }
+
+        if(ultimoReconocidoDialogue){
+            TextDetectDialogue.SetActive(true);
+        }else{
+            TextDetectDialogue.SetActive(false);
         }
 
         if(ultimoReconocidoBasura){
