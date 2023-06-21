@@ -15,12 +15,15 @@ public class ActivarDialogo : Interactable
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)){
-            CharacterMovement.movementDialogue = true;
-            CameraInteraction.interactionDialogue = true;
-            FpsCamera.cameraDialogue = true;
-            dialogoObjetivo.SetActive(true);
-        }
-    }
 
+    }
+    public override void Interact(){
+        
+        base.Interact();
+        CharacterMovement.movementDialogue = true;
+        CameraInteraction.interactionDialogue = true;
+        FpsCamera.cameraDialogue = true;
+        dialogoObjetivo.SetActive(true);
+
+    }
 }
