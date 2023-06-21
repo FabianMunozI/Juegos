@@ -27,6 +27,10 @@ public class Incendio : MonoBehaviour
     public bool inputTrue = false;
     public Animator controller;
 
+    public GameObject Guardabosque;
+
+    bool missionDone = false;
+
     void Start()
     {
         Quest_started = false;
@@ -55,54 +59,41 @@ public class Incendio : MonoBehaviour
         }
 
 
+        if (!Quest_started && !(missionDone) && Input.GetKeyDown(KeyCode.E)){
+
+            OnOffPlayer();
+            VectorPartida = CamaraO.transform.position;
+
+            if(Jugador.GetComponent<CharacterMovement>().EstaParado==false){
+                CamaraO.transform.position= cam_pos;
+                Jugador.GetComponent<CharacterMovement>().EstaParado=true;
+            }
+
+            Jugador.transform.rotation = Quaternion.Euler(playerrot);
+            CamaraO.transform.rotation = Quaternion.Euler(camrot);
+
+            posCamara = CamaraO.transform.position;
+
+            controller.SetTrigger("Start");
+
+            Invoke("OnOffPlayer", 8f);
+
+            Quest_started = true;
+            Llamas.SetActive(true);
+            quest_text.enabled = true;
+            Balde_Agua.GetComponent<Outline>().enabled = true;
+            Pozo.GetComponent<Outline>().enabled = true;
+        }
+
         if (llamas_restantes == 0)
         {
+            missionDone = true;
             quest_text.text = "¡Mision Completada!";
             Quest_started = false;
+            Guardabosque.SetActive(true);
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-
-        if(other.CompareTag("Player")){
-            this.gameObject.GetComponent<MeshRenderer>().material.color = color1.color;
-
-            
-
-            if (!Quest_started){
-
-               OnOffPlayer();
-                VectorPartida = CamaraO.transform.position;
-
-                if(Jugador.GetComponent<CharacterMovement>().EstaParado==false){
-                    CamaraO.transform.position= cam_pos;
-                    Jugador.GetComponent<CharacterMovement>().EstaParado=true;
-                }
-
-                Jugador.transform.rotation = Quaternion.Euler(playerrot);
-                CamaraO.transform.rotation = Quaternion.Euler(camrot);
-
-                posCamara = CamaraO.transform.position;
-
-                controller.SetTrigger("Start");
-
-                Invoke("OnOffPlayer", 8f);
-
-                Quest_started = true;
-                Llamas.SetActive(true);
-                quest_text.enabled = true;
-                Balde_Agua.GetComponent<Outline>().enabled = true;
-                Pozo.GetComponent<Outline>().enabled = true;
-
-                
-
-
-
-
-            }
-            
-        }
-    }
 
     private void OnTriggerExit(Collider other) {
         if(other.CompareTag("Player")){

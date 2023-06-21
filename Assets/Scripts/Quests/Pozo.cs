@@ -16,13 +16,14 @@ public class Pozo : Interactable
 
     public override void Interact()
     {
+        base.Interact();
         if(Jugador.GetComponent<PickUpObjects>().PickedObject == Balde_Agua)
         {
             if (! Balde_Agua.GetComponent<Balde_Comp>().tiene_agua)
             {   
                 Balde_Agua.GetComponent<Outline>().enabled = false;
                 this.GetComponent<Outline>().enabled = false;
-                base.Interact();
+                //base.Interact();
                 Balde_Agua.GetComponent<Balde_Comp>().tiene_agua = true;
             }
         }
