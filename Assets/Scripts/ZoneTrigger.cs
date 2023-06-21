@@ -16,7 +16,6 @@ public class ZoneTrigger : MonoBehaviour
             if(Input.GetKey(KeyCode.E)){
                 CharacterMovement.movementDialogue = true;
                 CameraInteraction.interactionDialogue = true;
-                FpsCamera.cameraDialogue = true;
                 onTriggerExit.Invoke();
                 dialogoObjetivo.SetActive(true);
             }
