@@ -28,9 +28,13 @@ public class UsablePickedObject : MonoBehaviour
 
                 }else if(this.GetComponent<PickUpObjects>().PickedObject.CompareTag("basura") && GetComponent<CameraInteraction>().ultimoReconocidoBasura){ // 1ro se suelta y luego ...
                     GameObject basura=GetComponent<PickUpObjects>().PickedObject;
+                    //Debug.Log(GetComponent<CameraInteraction>().ultimoReconocidoBasura); // basurero
                     basura.GetComponent<Interactable>().Interact();
                     
-                    basura.GetComponent<Usable>().usable();
+                    GameObject basureroSeleccionado = GetComponent<CameraInteraction>().ultimoReconocidoBasura;
+                    basureroSeleccionado.GetComponent<BasureroReciclaje>().objetoPickeadoReferencia=basura;
+                   
+                    basureroSeleccionado.GetComponent<Usable>().usable(); // falta aki
                 }
 
                 

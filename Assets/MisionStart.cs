@@ -38,7 +38,9 @@ public class MisionStart : MonoBehaviour
 
     public int ObjBienPuestos = 0;
 
-    int target = 1;
+    int target = 2;
+
+    //////////////////////////////////////////////
 
 
     // Start is called before the first frame update
