@@ -31,6 +31,8 @@ public class Incendio : MonoBehaviour
 
     bool missionDone = false;
 
+    public GameObject fogata;
+
     void Start()
     {
         Quest_started = false;
@@ -47,6 +49,8 @@ public class Incendio : MonoBehaviour
 
         Jugador= GameObject.Find("Player");
         CamaraO = GameObject.Find("Camera");
+
+        fogata= GameObject.Find("Plataforma");
     }
 
     void Update()
@@ -59,24 +63,29 @@ public class Incendio : MonoBehaviour
         }
 
 
-        if (!Quest_started && !(missionDone) && Input.GetKeyDown(KeyCode.E)){
+        if (!Quest_started && !(missionDone) && Input.GetKeyDown(KeyCode.E) && fogata.GetComponent<activarMisionBosque1>().misionActivada){
 
             OnOffPlayer();
             VectorPartida = CamaraO.transform.position;
 
             if(Jugador.GetComponent<CharacterMovement>().EstaParado==false){
-                CamaraO.transform.position= cam_pos;
+                CamaraO.transform.position= Jugador.transform.position + Jugador.GetComponent<CharacterMovement>().InitialPos;
                 Jugador.GetComponent<CharacterMovement>().EstaParado=true;
+            }else{
+
             }
 
-            Jugador.transform.rotation = Quaternion.Euler(playerrot);
-            CamaraO.transform.rotation = Quaternion.Euler(camrot);
+            Jugador.transform.position = new Vector3(7,1,20);
+            Jugador.transform.rotation = Quaternion.Euler(0, -93.019f,0);
+            //CamaraO.transform.position = new Vector3(0,0.69f,0);
+            //CamaraO.transform.rotation = Quaternion.Euler(0,0,0);
+            CamaraO.transform.rotation=Jugador.transform.rotation;
 
             posCamara = CamaraO.transform.position;
 
-            controller.SetTrigger("Start");
+            controller.SetTrigger("Start2");
 
-            Invoke("OnOffPlayer", 8f);
+            Invoke("OnOffPlayer", 14.5f);
 
             Quest_started = true;
             Llamas.SetActive(true);
@@ -123,7 +132,7 @@ public class Incendio : MonoBehaviour
         if(inputTrue==false){ // si ya se inicio la mision y se esta terminando / devolviendo controles al player
         // hay que desactivar que la mision pueda ser tomada
             //referenciaExclamacion.SetActive(inputTrue);
-            controller.SetTrigger("End");
+            controller.SetTrigger("End2");
             //Debug.Log("volvieron los controles");
             // referenciaExclamacion.SetActive(false);
             this.GetComponent<MeshRenderer>().material.color=Color.green;

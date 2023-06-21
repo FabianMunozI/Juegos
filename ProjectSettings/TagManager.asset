@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - pelotaRecogible
+  - basura
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - misionBosque1
   - Water
   - UI
   - interactable
