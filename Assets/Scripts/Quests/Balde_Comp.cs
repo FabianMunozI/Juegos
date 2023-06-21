@@ -8,20 +8,24 @@ public class Balde_Comp : Interactable
     private Mesh bal_con_agua;
     private Mesh bal_sin_agua;
     private GameObject water_mesh;
+    private GameObject water_particles;
 
     void Start()
     {
         tiene_agua = false;
         water_mesh = GameObject.Find("water 2");
+        water_particles = GameObject.Find("Water_particles");
     }
 
     void Update()
     {
         if (tiene_agua)
         {
-            Debug.Log("aa");
+            water_mesh.active = true;  
+            water_particles.active = true;
         }else{
             water_mesh.active = false;  
+            water_particles.active = false;
         }
     }
 }
