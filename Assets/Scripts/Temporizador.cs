@@ -23,9 +23,14 @@ public class Temporizador : MonoBehaviour
 
     public bool iniciarGame= true;
 
+    GameObject referenciaMision;
+
+    public int InstanciaTemporizador;
+
     // Start is called before the first frame update
     void Start()
     {
+        referenciaMision = GameObject.Find("Plataforma");
         escadaDelTiempoInicial = escadaDelTiempo;
 
         myText = GetComponent<Text>();
@@ -45,7 +50,24 @@ public class Temporizador : MonoBehaviour
             tiempoDelFrameConTimeScale = Time.deltaTime * escadaDelTiempo;
             tiempoAMostrarEnSegundos -= tiempoDelFrameConTimeScale; // cambiar esto a += hace que avance
             ActualizarReloj(tiempoAMostrarEnSegundos);
-
+            if(tiempoAMostrarEnSegundos<= 0){
+                iniciarGame = false;
+                string text1;
+                if(InstanciaTemporizador==0){
+                    text1 = "- Tiempo Restante:         ";
+                    myText.text = text1 +" 00:00";
+                    referenciaMision.GetComponent<MisionStart>().TiempoPerdiste = true;
+                }else if(InstanciaTemporizador==1){
+                    text1="- Mision Fallida  :(    ";
+                    myText.text = text1;
+                    referenciaMision.GetComponent<MisionStart>().yaPerdio=true;
+                }else if(InstanciaTemporizador==2){
+                    text1="- Mision Exitosa  :)    5";
+                    myText.text = text1;
+                    referenciaMision.GetComponent<MisionStart>().yaGano=true;
+                }
+                
+            }
             /* if(!estaPausado){
                 Time.timeScale= 1;
 
@@ -94,9 +116,21 @@ public class Temporizador : MonoBehaviour
         minutos = (int)tiempoEnSegundos / 60;
         segundos = (int) tiempoEnSegundos % 60;
 
-        textoDelRejoj = minutos.ToString("00") + ":" + segundos.ToString("00");
-
-        myText.text = textoDelRejoj;
+        
+        if(InstanciaTemporizador==0){
+            textoDelRejoj = minutos.ToString("00") + ":" + segundos.ToString("00");
+            string text1 = "- Tiempo Restante:         ";
+            myText.text = text1 + textoDelRejoj;
+        }else if(InstanciaTemporizador==1){
+            textoDelRejoj=segundos.ToString("0");
+            string text1 = "- Mision Fallida  :(    ";
+            myText.text = text1 + textoDelRejoj;
+        }else if(InstanciaTemporizador==2){
+            textoDelRejoj=segundos.ToString("0");
+            string text1 = "- Mision Exitosa  :)    ";
+            myText.text = text1 + textoDelRejoj;
+        }
+        
     }
 
     public void Pausar(){
