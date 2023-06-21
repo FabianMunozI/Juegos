@@ -9027,7 +9027,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.1
+  m_MaxParticleSize: 0.3
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -9189,7 +9189,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9305,7 +9305,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -52440,7 +52440,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.1
+  m_MaxParticleSize: 0.3
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -52602,7 +52602,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -52718,7 +52718,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -61888,6 +61888,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: cfd21ef8050231440a7ccd68a5517483, type: 3}
   m_PrefabInstance: {fileID: 1315948369}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1318309677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3753369507412646900, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+  m_PrefabInstance: {fileID: 2090730046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1318309678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318309677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a84ecc5c0959d0348a2f4f284df52a8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1318570574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94202,6 +94228,11 @@ MonoBehaviour:
   quest_text: {fileID: 1950221173}
   Balde_Agua: {fileID: 0}
   Pozo: {fileID: 0}
+  cam_pos: {x: 10, y: 5, z: 10}
+  playerrot: {x: 0, y: 0, z: 0}
+  camrot: {x: 0, y: -90, z: 0}
+  inputTrue: 0
+  controller: {fileID: 1318309678}
 --- !u!1001 &1915108980
 PrefabInstance:
   m_ObjectHideFlags: 0
