@@ -29,7 +29,7 @@ public class generaBasura : MonoBehaviour
         if(sehizo==false){
             sehizo=true;
 
-            for(int i=0; i<62; i++){
+            for(int i=0; i<58; i++){
                 Invoke("generar", init);
 
                 init+=0.5f;

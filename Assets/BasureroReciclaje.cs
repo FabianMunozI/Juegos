@@ -29,13 +29,13 @@ public class BasureroReciclaje : Usable
             objetoPickeadoReferencia.SetActive(false);
 
             
-            Debug.Log("Acertaste");
+            //Debug.Log("Acertaste");
 
             mision.ObjBienPuestos +=1;
             mision.actualizarTextRecolectados();
         }else{
             objetoPickeadoReferencia.SetActive(false);
-            Debug.Log("No acertaste");
+            //Debug.Log("No acertaste");
             mision.Vidas-=1;
             mision.actualizarTextVidas();
         }
