@@ -25,6 +25,8 @@ public class NpcNav : MonoBehaviour
     {   
 
         navMeshAgent.destination = movePositionTransform.position;
+
+        print(navMeshAgent.remainingDistance);
         
         if(isInDialogue || (navMeshAgent.remainingDistance <= 0.15)){
             navMeshAgent.isStopped = true;

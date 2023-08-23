@@ -33,7 +33,7 @@ public class ObjectNav : MonoBehaviour
                 timer = tiempoEntreReposicion;
             } 
         }
-        
+  
     }
 
     public void StartTimer(){
@@ -52,8 +52,9 @@ public class ObjectNav : MonoBehaviour
         while(flag){
             x_aleatoria = UnityEngine.Random.Range(x_inferior, x_superior);
             z_aleatoria = UnityEngine.Random.Range(z_inferior, z_superior);
+            //print(z_aleatoria);
             randomPoint = new Vector3(x_aleatoria, 0, z_aleatoria);
-            if(NavMesh.SamplePosition(randomPoint, out hit, 0.09f, NavMesh.AllAreas)){
+            if(NavMesh.SamplePosition(randomPoint, out hit, 0.5f, NavMesh.AllAreas)){
                 flag = false;
                 result = hit.position;
             }
