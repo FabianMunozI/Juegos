@@ -57,6 +57,7 @@ public class DialogueScript : Interactable{
             CharacterMovement. movementDialogue = false;
             FpsCamera.cameraDialogue = false;
             CameraInteraction.interactionDialogue = false;
+            NpcNav.isInDialogue = false;
         }
     }
 
