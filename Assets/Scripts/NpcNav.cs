@@ -26,7 +26,7 @@ public class NpcNav : MonoBehaviour
 
         navMeshAgent.destination = movePositionTransform.position;
         
-        if(isInDialogue || (navMeshAgent.remainingDistance <= 0.1)){
+        if(isInDialogue || (navMeshAgent.remainingDistance <= 0.15)){
             navMeshAgent.isStopped = true;
             animator.SetFloat("movimiento", 0);
         }
