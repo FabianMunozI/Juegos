@@ -11,6 +11,7 @@ public class Incendio : MonoBehaviour
     public Material color2;
     private GameObject Llamas;
     public TextMeshProUGUI quest_text;
+    public GameObject cuentaRegresiva;
     private int n_llamas;
     public GameObject Balde_Agua;
     public GameObject Pozo;
@@ -27,6 +28,8 @@ public class Incendio : MonoBehaviour
     public bool inputTrue = false;
     public Animator controller;
 
+    bool apagarTiempoMision = false;
+
     public GameObject Guardabosque;
 
     bool missionDone = false;
@@ -35,6 +38,9 @@ public class Incendio : MonoBehaviour
 
     void Start()
     {
+
+        cuentaRegresiva.SetActive(false);
+
         Quest_started = false;
         Llamas = GameObject.Find("Llamas");
         Llamas.SetActive(false);
@@ -59,7 +65,7 @@ public class Incendio : MonoBehaviour
         int llamas_restantes = counter_actives(Llamas);
         if (Quest_started)
         {
-            quest_text.text = "¡Apaga los Arboles!\n- "+(n_llamas - llamas_restantes )+"/"+n_llamas+" Arboles Apagados";
+            quest_text.text = "¡Apaga los focos de incendio!\n"+(n_llamas - llamas_restantes )+"/"+n_llamas+" Arboles Apagados";
         }
 
 
@@ -94,13 +100,21 @@ public class Incendio : MonoBehaviour
             Pozo.GetComponent<Outline>().enabled = true;
         }
 
-        if (llamas_restantes == 0)
+        if (llamas_restantes == 0 && !apagarTiempoMision)
         {
+            apagarTiempoMision = true;
             missionDone = true;
-            quest_text.text = "¡Mision Completada!";
+            quest_text.text = "Mision Exitosa  :)";
             Quest_started = false;
+            cuentaRegresiva.SetActive(true);
             Guardabosque.SetActive(true);
+            Invoke("desactivarTexto",5f);
         }
+    }
+
+    void desactivarTexto(){ 
+        cuentaRegresiva.SetActive(false);
+        quest_text.enabled = false;
     }
 
 

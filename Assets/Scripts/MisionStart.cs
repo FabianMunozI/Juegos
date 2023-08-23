@@ -96,11 +96,13 @@ public class MisionStart : MonoBehaviour
 
                 NpcActivar.SetActive(true);
                 BasuraActivar.SetActive(true);
-                objetosActivar.SetActive(true);
+                //objetosActivar.SetActive(true);
                 controller.SetTrigger("Start");
                 activarPreguntaParaIniciarMision.SetActive(false); // desactivas mensaje de iniciar mision
 
-                
+                for(int i =0; i< objetosActivar.transform.childCount; i++){
+                    objetosActivar.transform.GetChild(i).gameObject.GetComponent<Outline>().enabled=true;
+                }
 
                 Invoke("OnOffPlayer", 8f);
 

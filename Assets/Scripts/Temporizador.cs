@@ -65,6 +65,10 @@ public class Temporizador : MonoBehaviour
                     text1="- Mision Exitosa  :)    5";
                     myText.text = text1;
                     referenciaMision.GetComponent<MisionStart>().yaGano=true;
+                }else if(InstanciaTemporizador == 3){
+                    iniciarGame = false;
+                    text1 = "0";
+                    myText.text = text1;
                 }
                 
             }
@@ -128,6 +132,10 @@ public class Temporizador : MonoBehaviour
         }else if(InstanciaTemporizador==2){
             textoDelRejoj=segundos.ToString("0");
             string text1 = "- Mision Exitosa  :)    ";
+            myText.text = text1 + textoDelRejoj;
+        }else if(InstanciaTemporizador == 3){
+            textoDelRejoj=segundos.ToString("0");
+            string text1 = "";
             myText.text = text1 + textoDelRejoj;
         }
         
