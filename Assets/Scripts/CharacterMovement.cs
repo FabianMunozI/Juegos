@@ -33,7 +33,13 @@ public class CharacterMovement : MonoBehaviour
         AnimacionOn=true;
 
         InitialPos = transform.GetChild(0).position - transform.position;
-        controlPos = transform.position - new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y-0.5f, transform.GetChild(0).position.z);
+
+        if(gameObject.name == "Player"){
+            controlPos = transform.position - new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y-0.5f, transform.GetChild(0).position.z);
+        }else{
+            controlPos = transform.position - new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y-0.25f, transform.GetChild(0).position.z);
+        }
+        
 
         rigidbody = GetComponent<Rigidbody>();
         //distance_to_ground = GetComponent<Collider>().bounds.extents.y;
