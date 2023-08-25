@@ -7,6 +7,10 @@ TagManager:
   - pelotaRecogible
   - basura
   - NPC
+  - smog
+  - building
+  - autos
+  - Mascota
   layers:
   - Default
   - TransparentFX
@@ -17,12 +21,12 @@ TagManager:
   - interactable
   - grabable
   - dialogable
-  - 
+  - smog
   - basurero
-  - 
-  - 
-  - 
-  - 
+  - caminoMarcador
+  - autos
+  - mascotaMesh
+  - playerMesh
   - 
   - 
   - 

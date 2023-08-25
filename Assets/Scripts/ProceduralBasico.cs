@@ -18,7 +18,7 @@ public class ProceduralBasico : MonoBehaviour
         randomRot=(Random.Range(0,4)); // numero entre 0 y 4 inclusivo pero creo que eso es mentira y es entre 0 y 3
 
 
-        Debug.Log(randomRot);
+        //Debug.Log(randomRot);
         if(randomNoGenerar!=9){
             Instantiate(objetosPosibles[Random.Range(0,objetosPosibles.Length)], transform.position, Quaternion.Euler(0, randomRot*90, 0));
         }
