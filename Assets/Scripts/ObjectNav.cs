@@ -35,16 +35,6 @@ public class ObjectNav : MonoBehaviour
         }
   
     }
-
-    public void StartTimer(){
-        timer -= Time.deltaTime;
-        if(timer <= 0){
-            result = GenerateRandomPoint();
-            gameObject.transform.position = result;
-            tiempoEntreReposicion = UnityEngine.Random.Range(5,10);
-            timer = tiempoEntreReposicion;
-        } 
-    }
     public Vector3 GenerateRandomPoint(){
         bool flag = true;
         NavMeshHit hit;
