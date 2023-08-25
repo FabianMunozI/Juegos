@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using GLTF.Schema;
 using UnityEngine;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 
 public class RitmoTeclas : MonoBehaviour
 {

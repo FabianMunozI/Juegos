@@ -123,7 +123,7 @@ public class Temporizador : MonoBehaviour
         
         if(InstanciaTemporizador==0){
             textoDelRejoj = minutos.ToString("00") + ":" + segundos.ToString("00");
-            string text1 = "- Tiempo Restante:         ";
+            string text1 = "- Tiempo Restante:   ";
             myText.text = text1 + textoDelRejoj;
         }else if(InstanciaTemporizador==1){
             textoDelRejoj=segundos.ToString("0");
