@@ -31,7 +31,6 @@ public class Ladrido : MonoBehaviour
 
     void llamarAtencion(){
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("npcmascota");
-        Debug.Log(npcs.Length);
         for(int i = 0; i< npcs.Length ; i++){
             if(Vector3.Distance(transform.position, npcs[i].transform.position) <50 ){
                 Debug.Log("zi");
