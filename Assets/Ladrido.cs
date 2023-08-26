@@ -33,8 +33,11 @@ public class Ladrido : MonoBehaviour
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("npcmascota");
         for(int i = 0; i< npcs.Length ; i++){
             if(Vector3.Distance(transform.position, npcs[i].transform.position) <50 ){
-                Debug.Log("zi");
-                npcs[i].transform.LookAt(transform);
+                //Debug.Log("zi");
+                Vector3 targetPosition = transform.position;
+                targetPosition.y = npcs[i].transform.position.y;
+                npcs[i].transform.LookAt(targetPosition);
+                //npcs[i].transform.LookAt(transform);
             }
         }
 
