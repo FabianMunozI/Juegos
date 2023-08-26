@@ -69,10 +69,10 @@ public class NavMeshController : MonoBehaviour
 
                 Vector3 clicEnMundo = minimapCamera.ScreenToWorldPoint(new Vector3(clicEnCamaraMinimapaConversion.x, clicEnCamaraMinimapaConversion.y, minimapCamera.nearClipPlane));
 
-                Vector3 final = new Vector3(clicEnMundo.x, 100f, clicEnMundo.z); //el 100 era 0.1f
+                Vector3 final = new Vector3(clicEnMundo.x, 5f, clicEnMundo.z); //el 5 era 100f
                 GuardadoPuntoFinal = final;
                 
-                this.transform.position = new Vector3(Player.transform.position.x, 100f, Player.transform.position.z);
+                this.transform.position = new Vector3(Player.transform.position.x, 5f, Player.transform.position.z);
                 //GetComponent<TrailRenderer>().Clear();
                 agente.destination = final; 
                 
@@ -80,7 +80,7 @@ public class NavMeshController : MonoBehaviour
         } 
         //agente.destination = objetivo.position;
         if(agente.hasPath){
-            this.transform.position = new Vector3(Player.transform.position.x, 100f, Player.transform.position.z);
+            this.transform.position = new Vector3(Player.transform.position.x, 5f, Player.transform.position.z);
             DrawPath();
         }
 

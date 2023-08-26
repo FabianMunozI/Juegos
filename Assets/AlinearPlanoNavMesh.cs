@@ -15,6 +15,6 @@ public class AlinearPlanoNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(posPlayer.x, 100f, posPlayer.z);
+        transform.position = new Vector3(posPlayer.x, 5f, posPlayer.z);
     }
 }
