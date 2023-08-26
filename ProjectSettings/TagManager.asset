@@ -11,6 +11,7 @@ TagManager:
   - building
   - autos
   - Mascota
+  - npcmascota
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,7 @@ public class Mascota : MonoBehaviour
 
     bool mascotaUp;
 
-    bool eresLaMascota;
+    public bool eresLaMascota;
 
 
     // de aqui para abajo scripts player
@@ -43,7 +43,7 @@ public class Mascota : MonoBehaviour
         camaraPlayer = GameObject.Find("Player").transform.GetChild(0).gameObject;
 
 
-        camaraMascota = mascota.transform.GetChild(0).gameObject;
+        camaraMascota = mascota.transform.GetChild(1).gameObject;
         mascotaUp = false;
 
         /////////////////////////////////////////////////////////////
