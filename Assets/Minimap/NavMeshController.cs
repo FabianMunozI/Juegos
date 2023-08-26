@@ -65,14 +65,14 @@ public class NavMeshController : MonoBehaviour
                 float XRatio = minimapCamera.pixelWidth/largoMainCameraX;
                 float YRatio = minimapCamera.pixelHeight/largoMainCameraY;
 
-                Vector3 clicEnCamaraMinimapaConversion = new Vector3(NuevoClicPantalla.x * XRatio, NuevoClicPantalla.y * YRatio, 0);
+                Vector3 clicEnCamaraMinimapaConversion = new Vector3(NuevoClicPantalla.x * XRatio, NuevoClicPantalla.y * YRatio, 0); // el 51 era un 0
 
                 Vector3 clicEnMundo = minimapCamera.ScreenToWorldPoint(new Vector3(clicEnCamaraMinimapaConversion.x, clicEnCamaraMinimapaConversion.y, minimapCamera.nearClipPlane));
 
-                Vector3 final = new Vector3(clicEnMundo.x, 0.1f, clicEnMundo.z);
+                Vector3 final = new Vector3(clicEnMundo.x, 100f, clicEnMundo.z); //el 100 era 0.1f
                 GuardadoPuntoFinal = final;
                 
-                this.transform.position = Player.transform.position;
+                this.transform.position = new Vector3(Player.transform.position.x, 100f, Player.transform.position.z);
                 //GetComponent<TrailRenderer>().Clear();
                 agente.destination = final; 
                 
@@ -80,11 +80,11 @@ public class NavMeshController : MonoBehaviour
         } 
         //agente.destination = objetivo.position;
         if(agente.hasPath){
-            this.transform.position = Player.transform.position;
+            this.transform.position = new Vector3(Player.transform.position.x, 100f, Player.transform.position.z);
             DrawPath();
         }
 
-        if(Vector3.Distance(agente.destination, Player.transform.position) <= agente.stoppingDistance){
+        if(Vector3.Distance(new Vector3(agente.destination.x, 0, agente.destination.z), Player.transform.position) <= agente.stoppingDistance){
             MyLineRenderer.positionCount=0;
             agente.ResetPath();
         }
