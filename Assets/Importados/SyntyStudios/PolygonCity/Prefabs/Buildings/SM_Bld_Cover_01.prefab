@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 64738585741061564}
   - component: {fileID: 64700902185988904}
   - component: {fileID: 64862366402269214}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Cover_01
   m_TagString: building
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &413872
 Transform:

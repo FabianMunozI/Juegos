@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 64895425006881306}
   - component: {fileID: 64871132166073584}
   - component: {fileID: 64552291686847290}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Apartment_Door_01
   m_TagString: building
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &454240
 Transform:

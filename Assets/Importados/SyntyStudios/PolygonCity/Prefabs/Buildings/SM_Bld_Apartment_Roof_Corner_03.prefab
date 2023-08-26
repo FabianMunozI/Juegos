@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 65995452968665610}
   - component: {fileID: 65392026178564298}
   - component: {fileID: 65576360546340080}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Apartment_Roof_Corner_03
   m_TagString: building
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &487550
 Transform:

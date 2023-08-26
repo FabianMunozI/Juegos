@@ -47,9 +47,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2227987060207247322, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4168437363309153186, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
       propertyPath: m_Name
       value: Mascota
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520861358486156401, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520861358486156401, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 87797
       objectReference: {fileID: 0}
     - target: {fileID: 9015719785142643737, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
       propertyPath: m_RootOrder

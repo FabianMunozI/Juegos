@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 2325110}
   - component: {fileID: 64005552069748600}
   - component: {fileID: 64521683290857282}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Station_03
   m_TagString: building
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &434824
 Transform:

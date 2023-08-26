@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3393438}
   - component: {fileID: 2377862}
   - component: {fileID: 64840535184475436}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_OfficeRound_01
   m_TagString: building
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &452506
 Transform:

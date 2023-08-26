@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 453602}
   - component: {fileID: 3342362}
   - component: {fileID: 2358618}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Shop_05_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &453602
 Transform:
@@ -96,12 +96,12 @@ GameObject:
   - component: {fileID: 2399732}
   - component: {fileID: 64667433351282224}
   - component: {fileID: 64974133738270322}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Shop_05
   m_TagString: building
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &430042
 Transform:

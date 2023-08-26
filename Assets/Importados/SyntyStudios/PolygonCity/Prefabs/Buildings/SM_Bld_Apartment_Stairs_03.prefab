@@ -20,12 +20,12 @@ GameObject:
   - component: {fileID: 64111614885720738}
   - component: {fileID: 64833306655788988}
   - component: {fileID: 64682083406530566}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SM_Bld_Apartment_Stairs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &471776
 Transform:
