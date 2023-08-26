@@ -8,9 +8,20 @@ public class activarMisionRitmo : Interactable
     public GameObject MisionRitmo;
     GameObject player;
 
+    GameObject CScenarioRef;
+
+    GameObject refAlcalde;
+
+    GameObject refPosCamAlcalde;
+
     GameObject microfonoRef;
     void Start()
     {
+        CScenarioRef = GameObject.Find("CScenario");
+
+        refAlcalde = CScenarioRef.transform.GetChild(0).GetChild(0).gameObject;
+        refPosCamAlcalde = CScenarioRef.transform.GetChild(0).GetChild(1).gameObject;
+
         player = GameObject.Find("Player");
         microfonoRef = GameObject.Find("Podio").transform.GetChild(0).gameObject;
     }
@@ -24,6 +35,12 @@ public class activarMisionRitmo : Interactable
     }
 
     public void iniciarMision(){
+        // ACTIVAR POLITICO, Y NPCS
+        CScenarioRef.transform.GetChild(0).gameObject.SetActive(true);
+
+        ///////// paneo de camara
+        
+
 
         //////////// Activar tablero Ritmo
         MisionRitmo.transform.GetChild(0).gameObject.SetActive(true);
