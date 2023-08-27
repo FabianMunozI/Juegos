@@ -5,6 +5,8 @@ using UnityEngine;
 public class InteractuarGrifo : Interactable
 {
     // Start is called before the first frame update
+
+    public AguaSurtidor aguaSurtidor;
     void Start()
     {
         
@@ -19,6 +21,6 @@ public class InteractuarGrifo : Interactable
     public override void Interact()
     {
         base.Interact();
-        AguaSurtidor.interactuado = true;
+        aguaSurtidor.interactuado = true;
     }
 }

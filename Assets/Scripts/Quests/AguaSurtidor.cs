@@ -6,13 +6,13 @@ public class AguaSurtidor : MonoBehaviour
 {   
     private bool misionActiva;
     private bool surtidorAbierto;
-    public static bool interactuado;
+    [HideInInspector] public bool interactuado;
     public float tiempoTimer;
     
     [SerializeField] private float timer;
     public float speed;
 
-    public Vector3 positionAguaArriba, positionAguaAbajo;
+    private Vector3 positionAguaArriba, positionAguaAbajo;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,20 +20,15 @@ public class AguaSurtidor : MonoBehaviour
         misionActiva = false;
         surtidorAbierto = false;
         interactuado = false;
+        positionAguaAbajo = transform.position;
+        positionAguaArriba = new Vector3(positionAguaAbajo.x, positionAguaAbajo.y + 0.045f, positionAguaAbajo.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /* if(misionActiva){
-            timer -= Time.deltaTime;
-        }
-        if(!surtidorAbierto && timer <= 0){
-            surtidorAbierto = true;
-            SubirAgua();
-        } */
         timer -= Time.deltaTime;
-        if(timer <= 0 && transform.position != positionAguaArriba){
+        if(timer <= 0 && transform.position != positionAguaArriba && !interactuado){
             SubirAgua();
         }
 
