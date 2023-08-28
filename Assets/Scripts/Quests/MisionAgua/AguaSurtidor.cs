@@ -9,10 +9,10 @@ public class AguaSurtidor : MonoBehaviour
     [HideInInspector] public bool interactuado;
     public float tiempoTimer;
     
-    [SerializeField] private float timer;
+    public float timer;
     public float speed;
 
-    private Vector3 positionAguaArriba, positionAguaAbajo;
+    [HideInInspector] public Vector3 positionAguaArriba, positionAguaAbajo;
     // Start is called before the first frame update
     void Start()
     {
