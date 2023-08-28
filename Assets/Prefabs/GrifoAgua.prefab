@@ -947,9 +947,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactuado: 0
-  tiempoTimer: 4
+  tiempoTimer: 120
   timer: 0
   speed: 0.005
+  positionAguaArriba: {x: 0, y: 0, z: 0}
+  positionAguaAbajo: {x: 0, y: 0, z: 0}
 --- !u!1001 &3167305322750523468
 PrefabInstance:
   m_ObjectHideFlags: 0

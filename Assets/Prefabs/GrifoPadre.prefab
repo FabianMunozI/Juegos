@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactuado: 0
-  tiempoTimer: 0
+  tiempoTimer: 120
   timer: 0
   speed: 0.005
   positionAguaArriba: {x: 0, y: 0, z: 0}
@@ -4387,7 +4387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2095837455696209866
 Transform:
   m_ObjectHideFlags: 0
