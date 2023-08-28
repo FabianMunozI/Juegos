@@ -15,8 +15,6 @@ public class InteraccionGrifoPadre : Interactable
     public override void Interact()
     {
         base.Interact();
-        aguaSurtidor.interactuado = true;
-        print("a");
         gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
         Destroy(gameObject.GetComponent<InteraccionGrifoPadre>());
     }
