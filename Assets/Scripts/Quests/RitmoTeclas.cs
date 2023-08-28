@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using GLTF.Schema;
+using JetBrains.Annotations;
+using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +30,7 @@ public class RitmoTeclas : MonoBehaviour
     GameObject tileVerde;
     GameObject tileAzul;
 
+    
     public AudioSource Error;
 
     //384 teclas en total
@@ -417,7 +421,7 @@ public class RitmoTeclas : MonoBehaviour
         { 101.705f, "P" },
         { 101.706f, "Q" }
 
-    };
+    };  // 418-34 teclas , 384 obj atraer  20 personas cada 20 aciertos 1 persona, los bien cuentan por 1, y los excelente por 2
     public AudioSource musica;
 
     private float escadaDelTiempoAlPausar, escadaDelTiempoInicial;
@@ -461,8 +465,25 @@ public class RitmoTeclas : MonoBehaviour
     float retrasoM = 5f; // valor para que inicie antes la musica
 
     GameObject Player;
+
+    /////// variables para puntajes
+    public float puntaje;
+
+    int publico;
+    TextMeshProUGUI textPersonas;
+    TextMeshProUGUI textBoss;
+
+    AudioSource musicaCiudad;
+    List<GameObject> todasLasTeclas;
     void Start()
     {
+        musicaCiudad = GameObject.Find("MusicaCiudad").GetComponent<AudioSource>();
+
+        textPersonas = transform.parent.parent.GetChild(2).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+        textBoss = transform.parent.parent.GetChild(2).GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
+
+        puntaje = 0;
+        publico = 0;
         //// DESACTIVAR MOVIMIENTO PLAYER
         Player = GameObject.Find("Player");
         DesactivarScriptsPlayer(false);
@@ -512,8 +533,12 @@ public class RitmoTeclas : MonoBehaviour
 
 
         if(Input.GetKeyDown(KeyCode.C) && !iniciarGame){
+            transform.parent.parent.GetChild(4).gameObject.SetActive(false);
             iniciarGame = true;
-            Invoke("delayM",7f-retrasoM); // estaba en 7, lo puse en 4 y ahora se le resta la variable retrasoM al tiempo de invocacion
+            Invoke("delayM",7f-retrasoM); // retrasoM = 5
+
+            //apagar musica 
+            musicaCiudad.Stop();
             
             foreach(KeyValuePair<float, string> gen in generarT){
                 if(gen.Value=="Q"){
@@ -546,6 +571,8 @@ public class RitmoTeclas : MonoBehaviour
 
         if(tiempoAMostrarEnSegundos>= 104f){ // no dejar que se tome la mision denuevo
             gameObject.SetActive(false);
+            musicaCiudad.Play();
+
         }
 
         if( !DesactivarTeclas){
@@ -627,28 +654,28 @@ public class RitmoTeclas : MonoBehaviour
         //a.transform.SetParent(canvas.transform);
         a.GetComponent<TilesMov>().vel = (Vector3.Distance(actual1.transform.position , PRojo.transform.position))/tiempoCaidaTeclas;
 
-        Destroy(a, 2f);
+        Destroy(a, 4f);
     }
 
     void initA(){
         GameObject a =Instantiate(Amari, PAmari.transform.position, Quaternion.identity, transform.parent);
         a.GetComponent<TilesMov>().vel = (Vector3.Distance(actual2.transform.position , PAmari.transform.position))/tiempoCaidaTeclas;
         //a.transform.SetParent(canvas.transform);
-        Destroy(a, 2f);
+        Destroy(a, 4f);
     }
 
     void initV(){
         GameObject a =Instantiate(Verde, PVerde.transform.position, Quaternion.identity, transform.parent);
         a.GetComponent<TilesMov>().vel = (Vector3.Distance(actual3.transform.position , PVerde.transform.position))/tiempoCaidaTeclas;
         //a.transform.SetParent(canvas.transform);
-        Destroy(a, 2f);
+        Destroy(a, 4f);
     }
 
     void initAz(){
         GameObject a =Instantiate(Azul, PAzul.transform.position, Quaternion.identity, transform.parent);
         a.GetComponent<TilesMov>().vel = (Vector3.Distance(actual4.transform.position , PAzul.transform.position))/tiempoCaidaTeclas;
         //a.transform.SetParent(canvas.transform);
-        Destroy(a, 2f);
+        Destroy(a, 4f);
     }
 
     bool TocarNota(string letra){
@@ -660,8 +687,12 @@ public class RitmoTeclas : MonoBehaviour
                 generarT.Remove(gen.Key);
                 if( (gen.Key-retrasoM>=(tiempoAMostrarEnSegundos-(margen/2)-tiempoCaidaTeclas)) && (gen.Key-retrasoM<=(tiempoAMostrarEnSegundos+(margen/2)-tiempoCaidaTeclas))){
                     Instantiate(increible, posGenerarMensajes, Quaternion.identity, transform);
+                    puntaje +=1;
+                    ActualizarPuntajes();
                 }else{
                     Instantiate(bien, posGenerarMensajes, Quaternion.identity, transform);
+                    puntaje+=0.5f;
+                    ActualizarPuntajes();
                 }
 
 
@@ -672,6 +703,8 @@ public class RitmoTeclas : MonoBehaviour
 
         Instantiate(mal, posGenerarMensajes, Quaternion.identity, transform);
         Error.Play();
+        puntaje-=1;
+        ActualizarPuntajes();
         return false;
     }
 
@@ -681,6 +714,52 @@ public class RitmoTeclas : MonoBehaviour
         Player.GetComponent<CameraInteraction>().enabled = des;
         Player.GetComponent<AbrirMapa>().enabled = des;
         Player.GetComponent<Mascota>().enabled = des;
+    }
+
+    public void ActualizarPuntajes(){
+        if(publico==0  && puntaje<0){
+            puntaje = 0;
+            textPersonas.text = ".- Atrae público:   0/20";
+            textBoss.text = ".- Atrae a la autoridad:   0/1";
+            return;
+        }else if(publico==20){
+            if(puntaje>=20){
+                //invocar jefe
+                textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+                textBoss.text = ".- Atrae a la autoridad:   1/1";
+            }
+            else if(puntaje<0){
+                puntaje = 10 + puntaje;
+                publico -=1;
+                textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+                textBoss.text = ".- Atrae a la autoridad:   0/1";
+            }
+            else{ // puntaje >= 0 y publico al maximo
+                //se acerca la autoridad...
+                textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+                textBoss.text = ".- Atrae a la autoridad:   0/1";
+            }
+            return;
+
+        }
+        else if(puntaje>=10){
+            puntaje = puntaje%10;
+            publico +=1;
+            textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+            textBoss.text = ".- Atrae a la autoridad:   0/1";
+            // lamar funcion llamar publico
+            return;
+        } 
+        else if(puntaje<0){ // publico tiene que ser distinto de 0
+            publico -=1;
+            puntaje = 10 + puntaje;
+            textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+            textBoss.text = ".- Atrae a la autoridad:   0/1";
+
+            // llamar funcion quitar persona del publico
+
+        }
+        
     }
 
 }

@@ -7,6 +7,8 @@ public class activarMisionRitmo : Interactable
 {
     // Start is called before the first frame update
     public GameObject MisionRitmo;
+
+    GameObject referenciaInicioRitmo;
     GameObject player;
 
     GameObject CScenarioRef;
@@ -25,6 +27,8 @@ public class activarMisionRitmo : Interactable
 
     void Start()
     {
+        referenciaInicioRitmo = GameObject.Find("PosPlayerInicialRitmo");
+        MisionRitmo = GameObject.Find("Critmo");
         CScenarioRef = GameObject.Find("CScenario");
 
         refAlcalde = CScenarioRef.transform.GetChild(0).GetChild(0).gameObject;
@@ -61,8 +65,14 @@ public class activarMisionRitmo : Interactable
                 segUpdate = false;
                 player.GetComponent<Collider>().isTrigger = false;
                 player.GetComponent<Rigidbody>().isKinematic = false;
+
+                // prender objetivos mision
+                MisionRitmo.transform.GetChild(2).gameObject.SetActive(true);
+                MisionRitmo.transform.GetChild(3).gameObject.SetActive(true);
+
             }
         }
+
     }
 
     public override void Interact(){ // preguntar mision
@@ -81,25 +91,24 @@ public class activarMisionRitmo : Interactable
         
         player.GetComponent<Rigidbody>().isKinematic = true;
         player.GetComponent<Collider>().isTrigger = true;
-        //player.transform.position = refPosCamAlcalde.transform.position;
+
+        //posiciona al player para iniciar animacion bien,
+        player.transform.position = referenciaInicioRitmo.transform.position;
+        Vector3 targetPosition = transform.position;
+        targetPosition.y = player.transform.position.y; 
+        player.transform.LookAt(targetPosition); 
+        player.transform.GetChild(0).GetComponent<Camera>().transform.rotation = referenciaInicioRitmo.transform.rotation;
         
 
         distanceCamPos = (Vector3.Distance(player.transform.position, refPosCamAlcalde.transform.position)) /* / 4f */; // distancia dividido tiempo
         initialDistance = refPosCamAlcalde.transform.position - player.transform.position;
         activarUpdate = true;
 
-        //////////// Activar tablero Ritmo
-        MisionRitmo.transform.GetChild(0).gameObject.SetActive(true);
-
-        //////////////////////////////  Mover player posicion y rotacion camara a escenario.
-
-    
-        ////////////////////////// desactiva el canvas si iniciar o no misin
 
         MisionRitmo.transform.GetChild(1).gameObject.SetActive(false); 
 
         //////// desactivar mensaje de interaccion para
-        GameObject.Find("Interactuar").SetActive(false);
+        GameObject.Find("Interactuar").SetActive(false); 
     }
     public void noIniciar(){
         MisionRitmo.transform.GetChild(1).gameObject.SetActive(false);
