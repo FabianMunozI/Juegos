@@ -12,6 +12,7 @@ TagManager:
   - autos
   - Mascota
   - npcmascota
+  - tile
   layers:
   - Default
   - TransparentFX
