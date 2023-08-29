@@ -14,14 +14,7 @@ public class InteractuarGrifo : Interactable
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void ActivarInteraccion(){
-        gameObject.SetActive(true);
-    }
     public override void Interact()
     {
         base.Interact();

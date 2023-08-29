@@ -23,9 +23,6 @@ public class CarNav : MonoBehaviour
         navMeshAgent.destination = direcciones[0];
         movementSpeed = navMeshAgent.speed;
         i = 1;
-        /* for(int j = 0; j < direcciones.Count; j++){
-            print(direcciones[j]);
-        } */
     }
 
     // Update is called once per frame
@@ -34,7 +31,6 @@ public class CarNav : MonoBehaviour
         direccionActual = navMeshAgent.destination;
         //print(navMeshAgent.remainingDistance);
         if(navMeshAgent.remainingDistance <= 5){
-            print(direcciones[i]);
             navMeshAgent.destination = direcciones[i];
             i++;
             if(i >= direcciones.Count){
