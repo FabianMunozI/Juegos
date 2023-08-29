@@ -6,6 +6,7 @@ public class ZonaDeposito : MonoBehaviour
 {  
     public static int jaulasAdentro = 0;
     public GameObject jaulaPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class ZonaDeposito : MonoBehaviour
         if(other.name == string.Format("{0}(Clone)", jaulaPrefab.name))
         {
             jaulasAdentro ++;
+            Debug.Log(jaulasAdentro);
         }
     }
 

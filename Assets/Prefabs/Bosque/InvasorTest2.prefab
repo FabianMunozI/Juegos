@@ -69,7 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8dfaecef741bd0b41ba03cfb57c091ed, type: 2}
     - target: {fileID: 919132149155446097, guid: 55b34d0796b799d4cbe70064d67592c1, type: 3}
       propertyPath: m_Name
-      value: retopology_deer (2)
+      value: InvasorTest2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55b34d0796b799d4cbe70064d67592c1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55b34d0796b799d4cbe70064d67592c1, type: 3}
@@ -107,3 +111,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.50518054, y: 1.4956123, z: 1.2870092}
   m_Center: {x: -0.000015646223, y: 0.7482671, z: -0.00029140717}
+--- !u!114 &1846040563025599419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344134318078004779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9b3503c686f5741abfe7a17a7106ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cagePrefab: {fileID: 2117675520919031155, guid: c2933203c1388c0409b02b0947eb682b, type: 3}
+  cageWithAnimalPrefab: {fileID: 2117675520919031155, guid: 3c67164dafdc4a3428acec28157314a8, type: 3}

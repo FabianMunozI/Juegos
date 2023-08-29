@@ -87,32 +87,6 @@ public class Inventory : MonoBehaviour
         item.transform.SetParent(draggablesTransform);
     }
 
-    /*
-    public void EquipEquipment(SlotTag tag, InventoryItem item = null)
-    {
-        switch (tag)
-        {
-            case SlotTag.Head:
-                if(item == null)
-                {
-                    // Destroy item.equipmentPrefab on the Player Object;
-                    Debug.Log("Unequipped helmet on " + tag);
-                }
-                else
-                {
-                    // Instantiate item.equipmentPrefab on the Player Object;
-                    Debug.Log("Equipped " + item.myItem.name + " on " + tag);
-                }
-                break;
-            case SlotTag.Chest:
-                break;
-            case SlotTag.Legs:
-                break;
-            case SlotTag.Feet:
-                break;
-        }
-    }
-    */
 
     public void SaveInventory()
     {

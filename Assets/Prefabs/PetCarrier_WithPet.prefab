@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01173dab0990aa44ea5e72f5be737fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item_vinculado: {fileID: 11400000, guid: 48ff7a1eb4d24874da89d0c6fe600ef2, type: 2}
+  item_vinculado: {fileID: 11400000, guid: d4363f257e48025409658f8043c2d06a, type: 2}
 --- !u!114 &-2366162559706636427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +436,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1596717408953505737}
     m_Modifications:
+    - target: {fileID: -3888338869586828130, guid: 360ccb4e610588f4ea2d840bfe3d7dfb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3888338869586828130, guid: 360ccb4e610588f4ea2d840bfe3d7dfb, type: 3}
+      propertyPath: cageWithAnimalPrefab
+      value: 
+      objectReference: {fileID: 2117675520919031155}
     - target: {fileID: 5877516828662948061, guid: 360ccb4e610588f4ea2d840bfe3d7dfb, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -484,7 +492,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvasorTest1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6204723435582031674, guid: 360ccb4e610588f4ea2d840bfe3d7dfb, type: 3}
+    - {fileID: 6204723435582031673, guid: 360ccb4e610588f4ea2d840bfe3d7dfb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 360ccb4e610588f4ea2d840bfe3d7dfb, type: 3}
 --- !u!4 &4953506401847274193 stripped
 Transform:

@@ -11,6 +11,7 @@ public class Reforestar : MonoBehaviour
     public bool missionDone = false; // Mision ya hecha
 
     public GameObject questGiver;
+    public GameObject infoGiver;
     public GameObject arbolesMision;
     
     public GameObject palaPrefab, semillaPrefab, regaderaPrefab;
@@ -24,15 +25,15 @@ public class Reforestar : MonoBehaviour
     int arbolesPlantados = 0;
 
     // UI
-    public TextMeshProUGUI questTracker;
-    public GameObject questText;
+    public GameObject questTracker;
+    public TextMeshProUGUI questTitle;
+    public TextMeshProUGUI questText;
 
     // Personaje - Camara
     Vector3 posCamara;
     GameObject CamaraO;
     Vector3 VectorPartida;
     public bool inputTrue = false;
-    public Animator controller;
     public GameObject Jugador;
     public GameObject centroBosque;
 
@@ -52,7 +53,8 @@ public class Reforestar : MonoBehaviour
         CamaraO = GameObject.Find("Camera");
 
         AgregarComponente(arbolesMision);
-        questTracker.enabled = false;
+        questTracker.SetActive(false);
+        infoGiver.SetActive(false);
     }
 
     void Update()
@@ -66,12 +68,15 @@ public class Reforestar : MonoBehaviour
             OnOffPlayer();
             missionDone = true;
             Quest_started = false;
-            questTracker.text = "Mision Terminada!";
-            Invoke("desactivarTexto",5f);
+            questTitle.text = "Mision Terminada!";
+            questText.text = "El bosque vuelve a la vida!";
             Invoke("ReemplazarRestoArboles",2f);
 
+            infoGiver.SetActive(true);
             RotarCamaraArboles(orbitSpeed, 15f, 8f);
             Invoke("OnOffPlayer", 8f);
+            Invoke("desactivarTexto",3f);
+
         }
 
 
@@ -88,8 +93,6 @@ public class Reforestar : MonoBehaviour
 
             OnOffPlayer();
 
-            
-
             Vector3 pos = semillas.transform.position - Jugador.transform.position;
             pos += new Vector3 (5,5,5);
 
@@ -99,41 +102,8 @@ public class Reforestar : MonoBehaviour
             CamaraO.transform.LookAt(semillas.transform);
 
             Invoke("OnOffPlayer", 2f);
+            questTracker.SetActive(true);
 
-
-            /*
-            Vector3 pos = semillas.transform.position - Jugador.transform.position;
-            pos += new Vector3 (-1,0,-1);
-            
-            CamaraO.transform.Translate(pos, Space.World);
-            CamaraO.transform.LookAt(semillas.transform);
-            */
-
-
-            // RotarCamara();
-
-            /*
-            VectorPartida = CamaraO.transform.position;
-
-            if(Jugador.GetComponent<CharacterMovement>().EstaParado==false){
-                //CamaraO.transform.position= Jugador.transform.position + Jugador.GetComponent<CharacterMovement>().InitialPos;
-                Jugador.GetComponent<CharacterMovement>().EstaParado=true;
-            }else{
-
-            }
-
-            Jugador.transform.position = new Vector3(-7,2.4f,-40);
-            Jugador.transform.rotation = Quaternion.Euler(0, -133f,0);
-            CamaraO.transform.position = new Vector3(0,0.69f,0);
-            CamaraO.transform.rotation = Quaternion.Euler(0,0,0);
-            CamaraO.transform.rotation=Jugador.transform.rotation;
-
-            posCamara = CamaraO.transform.position;
-
-            controller.SetTrigger("Start3");
-            */
-
-            //Invoke("OnOffPlayer", 10f);
 
 
         }
@@ -141,7 +111,7 @@ public class Reforestar : MonoBehaviour
         // Ciclo de mision
         if (Quest_started)
         {
-            questTracker.text = "¡Planta y haz crecer 3 arboles!\n Llevas"+ arbolesPlantados +"/3.";
+            questText.text = "¡Planta y haz crecer 3 arboles!\n Llevas "+ arbolesPlantados +"/3.";
             
             for (int i = 0; i < arbolesMision.transform.childCount; i++)
             {
@@ -256,7 +226,7 @@ public class Reforestar : MonoBehaviour
 
             CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
             CamaraO.transform.rotation = rotOriginal;
-            questTracker.enabled = true;
+            
             
         }
 
@@ -296,7 +266,7 @@ public class Reforestar : MonoBehaviour
     }
 
     void desactivarTexto(){ 
-        questTracker.enabled = false;
+        questTracker.SetActive(false);
     }
 
     public void ReemplazarRestoArboles()

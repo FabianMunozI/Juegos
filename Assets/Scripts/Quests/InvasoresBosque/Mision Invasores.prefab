@@ -37,6 +37,7 @@ Transform:
   - {fileID: 3649837049211135276}
   - {fileID: 4382136768280145715}
   - {fileID: 4382136767080771043}
+  - {fileID: 70829305574818868}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63,6 +64,7 @@ MonoBehaviour:
   Jugador: {fileID: 0}
   questTracker: {fileID: 0}
   CameraBusy: 0
+  particulas: {fileID: 4382136768280145724}
 --- !u!1 &4382136767080771052
 GameObject:
   m_ObjectHideFlags: 0
@@ -4935,6 +4937,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &8697699091101595781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70829305574818868}
+  m_Layer: 0
+  m_Name: ToTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &70829305574818868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697699091101595781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.43, y: 2.05, z: 6.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4382136766899366294}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &887544319186576018
 PrefabInstance:
   m_ObjectHideFlags: 0

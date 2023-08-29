@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 207bf583ab2f9884d8785bb2fd361dde, type: 2}
+  - {fileID: 2100000, guid: b6a69c2aca7fcce4bb09d9f99ee42231, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,3 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f4aec82e8bfbd4f9aece1ca904f3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  semillaPrefab: {fileID: 0}
+  plantar: 0
+  to_remove: 0
+  indice: 0

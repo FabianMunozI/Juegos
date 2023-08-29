@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5405a87e46cfd1241a893d4c297bc5d3, type: 3}
   m_Name: Semillas
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: eb3ace0fb075ce742b60a93d63f491f5, type: 3}
+  sprite: {fileID: 21300000, guid: d07206206732f2a499ce6516ba823da7, type: 3}
   itemTag: 0
   equipmentPrefab: {fileID: 8178369323068806166, guid: 8ed429f2302ca2e4285c23718a026af6, type: 3}
