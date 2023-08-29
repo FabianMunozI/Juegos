@@ -8,10 +8,12 @@ public class transicionMapa : MonoBehaviour
     // Start is called before the first frame update
     public GameObject menuCambioDeMapa;
     public GameObject player;
+    GameObject Iv;
     void Start()
     {
         menuCambioDeMapa = GameObject.Find("ContMapa").transform.GetChild(0).gameObject; //asegurarse de no cambiar el name de este prefab y dejarlo en la pos 0 del canvas
         player = GameObject.Find("Player");
+        Iv = GameObject.Find("Inventario");
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class transicionMapa : MonoBehaviour
         if(Equals(SceneManager.GetActiveScene().name, "Ciudad")){
             Salir();
         }else{
+            Iv.GetComponent<Inventory>().SaveInventory();
             TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_CITY);
         }
         
@@ -41,6 +44,7 @@ public class transicionMapa : MonoBehaviour
         if(Equals(SceneManager.GetActiveScene().name, "Bosque")){
             Salir();
         }else{
+            Iv.GetComponent<Inventory>().SaveInventory();
             TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_FOREST);
         }
         

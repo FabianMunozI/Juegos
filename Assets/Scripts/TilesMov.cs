@@ -32,6 +32,7 @@ public class TilesMov : MonoBehaviour
 
     public void siSeDestruyePorNoClick() {
         rtiles.puntaje -=1;
+        rtiles.Pmal +=1;
         //Debug.Log("descontar");
         rtiles.ActualizarPuntajes();
         //audioFail.Play();

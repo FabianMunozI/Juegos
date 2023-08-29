@@ -23,12 +23,16 @@ public class CameraInteraction : MonoBehaviour
 
     GameObject Activar;
 
+    [SerializeField] public InventoryItem itemPrefab;
+    private GameObject Iv;
+
     static public bool interactionDialogue = false;
     // Start is called before the first frame update
     void Start()
     {
 
         cameraa = transform.Find("Camera");
+        Iv = GameObject.Find("Inventario");
 
         //TextDetectInteractable = transform.Find("Interactuar").gameObject;
         //TextDetectDragable = transform.Find("Recoger").gameObject;
@@ -72,13 +76,26 @@ public class CameraInteraction : MonoBehaviour
                 }
                 if(Input.GetKeyDown(KeyCode.F) && this.GetComponent<PickUpObjects>().PickedObject == null){ //agarrar objeto
                     hit2.transform.GetComponent<Interactable>().Interact();
+
+                    if(this.GetComponent<PickUpObjects>().PickedObject != null)
+                    {
+                        if (this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>().item_vinculado != null)
+                        {
+                            Iv.GetComponent<Inventory>().SpawnHotBarItem(this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>().item_vinculado);
+                        } else {
+                            Debug.Log("WARNING: OBJETO NO TIENE ITEM ASIGNADO");
+                            Iv.GetComponent<Inventory>().SpawnHotBarItem();
+                        }
+                    }
                 }
                 else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
                     GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
+                    Iv.GetComponent<Inventory>().SoltarObjeto();
                 }
             }else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
                         GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
                         Deselect2();
+                        Iv.GetComponent<Inventory>().SoltarObjeto();
             }
             else{
                 Deselect2();
