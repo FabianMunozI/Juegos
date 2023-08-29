@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class activarMisionRitmo : Interactable
 {
@@ -25,10 +26,38 @@ public class activarMisionRitmo : Interactable
 
     bool segUpdate;
 
+    public GameObject NpcGenerar;
+
+    public GameObject PadrePosicionesGenerarNPCs;
+
+    List<GameObject> NpcsGenerados0;
+    List<GameObject> NpcsGenerados1;
+    List<GameObject> NpcsGenerados2;
+    List<GameObject> NpcsGenerados3;
+
+    int listaPreferenciaEliminar;
+
+    int posGenerar;
+    bool sellamoAutoridad;
+
     void Start()
     {
+        sellamoAutoridad = false;
+        listaPreferenciaEliminar = 0;
+
+        NpcsGenerados0 = new List<GameObject>();
+        NpcsGenerados1 = new List<GameObject>();
+        NpcsGenerados2 = new List<GameObject>();
+        NpcsGenerados3 = new List<GameObject>();
+        
+        posGenerar = 0;
+        PadrePosicionesGenerarNPCs = transform.GetChild(24).gameObject;
+
+
         referenciaInicioRitmo = GameObject.Find("PosPlayerInicialRitmo");
         MisionRitmo = GameObject.Find("Critmo");
+        MisionRitmo.transform.GetChild(0).GetChild(0).GetComponent<RitmoTeclas>().referenciaScriptIniciarMisionRitmo= this;
+
         CScenarioRef = GameObject.Find("CScenario");
 
         refAlcalde = CScenarioRef.transform.GetChild(0).GetChild(0).gameObject;
@@ -126,6 +155,125 @@ public class activarMisionRitmo : Interactable
         player.GetComponent<CharacterMovement>().enabled = valor;
         player.GetComponent<FpsCamera>().enabled = valor;
         player.GetComponent<CameraInteraction>().enabled = valor;
+    }
+    
+    public void llamarNpc(){
+        GameObject a = Instantiate(NpcGenerar, PadrePosicionesGenerarNPCs.transform.GetChild(posGenerar));
+        a.GetComponent<NPCmov>().posGenerado = posGenerar;
+        a.GetComponent<NPCmov>().posGenObj = PadrePosicionesGenerarNPCs.transform.GetChild(posGenerar).gameObject;
+
+        if(posGenerar==0){
+            NpcsGenerados0.Add(a);
+
+        }else if(posGenerar == 1 ){
+            NpcsGenerados1.Add(a);
+
+        }else if(posGenerar == 2 ){
+            NpcsGenerados2.Add(a);
+
+        }else if(posGenerar == 3 ){
+            NpcsGenerados3.Add(a);
+        }
+            
+
+        posGenerar += 1;
+        if(posGenerar>3){
+            posGenerar=0;
+        }
+
+    }
+
+    public void quitarNpc(){
+        List<GameObject> nuevaLista;
+
+        if(listaPreferenciaEliminar==0){
+            nuevaLista = NpcsGenerados0;
+
+        }else if(listaPreferenciaEliminar == 1 ){
+            nuevaLista = NpcsGenerados1;
+
+        }else if(listaPreferenciaEliminar == 2 ){
+            nuevaLista = NpcsGenerados2;
+
+        }else if(listaPreferenciaEliminar == 3 ){
+            nuevaLista = NpcsGenerados3;
+        }else{
+            nuevaLista = new List<GameObject>();
+            Debug.Log("error funcion quitar NPC");
+        }
+
+        
+
+        bool bandera = true;
+
+        for(int i=0; i< nuevaLista.Count; i++){
+
+            if(nuevaLista[i] != null){  // destruir NPC y hacer que los otros caminen, tambien quitar NPC de la lista
+                
+                Destroy(nuevaLista[i]);
+                
+                caminarAgainNpc(listaPreferenciaEliminar);
+
+                nuevaLista.Remove(nuevaLista[i]);
+
+                bandera = false;
+                break;
+            }
+
+        }
+
+        listaPreferenciaEliminar+=1;
+        if(listaPreferenciaEliminar>3){
+            listaPreferenciaEliminar = 0;
+        }
+
+        if(bandera){
+            Debug.Log("hubo un error en elimnar NPC's");
+        }
+
+    }
+
+    void caminarAgainNpc(int listNum){
+        List<GameObject> Reiniciar;
+
+        if(listNum==0){
+            Reiniciar = NpcsGenerados0;
+
+        }else if(listNum == 1 ){
+            Reiniciar = NpcsGenerados1;
+
+        }else if(listNum == 2 ){
+            Reiniciar = NpcsGenerados2;
+
+        }else if(listNum == 3 ){
+            Reiniciar = NpcsGenerados3;
+        }else{
+            Reiniciar = new List<GameObject>();
+            Debug.Log("Error hacer caminar NPC again");
+        }
+        
+        for(int i = 1; i < Reiniciar.Count; i++){
+
+            if(!Reiniciar[i].GetComponent<NPCmov>().primeraFase){
+                Reiniciar[i].GetComponent<NPCmov>().segundaFase=true;
+                Reiniciar[i].GetComponent<NPCmov>().quedarQuieto=false;
+                Reiniciar[i].GetComponent<Collider>().isTrigger = true;
+                Reiniciar[i].GetComponent<Animator>().SetTrigger("caminar");
+            }
+
+        }
+
+    }
+
+    public void llamarAutoridad(){
+
+        if(!sellamoAutoridad){
+            GameObject Autoridad = transform.GetChild(25).GetChild(0).GetChild(0).gameObject;
+            Autoridad.GetComponent<MovAutoridad>().enabled = true;
+
+            sellamoAutoridad = true;
+        }
+
     }
 
 }

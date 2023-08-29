@@ -30,6 +30,7 @@ public class RitmoTeclas : MonoBehaviour
     GameObject tileVerde;
     GameObject tileAzul;
 
+    int posGenerarNPC;
     
     public AudioSource Error;
 
@@ -474,9 +475,26 @@ public class RitmoTeclas : MonoBehaviour
     TextMeshProUGUI textBoss;
 
     AudioSource musicaCiudad;
-    List<GameObject> todasLasTeclas;
+    public activarMisionRitmo referenciaScriptIniciarMisionRitmo;
+
+    public GameObject objetivoUno;
+    public GameObject objetivoDos;
+
+    bool objetivoMision;
     void Start()
     {
+        objetivoUno = transform.parent.parent.GetChild(2).GetChild(1).gameObject;
+        objetivoDos = transform.parent.parent.GetChild(2).GetChild(2).gameObject;
+        //////////////////////////////////////////////////////variables generar NPC
+        posGenerarNPC = 0;
+        GameObject NPCStartMision = referenciaScriptIniciarMisionRitmo.gameObject;
+        GameObject padrePosiciones = referenciaScriptIniciarMisionRitmo.PadrePosicionesGenerarNPCs;
+        GameObject prefabNPC = referenciaScriptIniciarMisionRitmo.NpcGenerar;
+
+        objetivoMision = false;
+
+        //////////////////////////////////////7
+
         musicaCiudad = GameObject.Find("MusicaCiudad").GetComponent<AudioSource>();
 
         textPersonas = transform.parent.parent.GetChild(2).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
@@ -567,10 +585,12 @@ public class RitmoTeclas : MonoBehaviour
         if(tiempoAMostrarEnSegundos>= 102f){
             DesactivarTeclas = true;
             DesactivarScriptsPlayer(true);
+
+            objetivoUno.transform.parent.gameObject.SetActive(false);
         }
 
         if(tiempoAMostrarEnSegundos>= 104f){ // no dejar que se tome la mision denuevo
-            gameObject.SetActive(false);
+            gameObject.transform.parent.gameObject.SetActive(false);  ////////////////////////////////////
             musicaCiudad.Play();
 
         }
@@ -722,22 +742,27 @@ public class RitmoTeclas : MonoBehaviour
             textPersonas.text = ".- Atrae público:   0/20";
             textBoss.text = ".- Atrae a la autoridad:   0/1";
             return;
-        }else if(publico==20){
+        }else if(publico==20){ ////////////// ESTO HAY QUE DEJARLO EN 20
+            objetivoMision = true;
+            objetivoUno.SetActive(true);
             if(puntaje>=20){
                 //invocar jefe
                 textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
                 textBoss.text = ".- Atrae a la autoridad:   1/1";
+                referenciaScriptIniciarMisionRitmo.llamarAutoridad();
+
+                objetivoDos.SetActive(true);
             }
             else if(puntaje<0){
-                puntaje = 10 + puntaje;
-                publico -=1;
-                textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
-                textBoss.text = ".- Atrae a la autoridad:   0/1";
+                puntaje = 0;  //antes era "10 + puntaje;"
+                //publico -=1;
+                //textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+                //textBoss.text = ".- Atrae a la autoridad:   0/1";
             }
             else{ // puntaje >= 0 y publico al maximo
                 //se acerca la autoridad...
-                textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
-                textBoss.text = ".- Atrae a la autoridad:   0/1";
+                //textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
+                //textBoss.text = ".- Atrae a la autoridad:   0/1";
             }
             return;
 
@@ -748,6 +773,8 @@ public class RitmoTeclas : MonoBehaviour
             textPersonas.text = ".- Atrae público:   "+ publico.ToString("00")+"/20";
             textBoss.text = ".- Atrae a la autoridad:   0/1";
             // lamar funcion llamar publico
+            referenciaScriptIniciarMisionRitmo.llamarNpc();
+
             return;
         } 
         else if(puntaje<0){ // publico tiene que ser distinto de 0
@@ -757,9 +784,12 @@ public class RitmoTeclas : MonoBehaviour
             textBoss.text = ".- Atrae a la autoridad:   0/1";
 
             // llamar funcion quitar persona del publico
+            referenciaScriptIniciarMisionRitmo.quitarNpc();
 
         }
         
     }
+
+    
 
 }

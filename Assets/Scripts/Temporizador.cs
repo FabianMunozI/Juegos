@@ -23,14 +23,14 @@ public class Temporizador : MonoBehaviour
 
     public bool iniciarGame= true;
 
-    GameObject referenciaMision;
+    public GameObject referenciaMision;
 
     public int InstanciaTemporizador;
 
     // Start is called before the first frame update
     void Start()
     {
-        referenciaMision = GameObject.Find("Plataforma");
+        referenciaMision = GameObject.Find("PlataformaReciclaje1");
         escadaDelTiempoInicial = escadaDelTiempo;
 
         myText = GetComponent<Text>();
