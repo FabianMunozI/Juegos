@@ -14,7 +14,7 @@ public class BasureroReciclaje : Usable
 
     public void Start(){
         Jugador = GameObject.Find("Player");
-        mision = GameObject.Find("Plataforma").GetComponent<MisionStart>();
+        mision = GameObject.Find("PlataformaReciclaje1").GetComponent<MisionStart>();
         
         
         //Invoke("Usar",2f);
