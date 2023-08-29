@@ -29,7 +29,7 @@ public class postMisionRitmo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return) && panelActivoPostMision){
+        if(Input.GetMouseButton(0) && panelActivoPostMision){
             panelActivoPostMision = false;
             PanelPostMision.SetActive(false);
             referenciaOtroScript.MisionRitmo.transform.GetChild(0).GetChild(0).GetComponent<RitmoTeclas>().DesactivarScriptsPlayer(true);
