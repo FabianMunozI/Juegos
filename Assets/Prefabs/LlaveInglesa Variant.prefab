@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7492122715828869552, guid: 5c40a888773ea6b4d90434e6382c6239, type: 3}
       propertyPath: m_TagString
-      value: llaveAgua
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c40a888773ea6b4d90434e6382c6239, type: 3}
