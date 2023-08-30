@@ -31,11 +31,15 @@ public class ActivarDialogo : Interactable
 
         /////////Rotacion del NPC al jugador//////////////////////
         Quaternion rotation = Quaternion.LookRotation(playerPosition - transform.position);
+        rotation.x = 0f;
+        rotation.z = 0f;
         transform.rotation = rotation;
         //////////////////////////////////////////////////////////
 
         ///////////Rotacion del jugador al NPC////////////////////
         rotation = Quaternion.LookRotation(npcPosition - player.transform.position);
+        rotation.x = 0f;
+        rotation.z = 0f;
         player.transform.rotation = rotation;
         //////////////////////////////////////////////////////////
 

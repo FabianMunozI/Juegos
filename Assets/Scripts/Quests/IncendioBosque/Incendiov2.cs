@@ -47,6 +47,9 @@ public class Incendiov2 : MonoBehaviour
 
     public GameObject Guardabosque;
 
+    public GameObject minimapIndicator;
+    public GameObject infoIndicator;
+
     private int counter_helper = 0;
 
 
@@ -71,6 +74,14 @@ public class Incendiov2 : MonoBehaviour
         foreach( var x in tree_list) {
                 burneable_trees.Remove(x);
             }
+
+        if(!missionDone)
+        {
+            minimapIndicator.SetActive(true);
+            infoIndicator.SetActive(false);
+        } else{
+            infoIndicator.SetActive(true);
+        }
 
         
 
@@ -145,6 +156,7 @@ public class Incendiov2 : MonoBehaviour
         // Mision en Progreso.
         if (Quest_started)
         {
+           
             quest_text.text = ".- Arboles incendiados: " + count_actives(llamasContenedor) ;
 
             // Terminada por condicionalidad 
@@ -179,6 +191,8 @@ public class Incendiov2 : MonoBehaviour
 
             //Invoke("OnOffPlayer", 14.5f);
 
+            minimapIndicator.SetActive(false);
+
             Quest_started = true;
             questGiver.SetActive(false);
 
@@ -206,7 +220,7 @@ public class Incendiov2 : MonoBehaviour
         // Mision terminada
         if (missionDone)
         {
-            
+            infoIndicator.SetActive(true);
             Quest_started = false;
             cuentaRegresiva.text = "";
             quest_text.text = "Mision Terminada!";

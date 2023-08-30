@@ -45,6 +45,14 @@ public class Reforestar : MonoBehaviour
 
     Quaternion rotOriginal;
 
+    public GameObject minimapaSenal;
+    public GameObject arbolesSenalPrefab;
+    List <GameObject> senalesArboles = new List <GameObject>();
+
+    public GameObject infoSenal;
+    public GameObject npcInfo;
+
+
 
 
     void Start()
@@ -55,6 +63,13 @@ public class Reforestar : MonoBehaviour
         AgregarComponente(arbolesMision);
         questTracker.SetActive(false);
         infoGiver.SetActive(false);
+        if(!missionDone)
+        {
+            minimapaSenal.SetActive(true);
+            infoSenal.SetActive(false);
+        } else{
+            infoSenal.SetActive(true);
+        }
     }
 
     void Update()
@@ -65,6 +80,7 @@ public class Reforestar : MonoBehaviour
 
         if (arbolesPlantados >= 3 && !missionDone)
         {
+            //arbolesSenal.SetActive(false);
             OnOffPlayer();
             missionDone = true;
             Quest_started = false;
@@ -72,10 +88,20 @@ public class Reforestar : MonoBehaviour
             questText.text = "El bosque vuelve a la vida!";
             Invoke("ReemplazarRestoArboles",2f);
 
+            npcInfo.gameObject.layer = LayerMask.NameToLayer("dialogable");
+
+            foreach(var senal in senalesArboles)
+            {
+                senal.SetActive(false);
+            }
+
+            infoSenal.SetActive(true);
             infoGiver.SetActive(true);
             RotarCamaraArboles(orbitSpeed, 15f, 8f);
             Invoke("OnOffPlayer", 8f);
             Invoke("desactivarTexto",3f);
+
+
 
         }
 
@@ -83,8 +109,10 @@ public class Reforestar : MonoBehaviour
         // Apenas se inicia la mision
         if (!Quest_started && !(missionDone) && questGiver.GetComponent<Quest_Starter>().misionAceptada )
         {
+            minimapaSenal.SetActive(false);
             Quest_started = true;
             questGiver.SetActive(false);
+            //arbolesSenal.SetActive(true);
             
             pala = Instantiate(palaPrefab, new Vector3(1,3,-40), Quaternion.Euler(0,0,0));
             semillas = Instantiate(semillaPrefab, new Vector3(2,3,-40), Quaternion.Euler(0,0,0));
@@ -94,7 +122,7 @@ public class Reforestar : MonoBehaviour
             OnOffPlayer();
 
             Vector3 pos = semillas.transform.position - Jugador.transform.position;
-            pos += new Vector3 (5,5,5);
+            pos += new Vector3 (-5,5,-5);
 
             rotOriginal = CamaraO.transform.rotation;
 
@@ -249,8 +277,15 @@ public class Reforestar : MonoBehaviour
     {
         for (int i = 0; i < contenedor.transform.childCount; i++)
         {
+            
             contenedor.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("interactable");
             contenedor.transform.GetChild(i).gameObject.GetComponent<ArbolReforestar>().palaPrefab = objeto;
+
+            if(contenedor.transform.GetChild(i).gameObject.GetComponent<Collider>() != null)
+            {
+                senalesArboles.Add(Instantiate(arbolesSenalPrefab, contenedor.transform.GetChild(i).gameObject.transform.position + new Vector3(0,5,0), Quaternion.Euler(-90,0,0) ));
+            }
+
         }
     }
 
