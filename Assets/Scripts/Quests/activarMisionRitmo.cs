@@ -100,7 +100,7 @@ public class activarMisionRitmo : Interactable
 
                 // prender objetivos mision
                 MisionRitmo.transform.GetChild(2).gameObject.SetActive(true);
-                MisionRitmo.transform.GetChild(3).gameObject.SetActive(true);
+                MisionRitmo.transform.GetChild(7).gameObject.SetActive(true); // antes era el child 3
 
             }
         }
