@@ -40,8 +40,11 @@ public class activarMisionRitmo : Interactable
     int posGenerar;
     bool sellamoAutoridad;
 
+    public bool panelesPostMision;
+
     void Start()
     {
+        panelesPostMision=false;
         sellamoAutoridad = false;
         listaPreferenciaEliminar = 0;
 
@@ -97,7 +100,7 @@ public class activarMisionRitmo : Interactable
 
                 // prender objetivos mision
                 MisionRitmo.transform.GetChild(2).gameObject.SetActive(true);
-                MisionRitmo.transform.GetChild(3).gameObject.SetActive(true);
+                MisionRitmo.transform.GetChild(7).gameObject.SetActive(true); // antes era el child 3
 
             }
         }
@@ -106,9 +109,15 @@ public class activarMisionRitmo : Interactable
 
     public override void Interact(){ // preguntar mision
         base.Interact();
-        MisionRitmo.transform.GetChild(1).gameObject.SetActive(true); // aceptar o rechazar mision
-        Cursor.lockState = CursorLockMode.Confined;
-        SetActivePlayerScripts(false);
+        if(!panelesPostMision){
+            MisionRitmo.transform.GetChild(1).gameObject.SetActive(true); // aceptar o rechazar mision
+            Cursor.lockState = CursorLockMode.Confined;
+            SetActivePlayerScripts(false);
+        }else{ // se termino la mision,activar funcion de script postmision
+            GetComponent<postMisionRitmo>().infoPostMision();
+
+        }
+        
 
     }
 

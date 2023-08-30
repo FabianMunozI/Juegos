@@ -55,12 +55,12 @@ public class RitmoTeclas : MonoBehaviour
         { 11.791f, "Q" },
         { 13.423f, "Q" },
         { 13.424f, "W" },//13.435
-        { 13.893f, "P" },
-        { 13.892f, "O" },
+        { 13.892f, "P" },
+        { 13.893f, "O" },
         { 14.384f, "Q" },
         { 14.385f, "W" },//14.402
-        { 14.794f, "P" },
-        { 14.825f, "O" },
+        { 14.7945f, "P" },
+        { 14.795f, "O" }, //825
         { 15.142f, "W" },
         { 15.284f, "Q" },
         { 15.398f, "P" },
@@ -162,10 +162,10 @@ public class RitmoTeclas : MonoBehaviour
         { 38.218f, "O" },
         { 38.536f, "Q" },
         { 38.811f, "P" },
-        { 39.075f, "Q" },
-        { 39.389f, "W" },
-        { 39.488f, "O" },
-        { 39.656f, "P" },
+        { 39.056f, "Q" },  // era 075
+        { 39.256f, "W" }, // 356 era 389
+        { 39.456f, "O" }, // 488
+        { 39.656f, "P" },  // 656
         { 39.830f, "Q" },
         { 40.074f, "P" },
         { 40.281f, "W" },
@@ -323,11 +323,11 @@ public class RitmoTeclas : MonoBehaviour
         { 81.297f, "P" },
         { 81.545f, "W" },
         { 81.946f, "Q" },
-        { 82.299f, "P" },
-        { 82.308f, "O" },
+        { 82.2999f, "P" },
+        { 82.300f, "O" }, // 308
         { 82.717f, "Q" },
-        { 83.158f, "P" },
-        { 83.183f, "O" },
+        { 83.170f, "P" }, // 158
+        { 83.1701f, "O" }, // 183
         { 83.481f, "W" },
         { 83.613f, "Q" },
         { 83.780f, "P" },
@@ -343,7 +343,7 @@ public class RitmoTeclas : MonoBehaviour
         { 85.767f, "O" },
         { 85.921f, "W" },
         { 86.213f, "O" },
-        { 86.337f, "W" },
+        { 86.337f, "W" },  
         { 86.481f, "O" },
         { 86.638f, "Q" },
         { 86.795f, "P" },
@@ -368,25 +368,25 @@ public class RitmoTeclas : MonoBehaviour
         { 90.569f, "W" },
         { 90.871f, "P" },
         { 91.091f, "Q" },
-        { 91.486f, "O" },
-        { 91.496f, "W" },
-        { 91.921f, "P" },
-        { 91.931f, "O" },
-        { 92.366f, "P" },
+        { 91.4865f, "O" },
+        { 91.487f, "W" }, //496
+        { 91.9215f, "P" },
+        { 91.922f, "O" }, //21
+        { 92.3665f, "P" },
         { 92.367f, "Q" },
-        { 92.761f, "O" },
+        { 92.7615f, "O" },
         { 92.762f, "W" },
         { 93.130f, "P" },
         { 93.276f, "W" },
         { 93.385f, "O" },
         { 93.526f, "P" },
-        { 93.856f, "Q" },
-        { 93.865f, "W" },
+        { 93.8565f, "Q" },
+        { 93.857f, "W" },//65
         { 94.226f, "P" },
-        { 94.243f, "O" },
+        { 94.227f, "O" },//243
         { 94.678f, "Q" },
         { 94.725f, "P" },
-        { 95.188f, "W" },
+        { 95.1885f, "W" },
         { 95.189f, "O" },
         { 95.516f, "P" },
         { 95.674f, "W" },
@@ -394,21 +394,21 @@ public class RitmoTeclas : MonoBehaviour
         { 95.904f, "P" },
         { 96.249f, "Q" },
         { 96.250f, "W" },
-        { 96.700f, "P" },
-        { 96.717f, "O" },
+        { 96.7005f, "P" },
+        { 96.701f, "O" }, //717
         { 97.140f, "Q" },
         { 97.152f, "P" },
-        { 97.583f, "W" },
-        { 97.594f, "O" },
+        { 97.5835f, "W" },
+        { 97.584f, "O" }, //594
         { 97.925f, "P" },
         { 98.064f, "W" },
         { 98.185f, "O" },
         { 98.359f, "P" },
-        { 98.653f, "Q" },
-        { 98.665f, "W" },
-        { 99.158f, "P" },
-        { 99.169f, "O" },
-        { 99.525f, "Q" },
+        { 98.6535f, "Q" },
+        { 98.654f, "W" },//65
+        { 99.1585f, "P" },
+        { 99.159f, "O" }, //169
+        { 99.5255f, "Q" },
         { 99.526f, "W" },//99.543
         { 100.051f, "P" },
         { 100.052f, "O" },
@@ -481,8 +481,27 @@ public class RitmoTeclas : MonoBehaviour
     public GameObject objetivoDos;
 
     bool objetivoMision;
+
+    bool terminoMision;
+
+    public int Pincreible, Pbien, Pmal;
+
+    bool seActivoPanel;
+
+    bool seguirAvanzando;
+    bool seguirAvanzando2;
     void Start()
     {
+        seguirAvanzando2 = false;
+        seguirAvanzando = false;
+        seActivoPanel = false;
+        Pincreible = 0;
+        Pbien = 0;
+        Pmal = 0;
+        terminoMision=false;
+
+        referenciaScriptIniciarMisionRitmo = GameObject.Find("Npc_Ritmo").GetComponent<activarMisionRitmo>();
+
         objetivoUno = transform.parent.parent.GetChild(2).GetChild(1).gameObject;
         objetivoDos = transform.parent.parent.GetChild(2).GetChild(2).gameObject;
         //////////////////////////////////////////////////////variables generar NPC
@@ -582,16 +601,45 @@ public class RitmoTeclas : MonoBehaviour
             tiempoAMostrarEnSegundos += tiempoDelFrameConTimeScale; // cambiar esto a += hace que avance
         } 
 
-        if(tiempoAMostrarEnSegundos>= 102f){
-            DesactivarTeclas = true;
-            DesactivarScriptsPlayer(true);
+        if(tiempoAMostrarEnSegundos>=100f && !seActivoPanel){ //mostrar desempeño por pantalla y congelar tiempo mientras no salga de ellas
+            seActivoPanel = true;
+            //Time.timeScale = 0;
+            //Debug.Log("entre0");
+            Cursor.lockState = CursorLockMode.None;
+            referenciaScriptIniciarMisionRitmo.MisionRitmo.transform.GetChild(6).gameObject.SetActive(true);
+            referenciaScriptIniciarMisionRitmo.MisionRitmo.transform.GetChild(6).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = "Increible :       "+Pincreible.ToString("000");
+            referenciaScriptIniciarMisionRitmo.MisionRitmo.transform.GetChild(6).GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = "Bien :             "+Pbien.ToString("000");
+            referenciaScriptIniciarMisionRitmo.MisionRitmo.transform.GetChild(6).GetChild(3).gameObject.GetComponent<TextMeshProUGUI>().text = "Fallos :           "+Pmal.ToString("000");
 
-            objetivoUno.transform.parent.gameObject.SetActive(false);
         }
 
-        if(tiempoAMostrarEnSegundos>= 104f){ // no dejar que se tome la mision denuevo
-            gameObject.transform.parent.gameObject.SetActive(false);  ////////////////////////////////////
+        if(tiempoAMostrarEnSegundos>= 101f && seguirAvanzando){
+            seguirAvanzando=false;
+
+            //Debug.Log("entre1");
+            DesactivarTeclas = true;
+
+            objetivoUno.transform.parent.gameObject.SetActive(false);
+            
+            Invoke("funcionseguirAvanzando2", 0.1f);
+        }
+
+        if(tiempoAMostrarEnSegundos>= 102f && !terminoMision && seguirAvanzando2){ // no dejar que se tome la mision denuevo
+            //Debug.Log("entre2");
+            terminoMision = true;
+            seguirAvanzando2=false;
+            //desactiva tomar la mision, activa exclamacion rojo y desactiva el amarillo
+            referenciaScriptIniciarMisionRitmo.gameObject.transform.GetChild(20).GetChild(1).gameObject.SetActive(false);
+            referenciaScriptIniciarMisionRitmo.gameObject.transform.GetChild(20).GetChild(2).gameObject.SetActive(true);
+            //referenciaScriptIniciarMisionRitmo.gameObject.GetComponent<postMisionRitmo>().enabled = true;
+            referenciaScriptIniciarMisionRitmo.gameObject.GetComponent<activarMisionRitmo>().panelesPostMision = true;
+            DesactivarScriptsPlayer(true);
+            //referenciaScriptIniciarMisionRitmo.gameObject.GetComponent<activarMisionRitmo>().enabled = false;
+
+             ////////////////////////////////////
             musicaCiudad.Play();
+
+            gameObject.transform.parent.gameObject.SetActive(false); 
 
         }
 
@@ -708,10 +756,12 @@ public class RitmoTeclas : MonoBehaviour
                 if( (gen.Key-retrasoM>=(tiempoAMostrarEnSegundos-(margen/2)-tiempoCaidaTeclas)) && (gen.Key-retrasoM<=(tiempoAMostrarEnSegundos+(margen/2)-tiempoCaidaTeclas))){
                     Instantiate(increible, posGenerarMensajes, Quaternion.identity, transform);
                     puntaje +=1;
+                    Pincreible +=1;
                     ActualizarPuntajes();
                 }else{
                     Instantiate(bien, posGenerarMensajes, Quaternion.identity, transform);
                     puntaje+=0.5f;
+                    Pbien+=1;
                     ActualizarPuntajes();
                 }
 
@@ -721,6 +771,7 @@ public class RitmoTeclas : MonoBehaviour
             
         }
 
+        Pmal += 1;
         Instantiate(mal, posGenerarMensajes, Quaternion.identity, transform);
         Error.Play();
         puntaje-=1;
@@ -728,7 +779,7 @@ public class RitmoTeclas : MonoBehaviour
         return false;
     }
 
-    void DesactivarScriptsPlayer(bool des){
+    public void DesactivarScriptsPlayer(bool des){
         Player.GetComponent<FpsCamera>().enabled = des;
         Player.GetComponent<CharacterMovement>().enabled = des;
         Player.GetComponent<CameraInteraction>().enabled = des;
@@ -788,6 +839,18 @@ public class RitmoTeclas : MonoBehaviour
 
         }
         
+    }
+
+    public void tiempoNormal(){
+        //Debug.Log("entre3");
+        seguirAvanzando=true;
+        Cursor.lockState = CursorLockMode.Locked;
+        //Time.timeScale = 1;
+        DesactivarScriptsPlayer(true);
+    }
+
+    public void funcionseguirAvanzando2(){
+        seguirAvanzando2 = true;
     }
 
     
