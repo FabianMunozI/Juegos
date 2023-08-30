@@ -14,6 +14,7 @@ TagManager:
   - npcmascota
   - tile
   - publicoritmo
+  - llaveAgua
   layers:
   - Default
   - TransparentFX
