@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasureroReciclaje : Usable
 {
+    public AudioSource sonido;
     public GameObject Jugador;
     
     public MisionStart mision;
@@ -13,6 +14,7 @@ public class BasureroReciclaje : Usable
     public GameObject objetoPickeadoReferencia;
 
     public void Start(){
+        sonido = GetComponent<AudioSource>();
         Jugador = GameObject.Find("Player");
         mision = GameObject.Find("PlataformaReciclaje1").GetComponent<MisionStart>();
         
@@ -27,7 +29,7 @@ public class BasureroReciclaje : Usable
         string uno =objetoPickeadoReferencia.GetComponent<Pickable>().tipoBasura;
         if(string.Equals(uno, TipoBasurero )){
             objetoPickeadoReferencia.SetActive(false);
-
+            sonido.Play();
             
             //Debug.Log("Acertaste");
 
@@ -36,6 +38,7 @@ public class BasureroReciclaje : Usable
         }else{
             objetoPickeadoReferencia.SetActive(false);
             //Debug.Log("No acertaste");
+            sonido.Play();
             mision.Vidas-=1;
             mision.actualizarTextVidas();
         }

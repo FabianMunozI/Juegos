@@ -62,9 +62,12 @@ public class MisionStart : MonoBehaviour
     public bool yaPerdio=false;
     public bool yaGano=false;
 
+    bool todoListo;
+
     // Start is called before the first frame update
     void Start()
     {
+        todoListo = false;
         vidasTotales=Vidas;
         Jugador= GameObject.Find("Player");
         CamaraO = GameObject.Find("Camera");
@@ -140,7 +143,8 @@ public class MisionStart : MonoBehaviour
             GetComponent<MisionStart>().enabled=false;
         }
 
-        if(ObjBienPuestos==target){
+        if(ObjBienPuestos==target && !todoListo){
+            todoListo=true;
             referenciaCanvas.transform.GetChild(1).gameObject.SetActive(false);
             referenciaCanvas.transform.GetChild(2).gameObject.SetActive(false);
             referenciaCanvas.transform.GetChild(3).gameObject.SetActive(false);
