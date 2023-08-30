@@ -46,6 +46,8 @@ public class Invasores : MonoBehaviour
     public GameObject particulas;
     public GameObject toLook;
 
+    public GameObject minimapIndicator;
+
 
 
     // Start is called before the first frame update
@@ -66,6 +68,11 @@ public class Invasores : MonoBehaviour
 
         questTracker.SetActive(false);
 
+
+        if(!missionDone)
+        {
+            minimapIndicator.SetActive(true);
+        } 
 
     }
 
@@ -154,13 +161,8 @@ public class Invasores : MonoBehaviour
 
             rotOriginal = CamaraO.transform.rotation;
 
-
-
             invocarCamara2 = true;
-
-            
-
-            Invoke("desactivarTexto",5f);
+            Invoke("desactivarTexto",7f);
         }
 
         if (invocarCamara2)
@@ -175,8 +177,10 @@ public class Invasores : MonoBehaviour
         // Apenas se inicia la mision
         if (!Quest_started && !(missionDone) && questGiver.GetComponent<Quest_Starter>().misionAceptada )
         {
+            minimapIndicator.SetActive(false);
             particulas.SetActive(true);
             OnOffPlayer();
+            questGiver.SetActive(false);
 
             int cont = 0;
 
@@ -323,7 +327,7 @@ public class Invasores : MonoBehaviour
                 Invoke("AjustarCamara2",2f);
             }
         } else {
-            Invoke("OnOffPlayer",2f);
+            OnOffPlayer();
         }
     }
 
