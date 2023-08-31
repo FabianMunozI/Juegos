@@ -26,8 +26,8 @@ public class MapGenerationFinal : MonoBehaviour
     private int nOfFlowers;
     [SerializeField] private int width;
     [SerializeField] private int height;
-    [SerializeField] private int townWidth = 10;
-    [SerializeField] private int townHeight = 7;
+    private int townWidth = 10;
+    private int townHeight = 7;
     [SerializeField] private int townExit;
     private int roadStart;
     [SerializeField] private int mountainWidth;
@@ -67,6 +67,14 @@ public class MapGenerationFinal : MonoBehaviour
         RoSW, // Road  North - South
         BNS,  // Bridge North- South
         BEW,   // Bridge East - West
+        InicioRioN,
+        InicioRioE,
+        InicioRioS,
+        InicioRioW,
+        FinalRioN,
+        FinalRioE,
+        FinalRioS,
+        FinalRioW,
         BGrass,
         BTree,
         BFlower
@@ -113,7 +121,8 @@ public class MapGenerationFinal : MonoBehaviour
         // I need to understand the mountain prefab first, but this is not yet relevant.
         int min = townExit;
         int max = width - townWidth + townExit;
-        roadStart = Random.Range(min, max);
+        //roadStart = Random.Range(min, max);
+        roadStart = Random.Range(7, width - 7);
     }
 
     private void ConnectRoad(int startX, int startY, int endX, int endY)
@@ -182,9 +191,12 @@ public class MapGenerationFinal : MonoBehaviour
                 y = (y < ey) ? y-1 : y+1;
                 x++;
             }
-            else
+            else 
             {
-                map[x][y] = TileType.Bridge;
+                if (map[x][y] != TileType.InicioRioE)
+                {
+                    map[x][y] = TileType.Bridge;
+                }
                 y = (y < ey) ? y+1 : y-1;
             }
         }
@@ -192,7 +204,7 @@ public class MapGenerationFinal : MonoBehaviour
         {
             if (map[x][y] == TileType.Empty)
                 map[x][y] = TileType.River;
-            else
+            else 
                 map[x][y] = TileType.Bridge;
             x++;
         }
@@ -206,7 +218,7 @@ public class MapGenerationFinal : MonoBehaviour
             int y;
             do
             {
-                y = Random.Range(firstSplit + 1, secondSplit - 1);
+                y = Random.Range(firstSplit + 2, secondSplit - 2);
             } while (corners.Contains(y));
             return y;
         }
@@ -215,7 +227,7 @@ public class MapGenerationFinal : MonoBehaviour
         {
             foreach ((int, int) pair in corners)
             {
-                if (pair.Item1 == x || pair.Item1 == x+1 || pair.Item1 == x-1)
+                if (pair.Item1 == x || pair.Item1 == x + 1 || pair.Item1 == x - 1)
                     return true;
             }
             return false;
@@ -232,6 +244,7 @@ public class MapGenerationFinal : MonoBehaviour
 
         (int, int)[] rCorners = new (int, int)[Random.Range(2, 8)];
         rCorners[0] = (1, RandY());
+        (int, int) inicioRio = rCorners[0];
         rCorners[rCorners.Length - 1] = (width - 1, RandY());
 
 
@@ -241,7 +254,7 @@ public class MapGenerationFinal : MonoBehaviour
             int y;
             do
             {
-                x = Random.Range(3, width - 3);
+                x = Random.Range(5, width - 5);
                 y = Random.Range(firstSplit + 1, secondSplit - 1);
             } while (XInCorners(rCorners, x) || corners.Contains(y) || map[x][y] == TileType.Road || map[x][y] == TileType.Grass);
             rCorners[i] = (x, y);
@@ -250,10 +263,45 @@ public class MapGenerationFinal : MonoBehaviour
         System.Array.Sort(rCorners, CompareTuples);
 
 
-        for (int i = 0; i < rCorners.Length - 1; i++)
+        map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioE;
+
+
+        for (int i = 0; i < rCorners.Length - 1; i++) // Los bordes ya están seteados hay que ver esos casos
         {
             ConnectRiver(rCorners[i].Item1, rCorners[i].Item2, rCorners[i + 1].Item1, rCorners[i + 1].Item2);
         }
+
+        if (map[inicioRio.Item1 ][inicioRio.Item2 + 1] == TileType.River)
+        {
+            Debug.Log(" rio norte");
+            map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioN;
+        }
+        else if (map[inicioRio.Item1 - 1][inicioRio.Item2] == TileType.River)
+        {
+            map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioW;
+        }
+        else if (map[inicioRio.Item1 - 1][inicioRio.Item2 - 1] == TileType.River)
+        {
+            map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioS;
+        }
+
+        if (map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 2].Item2] == TileType.River)
+        {
+            map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioN;
+        }
+        else if (map[rCorners[rCorners.Length - 2].Item1][rCorners[rCorners.Length - 2].Item2] == TileType.River)
+        {
+            map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioE;
+        }
+        else if(map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length].Item2] == TileType.River)
+        {
+            map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioS;
+        }
+        else
+        {
+            map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioW;
+        }
+        
     }
 
 
@@ -503,10 +551,12 @@ public class MapGenerationFinal : MonoBehaviour
                         CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva);
                         break;
                     case TileType.BNS:
-                        CrearIndicador(posicion, puente, new Quaternion(), false, true);
+                        CrearIndicador(posicion, puente, new Quaternion());
+                        CrearIndicador(posicion, rioRecto, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.BEW:
-                        CrearIndicador(posicion, caminoRecto, Quaternion.Euler(0, 90, 0), false, true);
+                        CrearIndicador(posicion, puente, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion, rioRecto, new Quaternion());
                         break;
                     case TileType.BGrass:
                         CrearIndicador(posicion, pastoQuemado);
@@ -515,23 +565,47 @@ public class MapGenerationFinal : MonoBehaviour
                         index = Random.Range(0, arbolesQuemadosPrefabs.Length);
                         if (index == 1)
                         {
-                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270,0,0), false, false, true, true);
+                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270,0,0), false, false, true);
                         }
                         else
                         {
-                            CrearIndicador(posicion, arbolesQuemadosPrefabs[index], new Quaternion(), false, false, true);
+                            CrearIndicador(posicion, arbolesQuemadosPrefabs[index], new Quaternion(), false, true);
                         }
                         break;
                     case TileType.BFlower:
                         index = Random.Range(0, arbolesQuemadosPrefabs.Length);
                         if (index == 1)
                         {
-                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270, 0, 0), false, false, true, true);
+                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270, 0, 0), false, false, true);
                         }
                         else
                         {
-                            CrearIndicador(posicion, arbolesQuemadosPrefabs[index], new Quaternion(), false, false, true);
+                            CrearIndicador(posicion, arbolesQuemadosPrefabs[index], new Quaternion(), false, true);
                         }
+                        break;
+                    case TileType.InicioRioN:
+                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 180, 0));
+                        break;
+                    case TileType.InicioRioE:
+                        CrearIndicador(posicion, inicioFinalRio);
+                        break;
+                    case TileType.InicioRioS:
+                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 90, 0));
+                        break;
+                    case TileType.InicioRioW:
+                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 270, 0));
+                        break;
+                    case TileType.FinalRioN:
+                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 180, 0));
+                        break;
+                    case TileType.FinalRioE:
+                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 90, 0));
+                        break;
+                    case TileType.FinalRioS:
+                        CrearIndicador(posicion, inicioFinalRio);
+                        break;
+                    case TileType.FinalRioW:
+                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 180, 0));
                         break;
                 }
             }
@@ -539,7 +613,7 @@ public class MapGenerationFinal : MonoBehaviour
 
     }
 
-    private void CrearIndicador(Vector3 position, GameObject prefab, Quaternion rotation = new Quaternion(), bool objet = false, bool puente = false, bool quemado = false, bool quemaDos = false)
+    private void CrearIndicador(Vector3 position, GameObject prefab, Quaternion rotation = new Quaternion(), bool objet = false, bool quemado = false, bool quemaDos = false)
     {
         var placePosition = position + new Vector3(.5f, .5f, .5f);
         if (objet)
@@ -548,12 +622,6 @@ public class MapGenerationFinal : MonoBehaviour
             elemento.transform.parent = parent;
             //pisoExtra.Add(elemento);
 
-        }
-        if(puente)
-        {
-            var elemento = Instantiate(rioRecto, placePosition, rotation);
-            elemento.transform.parent = parent;
-            //pisoExtra.Add(elemento);
         }
         if (quemado)
         {

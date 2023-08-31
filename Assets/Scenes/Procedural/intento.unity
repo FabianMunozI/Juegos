@@ -1093,10 +1093,8 @@ MonoBehaviour:
   pasto: {fileID: 152366, guid: 0f350c81d2a4fe6478de08d2b80f9732, type: 3}
   pastoQuemado: {fileID: 152366, guid: c0f2950057e53d649bbe48d60fb5e1b8, type: 3}
   pueblo: {fileID: 3328181010983008572, guid: 7a51c1a45203af543a9e9021b0a28bfd, type: 3}
-  width: 100
-  height: 100
-  townWidth: 10
-  townHeight: 7
+  width: 50
+  height: 50
   townExit: 0
   mountainWidth: 0
   mountainHeight: 0
