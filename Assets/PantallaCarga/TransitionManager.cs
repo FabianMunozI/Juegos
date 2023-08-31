@@ -36,6 +36,8 @@ public class TransitionManager : MonoBehaviour
     public const string SCENE_NAME_GAME_MENUBOSQUE = "MenuBosque";
     public const string SCENE_NAME_GAME_INTENTO = "intento";
 
+    public const string SCENE_NAME_GAME_PROCEDURALNEGRO = "ProceduralNegro";
+
 
     public Slider progressSlider;
     public TextMeshProUGUI progressLabel;
