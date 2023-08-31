@@ -725,6 +725,7 @@ public class MapGenerationFinal : MonoBehaviour
         GenMap();
 
         Invoke("GenPlayer",2f);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void GenPlayer(){

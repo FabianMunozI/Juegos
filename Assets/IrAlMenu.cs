@@ -16,10 +16,11 @@ public class IrAlMenu : MonoBehaviour
     void Start()
     {
         menuAbierto = false;
+        segundoMenu = false;
         player = GameObject.Find("Player");
         if(player ==null){
            Invoke("invokePlayer",3f);
-           //Cursor.lockState = CursorLockMode.None;
+           Cursor.lockState = CursorLockMode.None;
            segundoMenu=true;
         }
         canvasIrMenu = GameObject.Find("CIrMenu").transform.GetChild(0).gameObject;
@@ -33,7 +34,10 @@ public class IrAlMenu : MonoBehaviour
             canvasIrMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             ScriptsPlayer(false);
-        }
+        }else if(Input.GetKeyDown(KeyCode.Escape) && !segundoMenu){
+            canvasIrMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }   
 
         if(segundoMenu && menuAbierto && Input.GetMouseButtonDown(0)){
             irMenu();
@@ -45,6 +49,12 @@ public class IrAlMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             ScriptsPlayer(true);
 
+        }
+
+        if(Input.GetMouseButtonDown(0) && segundoMenu){
+            Cursor.lockState = CursorLockMode.None;
+        }else if(Input.GetMouseButtonDown(1) && segundoMenu){
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
