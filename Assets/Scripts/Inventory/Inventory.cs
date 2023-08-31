@@ -211,7 +211,10 @@ public class Inventory : MonoBehaviour
     public void SoltarObjeto()
     {
         //hotbarSlots[0].SetItem(new InventoryItem());
-        DestroyImmediate(hotbarSlots[0].transform.GetChild(0).gameObject);
+        if (hotbarSlots[0].myItem != null)
+        {
+            DestroyImmediate(hotbarSlots[0].transform.GetChild(0).gameObject);
+        }
     }
 
     void onDestroy()

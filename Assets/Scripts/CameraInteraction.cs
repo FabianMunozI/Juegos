@@ -79,12 +79,17 @@ public class CameraInteraction : MonoBehaviour
 
                     if(this.GetComponent<PickUpObjects>().PickedObject != null)
                     {
-                        if (this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>().item_vinculado != null)
+                        if (this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>() != null)
                         {
-                            Iv.GetComponent<Inventory>().SpawnHotBarItem(this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>().item_vinculado);
-                        } else {
-                            Debug.Log("WARNING: OBJETO NO TIENE ITEM ASIGNADO");
-                            Iv.GetComponent<Inventory>().SpawnHotBarItem();
+
+                            if (this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>().item_vinculado != null)
+                            {
+                                Iv.GetComponent<Inventory>().SpawnHotBarItem(this.GetComponent<PickUpObjects>().PickedObject.GetComponent<VincularObjetoInventario>().item_vinculado);
+                            } else {
+                                Debug.Log("WARNING: OBJETO NO TIENE ITEM ASIGNADO");
+                                Iv.GetComponent<Inventory>().SpawnHotBarItem();
+                            }
+
                         }
                     }
                 }
