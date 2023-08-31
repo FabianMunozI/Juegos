@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void MenuButton ()
+    public void MenuBosque ()
     {
-        SceneManager.LoadScene("MenuGenerador");
+        SceneManager.LoadScene("GeneradorBosque");
+    }
+    public void MenuCiudad ()
+    {
+        SceneManager.LoadScene("GeneradorCiudad");
     }
 
     // Update is called once per frame
