@@ -17,10 +17,8 @@ public class ActivarInteraccionGrifos : MonoBehaviour
     }
 
     public void ActivarInteraccion(){
-        gameObject.transform.GetChild(0).GetChild(2).GetChild(2).gameObject.SetActive(true);
         for(int i = 1; i < gameObject.transform.childCount; i++){
             gameObject.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
-            gameObject.transform.GetChild(i).GetChild(3).gameObject.SetActive(true);
         }
     }
 }
