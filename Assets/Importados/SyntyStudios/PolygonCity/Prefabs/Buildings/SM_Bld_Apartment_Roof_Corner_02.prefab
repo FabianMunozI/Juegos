@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 65027250995787788}
   - component: {fileID: 65847303674682244}
   - component: {fileID: 65182827890961676}
+  - component: {fileID: 7744233736926450868}
   m_Layer: 16
   m_Name: SM_Bld_Apartment_Roof_Corner_02
   m_TagString: building
@@ -125,3 +126,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3924942, y: 0.7435399, z: 5.441078}
   m_Center: {x: 0.13978195, y: 0.37176996, z: -2.384509}
+--- !u!208 &7744233736926450868
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137768}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.6550002, y: 15, z: 2.812}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.3500001, y: 0, z: -2.3560002}
+  m_TimeToStationary: 0.5

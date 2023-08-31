@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2307534}
   - component: {fileID: 64862682911889744}
   - component: {fileID: 64307477079404926}
+  - component: {fileID: 8532762227577268639}
   m_Layer: 16
   m_Name: SM_Bld_OfficeOld_Large_Floor_01
   m_TagString: building
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43996884183548594, guid: d23320a9fc5da0244b9c2f2a9447926b, type: 2}
+--- !u!208 &8532762227577268639
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114576}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 7.5000005, y: 15, z: 7.5000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -7.5000005, y: 0, z: -7.5000005}
+  m_TimeToStationary: 0.5

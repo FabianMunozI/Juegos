@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2393708}
   - component: {fileID: 64734186977445792}
   - component: {fileID: 64753426866299984}
+  - component: {fileID: 5992793114428621524}
   m_Layer: 16
   m_Name: SM_Bld_Shop_Corner_02
   m_TagString: building
@@ -114,6 +115,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43030064357752604, guid: ca39e32191f9a5c42a316c1f9fa08588, type: 2}
+--- !u!208 &5992793114428621524
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115170}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.6660001, y: 15, z: 2.6660001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.5, y: 0, z: -2.5}
+  m_TimeToStationary: 0.5
 --- !u!1 &157154
 GameObject:
   m_ObjectHideFlags: 0

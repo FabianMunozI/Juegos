@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3325142}
   - component: {fileID: 2368918}
   - component: {fileID: 65664705954415930}
+  - component: {fileID: 1883071052464831949}
   m_Layer: 16
   m_Name: SM_Bld_OfficeSquare_01
   m_TagString: building
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 30, z: 15}
   m_Center: {x: -7.5, y: 15, z: -7.5}
+--- !u!208 &1883071052464831949
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131184}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 7.5000005, y: 15.000001, z: 7.5000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -7.5000005, y: 0, z: -7.5000005}
+  m_TimeToStationary: 0.5

@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2355552}
   - component: {fileID: 64716588786034910}
   - component: {fileID: 64341226272795986}
+  - component: {fileID: 1704778652605262776}
   m_Layer: 16
   m_Name: SM_Bld_OfficeRound_Base_01
   m_TagString: building
@@ -197,3 +198,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43856690748242004, guid: 583fbcae68b65504c8540e7164157e2c, type: 2}
+--- !u!208 &1704778652605262776
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185420}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 11.526001, y: 30, z: 11.526001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

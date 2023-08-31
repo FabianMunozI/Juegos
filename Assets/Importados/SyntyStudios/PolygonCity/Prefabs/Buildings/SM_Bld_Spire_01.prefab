@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2303918}
   - component: {fileID: 64503935442861210}
   - component: {fileID: 64769559987184210}
+  - component: {fileID: 587919300117309867}
   m_Layer: 0
   m_Name: SM_Bld_Spire_01
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43109697441109772, guid: ba2b512393eab4341a488fa8681866c2, type: 2}
+--- !u!208 &587919300117309867
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152408}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.33, y: 15, z: 1.33}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

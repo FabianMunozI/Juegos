@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3330690}
   - component: {fileID: 2359360}
   - component: {fileID: 65285164381999652}
+  - component: {fileID: 4226466292898645247}
   m_Layer: 16
   m_Name: SM_Bld_OfficeSquare_Roof_01
   m_TagString: building
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.550177, y: 0.6361652, z: 15.550177}
   m_Center: {x: -7.500003, y: 0.3180826, z: -7.499997}
+--- !u!208 &4226466292898645247
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111276}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 7.7750006, y: 15, z: 7.7750006}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -7.5000005, y: 0, z: -7.5000005}
+  m_TimeToStationary: 0.5

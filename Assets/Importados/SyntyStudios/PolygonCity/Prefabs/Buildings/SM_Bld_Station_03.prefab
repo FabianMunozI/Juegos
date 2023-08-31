@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2325110}
   - component: {fileID: 64005552069748600}
   - component: {fileID: 64521683290857282}
+  - component: {fileID: 9149925751954035706}
   m_Layer: 16
   m_Name: SM_Bld_Station_03
   m_TagString: building
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43221444370255492, guid: 3c972dd5e611cbc439aa8d1e3f78443a, type: 2}
+--- !u!208 &9149925751954035706
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165620}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.3880005, y: 3.5, z: 2.9550002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.78, z: 0}
+  m_TimeToStationary: 0.5

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3313792}
   - component: {fileID: 2360664}
   - component: {fileID: 64272158652908518}
+  - component: {fileID: -3275916525826629790}
   m_Layer: 16
   m_Name: SM_Bld_Apartment_Stairs_Planter_02
   m_TagString: building
@@ -98,3 +99,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43631104422518038, guid: 667de0366e8a88d489c264c50a36f4f0, type: 2}
+--- !u!208 &-3275916525826629790
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115474}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.2, y: 15, z: 1.15}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.59, y: 0, z: -1.64}
+  m_TimeToStationary: 0.5
