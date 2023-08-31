@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 127de3f3264c3094ca2afae2760d7cdb
   - enabled: 1
-    path: Assets/Scenes/MenuBosque.unity
-    guid: 575fee7083f557744840e6a50f2a97ed
-  - enabled: 1
     path: Assets/Scenes/MenuCiudad.unity
     guid: 6f0d39569a99fa84282aceb6248e35f0
+  - enabled: 1
+    path: Assets/Scenes/MenuBosque.unity
+    guid: af3c91990fc53894c80146a131e16f37
   - enabled: 1
     path: Assets/Scenes/Ciudad.unity
     guid: f25e37d2a74ce49429e4d21e1b592c79
@@ -23,15 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bosque.unity
     guid: e120d0e37ab427a4cb1c20085b85c472
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 127de3f3264c3094ca2afae2760d7cdb
-  - enabled: 1
-    path: Assets/Scenes/GeneradorBosque.unity
-    guid: 575fee7083f557744840e6a50f2a97ed
-  - enabled: 1
-    path: Assets/Scenes/GeneradorCiudad.unity
-    guid: cc3289bd7e3102940a38fecf32960ac9
   - enabled: 1
     path: Assets/Scenes/Procedural/intento.unity
     guid: 95548cf2001b4ee4d876e26ed704943d

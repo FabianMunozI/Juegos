@@ -401,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617143676}
   - component: {fileID: 617143679}
-  - component: {fileID: 617143677}
+  - component: {fileID: 617143680}
   m_Layer: 5
   m_Name: CameraMapa
   m_TagString: Untagged
@@ -429,18 +429,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1024, y: -464}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &617143677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617143675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e7506da84abec4bb9f7001933d7351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &617143679
 Camera:
   m_ObjectHideFlags: 0
@@ -484,6 +472,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &617143680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617143675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a822ba73a1fc04b42b6c6bf08228ad51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &874947260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 372, y: -92}
+  m_AnchoredPosition: {x: 372, y: -37}
   m_SizeDelta: {x: 900, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634955180

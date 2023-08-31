@@ -34,5 +34,14 @@ public class Menu : MonoBehaviour
         //Decidir que escena vamos a cargar lol
         SceneManager.LoadScene("Ciudad");
     }
-
+    public void ProceduralBosque()
+    {
+        //Decidir que escena vamos a cargar lol
+        SceneManager.LoadScene("intento");
+    }
+    public void ProceduralCiudad()
+    {
+        //Decidir que escena vamos a cargar lol
+        SceneManager.LoadScene("ProceduralNegro");
+    }
 }
