@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3341490}
   - component: {fileID: 2351526}
   - component: {fileID: 64663163636499556}
+  - component: {fileID: 6719141614319924857}
   m_Layer: 16
   m_Name: SM_Env_Bush_01
   m_TagString: Untagged
@@ -98,3 +99,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43415335652680792, guid: 6e2b6d0f9024a3c438a7a5c602cbaf80, type: 2}
+--- !u!208 &6719141614319924857
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122670}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0400001, y: 15, z: 1.0020001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 64850746246563654}
   - component: {fileID: 64766918720421120}
   - component: {fileID: 64528706169004334}
+  - component: {fileID: 1018822190506405319}
   m_Layer: 16
   m_Name: SM_Env_TreePine_03
   m_TagString: Untagged
@@ -143,3 +144,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43323693416867548, guid: ead49cd6b9da9e6468cb76b3ec7d0793, type: 2}
+--- !u!208 &1018822190506405319
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117190}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.7170001, y: 15, z: 1.695}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

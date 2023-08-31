@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2351280}
   - component: {fileID: 64562824749330242}
   - component: {fileID: 64703155668254076}
+  - component: {fileID: 377198361321025631}
   m_Layer: 16
   m_Name: SM_Bld_Well_01
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43245694291277164, guid: 5ad67ff3fd7030142ba7ee25a8df769d, type: 2}
+--- !u!208 &377198361321025631
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117314}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.529, y: 15, z: 1.5400001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

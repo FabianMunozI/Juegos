@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2343582}
   - component: {fileID: 64870190742591534}
   - component: {fileID: 64685282913126708}
+  - component: {fileID: 7517271564811677496}
   m_Layer: 16
   m_Name: SM_Env_Tree_07
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43296375262335758, guid: c379fff86488a3d468d5fcd39ac63846, type: 2}
+--- !u!208 &7517271564811677496
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111638}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.4950001, y: 15, z: 1.3620001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

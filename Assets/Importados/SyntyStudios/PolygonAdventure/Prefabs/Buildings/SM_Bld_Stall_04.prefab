@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2349202}
   - component: {fileID: 64043446686749520}
   - component: {fileID: 64298615671803336}
+  - component: {fileID: 4803505074011637303}
   m_Layer: 16
   m_Name: SM_Bld_Stall_04
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43021916174260370, guid: 87ebff220a4a2eb4885e4440ef2bef6a, type: 2}
+--- !u!208 &4803505074011637303
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117632}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.4990001, y: 15, z: 1.493}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
