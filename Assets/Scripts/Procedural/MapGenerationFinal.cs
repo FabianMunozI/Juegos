@@ -36,6 +36,8 @@ public class MapGenerationFinal : MonoBehaviour
     [SerializeField] private int maxRoadCornerSparation = 10;
 
     Transform parent;
+
+    public GameObject player;
     //Dictionary<Vector3, GameObject> diccionarioObstaculos = new Dictionary<Vector3, GameObject>();
     //List<GameObject> pisoExtra = new List<GameObject>();
 
@@ -114,7 +116,7 @@ public class MapGenerationFinal : MonoBehaviour
             }
         }
 
-        //quizas el pozo podría quedar en el camino 
+        //quizas el pozo podrï¿½a quedar en el camino 
         map[roadStart + 1][firstSplit + 1] = TileType.Grass;
     }
 
@@ -269,7 +271,7 @@ public class MapGenerationFinal : MonoBehaviour
         map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioE;
 
 
-        for (int i = 0; i < rCorners.Length - 1; i++) // Los bordes ya están seteados hay que ver esos casos
+        for (int i = 0; i < rCorners.Length - 1; i++) // Los bordes ya estï¿½n seteados hay que ver esos casos
         {
             ConnectRiver(rCorners[i].Item1, rCorners[i].Item2, rCorners[i + 1].Item1, rCorners[i + 1].Item2);
         }
@@ -721,8 +723,13 @@ public class MapGenerationFinal : MonoBehaviour
         nOfRocks = width * height / 96;
         nOfFlowers = width * height / 24;
         GenMap();
+
+        Invoke("GenPlayer",2f);
     }
 
+    public void GenPlayer(){
+        Instantiate(player, new Vector3(25, 2, 25), Quaternion.identity);
+    }
     private void DrawBounds()
     {
         Gizmos.color = Color.red;
