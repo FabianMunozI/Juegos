@@ -97,7 +97,7 @@ public class MapGenerationFinal : MonoBehaviour
         // min = townExit;
         //int max = width - townWidth + townExit;
 
-        CrearIndicador(new Vector3(roadStart -0.2f, 3.05f, firstSplit + 2.58f), pueblo, Quaternion.Euler(0, 180, 0));
+        CrearIndicador(new Vector3(roadStart -0.2f, 3.13f, firstSplit + 2.3f), pueblo, Quaternion.Euler(0, 180, 0));
 
         for(int ancho = 0 ; ancho < 10 ; ancho++)
         {
@@ -532,48 +532,48 @@ public class MapGenerationFinal : MonoBehaviour
                         CrearIndicador(posicion, rockPrefabs[index], new Quaternion(), true);
                         break;
                     case TileType.RiNS:
-                        CrearIndicador(posicion, rioRecto);
+                        CrearIndicador(posicion + new Vector3(0, -0.0166f, 0), rioRecto);
                         break;
                     case TileType.RiEW:
-                        CrearIndicador(posicion, rioRecto, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.0166f, 0), rioRecto, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.RiNE:
-                        CrearIndicador(posicion, rioCurva, Quaternion.Euler(0, 180, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.036f, 0), rioCurva, Quaternion.Euler(0, 180, 0));
                         break;
                     case TileType.RiNW:
-                        CrearIndicador(posicion, rioCurva, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.036f, 0), rioCurva, Quaternion.Euler(0, 90, 0)); 
                         break;
                     case TileType.RiSE:
-                        CrearIndicador(posicion, rioCurva, Quaternion.Euler(0, 270, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.036f, 0), rioCurva, Quaternion.Euler(0, 270, 0));
                         break;
                     case TileType.RiSW:
-                        CrearIndicador(posicion,rioCurva);
+                        CrearIndicador(posicion + new Vector3(0, -0.036f, 0), rioCurva);
                         break;
                     case TileType.RoNS:
-                        CrearIndicador(posicion, caminoRecto);
+                        CrearIndicador(posicion + new Vector3(0, 0.083f, 0), caminoRecto);
                         break;
                     case TileType.RoEW:
-                        CrearIndicador(posicion, caminoRecto, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion + new Vector3(0, 0.083f, 0), caminoRecto, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.RoNE:
-                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva, Quaternion.Euler(0, 180, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.056f, 0), caminoCurva, Quaternion.Euler(0, 180, 0));
                         break;
                     case TileType.RoNW:
-                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.056f, 0), caminoCurva, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.RoSE:
-                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva, Quaternion.Euler(0, 270, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.056f, 0), caminoCurva, Quaternion.Euler(0, 270, 0));
                         break;
                     case TileType.RoSW:
-                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva);
+                        CrearIndicador(posicion + new Vector3(0, -0.056f, 0), caminoCurva);
                         break;
                     case TileType.BNS:
                         CrearIndicador(posicion, puente, new Quaternion());
-                        CrearIndicador(posicion, rioRecto, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion , rioRecto, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.BEW:
                         CrearIndicador(posicion, puente, Quaternion.Euler(0, 90, 0));
-                        CrearIndicador(posicion, rioRecto, new Quaternion());
+                        CrearIndicador(posicion + new Vector3(0, -0.0386f, 0), rioRecto, new Quaternion());
                         break;
                     case TileType.BGrass:
                         CrearIndicador(posicion, pastoQuemado);
@@ -601,28 +601,28 @@ public class MapGenerationFinal : MonoBehaviour
                         }
                         break;
                     case TileType.InicioRioN:
-                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 180, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio, Quaternion.Euler(0, 180, 0));
                         break;
                     case TileType.InicioRioE:
-                        CrearIndicador(posicion, inicioFinalRio);
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio);
                         break;
                     case TileType.InicioRioS:
-                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.InicioRioW:
-                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 270, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio, Quaternion.Euler(0, 270, 0));
                         break;
                     case TileType.FinalRioN:
-                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 180, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio, Quaternion.Euler(0, 180, 0));
                         break;
                     case TileType.FinalRioE:
-                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 90, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio, Quaternion.Euler(0, 90, 0));
                         break;
                     case TileType.FinalRioS:
-                        CrearIndicador(posicion, inicioFinalRio);
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio);
                         break;
                     case TileType.FinalRioW:
-                        CrearIndicador(posicion, inicioFinalRio, Quaternion.Euler(0, 180, 0));
+                        CrearIndicador(posicion + new Vector3(0, -0.02f, 0), inicioFinalRio, Quaternion.Euler(0, 180, 0));
                         break;
                 }
             }
@@ -677,7 +677,7 @@ public class MapGenerationFinal : MonoBehaviour
 
     private void BurnShitUp() // agregar mas arboles quemados
     {
-        int r = Random.Range(2, 5);
+        int r = Random.Range(5, 10);
         int cx = Random.Range(5, width - 5);
         int cy = Random.Range(firstSplit + r, height - 5);
         for (int x = 0; x < width; x++)
