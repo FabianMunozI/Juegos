@@ -97,7 +97,7 @@ public class MapGenerationFinal : MonoBehaviour
         // min = townExit;
         //int max = width - townWidth + townExit;
 
-        CrearIndicador(new Vector3(roadStart, 0, firstSplit - 0.3f), pueblo, Quaternion.Euler(0, 180, 0));
+        CrearIndicador(new Vector3(roadStart -0.2f, 3.05f, firstSplit + 2.58f), pueblo, Quaternion.Euler(0, 180, 0));
 
         for(int ancho = 0 ; ancho < 10 ; ancho++)
         {
@@ -113,6 +113,9 @@ public class MapGenerationFinal : MonoBehaviour
                 }
             }
         }
+
+        //quizas el pozo podría quedar en el camino 
+        map[roadStart + 1][firstSplit + 1] = TileType.Grass;
     }
 
     // Coloca la montana en el tercer tercio del mapa
@@ -243,9 +246,9 @@ public class MapGenerationFinal : MonoBehaviour
         }
 
         (int, int)[] rCorners = new (int, int)[Random.Range(2, 8)];
-        rCorners[0] = (1, RandY());
+        rCorners[0] = (5, RandY());
         (int, int) inicioRio = rCorners[0];
-        rCorners[rCorners.Length - 1] = (width - 1, RandY());
+        rCorners[rCorners.Length - 1] = (width - 5, RandY());
 
 
         for (int i = 1; i < rCorners.Length - 1; i++)
@@ -271,30 +274,37 @@ public class MapGenerationFinal : MonoBehaviour
             ConnectRiver(rCorners[i].Item1, rCorners[i].Item2, rCorners[i + 1].Item1, rCorners[i + 1].Item2);
         }
 
-        if (map[inicioRio.Item1 ][inicioRio.Item2 + 1] == TileType.River)
+        //revisar que esten dentro del mapa
+
+        if (EsValido(inicioRio.Item1, inicioRio.Item2 + 1) )
         {
-            Debug.Log(" rio norte");
-            map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioN;
+            if(map[inicioRio.Item1][inicioRio.Item2 + 1] == TileType.River)
+                map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioN;
         }
-        else if (map[inicioRio.Item1 - 1][inicioRio.Item2] == TileType.River)
+        else if (EsValido(inicioRio.Item1 - 1, inicioRio.Item2))
         {
-            map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioW;
+            if (map[inicioRio.Item1 - 1][inicioRio.Item2] == TileType.River)
+                map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioW;
         }
-        else if (map[inicioRio.Item1 - 1][inicioRio.Item2 - 1] == TileType.River)
+        else if (EsValido(inicioRio.Item1 - 1, inicioRio.Item2 - 1))
         {
-            map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioS;
+            if (map[inicioRio.Item1 - 1][inicioRio.Item2 - 1] == TileType.River)
+                map[inicioRio.Item1][inicioRio.Item2] = TileType.InicioRioS;
         }
 
-        if (map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 2].Item2] == TileType.River)
+        if (EsValido(rCorners[rCorners.Length - 1].Item1,rCorners[rCorners.Length - 2].Item2))
         {
-            map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioN;
+            if(map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 2].Item2] == TileType.River)
+                map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioN;
         }
-        else if (map[rCorners[rCorners.Length - 2].Item1][rCorners[rCorners.Length - 2].Item2] == TileType.River)
+        else if (EsValido(rCorners[rCorners.Length - 2].Item1 , rCorners[rCorners.Length - 2].Item2))
         {
-            map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioE;
+            if (map[rCorners[rCorners.Length - 2].Item1][rCorners[rCorners.Length - 2].Item2] == TileType.River)
+                map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioE;
         }
-        else if(map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length].Item2] == TileType.River)
+        else if(EsValido(rCorners[rCorners.Length - 1].Item1 , rCorners[rCorners.Length].Item2))
         {
+            if (map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length].Item2] == TileType.River)
             map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioS;
         }
         else
@@ -302,6 +312,13 @@ public class MapGenerationFinal : MonoBehaviour
             map[rCorners[rCorners.Length - 1].Item1][rCorners[rCorners.Length - 1].Item2] = TileType.FinalRioW;
         }
         
+    }
+
+    private bool EsValido(int x, int z)  // es menos 1 o no?
+    {
+        if (x < 0 || x > width - 1 || z < 0  || z > height-1)
+            return false;
+        return true;
     }
 
 
@@ -565,7 +582,7 @@ public class MapGenerationFinal : MonoBehaviour
                         index = Random.Range(0, arbolesQuemadosPrefabs.Length);
                         if (index == 1)
                         {
-                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270,0,0), false, false, true);
+                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270,0,0), false, true, true);
                         }
                         else
                         {
@@ -576,7 +593,7 @@ public class MapGenerationFinal : MonoBehaviour
                         index = Random.Range(0, arbolesQuemadosPrefabs.Length);
                         if (index == 1)
                         {
-                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270, 0, 0), false, false, true);
+                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270, 0, 0), false, true, true);
                         }
                         else
                         {
@@ -660,7 +677,7 @@ public class MapGenerationFinal : MonoBehaviour
 
     private void BurnShitUp() // agregar mas arboles quemados
     {
-        int r = Random.Range(5, 10);
+        int r = Random.Range(2, 5);
         int cx = Random.Range(5, width - 5);
         int cy = Random.Range(firstSplit + r, height - 5);
         for (int x = 0; x < width; x++)
@@ -694,6 +711,7 @@ public class MapGenerationFinal : MonoBehaviour
         AddObstacles();
         AddGrass();
         BurnShitUp();
+
         BuildMap();
     }
 
