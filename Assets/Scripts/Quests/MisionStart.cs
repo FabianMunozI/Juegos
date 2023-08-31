@@ -24,7 +24,7 @@ public class MisionStart : MonoBehaviour
 
     public GameObject activarPreguntaParaIniciarMision;
 
-    GameObject Jugador;
+    public GameObject Jugador;
 
     public Animator controller;
 
@@ -64,9 +64,13 @@ public class MisionStart : MonoBehaviour
 
     bool todoListo;
 
+    bool nuevoIniciarMision;
+
     // Start is called before the first frame update
     void Start()
     {
+        nuevoIniciarMision = false;
+
         todoListo = false;
         vidasTotales=Vidas;
         Jugador= GameObject.Find("Player");
@@ -78,7 +82,7 @@ public class MisionStart : MonoBehaviour
     void Update()
     {
         if(estaSobreLaPlataforma){
-            if(Input.GetKey(KeyCode.E) && !eActivado){
+            if(nuevoIniciarMision && !eActivado){
                 eActivado=true;
                 OnOffPlayer();  // activa o desactiva los controles del player
 
@@ -164,16 +168,29 @@ public class MisionStart : MonoBehaviour
             this.gameObject.GetComponent<MeshRenderer>().material.color = color1.color;
             estaSobreLaPlataforma = true;
             activarPreguntaParaIniciarMision.SetActive(true);
+            activarPreguntaParaIniciarMision.GetComponent<funcionBotonAceptar>().referenciaMisionStart = this.GetComponent<MisionStart>();
+
+            Cursor.lockState = CursorLockMode.None;
+            
+            other.gameObject.GetComponent<FpsCamera>().enabled=false;
+
         } // quiza podemos añadir mision en curso o algo asi 
     }
 
 
     private void OnTriggerExit(Collider other) {
         if(other.CompareTag("Player") && !eActivado){
+            Cursor.lockState = CursorLockMode.Locked;
+            other.gameObject.GetComponent<FpsCamera>().enabled = true;
+
             this.gameObject.GetComponent<MeshRenderer>().material.color = color2.color;
             estaSobreLaPlataforma = false;
             activarPreguntaParaIniciarMision.SetActive(false);
         }
+    }
+
+    public void misionStarter(){
+        nuevoIniciarMision = true;
     }
 
     public void OnOffPlayer(){
