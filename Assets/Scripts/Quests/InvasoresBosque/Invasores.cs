@@ -61,7 +61,7 @@ public class Invasores : MonoBehaviour
         {
             bolasVerificadoras.Add(
                 Instantiate(verificadorPrefab,
-                new Vector3(Random.Range(-50, 50), 20  , Random.Range(-50, 50)  ),
+                new Vector3(Random.Range(-20, 20), 20  , Random.Range(-20, 20)  ),
                 Quaternion.Euler(0,0,0))
                 );
         }
@@ -277,6 +277,43 @@ public class Invasores : MonoBehaviour
 
             CamaraO.transform.Translate(pos, Space.World);
             CamaraO.transform.LookAt(invasores[actual_id].transform);
+
+
+
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.name != invasores[actual_id].transform.name)
+                {
+                    CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
+                    CamaraO.transform.rotation = rotOriginal;
+                    pos = invasores[actual_id].transform.position - Jugador.transform.position;
+                    pos += new Vector3 (-5,5,-5);
+                    CamaraO.transform.Translate(pos, Space.World);
+                    CamaraO.transform.LookAt(invasores[actual_id].transform);
+                    if (hit.transform.name != invasores[actual_id].transform.name)
+                    {
+                        CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
+                        CamaraO.transform.rotation = rotOriginal;
+                        pos = invasores[actual_id].transform.position - Jugador.transform.position;
+                        pos += new Vector3 (5,5,-5);
+                        CamaraO.transform.Translate(pos, Space.World);
+                        CamaraO.transform.LookAt(invasores[actual_id].transform);
+
+                        if (hit.transform.name != invasores[actual_id].transform.name)
+                        {
+                            CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
+                            CamaraO.transform.rotation = rotOriginal;
+                            pos = invasores[actual_id].transform.position - Jugador.transform.position;
+                            pos += new Vector3 (-5,5,5);
+                            CamaraO.transform.Translate(pos, Space.World);
+                            CamaraO.transform.LookAt(invasores[actual_id].transform);
+                        }
+                    }
+                }
+            }
             
             
 
@@ -318,6 +355,41 @@ public class Invasores : MonoBehaviour
 
             CamaraO.transform.Translate(pos, Space.World);
             CamaraO.transform.LookAt(buenos[actual_id2].transform);
+
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.name != buenos[actual_id2].transform.name)
+                {
+                    CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
+                    CamaraO.transform.rotation = rotOriginal;
+                    pos = buenos[actual_id2].transform.position - Jugador.transform.position;
+                    pos += new Vector3 (-5,5,-5);
+                    CamaraO.transform.Translate(pos, Space.World);
+                    CamaraO.transform.LookAt(buenos[actual_id2].transform);
+                    if (hit.transform.name != buenos[actual_id2].transform.name)
+                    {
+                        CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
+                        CamaraO.transform.rotation = rotOriginal;
+                        pos = buenos[actual_id2].transform.position - Jugador.transform.position;
+                        pos += new Vector3 (5,5,-5);
+                        CamaraO.transform.Translate(pos, Space.World);
+                        CamaraO.transform.LookAt(buenos[actual_id2].transform);
+
+                        if (hit.transform.name != buenos[actual_id2].transform.name)
+                        {
+                            CamaraO.transform.localPosition = new Vector3(0,0.69f,0);
+                            CamaraO.transform.rotation = rotOriginal;
+                            pos = buenos[actual_id2].transform.position - Jugador.transform.position;
+                            pos += new Vector3 (-5,5,5);
+                            CamaraO.transform.Translate(pos, Space.World);
+                            CamaraO.transform.LookAt(buenos[actual_id2].transform);
+                        }
+                    }
+                }
+            }
             
             
 
