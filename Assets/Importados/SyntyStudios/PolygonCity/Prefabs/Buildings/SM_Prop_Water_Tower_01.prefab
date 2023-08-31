@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2364110}
   - component: {fileID: 64586552519621296}
   - component: {fileID: 64556447331118446}
+  - component: {fileID: 2773055851558942857}
   m_Layer: 16
   m_Name: SM_Prop_Water_Tower_01
   m_TagString: building
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43728988027560604, guid: d49906f1cd194f54ba59e4e710513a77, type: 2}
+--- !u!208 &2773055851558942857
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198202}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.21, y: 15, z: 1.21}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

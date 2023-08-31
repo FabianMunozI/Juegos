@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3373824}
   - component: {fileID: 2348148}
   - component: {fileID: 65855074291239870}
+  - component: {fileID: 6390065579368533668}
   m_Layer: 16
   m_Name: SM_Bld_Apartment_Roof_01
   m_TagString: building
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.309677, y: 0.4998675, z: 5.9175124}
   m_Center: {x: -2.5, y: 0.24993375, z: -2.2094429}
+--- !u!208 &6390065579368533668
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134626}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.6550002, y: 15, z: 2.812}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.5, y: 0, z: -2.209}
+  m_TimeToStationary: 0.5

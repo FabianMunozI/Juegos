@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2322114}
   - component: {fileID: 64253576116498310}
   - component: {fileID: 64943744163857638}
+  - component: {fileID: 6160514584795964293}
   m_Layer: 16
   m_Name: SM_Bld_Apartment_Corner_03
   m_TagString: building
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43129005994196292, guid: cf707266b7730b24e95d89c3a681b7eb, type: 2}
+--- !u!208 &6160514584795964293
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189184}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.5, y: 15, z: 2.598}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.5, y: 0, z: -2.4020002}
+  m_TimeToStationary: 0.5

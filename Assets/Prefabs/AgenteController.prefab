@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 743759695583254509}
   - component: {fileID: 743759695583254508}
   m_Layer: 11
-  m_Name: Capsule (1)
+  m_Name: AgenteController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

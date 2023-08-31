@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2381856}
   - component: {fileID: 64346610243123622}
   - component: {fileID: 64788836933507212}
+  - component: {fileID: 3847462543387326311}
   m_Layer: 16
   m_Name: SM_Bld_OfficeOld_Small_02
   m_TagString: building
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43543388562453858, guid: 810735e12d93cac4da82fa5cdbfd5e7b, type: 2}
+--- !u!208 &3847462543387326311
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103440}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.5600004, y: 15, z: 5.6000004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -5.046, y: 0, z: -5.038}
+  m_TimeToStationary: 0.5

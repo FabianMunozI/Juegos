@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3356172}
   - component: {fileID: 2373228}
   - component: {fileID: 64394111778823318}
+  - component: {fileID: 5419069404309698202}
   m_Layer: 16
   m_Name: SM_Bld_OfficeOctagon_01
   m_TagString: building
@@ -98,3 +99,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43012198484134262, guid: 9dd0f03ab7172144f8959a8b367af195, type: 2}
+--- !u!208 &5419069404309698202
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116864}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 10.232, y: 30, z: 10.232}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

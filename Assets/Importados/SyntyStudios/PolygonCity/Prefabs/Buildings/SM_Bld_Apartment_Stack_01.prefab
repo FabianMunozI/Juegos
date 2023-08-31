@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3395774}
   - component: {fileID: 2306966}
   - component: {fileID: 64732304882736528}
+  - component: {fileID: -1122992429899952430}
   m_Layer: 16
   m_Name: SM_Bld_Apartment_Stack_01
   m_TagString: building
@@ -98,3 +99,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43145123891503732, guid: 786104971c0b24244bd4083b3272a39f, type: 2}
+--- !u!208 &-1122992429899952430
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151176}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.6550002, y: 15, z: 2.812}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.5, y: 0, z: -2.4020002}
+  m_TimeToStationary: 0.5

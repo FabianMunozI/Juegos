@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3342970}
   - component: {fileID: 2339944}
   - component: {fileID: 64621539492296192}
+  - component: {fileID: 9000391303516858835}
   m_Layer: 16
   m_Name: SM_Bld_OfficeRound_Roof_01
   m_TagString: building
@@ -98,3 +99,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43320002937143690, guid: 6084313b6139c0f4e84bf48f7ee77b50, type: 2}
+--- !u!208 &9000391303516858835
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188786}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 11.526001, y: 30, z: 11.526001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

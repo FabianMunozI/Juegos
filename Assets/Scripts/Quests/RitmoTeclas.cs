@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using GLTF.Schema;
+//using GLTF.Schema;
 using JetBrains.Annotations;
 using TMPro;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
