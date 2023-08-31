@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2369348}
   - component: {fileID: 64570625440722052}
   - component: {fileID: 64874550828923864}
+  - component: {fileID: 5060694026337935553}
   m_Layer: 16
   m_Name: SM_Bld_Village_01
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43847335023890698, guid: 1a863abaab4ce1746a107a6899e9da2c, type: 2}
+--- !u!208 &5060694026337935553
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192570}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.0470002, y: 15, z: 2.026}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2319228}
   - component: {fileID: 64738681453386428}
   - component: {fileID: 64776123418366578}
+  - component: {fileID: 5999847866786374456}
   m_Layer: 16
   m_Name: SM_Env_Tree_04_Snow
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43244268343100470, guid: 4202e1c779c16984eb9f768bea8ccf9d, type: 2}
+--- !u!208 &5999847866786374456
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172638}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.9740001, y: 15, z: 1.3970001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.051000003, y: 0, z: 0.031000001}
+  m_TimeToStationary: 0.5
