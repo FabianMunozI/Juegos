@@ -114,15 +114,15 @@ public class Reforestar : MonoBehaviour
             questGiver.SetActive(false);
             //arbolesSenal.SetActive(true);
             
-            pala = Instantiate(palaPrefab, new Vector3(1,3,-40), Quaternion.Euler(0,0,0));
-            semillas = Instantiate(semillaPrefab, new Vector3(2,3,-40), Quaternion.Euler(0,0,0));
-            regadera = Instantiate(regaderaPrefab, new Vector3(3,3,-40), Quaternion.Euler(0,0,0));
+            pala = Instantiate(palaPrefab, new Vector3(6.5f ,4,-43), Quaternion.Euler(0,0,0));
+            semillas = Instantiate(semillaPrefab, new Vector3(7.5f ,4,-43), Quaternion.Euler(0,0,0));
+            regadera = Instantiate(regaderaPrefab, new Vector3(8.5f ,4,-43), Quaternion.Euler(0,0,0));
             AsignarObjeto(arbolesMision, palaPrefab);
 
             OnOffPlayer();
 
             Vector3 pos = semillas.transform.position - Jugador.transform.position;
-            pos += new Vector3 (-5,5,-5);
+            pos += new Vector3 (3,4,4);
 
             rotOriginal = CamaraO.transform.rotation;
 
