@@ -31,6 +31,12 @@ public class TransitionManager : MonoBehaviour
     public const string SCENE_NAME_GAME_ARTIC = "Artico";
     public const string SCENE_NAME_GAME_BEACH = "Playa";
 
+    public const string SCENE_NAME_GAME_MENU = "Menu";
+    public const string SCENE_NAME_GAME_MENUCIUDAD = "MenuCiudad";
+    public const string SCENE_NAME_GAME_MENUBOSQUE = "MenuBosque";
+    public const string SCENE_NAME_GAME_INTENTO = "intento";
+
+
     public Slider progressSlider;
     public TextMeshProUGUI progressLabel;
     public TextMeshProUGUI transitionInformationLabel;

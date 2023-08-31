@@ -78,5 +78,45 @@ public class transicionMapa : MonoBehaviour
         
     }
 
+    public void LoadMenu(){
+        if(Equals(SceneManager.GetActiveScene().name, "Menu")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENU);
+        }
+        
+        
+    }
+
+    public void LoadMenuCiudad(){
+        if(Equals(SceneManager.GetActiveScene().name, "MenuCiudad")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+        }
+        
+        
+    }
+
+    public void LoadMenuBosque(){
+        if(Equals(SceneManager.GetActiveScene().name, "MenuBosque")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUBOSQUE);
+        }
+        
+        
+    }
+
+    public void LoadIntento(){
+        if(Equals(SceneManager.GetActiveScene().name, "intento")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_INTENTO);
+        }
+        
+        
+    }
+
     
 }
