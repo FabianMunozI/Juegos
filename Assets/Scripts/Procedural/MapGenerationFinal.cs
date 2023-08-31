@@ -16,18 +16,29 @@ public class MapGenerationFinal : MonoBehaviour
     [SerializeField] private GameObject[] rockPrefabs;
     private int nOfRocks;
     [SerializeField] private GameObject[] flowerPrefabs;
+
+    [SerializeField] private GameObject[] arbolesQuemadosPrefabs;
+
+    [SerializeField] private GameObject inicioFinalRio, rioRecto, rioCurva, caminoRecto, caminoCurva, puente, pasto, pastoQuemado;
+
+    [SerializeField] private GameObject pueblo;
+
     private int nOfFlowers;
     [SerializeField] private int width;
     [SerializeField] private int height;
-    [SerializeField] private int townWidth;
-    [SerializeField] private int townHeight;
+    [SerializeField] private int townWidth = 10;
+    [SerializeField] private int townHeight = 7;
     [SerializeField] private int townExit;
     private int roadStart;
     [SerializeField] private int mountainWidth;
     [SerializeField] private int mountainHeight;
     private (int, int) mountainPos; // No se coloca la montana!!!
     [SerializeField] private int maxRoadCornerSparation = 10;
-    
+
+    Transform parent;
+    //Dictionary<Vector3, GameObject> diccionarioObstaculos = new Dictionary<Vector3, GameObject>();
+    //List<GameObject> pisoExtra = new List<GameObject>();
+
 
     private enum TileType
     {
@@ -39,6 +50,7 @@ public class MapGenerationFinal : MonoBehaviour
         Tree,
         Hill,
         Flower,
+        Nada,
         Rock,
         // Rios y caminos, pero especificamos el tipo.
         RiNS, // River North - South
@@ -70,19 +82,38 @@ public class MapGenerationFinal : MonoBehaviour
         firstSplit = height / 4; // Altura del primer tercio
         secondSplit = height / 4 * 3; // Altura del segundo tercio
     }
-    
+
     // Coloca el pueblo en algun lugar
     private void PutTown()
     {
-        int min = townExit;
-        int max = width - townWidth + townExit;
-        roadStart = Random.Range(min, max);
+        // min = townExit;
+        //int max = width - townWidth + townExit;
+
+        CrearIndicador(new Vector3(roadStart, 0, firstSplit - 0.3f), pueblo, Quaternion.Euler(0, 180, 0));
+
+        for(int ancho = 0 ; ancho < 10 ; ancho++)
+        {
+            for(int alto = 0 ; alto < 7 ; alto++)
+            {
+                if(!(ancho == 5 && alto == 4) && !(ancho == 5 && alto == 5) && !(ancho == 5 && alto == 6) && !(ancho == 5 && alto == 7))
+                {
+                    map[(roadStart - 5) + ancho][(firstSplit - 7) + alto] = TileType.Grass;
+                }
+                else
+                {
+                    map[(roadStart - 5) + ancho][(firstSplit - 7) + alto] = TileType.Nada;
+                }
+            }
+        }
     }
 
     // Coloca la montana en el tercer tercio del mapa
     private void PutMountain()
     {
         // I need to understand the mountain prefab first, but this is not yet relevant.
+        int min = townExit;
+        int max = width - townWidth + townExit;
+        roadStart = Random.Range(min, max);
     }
 
     private void ConnectRoad(int startX, int startY, int endX, int endY)
@@ -212,7 +243,7 @@ public class MapGenerationFinal : MonoBehaviour
             {
                 x = Random.Range(3, width - 3);
                 y = Random.Range(firstSplit + 1, secondSplit - 1);
-            } while (XInCorners(rCorners, x) || corners.Contains(y) || map[x][y] == TileType.Road);
+            } while (XInCorners(rCorners, x) || corners.Contains(y) || map[x][y] == TileType.Road || map[x][y] == TileType.Grass);
             rCorners[i] = (x, y);
         }
 
@@ -396,12 +427,151 @@ public class MapGenerationFinal : MonoBehaviour
     }
 
     // Instancia todos los prefabs
-    private void BuildMap()
+    private void BuildMap() // falta inicio rio 
     {
         // TODO
+        int index;
+
+        for (int x = 0; x < map.Length; x++)
+        {
+            for (int y = 0; y < map[x].Length; y++)
+            {
+                var posicion = new Vector3(x, 0, y);
+                switch (map[x][y])
+                {
+                    case TileType.Empty:
+                        break;
+                    case TileType.Nada:
+                        break;
+                    case TileType.Grass:
+                        CrearIndicador(posicion, pasto);
+                        break;
+                    case TileType.River:
+                        break;
+                    case TileType.Road:
+                        break;
+                    case TileType.Bridge:
+                        break;
+                    case TileType.Tree:
+                        index = Random.Range(0,treePrefabs.Length);
+                        CrearIndicador(posicion, treePrefabs[index], new Quaternion(), true);
+                        break;
+                    case TileType.Hill:
+                        break;
+                    case TileType.Flower:
+                        index = Random.Range(0, flowerPrefabs.Length);
+                        CrearIndicador(posicion, flowerPrefabs[index], new Quaternion(), true);
+                        break;
+                    case TileType.Rock:
+                        index = Random.Range(0, rockPrefabs.Length);
+                        CrearIndicador(posicion, rockPrefabs[index], new Quaternion(), true);
+                        break;
+                    case TileType.RiNS:
+                        CrearIndicador(posicion, rioRecto);
+                        break;
+                    case TileType.RiEW:
+                        CrearIndicador(posicion, rioRecto, Quaternion.Euler(0, 90, 0));
+                        break;
+                    case TileType.RiNE:
+                        CrearIndicador(posicion, rioCurva, Quaternion.Euler(0, 180, 0));
+                        break;
+                    case TileType.RiNW:
+                        CrearIndicador(posicion, rioCurva, Quaternion.Euler(0, 90, 0));
+                        break;
+                    case TileType.RiSE:
+                        CrearIndicador(posicion, rioCurva, Quaternion.Euler(0, 270, 0));
+                        break;
+                    case TileType.RiSW:
+                        CrearIndicador(posicion,rioCurva);
+                        break;
+                    case TileType.RoNS:
+                        CrearIndicador(posicion, caminoRecto);
+                        break;
+                    case TileType.RoEW:
+                        CrearIndicador(posicion, caminoRecto, Quaternion.Euler(0, 90, 0));
+                        break;
+                    case TileType.RoNE:
+                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva, Quaternion.Euler(0, 180, 0));
+                        break;
+                    case TileType.RoNW:
+                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva, Quaternion.Euler(0, 90, 0));
+                        break;
+                    case TileType.RoSE:
+                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva, Quaternion.Euler(0, 270, 0));
+                        break;
+                    case TileType.RoSW:
+                        CrearIndicador(posicion + new Vector3(0, -0.1f, 0), caminoCurva);
+                        break;
+                    case TileType.BNS:
+                        CrearIndicador(posicion, puente, new Quaternion(), false, true);
+                        break;
+                    case TileType.BEW:
+                        CrearIndicador(posicion, caminoRecto, Quaternion.Euler(0, 90, 0), false, true);
+                        break;
+                    case TileType.BGrass:
+                        CrearIndicador(posicion, pastoQuemado);
+                        break;
+                    case TileType.BTree:
+                        index = Random.Range(0, arbolesQuemadosPrefabs.Length);
+                        if (index == 1)
+                        {
+                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270,0,0), false, false, true, true);
+                        }
+                        else
+                        {
+                            CrearIndicador(posicion, arbolesQuemadosPrefabs[index], new Quaternion(), false, false, true);
+                        }
+                        break;
+                    case TileType.BFlower:
+                        index = Random.Range(0, arbolesQuemadosPrefabs.Length);
+                        if (index == 1)
+                        {
+                            CrearIndicador(posicion + new Vector3(0, 0.58f, 0), arbolesQuemadosPrefabs[index], Quaternion.Euler(270, 0, 0), false, false, true, true);
+                        }
+                        else
+                        {
+                            CrearIndicador(posicion, arbolesQuemadosPrefabs[index], new Quaternion(), false, false, true);
+                        }
+                        break;
+                }
+            }
+        }
+
     }
 
-    
+    private void CrearIndicador(Vector3 position, GameObject prefab, Quaternion rotation = new Quaternion(), bool objet = false, bool puente = false, bool quemado = false, bool quemaDos = false)
+    {
+        var placePosition = position + new Vector3(.5f, .5f, .5f);
+        if (objet)
+        {
+            var elemento = Instantiate(pasto, placePosition, new Quaternion());
+            elemento.transform.parent = parent;
+            //pisoExtra.Add(elemento);
+
+        }
+        if(puente)
+        {
+            var elemento = Instantiate(rioRecto, placePosition, rotation);
+            elemento.transform.parent = parent;
+            //pisoExtra.Add(elemento);
+        }
+        if (quemado)
+        {
+            if (quemaDos)
+            {
+                placePosition = placePosition - new Vector3(0, .58f, 0);
+            }
+            var elemento = Instantiate(pastoQuemado, placePosition, new Quaternion());
+            elemento.transform.parent = parent;
+            //pisoExtra.Add(elemento);
+        }
+        var placementPosition = position + new Vector3(.5f, .5f, .5f);
+        var element = Instantiate(prefab, placementPosition, rotation);
+        element.transform.parent = parent;
+        //diccionarioObstaculos.Add(position, element);
+    }
+
+
 
     private void DrawCircle(int x, int y, Color c, float r = 0.5f, int res = 4)
     {
@@ -420,7 +590,7 @@ public class MapGenerationFinal : MonoBehaviour
 
     }
 
-    private void BurnShitUp()
+    private void BurnShitUp() // agregar mas arboles quemados
     {
         int r = Random.Range(5, 10);
         int cx = Random.Range(5, width - 5);
@@ -432,8 +602,8 @@ public class MapGenerationFinal : MonoBehaviour
                 if ((cx - x) * (cx - x) + (cy - y) * (cy - y) <= r * r + Random.Range(-100, 100))
                 {
                     if (map[x][y] == TileType.Flower)
-                        map[x][y] = TileType.BFlower;
-                    else if (map[x][y] == TileType.Grass)
+                        map[x][y] = TileType.BGrass;
+                    if (map[x][y] == TileType.Grass)
                         map[x][y] = TileType.BGrass;
                     else if (map[x][y] == TileType.Tree)
                         map[x][y] = TileType.BTree;
@@ -446,9 +616,9 @@ public class MapGenerationFinal : MonoBehaviour
     private void GenMap()
     {
         InitializeMap();
-        PutTown();
         PutMountain();
         int[] corners = GenRoad();
+        PutTown();
         GenRiver(corners);
         ProcessBridgeDirections();
         ProcessRoadDirections();

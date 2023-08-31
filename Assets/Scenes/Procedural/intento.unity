@@ -341,7 +341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296498496
 GameObject:
@@ -569,50 +569,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &661223614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 661223616}
-  - component: {fileID: 661223615}
-  m_Layer: 0
-  m_Name: Grilla
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &661223615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661223614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b423f8076f956f41845520b6ba47366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &661223616
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661223614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23753738, y: -0.030512333, z: -0.9079824}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964443902
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +679,7 @@ RectTransform:
   m_Children:
   - {fileID: 1644440824}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -788,7 +744,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106180136
 GameObject:
@@ -1111,13 +1067,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hillPrefabs: []
-  treePrefabs: []
-  rockPrefabs: []
-  flowerPrefabs: []
+  treePrefabs:
+  - {fileID: 102970, guid: 41b9211ee5131e948b05474cdc4c3a77, type: 3}
+  - {fileID: 142298, guid: 29950e74db15cdc41b90256d7cb655df, type: 3}
+  - {fileID: 103806, guid: ae424794996198c41b77c817a6422ed8, type: 3}
+  rockPrefabs:
+  - {fileID: 117394, guid: 4348308f6d8c0e5438f4c1d060124562, type: 3}
+  - {fileID: 167394, guid: 424d472b4f1c25842a310627aececc58, type: 3}
+  flowerPrefabs:
+  - {fileID: 135202, guid: 80cb739ec032865429780dc7dac45ab2, type: 3}
+  - {fileID: 142994, guid: 1335fd58fdaf0c941a43eb47bf2733ee, type: 3}
+  - {fileID: 105602, guid: 30b1189a63a7c3346a25e57731416aa4, type: 3}
+  - {fileID: 185154, guid: a39f88156b88e6e439703190c23aee11, type: 3}
+  - {fileID: 145908, guid: b88e2f051ddce0445835a6c7bc52c2f5, type: 3}
+  arbolesQuemadosPrefabs:
+  - {fileID: 3647266850707130792, guid: 71efccb2fe0bc704db6c1482918b1908, type: 3}
+  - {fileID: 3222341624045737890, guid: 550aebe9ed0d31b47b8843e80fcb8809, type: 3}
+  - {fileID: 627146647910667545, guid: 7dbc80606fdb68448915d0ac07136b3a, type: 3}
+  inicioFinalRio: {fileID: 4721563843425448930, guid: 834d014e41075584a9c664ba48105441, type: 3}
+  rioRecto: {fileID: 4721563843425448930, guid: 2169e6dbe667b5240a68d3dd7c0d72ec, type: 3}
+  rioCurva: {fileID: 9214126012978358417, guid: 9b460e7e7a6805845968113abeb40fa0, type: 3}
+  caminoRecto: {fileID: 8149354005437741072, guid: 7cbc43da47aa6c542bbb4cc232d7a931, type: 3}
+  caminoCurva: {fileID: 5122180779446692970, guid: 91cba36200c417145892e802a6fef22b, type: 3}
+  puente: {fileID: 183838, guid: 8e4943a47878ea64cbbf28b26bea2da2, type: 3}
+  pasto: {fileID: 152366, guid: 0f350c81d2a4fe6478de08d2b80f9732, type: 3}
+  pastoQuemado: {fileID: 152366, guid: c0f2950057e53d649bbe48d60fb5e1b8, type: 3}
+  pueblo: {fileID: 3328181010983008572, guid: 7a51c1a45203af543a9e9021b0a28bfd, type: 3}
   width: 100
   height: 100
-  townWidth: 0
-  townHeight: 0
+  townWidth: 10
+  townHeight: 7
   townExit: 0
   mountainWidth: 0
   mountainHeight: 0
@@ -1135,7 +1114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550161300
 GameObject:
@@ -1319,7 +1298,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730810878
 GameObject:
@@ -1511,5 +1490,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
