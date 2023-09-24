@@ -102,7 +102,7 @@ Material:
     - _maxHeight: 1
     - _minHeight: 0
     - _testScale: 1
-    - testScale: 1
+    - testScale: 7.29
     - testTextureScale: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

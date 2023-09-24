@@ -3537,7 +3537,7 @@ MonoBehaviour:
   heightMapSettings: {fileID: 11400000, guid: 740a13ca91e454c51aeb1f625a396eca, type: 2}
   textureSettings: {fileID: 11400000, guid: addd6b0c4581e4f73b0395a4943b9f57, type: 2}
   viewer: {fileID: 1769655813}
-  mapMaterial: {fileID: 2100000, guid: 7e7251d35103a0d41a14317cd1dcf81d, type: 2}
+  mapMaterial: {fileID: 2100000, guid: 0fe09d884d05833478278bfad09bb050, type: 2}
 --- !u!114 &1571639761
 MonoBehaviour:
   m_ObjectHideFlags: 0
