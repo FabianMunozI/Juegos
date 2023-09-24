@@ -61,6 +61,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TestTexture:
+        m_Texture: {fileID: 2800000, guid: e36d15b65ccd248c19a846616a6767f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _baseTextures:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _testTexture:
+        m_Texture: {fileID: 2800000, guid: e36d15b65ccd248c19a846616a6767f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - testTexture:
         m_Texture: {fileID: 2800000, guid: e36d15b65ccd248c19a846616a6767f9, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -77,16 +89,24 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OutlineWidth: 2
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TestScale: 1
     - _UVSec: 0
+    - _ZTest: 0
     - _ZWrite: 1
-    - testScale: 10.56
+    - _layerCount: 1
+    - _maxHeight: 1
+    - _minHeight: 0
+    - _testScale: 1
+    - testScale: 1
     - testTextureScale: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
