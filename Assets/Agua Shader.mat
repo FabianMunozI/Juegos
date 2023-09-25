@@ -8,10 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Agua Shader
-  m_Shader: {fileID: -6465566751694194690, guid: e747768a9ed69d34a90851e048131b85, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 23339e3a9de9bf347ad4b6db929b240e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -20,6 +20,50 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Text2:
+        m_Texture: {fileID: 2800000, guid: 58db1789dad971b4292731b937bfb87a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Text_1:
+        m_Texture: {fileID: 2800000, guid: dca89c6cf47608a40ae7d6f5f33fc5bd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -35,18 +79,39 @@ Material:
     m_Ints: []
     m_Floats:
     - _Altura_Ola: 0.03
+    - _BumpScale: 1
     - _Contraste_Reflejos: 5
+    - _Cutoff: 0.5
     - _Densidad: 100
     - _Densidad_Ola: 50
     - _Densidad_Reflejos: 100
+    - _Depth: -0.2
+    - _DetailNormalMapScale: 1
+    - _Displacement: 0.05
+    - _DstBlend: 0
     - _Float: 1
     - _Float_1: 7
     - _Float_2: 5
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _Normal_Stre: 0.17
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Smoothness: 0.459
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Strength: 1.81
+    - _UVSec: 0
     - _VelocidadOla: 0.001
     - _Velocidad_Ola: 0.01
     - _Velocidad_Reflejos: 1
+    - _ZWrite: 1
     - _aaa: 1
     - _altura: 0.05
     - _densidadaltura: 200
@@ -56,6 +121,9 @@ Material:
     - _Color_1: {r: 0.740566, g: 1, b: 0.9715895, a: 0}
     - _Color_Base: {r: 0.32809716, g: 0.76341635, b: 0.9528302, a: 0}
     - _Color_Reflejos: {r: 1, g: 1, b: 1, a: 0}
+    - _DepthColor: {r: 0.22027406, g: 0.70344377, b: 0.8490566, a: 0.69411767}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 0.40392157}
   m_BuildTextureStacks: []
 --- !u!114 &7626152045815501011
 MonoBehaviour:

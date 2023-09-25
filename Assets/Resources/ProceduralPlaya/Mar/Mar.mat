@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mar
-  m_Shader: {fileID: -6465566751694194690, guid: 3db25ad4cdf489e45a0c28aa74dbcd9d, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e8fe4455c754a9e4db74a54618b6d56b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -52,6 +52,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Text2:
+        m_Texture: {fileID: 2800000, guid: dca89c6cf47608a40ae7d6f5f33fc5bd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Text_1:
+        m_Texture: {fileID: 2800000, guid: 58db1789dad971b4292731b937bfb87a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -85,30 +101,48 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth: -0.12
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Displacement: 6.79
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Espuma_Libre_En_Mar: 2
+    - _Espuma_Objetos: 4
+    - _FoamAmount: 2.3
+    - _FoamCutoff: 1.01
+    - _FoamScale: 3000
+    - _FoamSpeed: 0.001
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _Normal_Str: 0
+    - _Normal_Stre: 5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Strength: 0.17
     - _Surface: 0
+    - _WaveAmplitude: 2
+    - _WaveScale: 100
+    - _WaveSpeed: 400
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DeepColor: {r: 0.15801886, g: 0.39867216, b: 0.5, a: 1}
+    - _DepthColor: {r: 0.29307583, g: 0.5628718, b: 0.6981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.53092736, g: 0.84230626, b: 0.9150943, a: 0.7607843}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2379804757108948251
