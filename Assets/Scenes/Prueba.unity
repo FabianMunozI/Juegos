@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c1408f7c2008243bde8cd7de354b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 34243
+  seed: 12345
   octaves: 5
   freq: 1
   redistribution: 0.6
