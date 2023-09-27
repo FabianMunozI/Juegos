@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3753369507926638961, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: m_Name
-      value: Player 1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638972, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: m_RootOrder
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c1408f7c2008243bde8cd7de354b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 124534
+  seed: 34243
   octaves: 5
   freq: 1
   redistribution: 0.6
@@ -296,6 +296,9 @@ MonoBehaviour:
   cellsWidth: 15
   cellsHeight: 15
   cellsSize: 7
+  cantidadBasura: 1000
+  cantidadPersonas: 20
+  cantidadnubes: 20
 --- !u!1 &1728174450
 GameObject:
   m_ObjectHideFlags: 0
