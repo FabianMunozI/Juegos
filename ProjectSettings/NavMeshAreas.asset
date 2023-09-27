@@ -21,8 +21,8 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
-  - name: 
-    cost: 1
+  - name: NpcTala1Bosque
+    cost: 3
   - name: 
     cost: 1
   - name: 
