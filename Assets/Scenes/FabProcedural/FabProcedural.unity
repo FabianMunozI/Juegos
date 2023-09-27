@@ -2308,8 +2308,16 @@ PrefabInstance:
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: jumpforce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: speedUsar
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: distance_to_ground
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638961, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: m_Name
@@ -3529,9 +3537,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderLODIndex: 0
   detailLevels:
-  - lod: 1
+  - lod: 2
     visibleDstThreshold: 500
-  - lod: 1
+  - lod: 2
     visibleDstThreshold: 500
   meshSettings: {fileID: 11400000, guid: 46ff57af49f874fe2bd2a350a99d063c, type: 2}
   heightMapSettings: {fileID: 11400000, guid: 740a13ca91e454c51aeb1f625a396eca, type: 2}
