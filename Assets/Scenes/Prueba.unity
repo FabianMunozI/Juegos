@@ -296,7 +296,7 @@ MonoBehaviour:
   cellsWidth: 15
   cellsHeight: 15
   cellsSize: 7
-  cantidadBasura: 1000
+  cantidadBasura: 300
   cantidadPersonas: 20
   cantidadnubes: 20
 --- !u!1 &1728174450

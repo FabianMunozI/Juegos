@@ -95,6 +95,7 @@ public class ProceduralPlaya : MonoBehaviour
         Instantiate(planoAgua, new Vector3(0,0,0), Quaternion.identity);
 
         PlaceBeachDetails();
+        PlaceSeaTrash();
 
         nubes = Resources.LoadAll("ProceduralPlaya/Prefabs/Nubes");
 
@@ -111,7 +112,7 @@ public class ProceduralPlaya : MonoBehaviour
 
         if (nubesActuales < cantidadnubes)
         {
-            nubesLista.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(-1000f, 100f, Random.Range(-200,200)), Quaternion.identity));
+            nubesLista.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(-1000f, 100f, Random.Range(-400,400)), Quaternion.identity));
             nubesActuales++;
         } else{
 
@@ -512,7 +513,7 @@ public class ProceduralPlaya : MonoBehaviour
         GameObject cuboBase = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Plaza");
         UnityEngine.Object[] detallesPlaza = Resources.LoadAll("ProceduralPlaya/Prefabs/Terreno");
 
-        float prob_palmera = 0.1f;
+        float prob_palmera = 0.2f;
 
         int plazas = 3;
         float altura = 6f;
@@ -691,6 +692,27 @@ public class ProceduralPlaya : MonoBehaviour
             }
         }
         
+    }
+
+    void PlaceSeaTrash()
+    {
+        int nBasuraAgua = 1000;
+        UnityEngine.Object[] basuraAgua = Resources.LoadAll("ProceduralPlaya/Prefabs/DetallesPlaya/BasuraMar");
+        
+        for (int i = 0; i < nBasuraAgua; i++)
+        {
+            Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
+
+            // Perform a raycast using the ray.
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y < 0.5f)
+                {
+                    Vector3 pos = new Vector3(hit.point.x, 0, hit.point.z);
+                    Instantiate(basuraAgua[Random.Range(0,basuraAgua.Length)], pos, Quaternion.Euler(0,Random.Range(0,360), 0));
+                }
+            }
+        }
     }
 
     void PlaceBeachDetails()

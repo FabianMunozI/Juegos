@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7189886342757628483
+--- !u!1 &5879878137511885474
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7434580140429931156}
-  - component: {fileID: 4304102348932995422}
-  - component: {fileID: 4703468115994256058}
-  - component: {fileID: 4043545040346147134}
+  - component: {fileID: 6544388521468846104}
+  - component: {fileID: 7889617404622565309}
+  - component: {fileID: 5375462266367155063}
+  - component: {fileID: 2692621421339849361}
+  - component: {fileID: 3775442116685843849}
   m_Layer: 0
-  m_Name: SM_Env_GroundMounds_02(Clone)
+  m_Name: Tire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7434580140429931156
+--- !u!4 &6544388521468846104
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7189886342757628483}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 366.34, y: 14.700001, z: 230.56}
+  m_GameObject: {fileID: 5879878137511885474}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -85.03657, y: 2.6954231, z: 12.947666}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4304102348932995422
+--- !u!33 &7889617404622565309
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7189886342757628483}
-  m_Mesh: {fileID: 4300000, guid: 423c4c0e14dc7c44296e30945f1061c2, type: 3}
---- !u!23 &4703468115994256058
+  m_GameObject: {fileID: 5879878137511885474}
+  m_Mesh: {fileID: 548590712551798673, guid: 3b74b03a8c5711a44b3bb6ae43a7b1bf, type: 3}
+--- !u!23 &5375462266367155063
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7189886342757628483}
+  m_GameObject: {fileID: 5879878137511885474}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5d804242f6affb41a54f303b2ac8b75, type: 2}
+  - {fileID: 2100000, guid: ea4570a7b428e3d4dbdce4911be14bff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,17 +85,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4043545040346147134
-MeshCollider:
+--- !u!65 &2692621421339849361
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7189886342757628483}
+  m_GameObject: {fileID: 5879878137511885474}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 423c4c0e14dc7c44296e30945f1061c2, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.5908506, y: 0.24411054, z: 0.5908507}
+  m_Center: {x: -0.000000014901161, y: 0, z: 0}
+--- !u!95 &3775442116685843849
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5879878137511885474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc73cd5d0dbd6c643a92cb552f7aa8b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
