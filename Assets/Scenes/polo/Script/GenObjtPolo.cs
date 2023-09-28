@@ -8,6 +8,7 @@ public class GenObjtPolo : MonoBehaviour
     public GameObject[] objetos;
     public GameObject[] hielos;
     public GameObject[] glaciares;
+    public GameObject[] nubes;
     public int[] objetosCantidad;
     public int cantidadObjetosPorTipo;
 
@@ -19,6 +20,10 @@ public class GenObjtPolo : MonoBehaviour
     float xHielomin, zHielomin, xHielomax, zHielomax;
     int cantidadHieloRand, cantidadGlaciarRand;
     int auxHielo, auxGlaciar; //eleccion random de prefabs
+
+    private int cantidadNubes, nubesActuales;
+    private List<GameObject> listaNubes = new List<GameObject>();
+
     void Start()
     {
         zmin = -1100;
@@ -209,11 +214,38 @@ public class GenObjtPolo : MonoBehaviour
             }
         }
 
+        //Nubes
+        cantidadNubes = Random.Range(16, 20);
+        nubesActuales = 0;
+
+        for (int i = 0; i < cantidadNubes; i++)
+        {
+            listaNubes.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-1400, 1400), Random.Range(215, 260), Random.Range(-1500, 1500)), Quaternion.identity));
+            nubesActuales++;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (nubesActuales < cantidadNubes)
+        {
+            listaNubes.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-1500, -1250), Random.Range(215, 260), Random.Range(-1500, 1500)), Quaternion.identity));
+            nubesActuales++;
+        }
+        else
+        {
+
+            for (int i = listaNubes.Count - 1; i >= 0; i--)
+            {
+                if (listaNubes[i].transform.position.x > 1500)
+                {
+                    DestroyImmediate(listaNubes[i]);
+                    listaNubes.RemoveAt(i);
+                    nubesActuales--;
+                }
+            }
+
+        }
     }
 }

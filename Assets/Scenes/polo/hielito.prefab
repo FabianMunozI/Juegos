@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1996566885122264903}
   - component: {fileID: 1996566885123349155}
   - component: {fileID: 1971668504824666917}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: hielito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
