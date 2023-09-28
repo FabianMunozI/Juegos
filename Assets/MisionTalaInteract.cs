@@ -12,20 +12,31 @@ public class MisionTalaInteract : Interactable
 
     [HideInInspector]
     public GameObject NoHayMision;
+    public GameObject FinMision;
     MisionTala misionTalaScript;
 
     public GameObject[] ListaElementosActivar;
 
     GameObject player;
     public bool bandera= true;
+    public bool bandera2EntregarMision= false;
+
+    public GameObject NpcInfoTala;
+    GameObject activarObjetoCantArboles;
     // Start is called before the first frame update
     void Start()
     {
+        NpcInfoTala= GameObject.Find("NpcInfoTala");
+
         player = GameObject.Find("Player");
         misionTalaScript = GetComponent<MisionTala>();
         CanvasMisionTala = GameObject.Find("MisionTala");
         preguntarMision = CanvasMisionTala.transform.GetChild(0).gameObject;
         NoHayMision = CanvasMisionTala.transform.GetChild(1).gameObject;
+
+        FinMision= CanvasMisionTala.transform.GetChild(5).gameObject;
+
+        activarObjetoCantArboles = CanvasMisionTala.transform.GetChild(7).gameObject;
     }
 
      public override void Interact()
@@ -35,7 +46,15 @@ public class MisionTalaInteract : Interactable
             preguntarMision.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             ScriptsPlayer(false);
-        }else{
+        }else if(bandera2EntregarMision){
+            Invoke("npcGenerarFin",0.25f);
+            misionTalaScript.MisionTalaObject.transform.GetChild(4).gameObject.SetActive(false);
+            gameObject.SetActive(false);
+
+            activarObjetoCantArboles.SetActive(true);
+            activarObjetoCantArboles.GetComponent<scriptCantArboles>().cantidad = misionTalaScript.tiempoMision/3;
+        }
+        else{
             NoHayMision.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             ScriptsPlayer(false);
@@ -71,5 +90,9 @@ public class MisionTalaInteract : Interactable
 
     public void cambiarFuncInteract(){
         bandera = false;
+    }
+
+    void npcGenerarFin(){
+        NpcInfoTala.transform.GetChild(0).gameObject.SetActive(true);
     }
 }

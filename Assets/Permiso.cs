@@ -33,15 +33,23 @@ public class Permiso : Interactable
             misionTala.permisoUno = true;
             gameObject.SetActive(false);
             this.transform.parent.parent.parent.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+            misionTala.Objetivos.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
         }
         else if(tipo==1){
             misionTala.permisoDos = true;
             gameObject.SetActive(false);
             this.transform.parent.parent.parent.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(true);
+            misionTala.Objetivos.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
         }
         else if(tipo==2){
             misionTala.permisoTres = true;
             gameObject.SetActive(false);
+            misionTala.Objetivos.transform.GetChild(3).GetChild(0).gameObject.SetActive(true);
+            misionTala.tiempoParar = misionTala.tiempoMision+3f;
+
+            misionTala.teEstanBuscandoObject.SetActive(true);
+            misionTala.ScriptsPlayer(false);
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }

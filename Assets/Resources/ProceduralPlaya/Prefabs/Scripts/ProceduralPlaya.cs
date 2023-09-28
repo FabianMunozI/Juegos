@@ -65,6 +65,7 @@ public class ProceduralPlaya : MonoBehaviour
             Random.seed = Random.Range(0,10000);
         } else
         Random.seed = seed;
+        
 
         contenedorBasura = new GameObject("ContenedorBasura");
         contenedorCiudad = new GameObject("contenedorCiudad");
@@ -154,6 +155,25 @@ public class ProceduralPlaya : MonoBehaviour
 
         Invoke("GenerarGaviotasVolando", Random.Range(0,5)); // En proceso
 
+        SpawnTransform();
+
+    }
+
+    void SpawnTransform()
+    {
+        GameObject pl = GameObject.Find("/Player");
+        bool pos_encontrada = false;
+        while(!pos_encontrada)
+        {
+            int x_r = Random.Range(1,cellsWidth - 2);
+            int y_r = Random.Range(1,cellsHeight - 2);
+
+            if(!grid.GetCellDontBuild(x_r, y_r))
+            {
+                pl.transform.position = grid.GetCellCenter(x_r, y_r) + new Vector3(0, 5f, 0);
+                pos_encontrada = true;
+            }
+        }
     }
 
     void GenerarGaviotasVolando()
