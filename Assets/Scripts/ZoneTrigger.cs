@@ -25,12 +25,19 @@ public class ZoneTrigger : MonoBehaviour
         }
     }
     public void OnTriggerEnter(Collider other) {
-        onTriggerEnter.Invoke();
-        playerInZone = true;
+        if(other.CompareTag("Player")){
+            onTriggerEnter.Invoke();
+            playerInZone = true;
+        }
+
+        
     }
 
     public void OnTriggerExit(Collider other) {
-        onTriggerExit.Invoke();
-        playerInZone = false;
+        if(other.CompareTag("Player")){
+            onTriggerExit.Invoke();
+            playerInZone = false;
+        }
+        
     }
 }

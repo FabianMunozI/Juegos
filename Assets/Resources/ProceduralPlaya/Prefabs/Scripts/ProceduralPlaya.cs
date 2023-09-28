@@ -148,7 +148,7 @@ public class ProceduralPlaya : MonoBehaviour
 
         }
 
-        GenerarGaviotasVolando(); // En proceso
+        //GenerarGaviotasVolando(); // En proceso
 
     }
 
