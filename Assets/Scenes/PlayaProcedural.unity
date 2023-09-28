@@ -4191,6 +4191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3753369506578422302, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: Runspeed
       value: 9
@@ -4855,7 +4859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c1408f7c2008243bde8cd7de354b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 125
+  seed: -1
   octaves: 5
   freq: 1
   redistribution: 0.6

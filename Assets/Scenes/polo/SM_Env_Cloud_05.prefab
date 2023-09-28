@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1289255916792998015}
   - component: {fileID: 1289255916795961269}
   - component: {fileID: 1289255916794888183}
-  - component: {fileID: 6193393354716908288}
+  - component: {fileID: -3931630044480384742}
   m_Layer: 0
   m_Name: SM_Env_Cloud_05
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6193393354716908288
+--- !u!114 &-3931630044480384742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,10 +93,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1289255916792932281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267a9019b88a7e742b05a09d20d2b132, type: 3}
+  m_Script: {fileID: 11500000, guid: f785cebdcbda4514a84221029fb5cc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 1048576
-  offSet: {x: 0, y: 0, z: 0}
