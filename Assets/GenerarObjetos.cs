@@ -20,6 +20,11 @@ public class GenerarObjetos : MonoBehaviour
         zmax = transform.GetChild(1).position.z;
         xmax = transform.GetChild(1).position.x;
 
+        Debug.Log("zmin" + zmin);
+        Debug.Log("xmin" + xmin);
+        Debug.Log("zmax" + zmax);
+        Debug.Log("xmax" + xmax);
+
         for (var i = 0; i < objetos.Length; i++)
         {
             for (var a = 0; a < objetosCantidad[i]; a++)

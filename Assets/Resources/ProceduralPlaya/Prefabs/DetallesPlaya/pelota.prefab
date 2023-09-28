@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4255064078145828093}
   - component: {fileID: 3203219944415443492}
   - component: {fileID: -8370265982218537196}
+  - component: {fileID: 4424469515640152034}
   m_Layer: 0
   m_Name: pelota
   m_TagString: Untagged
@@ -114,3 +115,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.022729762
   m_Center: {x: 0, y: 0, z: -0.0000020582227}
+--- !u!95 &4424469515640152034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309777388986668328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ccf1da953e1a524f9d7df8d873305e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

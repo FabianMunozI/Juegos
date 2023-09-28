@@ -16,7 +16,7 @@ public enum cellType
 public class Cell 
 {
     public cellType cT;
-    public bool isBuildable;
+    public bool dontBuild = false;
     public int height = 0;
 
 }
@@ -68,6 +68,16 @@ public class Grid {
     public void SetCellHeight(int x, int y, int height)
     {
         gridArray[x,y].height = height;
+    }
+
+    public void SetCellDontBuild(int x, int y)
+    {
+        gridArray[x,y].dontBuild = true;
+    }
+
+    public bool GetCellDontBuild(int x, int y)
+    {
+        return gridArray[x,y].dontBuild;
     }
 
 
