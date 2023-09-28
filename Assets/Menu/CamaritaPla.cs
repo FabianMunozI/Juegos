@@ -9,7 +9,7 @@ public class CamaritaPla : MonoBehaviour
     void Start()
     {
         //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALPLAYA);
-        SceneManager.LoadScene("PlayaProcedural", LoadSceneMode.Additive);
+        SceneManager.LoadScene("pruebaplaya", LoadSceneMode.Additive);
     }
 
 }

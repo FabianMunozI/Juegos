@@ -60,6 +60,10 @@ public class ProceduralPlaya : MonoBehaviour
 
     void Start()
     {   
+        if (seed == -1)
+        {
+            Random.seed = Random.Range(0,10000);
+        } else
         Random.seed = seed;
 
         contenedorBasura = new GameObject("ContenedorBasura");

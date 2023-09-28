@@ -8,7 +8,7 @@ public class CamaritaArt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("Polo", LoadSceneMode.Additive);
+        SceneManager.LoadScene("pruebaartico", LoadSceneMode.Additive);
     }
 
 }

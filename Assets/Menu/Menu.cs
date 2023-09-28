@@ -76,7 +76,7 @@ public class Menu : MonoBehaviour
     {
         //Decidir que escena vamos a cargar lol
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALPLAYA);
-        //SceneManager.LoadScene("intento");
+        //SceneManager.LoadScene("PlayaProcedural");
     }
     public void ProceduralDesierto()
     {

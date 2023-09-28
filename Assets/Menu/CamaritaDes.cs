@@ -8,7 +8,7 @@ public class CamaritaDes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("FabProcedural", LoadSceneMode.Additive);
+        SceneManager.LoadScene("pruebadesierto", LoadSceneMode.Additive);
     }
 
 }
