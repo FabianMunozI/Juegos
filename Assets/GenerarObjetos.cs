@@ -32,7 +32,7 @@ public class GenerarObjetos : MonoBehaviour
                 float randomValueX = Random.Range(xmin, xmax);
                 float randomValueZ = Random.Range(zmin, zmax);
 
-                Instantiate(objetos[i], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+                Instantiate(objetos[i], new Vector3(randomValueX, 100, randomValueZ), Quaternion.identity);
             }
             
         }
