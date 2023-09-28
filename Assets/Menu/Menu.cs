@@ -16,6 +16,21 @@ public class Menu : MonoBehaviour
         //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
         SceneManager.LoadScene("MenuCiudad");
     }
+    public void MenuButtonArtico ()
+    {
+        //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+        SceneManager.LoadScene("MenuArtico");
+    }
+    public void MenuButtonDesierto ()
+    {
+        //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+        SceneManager.LoadScene("MenuDesierto");
+    }
+    public void MenuButtonPlaya ()
+    {
+        //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+        SceneManager.LoadScene("MenuPlaya");
+    }
     // Update is called once per frame
     public void OnQuitButton ()
     {
@@ -50,5 +65,23 @@ public class Menu : MonoBehaviour
         //Decidir que escena vamos a cargar lol
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALNEGRO);
         //SceneManager.LoadScene("ProceduralNegro");
+    }
+    public void ProceduralArtico()
+    {
+        //Decidir que escena vamos a cargar lol
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALARTICO);
+        //SceneManager.LoadScene("intento");
+    }
+    public void ProceduralPlaya()
+    {
+        //Decidir que escena vamos a cargar lol
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALPLAYA);
+        //SceneManager.LoadScene("intento");
+    }
+    public void ProceduralDesierto()
+    {
+        //Decidir que escena vamos a cargar lol
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALDESIERTO);
+        //SceneManager.LoadScene("intento");
     }
 }
