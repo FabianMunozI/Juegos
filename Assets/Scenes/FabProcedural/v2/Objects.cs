@@ -6,6 +6,7 @@ public class Objects : MonoBehaviour
 {
     void Start()
     {
+        transform.position = new Vector3(transform.position.x, 100f, transform.position.z);
         Invoke("FindLand",0.5f);
         //FindLand();
     }

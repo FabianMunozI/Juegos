@@ -28,7 +28,7 @@ public class TransitionManager : MonoBehaviour
     public const string SCENE_NAME_MAIN_MENU = "MainScene";
     public const string SCENE_NAME_GAME_CITY = "Ciudad";
     public const string SCENE_NAME_GAME_FOREST = "Bosque";
-    public const string SCENE_NAME_GAME_DESERT = "Desierto";
+    public const string SCENE_NAME_GAME_DESERT = "FabProcedural";
     public const string SCENE_NAME_GAME_ARTIC = "Artico";
     public const string SCENE_NAME_GAME_BEACH = "Playa";
 

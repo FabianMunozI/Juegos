@@ -99,3 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37cf64c26c9e344b991ea7d36e32568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6915318869866222981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739829228842855675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3862e0a5b11a5049b939b5736e80044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCambioDeMapa: {fileID: 0}
+  player: {fileID: 0}
