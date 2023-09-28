@@ -22,6 +22,7 @@ public class MisionTalaInteract : Interactable
     public bool bandera2EntregarMision= false;
 
     public GameObject NpcInfoTala;
+    GameObject activarObjetoCantArboles;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,8 @@ public class MisionTalaInteract : Interactable
         NoHayMision = CanvasMisionTala.transform.GetChild(1).gameObject;
 
         FinMision= CanvasMisionTala.transform.GetChild(5).gameObject;
+
+        activarObjetoCantArboles = CanvasMisionTala.transform.GetChild(7).gameObject;
     }
 
      public override void Interact()
@@ -47,6 +50,9 @@ public class MisionTalaInteract : Interactable
             Invoke("npcGenerarFin",0.25f);
             misionTalaScript.MisionTalaObject.transform.GetChild(4).gameObject.SetActive(false);
             gameObject.SetActive(false);
+
+            activarObjetoCantArboles.SetActive(true);
+            activarObjetoCantArboles.GetComponent<scriptCantArboles>().cantidad = misionTalaScript.tiempoMision/3;
         }
         else{
             NoHayMision.SetActive(true);

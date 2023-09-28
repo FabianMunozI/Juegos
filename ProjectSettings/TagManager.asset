@@ -15,6 +15,7 @@ TagManager:
   - tile
   - publicoritmo
   - puebloDesierto
+  - npcTala
   layers:
   - Default
   - TransparentFX
