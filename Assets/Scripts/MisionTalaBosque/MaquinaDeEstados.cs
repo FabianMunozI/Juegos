@@ -11,7 +11,7 @@ public class MaquinaDeEstados : MonoBehaviour
     public MonoBehaviour EstadoPersecusion;
     public MonoBehaviour EstadoInicial;
 
-    private MonoBehaviour EstadoActual;
+    public MonoBehaviour EstadoActual;
 
     public MeshRenderer MeshRendererIndicador;
     // Start is called before the first frame update

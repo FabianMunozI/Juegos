@@ -25,8 +25,8 @@ public class ControladorVision : MonoBehaviour
         {
             vectorDireccion = Ojos.forward;
         }
-
+        Debug.DrawRay(Ojos.position, vectorDireccion * rangoVision, Color.red);
         return Physics.Raycast(Ojos.position, vectorDireccion, out hit, rangoVision) && hit.collider.CompareTag("Player");
     }
-    
+
 }
