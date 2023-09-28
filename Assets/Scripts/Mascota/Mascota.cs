@@ -40,6 +40,7 @@ public class Mascota : MonoBehaviour
         mascota = GameObject.Find("CMascota").transform.GetChild(0).gameObject;
 
         zonasGeneracion = GameObject.Find("ZonasGeneracionMascota");
+        zonasGeneracion.SetActive(false);
         camaraPlayer = GameObject.Find("Player").transform.GetChild(0).gameObject;
 
 
@@ -62,6 +63,7 @@ public class Mascota : MonoBehaviour
     void Update()
     {
         if(!mascotaUp && Input.GetKeyDown(KeyCode.G)){ //generar mascota
+            zonasGeneracion.SetActive(true);
             for(int i=0; i<4; i++){
                 if(zonasGeneracion.transform.GetChild(i).GetComponent<SinColision>().Disponible==0){
                     generarAqui = zonasGeneracion.transform.GetChild(i);
@@ -77,7 +79,7 @@ public class Mascota : MonoBehaviour
 
                 mascotaUp=false;
             }
-
+            zonasGeneracion.SetActive(false);
 
         }else if(mascotaUp && Input.GetKeyDown(KeyCode.G)){ // ocultar mascota
             if(!eresLaMascota){
@@ -89,7 +91,7 @@ public class Mascota : MonoBehaviour
                 Debug.Log("debes dejar de ser la mascota 1ro");
                 //esto hay que hacerlo por pantalla
             }
-            
+            zonasGeneracion.SetActive(false);
         }
 
         if(mascotaUp && Input.GetKeyDown(KeyCode.Tab)){
@@ -126,7 +128,7 @@ public class Mascota : MonoBehaviour
                 mascota.SetActive(false);
 
                 mascotaUp=!mascotaUp;
-
+                zonasGeneracion.SetActive(false);
             }
 
             

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EstadoPatrulla : MonoBehaviour
 {
     public Transform[] WayPoint;
-    public Color colorEstado;
+    public Color ColorEstado;
 
     private ControlladorNavMesh controladorNavMesh;
     private int siguienteWayPoint;
@@ -38,7 +38,7 @@ public class EstadoPatrulla : MonoBehaviour
 
     void OnEnable() {
         //siguienteWayPoint = 0;
-        maquinaDeEstados.MeshRendererIndicador.material.color = colorEstado;
+        maquinaDeEstados.MeshRendererIndicador.material.color = ColorEstado;
         ActualizarWayPointDestino();
     }
 
@@ -47,7 +47,7 @@ public class EstadoPatrulla : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Player")){
+        if(other.CompareTag("Player") && enabled){
             maquinaDeEstados.ActivarEstado(maquinaDeEstados.EstadoAlerta);
         }
     }
