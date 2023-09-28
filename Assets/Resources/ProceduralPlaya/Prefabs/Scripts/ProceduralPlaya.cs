@@ -56,6 +56,8 @@ public class ProceduralPlaya : MonoBehaviour
     private int nubesActuales = 0;
     private List<GameObject> nubesLista = new List<GameObject>();
 
+    private List<Vector2> vectorProhibido = new List<Vector2>();
+
     void Start()
     {   
         Random.seed = seed;
@@ -103,7 +105,49 @@ public class ProceduralPlaya : MonoBehaviour
         {
             nubesLista.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-400,400), Random.Range(90,120), Random.Range(-400,400)), Quaternion.identity));
             nubesActuales ++;
+        }  
+
+
+        // Terrenos extras
+        for (int i = 0; i < Random.Range(3,6); i++)
+        {
+            int posx = 0;
+            int posy = 0;
+            if (i == 0)
+            {
+                posx = Random.Range(-400,-600);
+                posy = Random.Range(-300,300);
+            } else if(i == 1)
+            {
+                posx = Random.Range(-300,300);
+                posy = Random.Range(-200,400);
+            } else if(i == 2)
+            {
+                posx = Random.Range(-300,300);
+                posy = Random.Range(200,400);
+            } else if(i == 3)
+            {
+                posx = Random.Range(400,600);
+                posy = Random.Range(-200,400);
+            } else
+            {
+                int a = Random.Range(0,1);
+                if (a == 0)
+                {
+                    posx = Random.Range(400,600);
+                    posy = Random.Range(-200,400);
+                } else{
+                    posx = Random.Range(-300,300);
+                    posy = Random.Range(-200,400);
+                }
+            }
+
+            temp = Instantiate(planoTierra, new Vector3(posx, -77.6f, posy), Quaternion.identity);
+            temp.transform.localScale = new Vector3(Random.Range(2,4),1,Random.Range(2,4));
+            ShapeTerrain(temp, 64f * i);
+
         }
+
     }
 
     private void Update() {
@@ -146,8 +190,9 @@ public class ProceduralPlaya : MonoBehaviour
         valor = 1f - valor;
         return valor;
     }
-    private void ShapeTerrain(GameObject terrenoPlaya)
+    private void ShapeTerrain(GameObject terrenoPlaya, float offset = 0)
     {
+        heights = new List<float>();
         Mesh mesh = terrenoPlaya.GetComponent<MeshFilter>().mesh;
 
         
@@ -164,7 +209,7 @@ public class ProceduralPlaya : MonoBehaviour
                 float xValue = (float) mesh.vertices[i].x / scale * frequency + 64/2;
                 float zValue = (float) mesh.vertices[i].z / scale * frequency + 64/2;
 
-                float perlinValue = Mathf.PerlinNoise(xValue + seed, zValue + seed);
+                float perlinValue = Mathf.PerlinNoise(xValue + seed + offset, zValue + seed + offset);
 
                 noiseHeight += perlinValue * amplitude;
                 
@@ -324,6 +369,7 @@ public class ProceduralPlaya : MonoBehaviour
                             if (Random.Range(0f,1f) < probEscalera)
                             {
                                 Instantiate(escaleras, new Vector3((centro1+diferencia).x, 4.27f, (centro1+diferencia).z + 2.1f), Quaternion.Euler(0,270,0));
+                                vectorProhibido.Add(new Vector2(i,j));
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,270,0));
                             }
@@ -346,6 +392,7 @@ public class ProceduralPlaya : MonoBehaviour
                             if (Random.Range(0f,1f) < probEscalera)
                             {
                                 Instantiate(escaleras, new Vector3((centro1+diferencia).x, 4.27f, (centro1+diferencia).z - 2.1f), Quaternion.Euler(0,90,0));
+                                vectorProhibido.Add(new Vector2(i,j));
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,90,0));
                             }
@@ -367,6 +414,7 @@ public class ProceduralPlaya : MonoBehaviour
                             if (Random.Range(0f,1f) < probEscalera)
                             {
                                 Instantiate(escaleras, new Vector3((centro1+diferencia).x + 2.1f, 4.27f, (centro1+diferencia).z), Quaternion.Euler(0,0,0));
+                                vectorProhibido.Add(new Vector2(i,j));
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,0,0));
                             }
@@ -389,6 +437,7 @@ public class ProceduralPlaya : MonoBehaviour
                             if (Random.Range(0f,1f) < probEscalera)
                             {
                                 Instantiate(escaleras, new Vector3((centro1+diferencia).x - 2.1f, 4.27f, (centro1+diferencia).z), Quaternion.Euler(0,180,0));
+                                vectorProhibido.Add(new Vector2(i,j));
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,180,0));
                             }
@@ -513,7 +562,7 @@ public class ProceduralPlaya : MonoBehaviour
         GameObject cuboBase = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Plaza");
         UnityEngine.Object[] detallesPlaza = Resources.LoadAll("ProceduralPlaya/Prefabs/Terreno");
 
-        float prob_palmera = 0.2f;
+        float prob_palmera = 0.4f;
 
         int plazas = 3;
         float altura = 6f;
@@ -596,7 +645,9 @@ public class ProceduralPlaya : MonoBehaviour
 
 
         float prob_silla = 0.2f;
-        GameObject silla = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Detalles/Bench_6");
+        float prob_basura = 0.1f;
+        UnityEngine.Object[] sillas = Resources.LoadAll("ProceduralPlaya/Prefabs/Detalles/Borde");
+        UnityEngine.Object[] basureros = Resources.LoadAll("ProceduralPlaya/Prefabs/Detalles/BasurerosBorde");
 
         for (int i = 0; i < cellsWidth; i++)
         {
@@ -615,37 +666,49 @@ public class ProceduralPlaya : MonoBehaviour
                 {
                     if (j == 0)
                     {
-                        if (Random.Range(0f,1f) < prob_silla)
+                        if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
-                            Instantiate(silla, grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,180,0));
-                        } 
+                            variarhumanos(
+                                Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,180,0))
+                            as GameObject);
+                        } else if (Random.Range(0f,1f) < prob_basura)
+                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,270,0));
 
                     }
                     else if (j == cellsHeight - 1)
                     {
                        
-                        if (Random.Range(0f,1f) < prob_silla)
+                        if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
-                            Instantiate(silla, grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,0,0));
-                        } 
+                            variarhumanos(
+                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,0,0))
+                            as GameObject);
+                        } else if (Random.Range(0f,1f) < prob_basura)
+                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,90,0));
                         
                     }
                     else if (i == 0)
                     {
                         
-                        if (Random.Range(0f,1f) < prob_silla)
+                        if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
-                            Instantiate(silla, grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,270,0));
-                        }
+                            variarhumanos(
+                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,270,0))
+                            as GameObject);
+                        } else if (Random.Range(0f,1f) < prob_basura)
+                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,180,0));
                        
                     }
                         
                     else
                     {
-                        if (Random.Range(0f,1f) < prob_silla)
+                        if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
-                            Instantiate(silla, grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,90,0));
-                        }
+                            variarhumanos(
+                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,90,0))
+                            as GameObject);
+                        } else if (Random.Range(0f,1f) < prob_basura)
+                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,0,0));
 
                     } 
                         
@@ -663,11 +726,14 @@ public class ProceduralPlaya : MonoBehaviour
 
     void PonerPalmera(float prob, int x, int y, float altura)
     {
-        GameObject palmera = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Detalles/Palmera");
+        UnityEngine.Object[] palmera = Resources.LoadAll("ProceduralPlaya/Prefabs/Detalles/PlantasArbol");
 
-        if (Random.Range(0f,1f) < prob)
-                Instantiate(palmera, grid.GetCellCenter(x , y) + new Vector3(0,altura,0), Quaternion.Euler(0,0,0));
+        if (Random.Range(0f,1f) < prob && grid.GetCellDontBuild(x,y) == false)
+        {
+                Instantiate(palmera[Random.Range(0,palmera.Length)], grid.GetCellCenter(x , y) + new Vector3(0,altura,0), Quaternion.Euler(0,Random.Range(0,360),0));
 
+                grid.SetCellDontBuild(x,y);
+        }
     }
 
 
@@ -852,6 +918,44 @@ public class ProceduralPlaya : MonoBehaviour
         }
 
         
+    }
+
+    void variarhumanos(GameObject insta)
+    {
+        Color pelo = coloresPelo[Random.Range(0,coloresPelo.Length)];
+        Color conjuntotodo = Random.ColorHSV();
+
+        foreach (Renderer rend in (insta as GameObject).GetComponentsInChildren<Renderer>())
+        {  
+            Color conjunto = Random.ColorHSV();
+                        
+                        foreach(var mat in rend.materials)
+                        {
+                            switch (mat.name)
+                            {  
+                                
+                                case "Shorts (Instance)":
+                                case "TB_down.003 (Instance)":
+                                case "TB_up (Instance)":
+                                    mat.color = conjunto;
+                                    break;
+                                case "Material.007 (Instance)":
+                                    mat.color = pelo;
+                                    break;
+                                case "Material.002 (Instance)":
+                                    mat.color = pelo;
+                                    break;
+                                case "Skin.001 (Instance)":
+                                case "Skin (Instance)":
+                                    mat.color = coloresPiel[Random.Range(0,coloresPiel.Length)];
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                            
+                        
+        }
     }
 
 }
