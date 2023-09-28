@@ -24,6 +24,7 @@ public class TransitionManager : MonoBehaviour
         }
     }
 
+    //Escenas
     public const string SCENE_NAME_MAIN_MENU = "MainScene";
     public const string SCENE_NAME_GAME_CITY = "Ciudad";
     public const string SCENE_NAME_GAME_FOREST = "Bosque";
@@ -31,12 +32,20 @@ public class TransitionManager : MonoBehaviour
     public const string SCENE_NAME_GAME_ARTIC = "Artico";
     public const string SCENE_NAME_GAME_BEACH = "Playa";
 
+    //Menu
     public const string SCENE_NAME_GAME_MENU = "Menu";
     public const string SCENE_NAME_GAME_MENUCIUDAD = "MenuCiudad";
     public const string SCENE_NAME_GAME_MENUBOSQUE = "MenuBosque";
+    public const string SCENE_NAME_GAME_MENUARTICO = "MenuArtico";
+    public const string SCENE_NAME_GAME_MENUPLAYA = "MenuPlaya";
+    public const string SCENE_NAME_GAME_MENUDESIERTO = "MenuDesierto";
+    //Procedural
     public const string SCENE_NAME_GAME_INTENTO = "intento";
-
     public const string SCENE_NAME_GAME_PROCEDURALNEGRO = "ProceduralNegro";
+    public const string SCENE_NAME_GAME_PROCEDURALARTICO = "Polo";
+    public const string SCENE_NAME_GAME_PROCEDURALPLAYA = "PlayaProcedural";
+    public const string SCENE_NAME_GAME_PROCEDURALDESIERTO = "FabProcedural";
+    
 
 
     public Slider progressSlider;
