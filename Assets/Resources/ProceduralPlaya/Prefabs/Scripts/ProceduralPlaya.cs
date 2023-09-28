@@ -148,6 +148,8 @@ public class ProceduralPlaya : MonoBehaviour
 
         }
 
+        GenerarGaviotasVolando(); // En proceso
+
     }
 
     private void Update() {
@@ -696,7 +698,7 @@ public class ProceduralPlaya : MonoBehaviour
                             Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,270,0))
                             as GameObject);
                         } else if (Random.Range(0f,1f) < prob_basura)
-                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,180,0));
+                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,0,0));
                        
                     }
                         
@@ -708,7 +710,7 @@ public class ProceduralPlaya : MonoBehaviour
                             Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,90,0))
                             as GameObject);
                         } else if (Random.Range(0f,1f) < prob_basura)
-                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,0,0));
+                            Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,180,0));
 
                     } 
                         
