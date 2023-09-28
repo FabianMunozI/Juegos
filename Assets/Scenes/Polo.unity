@@ -170,6 +170,7 @@ MonoBehaviour:
   - {fileID: 2264731188190862155, guid: 90f1db5cf0ff5e141908eb46e230919f, type: 3}
   - {fileID: 7812082474393881395, guid: 47212240fe4ec4545b9315a765d04801, type: 3}
   trees: []
+  hielatzo: {fileID: 1996566885125379963, guid: 8eef08b0823399b4bb2921797f79481f, type: 3}
   colliderLODIndex: 0
   detailLevels:
   - lod: 0
@@ -612,6 +613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3753369507926638961, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638971, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -797,14 +802,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetos:
+  - {fileID: 7137721476856108171, guid: cac297ee3c57db846ae9e34baff99a83, type: 3}
   - {fileID: 8870592930504867416, guid: 8b6e06a7ddb59db4e9a42ef5feb80603, type: 3}
   - {fileID: 6721549604203053136, guid: a8be2709c6e04d94880925c11e062826, type: 3}
-  - {fileID: 1905642289704548493, guid: 1946f16de6774ed4d8a12e2647293a0a, type: 3}
   - {fileID: 7203945717080534192, guid: 4df92922605050e4695c1e3c2fbb972d, type: 3}
   - {fileID: 189700, guid: b4b640081e0baf844bf6d1fec0220e75, type: 3}
   - {fileID: 133318, guid: d571cba16a02393479fec11fdb4c1071, type: 3}
   - {fileID: 7472139766441278325, guid: 43f5da9bf71c53747b7e3331bf6a3b35, type: 3}
-  objetosCantidad: 110000000a0000006400000064000000640000006400000022000000
+  hielos:
+  - {fileID: 113340, guid: d91f4f627b920ff4d8b26406e5a258bd, type: 3}
+  - {fileID: 113340, guid: 3c798b74692d17b40b2b907e20d5ee3a, type: 3}
+  - {fileID: 2822772186109546641, guid: bf164796c766e1a419a4bb950ba41f70, type: 3}
+  - {fileID: 158894, guid: 569de8b80551c3748b9c06743fd955f1, type: 3}
+  - {fileID: 155290, guid: 22a0f10450826304dbccde619e2bf659, type: 3}
+  - {fileID: 5992139321581464273, guid: b424b28e798ce16448da8886bcaa2414, type: 3}
+  glaciares:
+  - {fileID: 5061132656279627140, guid: 74d076074f9262a44a35ae4ed7095f03, type: 3}
+  objetosCantidad: 0b0000000a0000000a0000006400000014000000640000001c000000
   cantidadObjetosPorTipo: 50
 --- !u!1 &1360395425
 GameObject:

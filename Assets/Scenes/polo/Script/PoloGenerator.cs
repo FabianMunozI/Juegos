@@ -9,6 +9,7 @@ public class PoloGenerator : MonoBehaviour {
 
 	[SerializeField] private GameObject[] montanias;
 	[SerializeField] private GameObject[] trees;
+	[SerializeField] private GameObject hielatzo;
 	Transform parent;
 
 	public int colliderLODIndex;
@@ -41,6 +42,7 @@ public class PoloGenerator : MonoBehaviour {
 
 		UpdateVisibleChunks ();
 		ColocarMontañas();
+		ColocarHielo();
 	}
 
 	void Update() {
@@ -301,4 +303,30 @@ public class PoloGenerator : MonoBehaviour {
 		element.transform.parent = parent;
 		//diccionarioObstaculos.Add(position, element);
 	}
+
+	private void ColocarHielo()
+    {
+		float xmin;
+		float xmax;
+		float zmin;
+		float zmax;
+
+		zmin = -1100;
+		xmin = -1100;
+		zmax = 1100;
+		xmax = 1100;
+
+		float randomValueX;
+		float randomValueZ;
+
+		int cantidadHielitos = Random.Range(15,21);
+
+		for (var i = 0 ; i < cantidadHielitos ; i++ )
+        {
+			randomValueX = Random.Range(xmin, xmax);
+			randomValueZ = Random.Range(zmin, zmax);
+
+			Instantiate(hielatzo, new Vector3(randomValueX, 16.1f, randomValueZ), Quaternion.identity);
+		}
+    }
 }
