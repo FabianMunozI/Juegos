@@ -44,7 +44,7 @@ public class transicionMapa : MonoBehaviour
         if(Equals(SceneManager.GetActiveScene().name, "Bosque")){
             Salir();
         }else{
-            Iv.GetComponent<Inventory>().SaveInventory();
+            //Iv.GetComponent<Inventory>().SaveInventory();
             TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_FOREST);
         }
         
@@ -55,6 +55,33 @@ public class transicionMapa : MonoBehaviour
             Salir();
         }else{
             TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_ARTIC);
+        }
+        
+    }
+
+    public void LoadArticoProcedural(){
+        if(Equals(SceneManager.GetActiveScene().name, "Polo")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALARTICO);
+        }
+        
+    }
+
+    public void LoadProceduralFabian(){
+        if(Equals(SceneManager.GetActiveScene().name, "FabProcedural")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALDESIERTO);
+        }
+        
+    }
+
+    public void LoadProceduralPlaya(){
+        if(Equals(SceneManager.GetActiveScene().name, "PlayaProcedural")){
+            Salir();
+        }else{
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALPLAYA);
         }
         
     }
