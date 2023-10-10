@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EstadoPersecusion : MonoBehaviour
 {
+    AudioSource NpcAlertaSound;
+
     public Color ColorEstado = Color.red;
 
     private MaquinaDeEstados maquinaDeEstados;
@@ -17,11 +19,13 @@ public class EstadoPersecusion : MonoBehaviour
         controladorNavMesh = GetComponent<ControlladorNavMesh>();
         controladorVision = GetComponent<ControladorVision>();
         misionTala = transform.parent.parent.GetComponent<MisionTala>();
+        NpcAlertaSound = GetComponent<AudioSource>();
     }
 
     void OnEnable(){
         maquinaDeEstados.MeshRendererIndicador.material.color = ColorEstado;
         tiempoBuscando = 3f;
+        NpcAlertaSound.Play();
     }
     // Update is called once per frame
     void Update()
