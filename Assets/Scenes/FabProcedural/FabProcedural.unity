@@ -12390,7 +12390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1918749090424688730, guid: 015253e3b31b0614091ef80824c1b2f9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadArtico
+      value: LoadArticoProcedural
       objectReference: {fileID: 0}
     - target: {fileID: 3426240586402537007, guid: 015253e3b31b0614091ef80824c1b2f9, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -12630,7 +12630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4231165415247794929, guid: 015253e3b31b0614091ef80824c1b2f9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadDesierto
+      value: LoadProceduralFabian
       objectReference: {fileID: 0}
     - target: {fileID: 4408138890197797721, guid: 015253e3b31b0614091ef80824c1b2f9, type: 3}
       propertyPath: m_Text
@@ -12650,7 +12650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5247398221318806292, guid: 015253e3b31b0614091ef80824c1b2f9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadPlaya
+      value: LoadProceduralPlaya
       objectReference: {fileID: 0}
     - target: {fileID: 8570964090713287183, guid: 015253e3b31b0614091ef80824c1b2f9, type: 3}
       propertyPath: m_SizeDelta.x
