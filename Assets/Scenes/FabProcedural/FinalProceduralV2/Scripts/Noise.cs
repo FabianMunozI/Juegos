@@ -9,6 +9,8 @@ public static class Noise {
 		float[,] noiseMap = new float[mapWidth,mapHeight];
 
 		System.Random prng = new System.Random (settings.seed);
+		Debug.Log(settings.seed);
+		Debug.Log(prng);
 		Vector2[] octaveOffsets = new Vector2[settings.octaves];
 
 		float maxPossibleHeight = 0;
@@ -92,7 +94,7 @@ public class NoiseSettings {
 	public Vector2 offset;
 
 	public void ValidateValues() {
-		seed = Random.Range(0,10000);
+		seed = PlayerPrefs.GetInt("seedDesierto");//Random.Range(0,10000);
 		scale = Mathf.Max (scale, 0.01f);
 		octaves = Mathf.Max (octaves, 1);
 		lacunarity = Mathf.Max (lacunarity, 1);
