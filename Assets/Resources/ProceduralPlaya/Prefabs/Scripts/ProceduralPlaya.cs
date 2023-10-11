@@ -5,8 +5,8 @@ using System.Linq;
 
 public class ProceduralPlaya : MonoBehaviour
 {   
-    private int left_limit = -300, right_limit = 300;
-    private int up_limit = 300, down_limit = -300;
+    private int left_limit = -800, right_limit = 800;
+    private int up_limit = 800, down_limit = -800;
     // Procedural Playa
     [Header("Configuracion Terreno Playa")]
     public int seed = -1, octaves = 5;
@@ -85,7 +85,7 @@ public class ProceduralPlaya : MonoBehaviour
         CloudsGen();
         //ExtraTerrains();
 
-        //1 Invoke("GenerarGaviotasVolando", Random.Range(0,5)); // En proceso
+        Invoke("GenerarGaviotasVolando", Random.Range(0,5)); // En proceso
 
         SpawnTransform();
 
@@ -108,7 +108,7 @@ public class ProceduralPlaya : MonoBehaviour
 
             
         GameObject planoTierra = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Terrain");
-        var temp = Instantiate(planoTierra, new Vector3(0,-48f,0), Quaternion.identity);
+        var temp = Instantiate(planoTierra, new Vector3(0,-77.6f,0), Quaternion.identity);
         temp.SetActive(true);
         temp.transform.localScale = new Vector3(Random.Range(3,4),1,Random.Range(3,4));
     }

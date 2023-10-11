@@ -91,11 +91,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40837f957a5f8ed419d84384d399a864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 128
-  height: 128
+  width: 256
+  height: 256
   depth: 100
   scale: 20
   offsetX: 100
   offsetY: 100
-  limit_h: 0.5
+  limit_h: 0.8
   heightScale: 1
