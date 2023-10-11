@@ -4936,7 +4936,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1345576088}
-  - component: {fileID: 1345576087}
   - component: {fileID: 1345576089}
   m_Layer: 0
   m_Name: MapaHandler
@@ -4945,29 +4944,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1345576087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345576086}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a62824a01ae9c4489dd2ff033be01ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 50
-  height: 50
-  cellSize: 7
-  cellsHeight: 0.5
-  beach_lenght: 9
-  prefabTest: {fileID: 3977796261755223179, guid: d235b61141e0d3f498b63fc5610e91dc, type: 3}
-  prefabPlaya: {fileID: 389205681318973268, guid: 8aa903a356525b54481797e16e3cc369, type: 3}
-  prefabArenaMojada: {fileID: 389205681318973268, guid: 8ab072ca1de7cee46b447fe75f00de55, type: 3}
-  seed: 134
-  center_x: 25
-  center_y: 25
 --- !u!4 &1345576088
 Transform:
   m_ObjectHideFlags: 0
