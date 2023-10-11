@@ -284,7 +284,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9049151957444835837}
         m_TargetAssemblyTypeName: transicionMapa, Assembly-CSharp
-        m_MethodName: LoadCiudad
+        m_MethodName: LoadProceduralFabian
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -498,7 +498,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9049151957444835837}
         m_TargetAssemblyTypeName: transicionMapa, Assembly-CSharp
-        m_MethodName: LoadCiudad
+        m_MethodName: LoadArticoProcedural
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -632,7 +632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9049151957444835837}
         m_TargetAssemblyTypeName: transicionMapa, Assembly-CSharp
-        m_MethodName: LoadCiudad
+        m_MethodName: LoadProceduralPlaya
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

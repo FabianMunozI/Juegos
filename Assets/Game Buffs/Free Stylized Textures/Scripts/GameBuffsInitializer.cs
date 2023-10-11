@@ -1,4 +1,4 @@
-using UnityEditor;
+/* using UnityEditor;
 using UnityEngine;
 
 namespace GameBuffs.FreeStylizedTextures
@@ -33,4 +33,4 @@ namespace GameBuffs.FreeStylizedTextures
             Application.OpenURL(GAMEBUFFS_MEGAPACK_URL);
         }
     }
-}
+} */
