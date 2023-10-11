@@ -14,8 +14,6 @@ public class TG : MonoBehaviour
     public float offsetX = 100f;
     public float offsetY = 100f;
 
-    public 
-
     private void Start()
     {
         offsetX = Random.Range(0f, 9999f);
