@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class PoloGenerator : MonoBehaviour {
 
+
+	// float random = prng.Next (RangoIzquierdo, RangoDerecho)
+
 	const float viewerMoveThresholdForChunkUpdate = 25f;
 	const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
 
@@ -30,8 +33,11 @@ public class PoloGenerator : MonoBehaviour {
 
 	Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
 	List<TerrainChunk> visibleTerrainChunks = new List<TerrainChunk>();
+	System.Random prng;
 
 	void Start() {
+
+		prng = new System.Random(PlayerPrefs.GetInt("seedArtico")); // setear semilla a utilizar
 
 		textureSettings.ApplyToMaterial (mapMaterial);
 		textureSettings.UpdateMeshHeights (mapMaterial, heightMapSettings.minHeight, heightMapSettings.maxHeight);
@@ -45,6 +51,7 @@ public class PoloGenerator : MonoBehaviour {
 		ColocarHielo();
 	}
 
+	/*
 	void Update() {
 		viewerPosition = new Vector2 (viewer.position.x, viewer.position.z);
 
@@ -59,6 +66,7 @@ public class PoloGenerator : MonoBehaviour {
 			UpdateVisibleChunks ();
 		}
 	}
+	*/
 		
 	void UpdateVisibleChunks() {
 		HashSet<Vector2> alreadyUpdatedChunkCoords = new HashSet<Vector2> ();
@@ -116,14 +124,17 @@ public class PoloGenerator : MonoBehaviour {
 		int index1, index2, aux;
 		do
 		{
-			index1 = Random.Range(0, 4);
-			index2 = Random.Range(0, 4);
+			//index1 = Random.Range(0, 4);
+			//index2 = Random.Range(0, 4);
+			index1 = prng.Next(0, 4);
+			index2 = prng.Next(0, 4);
 		} while (index1 == index2);
 
-		
-		
+
+
 		//Selección tipo de montaña
-		aux = Random.Range(0, 3);
+		//aux = Random.Range(0, 3);
+		aux = prng.Next(0,3);
 
 		//Pruebas
 		aux = 1;
@@ -217,8 +228,9 @@ public class PoloGenerator : MonoBehaviour {
 			Debug.Log("haber, pero qué pasó");
         }
 
-		
-		aux = Random.Range(0, 3);
+
+		//aux = Random.Range(0, 3);
+		aux = prng.Next(0, 3);
 
 		if (aux == 0)
 		{
@@ -306,10 +318,14 @@ public class PoloGenerator : MonoBehaviour {
 
 	private void ColocarHielo()
     {
-		float xmin;
-		float xmax;
-		float zmin;
-		float zmax;
+		//float xmin;
+		//float xmax;
+		//float zmin;
+		//float zmax;
+		int xmin;
+		int xmax;
+		int zmin;
+		int zmax;
 
 		zmin = -1100;
 		xmin = -1100;
@@ -318,13 +334,16 @@ public class PoloGenerator : MonoBehaviour {
 
 		float randomValueX;
 		float randomValueZ;
-
-		int cantidadHielitos = Random.Range(15,21);
+		
+		//int cantidadHielitos = Random.Range(15,21);
+		int cantidadHielitos = prng.Next(15, 21);
 
 		for (var i = 0 ; i < cantidadHielitos ; i++ )
         {
-			randomValueX = Random.Range(xmin, xmax);
-			randomValueZ = Random.Range(zmin, zmax);
+			//randomValueX = Random.Range(xmin, xmax);
+			//randomValueZ = Random.Range(zmin, zmax);
+			randomValueX = prng.Next(xmin, xmax);
+			randomValueZ = prng.Next(zmin, zmax);
 
 			Instantiate(hielatzo, new Vector3(randomValueX, 16.1f, randomValueZ), Quaternion.identity);
 		}
