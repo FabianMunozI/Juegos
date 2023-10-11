@@ -81,28 +81,47 @@ public static class Noise {
 
 [System.Serializable]
 public class NoiseSettings {
-	public Noise.NormalizeMode normalizeMode;
+    public Noise.NormalizeMode normalizeMode;
 
-	public float scale = 50;
+    public float scale = 50;
 
-	public int octaves = 6;
-	[Range(0,1)]
-	public float persistance =.6f;
-	public float lacunarity = 2;
+    public int octaves = 6;
+    [Range(0,1)]
+    public float persistance =.6f;
+    public float lacunarity = 2;
 
-	public int seed;
-	public Vector2 offset;
+    public int seed;
+    public Vector2 offset;
 
-	public void ValidateValues() {
-		if(!PlayerPrefs.HasKey("seedDesierto")){
-			int seed = Random.Range(0,10000);
-            PlayerPrefs.SetInt("seedDesierto", seed);
-            PlayerPrefs.Save();
-		}
-		seed = PlayerPrefs.GetInt("seedDesierto");//Random.Range(0,10000);
-		scale = Mathf.Max (scale, 0.01f);
-		octaves = Mathf.Max (octaves, 1);
-		lacunarity = Mathf.Max (lacunarity, 1);
-		persistance = Mathf.Clamp01 (persistance);
-	}
+    public void ValidateValues()
+    {
+        if (Equals(SceneManager.GetActiveScene().name, "FabProcedural"))
+        {
+            if (!PlayerPrefs.HasKey("seedDesierto"))
+            {
+                int seed = Random.Range(0, 10000);
+                PlayerPrefs.SetInt("seedDesierto", seed);
+                PlayerPrefs.Save();
+            }
+            seed = PlayerPrefs.GetInt("seedDesierto");//Random.Range(0,10000);
+            scale = Mathf.Max(scale, 0.01f);
+            octaves = Mathf.Max(octaves, 1);
+            lacunarity = Mathf.Max(lacunarity, 1);
+            persistance = Mathf.Clamp01(persistance);
+        }
+        else
+        {
+            if (!PlayerPrefs.HasKey("seedArtico"))
+            {
+                int seed = Random.Range(0, 10000);
+                PlayerPrefs.SetInt("seedArtico", seed);
+                PlayerPrefs.Save();
+            }
+            seed = PlayerPrefs.GetInt("seedArtico");//Random.Range(0,10000);
+            scale = Mathf.Max(scale, 0.01f);
+            octaves = Mathf.Max(octaves, 1);
+            lacunarity = Mathf.Max(lacunarity, 1);
+            persistance = Mathf.Clamp01(persistance);
+        }
+    }
 }
