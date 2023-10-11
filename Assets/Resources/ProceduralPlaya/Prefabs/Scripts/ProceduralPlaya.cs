@@ -60,6 +60,7 @@ public class ProceduralPlaya : MonoBehaviour
 
     void Start()
     {   
+        // Inicializar semilla.
         if (seed == -1)
         {
             Random.seed = Random.Range(0,10000);
@@ -70,9 +71,30 @@ public class ProceduralPlaya : MonoBehaviour
         contenedorBasura = new GameObject("ContenedorBasura");
         contenedorCiudad = new GameObject("contenedorCiudad");
         contenedorAnimales = new GameObject("contenedorAnimales");
+
+        BeachTerrain();
+        CityTerrainDetails();
+
+
+
+
+        PlaceSeaDetails();
+        SeaTerrain();
+        PlaceBeachDetails();
+        PlaceSeaTrash();
+        CloudsGen();
+        //ExtraTerrains();
+
+        //1 Invoke("GenerarGaviotasVolando", Random.Range(0,5)); // En proceso
+
+        SpawnTransform();
+
+    }
+
+    void BeachTerrain()
+    {
         
         centrosArena = new Vector2[Random.Range(1,3)];
-        Debug.Log(centrosArena.Length);
 
         for (int i = 0; i < centrosArena.Length; i++)
         {
@@ -84,36 +106,29 @@ public class ProceduralPlaya : MonoBehaviour
         else if (centrosArena.Length == 2)
             tierraAltura=-76.6f;
 
-
-
-        detallesMar = Resources.LoadAll("ProceduralPlaya/Prefabs/DetallesMar");
-        
-        GameObject planoTierra = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Planos/Plano64x64_Pref");
-        //var temp = Instantiate(planoTierra, new Vector3(Random.Range(-100,100),-81f,Random.Range(-100,100)), Quaternion.identity);
-        var temp = Instantiate(planoTierra, new Vector3(0, tierraAltura,0), Quaternion.identity);
+            
+        GameObject planoTierra = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Terrain");
+        var temp = Instantiate(planoTierra, new Vector3(0,-48f,0), Quaternion.identity);
+        temp.SetActive(true);
         temp.transform.localScale = new Vector3(Random.Range(3,4),1,Random.Range(3,4));
-        ShapeTerrain(temp);
+    }
+
+    void SeaTerrain()
+    {
+        GameObject planoAgua = Resources.Load<GameObject>("ProceduralPlaya/Mar/PlanoAgua_R");
+        Instantiate(planoAgua, new Vector3(0,0,0), Quaternion.identity);
+    }
+
+    void CityTerrainDetails()
+    {
         PlaceComplementaryTerrain();
         grid = new Grid(cellsWidth, cellsHeight, cellsSize, posicionOptima.x, posicionOptima.z);
         AddDetailsUp();
-        PlaceSeaDetails();
+    }
 
-        GameObject planoAgua = Resources.Load<GameObject>("ProceduralPlaya/Mar/PlanoAgua_R");
-        Instantiate(planoAgua, new Vector3(0,0,0), Quaternion.identity);
-
-        PlaceBeachDetails();
-        PlaceSeaTrash();
-
-        nubes = Resources.LoadAll("ProceduralPlaya/Prefabs/Nubes");
-
-        for (int i = 0; i < cantidadnubes; i++)
-        {
-            nubesLista.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-400,400), Random.Range(90,120), Random.Range(-400,400)), Quaternion.identity));
-            nubesActuales ++;
-        }  
-
-
-        // Terrenos extras
+    void ExtraTerrains()
+    {
+         // Terrenos extras
         for (int i = 0; i < Random.Range(3,6); i++)
         {
             int posx = 0;
@@ -147,16 +162,22 @@ public class ProceduralPlaya : MonoBehaviour
                 }
             }
 
-            temp = Instantiate(planoTierra, new Vector3(posx, -77.6f, posy), Quaternion.identity);
-            temp.transform.localScale = new Vector3(Random.Range(2,4),1,Random.Range(2,4));
-            ShapeTerrain(temp, 64f * i);
+            //temp = Instantiate(planoTierra, new Vector3(posx, -77.6f, posy), Quaternion.identity);
+            //temp.transform.localScale = new Vector3(Random.Range(2,4),1,Random.Range(2,4));
+            //1 ShapeTerrain(temp, 64f * i);
 
         }
+    }
 
-        Invoke("GenerarGaviotasVolando", Random.Range(0,5)); // En proceso
+    void CloudsGen()
+    {
+        nubes = Resources.LoadAll("ProceduralPlaya/Prefabs/Nubes");
 
-        SpawnTransform();
-
+        for (int i = 0; i < cantidadnubes; i++)
+        {
+            nubesLista.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-400,400), Random.Range(90,120), Random.Range(-400,400)), Quaternion.identity));
+            nubesActuales ++;
+        }  
     }
 
     void SpawnTransform()
@@ -196,8 +217,10 @@ public class ProceduralPlaya : MonoBehaviour
     }
 
     private void Update() {
+
+        /*
         Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
-        Debug.DrawRay(posicionOptima, -1*transform.up * 1000, Color.magenta);
+        // Debug.DrawRay(posicionOptima, -1*transform.up * 1000, Color.magenta);
 
         if (nubesActuales < cantidadnubes)
         {
@@ -216,113 +239,11 @@ public class ProceduralPlaya : MonoBehaviour
             }
 
         }
+        */
     }
 
 
 
-    float calculateDistance(float nx, float nz)
-    {
-        float valor = 0f;
-
-        foreach (var centro in centrosArena)
-        {
-            valor += Mathf.Sqrt(
-                Mathf.Pow(nx - centro.x, 2) + Mathf.Pow(nz - centro.y, 2)
-                ) / (denom);
-           
-        }
-
-        valor = 1f - valor;
-        return valor;
-    }
-    private void ShapeTerrain(GameObject terrenoPlaya, float offset = 0)
-    {
-        heights = new List<float>();
-        Mesh mesh = terrenoPlaya.GetComponent<MeshFilter>().mesh;
-
-        
-        for (int i = 0; i < mesh.vertices.Length; i++)
-        {
-            //Debug.Log("x: " + (float) mesh.vertices[i].x + ", z: "+ (float) mesh.vertices[i].z);
-            float scale = 50f;
-            float amplitude = 1f;
-            float noiseHeight = 0f;
-            float frequency = freq;
-
-            for (int o = 0; o < octaves; o++)
-            {
-                float xValue = (float) mesh.vertices[i].x / scale * frequency + 64/2;
-                float zValue = (float) mesh.vertices[i].z / scale * frequency + 64/2;
-
-                float perlinValue = Mathf.PerlinNoise(xValue + seed + offset, zValue + seed + offset);
-
-                noiseHeight += perlinValue * amplitude;
-                
-                amplitude *= persistance;
-                frequency *= lacunarity;
-            }
-            
-            
-            float nx = (float) mesh.vertices[i].x / 64;
-            float nz = (float) mesh.vertices[i].z / 64;
-            
-
-            //heights.Add(noiseHeight * (1 - (Mathf.Sqrt((nx * nx) + (nz * nz)) / denom)));
-            //heights.Add(noiseHeight);
-            heights.Add(noiseHeight * calculateDistance(nx, nz));
-            //if (vertices[i].y <= 0f) vertices[i].y = 0;
-            //else vertices[i].y = Mathf.Pow(noiseHeight * (1 - (Mathf.Sqrt((nx * nx) + (nz * nz)) / denom)), redistribution); 
-            //Debug.Log(vertices[i].y)
-            
-
-        }
-
-    
-
-        
-        Vector3 [] vertices = mesh.vertices;
-
-        
-        float min = heights.Min();
-        float max = heights.Max();
-        float percentage = 0.7f;
-        float range = max - min;
-
-        float limit = min + range * percentage;
-
-
-        float scale_ver = 100f;
-        float limit_heightmap = 3f;
-
-
-        for (int i = 0; i < heights.Count; i++)
-        {   
-            
-
-            // normalization
-            heights[i] = (heights[i] - min) / (max - min);
-            heights[i] = Mathf.Pow(heights[i], redistribution);
-
-            Debug.Log(heights[i] + " , " + heights[i] * scale_ver);
-
-            if (tierraAltura + heights[i] * scale_ver > limit_heightmap)
-                vertices[i].y = limit_heightmap - tierraAltura + Random.Range(-1.5f,1.5f);
-            else
-                vertices[i].y = heights[i] * scale_ver;
-        }
-
-        mesh.vertices = vertices;
-
-        // Recalcular las normales y la información de la malla
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
-
-        MeshCollider meshCollider = terrenoPlaya.GetComponent<MeshCollider>();
-        meshCollider.sharedMesh = mesh;
-
-
-
-    }
 
 
     void PlaceComplementaryTerrain()
@@ -333,11 +254,11 @@ public class ProceduralPlaya : MonoBehaviour
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 0)
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
             {
                 Ray ray2 = new Ray(ray.origin + new Vector3(1,0,0) * cellsSize * cellsWidth/2, ray.direction);
 
-                if (Physics.Raycast(ray2, out RaycastHit hit2) && hit2.transform.name == "Plano64x64_Pref(Clone)" && hit2.point.y < 0)
+                if (Physics.Raycast(ray2, out RaycastHit hit2) && hit2.transform.name == "Terrain(Clone)" && hit2.point.y < 0)
                 {
                     posicionOptima = ray2.origin;
                     posicionarNuevo = true;
@@ -345,7 +266,7 @@ public class ProceduralPlaya : MonoBehaviour
                 }
 
                 Ray ray3 = new Ray(ray.origin - new Vector3(1,0,0) * cellsSize * cellsWidth/2, ray.direction);
-                if (Physics.Raycast(ray3, out RaycastHit hit3) && hit3.transform.name == "Plano64x64_Pref(Clone)" && hit3.point.y < 0)
+                if (Physics.Raycast(ray3, out RaycastHit hit3) && hit3.transform.name == "Terrain(Clone)" && hit3.point.y < 0)
                 {
                     posicionOptima = ray3.origin;
                     posicionarNuevo = true;
@@ -353,7 +274,7 @@ public class ProceduralPlaya : MonoBehaviour
                 }
 
                 Ray ray4 = new Ray(ray.origin + new Vector3(0,0,1) * cellsSize * cellsWidth/2, ray.direction);
-                if (Physics.Raycast(ray4, out RaycastHit hit4) && hit4.transform.name == "Plano64x64_Pref(Clone)" && hit4.point.y < 0)
+                if (Physics.Raycast(ray4, out RaycastHit hit4) && hit4.transform.name == "Terrain(Clone)" && hit4.point.y < 0)
                 {
                     posicionOptima = ray4.origin;
                     posicionarNuevo = true;
@@ -361,7 +282,7 @@ public class ProceduralPlaya : MonoBehaviour
                 }
 
                 Ray ray5 = new Ray(ray.origin - new Vector3(0,0,1) * cellsSize * cellsWidth/2, ray.direction);
-                if (Physics.Raycast(ray5, out RaycastHit hit5) && hit5.transform.name == "Plano64x64_Pref(Clone)" && hit5.point.y < 0)
+                if (Physics.Raycast(ray5, out RaycastHit hit5) && hit5.transform.name == "Terrain(Clone)" && hit5.point.y < 0)
                 {
                     posicionOptima = ray5.origin;
                     posicionarNuevo = true;
@@ -409,7 +330,7 @@ public class ProceduralPlaya : MonoBehaviour
 
                         Ray ray = new Ray( centro1 + (2*diferencia) + new Vector3(0,100f,0), -1 * transform.up);
 
-                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 0)
+                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
                         {
                             if (Random.Range(0f,1f) < probEscalera)
                             {
@@ -418,7 +339,7 @@ public class ProceduralPlaya : MonoBehaviour
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,270,0));
                             }
-                            Debug.Log("j0 No hay arena enfrente.");
+                            // Debug.Log("j0 No hay arena enfrente.");
                         } else {
                             Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,270,0));
                         }
@@ -432,7 +353,7 @@ public class ProceduralPlaya : MonoBehaviour
 
                         Ray ray = new Ray( centro1 + (2*diferencia) + new Vector3(0,100f,0), -1 * transform.up);
 
-                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 0)
+                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
                         {
                             if (Random.Range(0f,1f) < probEscalera)
                             {
@@ -441,7 +362,7 @@ public class ProceduralPlaya : MonoBehaviour
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,90,0));
                             }
-                            Debug.Log("ja No hay arena enfrente.");
+                            // Debug.Log("ja No hay arena enfrente.");
                         } else {
                             Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,90,0));
                         }
@@ -454,7 +375,7 @@ public class ProceduralPlaya : MonoBehaviour
 
                         Ray ray = new Ray( centro1 + (2*diferencia) + new Vector3(0,100f,0), -1 * transform.up);
 
-                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 0)
+                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
                         {
                             if (Random.Range(0f,1f) < probEscalera)
                             {
@@ -463,7 +384,7 @@ public class ProceduralPlaya : MonoBehaviour
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,0,0));
                             }
-                            Debug.Log("i0 No hay arena enfrente.");
+                            // Debug.Log("i0 No hay arena enfrente.");
                         } else {
                             Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.identity);
                         }
@@ -477,7 +398,7 @@ public class ProceduralPlaya : MonoBehaviour
 
                         Ray ray = new Ray( centro1 + (2*diferencia) + new Vector3(0,100f,0), -1 * transform.up);
 
-                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 0)
+                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
                         {
                             if (Random.Range(0f,1f) < probEscalera)
                             {
@@ -486,7 +407,7 @@ public class ProceduralPlaya : MonoBehaviour
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,180,0));
                             }
-                            Debug.Log("ia No hay arena enfrente.");
+                            // Debug.Log("ia No hay arena enfrente.");
                         } else {
                             Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,180,0));
                         }
@@ -784,6 +705,9 @@ public class ProceduralPlaya : MonoBehaviour
 
     void PlaceSeaDetails()
     {
+        detallesMar = Resources.LoadAll("ProceduralPlaya/Prefabs/DetallesMar");
+
+        Debug.Log(detallesMar.Length);
         
         for (int i = 0; i < cantidadDetalles; i++)
         {
@@ -817,7 +741,7 @@ public class ProceduralPlaya : MonoBehaviour
             // Perform a raycast using the ray.
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y < 0.5f)
+                if (hit.transform.name == "Terrain(Clone)" && hit.point.y < 0.5f)
                 {
                     Vector3 pos = new Vector3(hit.point.x, 0, hit.point.z);
                     Instantiate(basuraAgua[Random.Range(0,basuraAgua.Length)], pos, Quaternion.Euler(0,Random.Range(0,360), 0));
@@ -837,7 +761,7 @@ public class ProceduralPlaya : MonoBehaviour
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 1f)
+            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 1f)
             {
                 Object insta = Instantiate(detallesPlaya[Random.Range(0,detallesPlaya.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorBasura.transform);
 
@@ -896,7 +820,7 @@ public class ProceduralPlaya : MonoBehaviour
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 1f)
+            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 1f)
             {
                 Object insta = Instantiate(detallesHumanos[Random.Range(0,detallesHumanos.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorBasura.transform);
 
@@ -955,7 +879,7 @@ public class ProceduralPlaya : MonoBehaviour
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Plano64x64_Pref(Clone)" && hit.point.y > 0)
+            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
             {
                 Instantiate(animales[Random.Range(0,animales.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorAnimales.transform);
                 cont2 ++;
