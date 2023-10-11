@@ -94,6 +94,11 @@ public class NoiseSettings {
 	public Vector2 offset;
 
 	public void ValidateValues() {
+		if(!PlayerPrefs.HasKey("seedDesierto")){
+			int seed = Random.Range(0,10000);
+            PlayerPrefs.SetInt("seedDesierto", seed);
+            PlayerPrefs.Save();
+		}
 		seed = PlayerPrefs.GetInt("seedDesierto");//Random.Range(0,10000);
 		scale = Mathf.Max (scale, 0.01f);
 		octaves = Mathf.Max (octaves, 1);
