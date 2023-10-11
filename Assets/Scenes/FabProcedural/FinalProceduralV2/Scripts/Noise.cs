@@ -9,8 +9,8 @@ public static class Noise {
 		float[,] noiseMap = new float[mapWidth,mapHeight];
 
 		System.Random prng = new System.Random (settings.seed);
-		Debug.Log(settings.seed);
-		Debug.Log(prng);
+		//Debug.Log(settings.seed);
+		//Debug.Log(prng);
 		Vector2[] octaveOffsets = new Vector2[settings.octaves];
 
 		float maxPossibleHeight = 0;
