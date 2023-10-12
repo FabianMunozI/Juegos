@@ -182,17 +182,28 @@ public class ProceduralPlaya : MonoBehaviour
 
     void SpawnTransform()
     {
-        GameObject pl = GameObject.Find("/Player");
+        GameObject pl = GameObject.Find("Player");
         bool pos_encontrada = false;
-        while(!pos_encontrada)
+        int trys = 0;
+        if (pl != null)
         {
-            int x_r = Random.Range(1,cellsWidth - 2);
-            int y_r = Random.Range(1,cellsHeight - 2);
-
-            if(!grid.GetCellDontBuild(x_r, y_r))
+            while(!pos_encontrada)
             {
-                pl.transform.position = grid.GetCellCenter(x_r, y_r) + new Vector3(0, 5f, 0);
-                pos_encontrada = true;
+                int x_r = Random.Range(1,cellsWidth - 2);
+                int y_r = Random.Range(1,cellsHeight - 2);
+
+                if(!grid.GetCellDontBuild(x_r, y_r))
+                {
+                    pl.transform.position = grid.GetCellCenter(x_r, y_r) + new Vector3(0, 5f, 0);
+                    pos_encontrada = true;
+                }
+
+                if (trys == 1000) 
+                {
+                    pl.transform.position = new Vector3(0, 5f, 0);
+                    break;
+                }
+                trys ++;
             }
         }
     }
@@ -218,7 +229,6 @@ public class ProceduralPlaya : MonoBehaviour
 
     private void Update() {
 
-        /*
         Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
         // Debug.DrawRay(posicionOptima, -1*transform.up * 1000, Color.magenta);
 
@@ -239,7 +249,6 @@ public class ProceduralPlaya : MonoBehaviour
             }
 
         }
-        */
     }
 
 
@@ -249,6 +258,7 @@ public class ProceduralPlaya : MonoBehaviour
     void PlaceComplementaryTerrain()
     {
         bool posicionarNuevo = false;
+        int trys = 0;
         while(!posicionarNuevo)
         {
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
@@ -289,7 +299,16 @@ public class ProceduralPlaya : MonoBehaviour
                     break;
                 }
 
+                
+
             }
+
+            if (trys == 1000) 
+            {
+                posicionOptima = new Vector3(0,0,0);
+                break;
+            }
+                trys ++;
 
         }
 
@@ -755,6 +774,7 @@ public class ProceduralPlaya : MonoBehaviour
         UnityEngine.Object[] detallesPlaya = Resources.LoadAll("ProceduralPlaya/Prefabs/DetallesPlaya/Basura");
 
         int cont = 0;
+        int trys = 0;
 
         while (cont < cantidadBasura)
         {
@@ -809,11 +829,18 @@ public class ProceduralPlaya : MonoBehaviour
 
                 cont ++;
             }
+
+            if (trys == 1000)
+            {
+                break;
+            }
+            trys ++;
         }
 
 
         UnityEngine.Object[] detallesHumanos = Resources.LoadAll("ProceduralPlaya/Prefabs/DetallesPlaya/NPC");
         int contHum = 0;
+        int trys2 = 0;
 
         while (contHum < cantidadPersonas)
         {
@@ -868,11 +895,18 @@ public class ProceduralPlaya : MonoBehaviour
 
                 contHum ++;
             }
+
+            if (trys2 == 1000)
+            {
+                break;
+            }
+            trys2++;
         }
 
         UnityEngine.Object[] animales = Resources.LoadAll("ProceduralPlaya/Prefabs/Animales");
 
         int cont2 = 0;
+        int trys3 = 0;
 
         while (cont2 < 100)
         {
@@ -884,6 +918,12 @@ public class ProceduralPlaya : MonoBehaviour
                 Instantiate(animales[Random.Range(0,animales.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorAnimales.transform);
                 cont2 ++;
             }
+
+            if (trys3 == 1000)
+            {
+                break;
+            }
+            trys3 ++;
         }
 
         
