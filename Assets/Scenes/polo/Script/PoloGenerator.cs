@@ -10,6 +10,8 @@ public class PoloGenerator : MonoBehaviour {
 	const float viewerMoveThresholdForChunkUpdate = 25f;
 	const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
 
+	[SerializeField] private GameObject teleport;
+
 	[SerializeField] private GameObject[] montanias;
 	[SerializeField] private GameObject[] trees;
 	[SerializeField] private GameObject hielatzo;
@@ -46,7 +48,8 @@ public class PoloGenerator : MonoBehaviour {
 		meshWorldSize = meshSettings.meshWorldSize;
 		chunksVisibleInViewDst = Mathf.RoundToInt(maxViewDst / meshWorldSize);
 
-		UpdateVisibleChunks ();
+		UpdateVisibleChunks();
+		ColocarTeleport();
 		ColocarMontañas();
 		ColocarHielo();
 	}
@@ -348,4 +351,12 @@ public class PoloGenerator : MonoBehaviour {
 			Instantiate(hielatzo, new Vector3(randomValueX, 16.1f, randomValueZ), Quaternion.identity);
 		}
     }
+
+	private void ColocarTeleport()
+    {
+		float randomValueX = Random.Range(-900, 900);
+		float randomValueZ = Random.Range(-900, 900);
+
+		Instantiate(teleport, new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+	}
 }
