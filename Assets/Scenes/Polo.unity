@@ -3445,8 +3445,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3753369506578422302, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3753369506578422302, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: TextDetectBasura
+      value: 
+      objectReference: {fileID: 1458800788}
+    - target: {fileID: 3753369506578422302, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: TextDetectDialogue
+      value: 
+      objectReference: {fileID: 1303685768}
+    - target: {fileID: 3753369506578422302, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: TextDetectDragable
+      value: 
+      objectReference: {fileID: 845568818}
+    - target: {fileID: 3753369506578422302, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
+      propertyPath: TextDetectInteractable
+      value: 
+      objectReference: {fileID: 1585808877}
     - target: {fileID: 3753369507412646897, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: far clip plane
       value: 2500

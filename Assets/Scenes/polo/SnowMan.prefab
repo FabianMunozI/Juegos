@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5757739353677117629}
   - component: {fileID: 2247512331271734619}
   - component: {fileID: 2247512331271734618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SnowMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1781875089137494344}
   - component: {fileID: 7659161725948699788}
-  m_Layer: 0
+  - component: {fileID: -4761410471885080226}
+  - component: {fileID: 4682340123391817551}
+  m_Layer: 6
   m_Name: SnowMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 1437120381530420210}
   m_LocalRotation: {x: -0, y: 0.83231384, z: -0, w: 0.5543048}
   m_LocalPosition: {x: 38.921265, y: 7.4202, z: -95.19994}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6287750173550926470}
@@ -163,3 +165,30 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1048576
   offSet: {x: 0, y: 0, z: 0}
+--- !u!114 &-4761410471885080226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437120381530420210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3862e0a5b11a5049b939b5736e80044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCambioDeMapa: {fileID: 0}
+  player: {fileID: 0}
+--- !u!65 &4682340123391817551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437120381530420210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.51711047, y: 0.7139861, z: 0.80310595}
+  m_Center: {x: -0.0038162777, y: 0.33034468, z: 0.00039847233}
