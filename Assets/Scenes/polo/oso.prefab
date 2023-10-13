@@ -2267,8 +2267,8 @@ GameObject:
   - component: {fileID: 8636712851541563513}
   - component: {fileID: 8636712851541563517}
   - component: {fileID: 8636712851541563515}
-  - component: {fileID: 8636712851541563516}
   - component: {fileID: 8608853961167304359}
+  - component: {fileID: -50248779434984942}
   m_Layer: 0
   m_Name: oso
   m_TagString: Untagged
@@ -2322,8 +2322,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2541237, y: 2.9640727, z: 4.348839}
-  m_Center: {x: -0.13407135, y: 0.98203635, z: 0.17074966}
+  m_Size: {x: 1.7433958, y: 2.0868154, z: 3.5640178}
+  m_Center: {x: 0.01593113, y: 0.9887358, z: 0.1086502}
 --- !u!82 &8636712851541563517
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2441,22 +2441,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8636712851541563516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8870592930504867416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bfbdd907ab5edb4a9a161aecde48b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0.3
-  semiMajorAxis: 2.5
-  semiMinorAxis: 4.7
-  rotationSpeed: 30
 --- !u!114 &8608853961167304359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,6 +2457,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1048576
   offSet: {x: 0, y: 0, z: 0}
+--- !u!114 &-50248779434984942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870592930504867416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5a4098ecf662446a443441236bf56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8933043976483251411
 GameObject:
   m_ObjectHideFlags: 0
