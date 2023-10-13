@@ -194,13 +194,13 @@ public class ProceduralPlaya : MonoBehaviour
 
                 if(!grid.GetCellDontBuild(x_r, y_r))
                 {
-                    pl.transform.position = grid.GetCellCenter(x_r, y_r) + new Vector3(0, 5f, 0);
+                    pl.transform.position = grid.GetCellCenter(x_r, y_r) + new Vector3(0, 8f, 0);
                     pos_encontrada = true;
                 }
 
                 if (trys == 1000) 
                 {
-                    pl.transform.position = new Vector3(0, 5f, 0);
+                    pl.transform.position = new Vector3(0, 8f, 0);
                     break;
                 }
                 trys ++;
