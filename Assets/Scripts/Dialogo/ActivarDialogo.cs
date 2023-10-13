@@ -47,6 +47,7 @@ public class ActivarDialogo : Interactable
         CameraInteraction.interactionDialogue = true;
         FpsCamera.cameraDialogue = true;
         NpcNav.isInDialogue = true;
+        Cursor.lockState = CursorLockMode.Confined;
 
         dialogoObjetivo.SetActive(true);
 
