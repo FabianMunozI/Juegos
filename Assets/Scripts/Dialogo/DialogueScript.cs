@@ -58,6 +58,7 @@ public class DialogueScript : Interactable{
             FpsCamera.cameraDialogue = false;
             CameraInteraction.interactionDialogue = false;
             NpcNav.isInDialogue = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
