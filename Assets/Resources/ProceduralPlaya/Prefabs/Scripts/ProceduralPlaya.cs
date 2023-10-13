@@ -318,6 +318,8 @@ public class ProceduralPlaya : MonoBehaviour
     }
 
     float probEscalera = 0.1f;
+
+    int n_escalera = 0;
     void AddDetailsUp()
     {
         GameObject reja1 = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Reja1");
@@ -349,15 +351,16 @@ public class ProceduralPlaya : MonoBehaviour
 
                         Ray ray = new Ray( centro1 + (2*diferencia) + new Vector3(0,100f,0), -1 * transform.up);
 
-                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
+                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 1f)
                         {
-                            if (Random.Range(0f,1f) < probEscalera)
+                            if (Random.Range(0f,1f) < probEscalera || n_escalera == 1)
                             {
                                 Instantiate(escaleras, new Vector3((centro1+diferencia).x, 4.27f, (centro1+diferencia).z + 2.1f), Quaternion.Euler(0,270,0));
                                 vectorProhibido.Add(new Vector2(i,j));
                             } else{
                                 Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,270,0));
                             }
+                            n_escalera++;
                             // Debug.Log("j0 No hay arena enfrente.");
                         } else {
                             Instantiate(reja1, grid.GetCellCenter(i, j) + new Vector3 (0,6.2f,0), Quaternion.Euler(0,270,0));
@@ -715,9 +718,17 @@ public class ProceduralPlaya : MonoBehaviour
 
         if (Random.Range(0f,1f) < prob && grid.GetCellDontBuild(x,y) == false)
         {
-                Instantiate(palmera[Random.Range(0,palmera.Length)], grid.GetCellCenter(x , y) + new Vector3(0,altura,0), Quaternion.Euler(0,Random.Range(0,360),0));
+            Vector3 centroAAA = grid.GetCellCenter(x , y);
+            Ray ray = new Ray(new Vector3(centroAAA.x,100,centroAAA.z), -1 * transform.up);
 
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                Instantiate(palmera[Random.Range(0,palmera.Length)], grid.GetCellCenter(x , y) + new Vector3(0,hit.point.y-1f,0), Quaternion.Euler(0,Random.Range(0,360),0));
                 grid.SetCellDontBuild(x,y);
+
+            }
+                
+
         }
     }
 
