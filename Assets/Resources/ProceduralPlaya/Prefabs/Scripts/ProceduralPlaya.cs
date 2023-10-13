@@ -5,8 +5,8 @@ using System.Linq;
 
 public class ProceduralPlaya : MonoBehaviour
 {   
-    private int left_limit = -800, right_limit = 800;
-    private int up_limit = 800, down_limit = -800;
+    private int left_limit = -300, right_limit = 300;
+    private int up_limit = 300, down_limit = -300;
     // Procedural Playa
     [Header("Configuracion Terreno Playa")]
     public int seed = -1, octaves = 5;
@@ -730,7 +730,7 @@ public class ProceduralPlaya : MonoBehaviour
         
         for (int i = 0; i < cantidadDetalles; i++)
         {
-            Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
+            Ray ray = new Ray(new Vector3(Random.Range(left_limit*2.5f, right_limit*2.5f),100,Random.Range(down_limit*2.5f,up_limit*2.5f)), -1 * transform.up);
 
             // Perform a raycast using the ray.
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -776,12 +776,14 @@ public class ProceduralPlaya : MonoBehaviour
         int cont = 0;
         int trys = 0;
 
+        float hitpoint_limit = 2f;
+
         while (cont < cantidadBasura)
         {
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 1f)
+            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > hitpoint_limit)
             {
                 Object insta = Instantiate(detallesPlaya[Random.Range(0,detallesPlaya.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorBasura.transform);
 
@@ -847,7 +849,7 @@ public class ProceduralPlaya : MonoBehaviour
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 1f)
+            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > hitpoint_limit)
             {
                 Object insta = Instantiate(detallesHumanos[Random.Range(0,detallesHumanos.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorBasura.transform);
 
@@ -913,7 +915,7 @@ public class ProceduralPlaya : MonoBehaviour
             Ray ray = new Ray(new Vector3(Random.Range(left_limit, right_limit),100,Random.Range(down_limit,up_limit)), -1 * transform.up);
 
             // Perform a raycast using the ray.
-            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 0)
+            if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > hitpoint_limit)
             {
                 Instantiate(animales[Random.Range(0,animales.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), contenedorAnimales.transform);
                 cont2 ++;
