@@ -102,6 +102,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5992139321581464286}
     m_Modifications:
+    - target: {fileID: -50248779434984942, guid: 8b6e06a7ddb59db4e9a42ef5feb80603, type: 3}
+      propertyPath: semiMajorAxis
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -50248779434984942, guid: 8b6e06a7ddb59db4e9a42ef5feb80603, type: 3}
+      propertyPath: semiMinorAxis
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8093388445099304162, guid: 8b6e06a7ddb59db4e9a42ef5feb80603, type: 3}
       propertyPath: m_RootOrder
       value: 0
