@@ -317,7 +317,7 @@ public class ProceduralPlaya : MonoBehaviour
         cuboBase.transform.localScale = new Vector3(cellsWidth * cellsSize, 100,cellsHeight * cellsSize); 
     }
 
-    float probEscalera = 0.1f;
+    float probEscalera = 0.2f;
 
     int n_escalera = 0;
     void AddDetailsUp()
@@ -349,11 +349,11 @@ public class ProceduralPlaya : MonoBehaviour
                         centro2 = grid.GetCellCenter(i,j+1);
                         Vector3 diferencia = centro1 - centro2;
 
-                        Ray ray = new Ray( centro1 + (2*diferencia) + new Vector3(0,100f,0), -1 * transform.up);
+                        Ray ray = new Ray( centro1 + (0.7f * diferencia) + new Vector3(0,100f,0), -1 * transform.up);
 
-                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 1f)
+                        if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > 2f)
                         {
-                            if (Random.Range(0f,1f) < probEscalera || n_escalera == 1)
+                            if (Random.Range(0f,1f) < probEscalera)
                             {
                                 Instantiate(escaleras, new Vector3((centro1+diferencia).x, 4.27f, (centro1+diferencia).z + 2.1f), Quaternion.Euler(0,270,0));
                                 vectorProhibido.Add(new Vector2(i,j));
