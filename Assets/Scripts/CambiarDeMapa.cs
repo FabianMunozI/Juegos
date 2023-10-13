@@ -15,6 +15,7 @@ public class CambiarDeMapa : Interactable
 
         if(!Equals(SceneManager.GetActiveScene().name, "MenuDesierto") &&  !Equals(SceneManager.GetActiveScene().name, "MenuArtico") && !Equals(SceneManager.GetActiveScene().name, "MenuPlaya")){
             menuCambioDeMapa = GameObject.Find("ContMapa").transform.GetChild(0).gameObject; //asegurarse de no cambiar el name de este prefab y dejarlo en la pos 0 del canvas
+            menuCambioDeMapa.SetActive(false);
         }
         
         //menuCambioDeMapa.SetActive(false);
