@@ -106,7 +106,7 @@ public class TransitionManager : MonoBehaviour
             progressSlider.value = progressValue;
         }
         if(progressLabel.text != null){
-            progressLabel.text = $"{progressValue * 100}%";
+            progressLabel.text = $"{(int)(progressValue * 100)}%";
         }
 
     }
