@@ -19,11 +19,36 @@ public class Menu : MonoBehaviour
     public void MenuButtonArtico ()
     {
         //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+        if(!Equals(SceneManager.GetActiveScene().name, "MenuArtico")){
+            if(!PlayerPrefs.HasKey("seedArtico")){
+                int seed = Random.Range(0,10000);
+                PlayerPrefs.SetInt("seedArtico", seed);
+                PlayerPrefs.Save();
+            }
+        }else { // estoy en la scena menu desierto y presiono regenerar desierto
+            int seed = Random.Range(0,10000);
+            PlayerPrefs.SetInt("seedArtico", seed);
+            PlayerPrefs.Save();
+        }
+        
         SceneManager.LoadScene("MenuArtico");
     }
     public void MenuButtonDesierto ()
     {
         //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+         // numero entre 0 y 10000 ( exclusivo el 2do)
+        if(!Equals(SceneManager.GetActiveScene().name, "MenuDesierto")){
+            if(!PlayerPrefs.HasKey("seedDesierto")){
+                int seed = Random.Range(0,10000);
+                PlayerPrefs.SetInt("seedDesierto", seed);
+                PlayerPrefs.Save();
+            }
+        }else { // estoy en la scena menu desierto y presiono regenerar desierto
+            int seed = Random.Range(0,10000);
+            PlayerPrefs.SetInt("seedDesierto", seed);
+            PlayerPrefs.Save();
+        }
+        
         SceneManager.LoadScene("MenuDesierto");
     }
     public void MenuButtonPlaya ()

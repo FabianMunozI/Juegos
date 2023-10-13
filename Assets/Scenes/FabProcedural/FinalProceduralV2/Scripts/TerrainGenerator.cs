@@ -39,7 +39,7 @@ public class TerrainGenerator : MonoBehaviour {
 		UpdateVisibleChunks ();
 	}
 
-	void Update() {
+	/* void Update() {
 		viewerPosition = new Vector2 (viewer.position.x, viewer.position.z);
 
 		if (viewerPosition != viewerPositionOld) {
@@ -52,7 +52,7 @@ public class TerrainGenerator : MonoBehaviour {
 			viewerPositionOld = viewerPosition;
 			UpdateVisibleChunks ();
 		}
-	}
+	} */
 		
 	void UpdateVisibleChunks() {
 		HashSet<Vector2> alreadyUpdatedChunkCoords = new HashSet<Vector2> ();

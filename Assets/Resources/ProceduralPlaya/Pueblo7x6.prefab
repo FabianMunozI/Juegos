@@ -1117,6 +1117,7 @@ Transform:
   - {fileID: 6411673612517528509}
   - {fileID: 4913087979351702405}
   - {fileID: 3848015100455624859}
+  - {fileID: 2794364569976347237}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5137,3 +5138,65 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -2.5, y: 0, z: -2.5}
   m_TimeToStationary: 0.5
+--- !u!1001 &4481523269901259828
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 239134868367403569}
+    m_Modifications:
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_RootOrder
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.129547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.6798477
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120986180954615251, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+      propertyPath: m_Name
+      value: PortalPlaya 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+--- !u!4 &2794364569976347237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1798627773011201617, guid: 0e9b403f8c327f149ae943bedb212051, type: 3}
+  m_PrefabInstance: {fileID: 4481523269901259828}
+  m_PrefabAsset: {fileID: 0}
