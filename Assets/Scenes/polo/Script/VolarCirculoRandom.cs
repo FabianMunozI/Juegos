@@ -9,7 +9,6 @@ public class VolarCirculoRandom : MonoBehaviour
     private float angulo = 0f;
     private Vector3 posicionInicial; // Variable para almacenar la posición inicial
 
-    // Start is called before the first frame update
     void Start()
     {
         // Guarda la posición inicial del objeto
