@@ -195,6 +195,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8588217284050728870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472139766441278325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d6e3b104783984f8b9e197988c67b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  moveDistanceZ: 5
+  rotationSpeed: 30
 --- !u!114 &-4198554724048080000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,18 +226,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1048576
   offSet: {x: 0, y: 0, z: 0}
---- !u!114 &20071735
-MonoBehaviour:
+--- !u!65 &8593824291187741960
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7472139766441278325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b884ff0dd6ba50478b116780f29c515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0.8
-  moveDistanceZ: 7
-  rotationSpeed: 60
+  serializedVersion: 2
+  m_Size: {x: 3.6212864, y: 4.160316, z: 1.2219324}
+  m_Center: {x: 0.05335967, y: 2.076581, z: 0.050762255}
