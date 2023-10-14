@@ -31,7 +31,7 @@ EditorBuildSettings:
     guid: c91e037c7ee6f454dae35cfeb1f91167
   - enabled: 1
     path: Assets/Scenes/pruebaartico.unity
-    guid: ea084d05d2b33214ca849b53cf0de8ab
+    guid: 3bd9180dd4062fd4c9bade3e4136db34
   - enabled: 1
     path: Assets/Scenes/Bosque.unity
     guid: e120d0e37ab427a4cb1c20085b85c472
