@@ -24,6 +24,8 @@ public class GenObjtPolo : MonoBehaviour
     private int cantidadNubes, nubesActuales;
     private List<GameObject> listaNubes = new List<GameObject>();
 
+    public GameObject animalesPadre;
+
     void Start()
     {
         zmin = -1100;
@@ -33,20 +35,31 @@ public class GenObjtPolo : MonoBehaviour
 
         float randomValueX, randomValueY , randomValueZ;
 
-        //Debug.Log("zmin" + zmin);
-        //Debug.Log("xmin" + xmin);
-        //Debug.Log("zmax" + zmax);
-        //Debug.Log("xmax" + xmax);
+        GameObject pajaro;
+        GameObject osoPengu;
+
         for (var pajaros = 0 ; pajaros < objetosCantidad[0] ; pajaros++)
         {
             randomValueX = Random.Range(xmin, xmax);
             randomValueY = Random.Range(86, 111);
             randomValueZ = Random.Range(zmin, zmax);
 
-            Instantiate(objetos[0], new Vector3(randomValueX, randomValueY, randomValueZ), Quaternion.identity);
+            pajaro = Instantiate(objetos[0], new Vector3(randomValueX, randomValueY, randomValueZ), Quaternion.identity);
+
+            pajaro.transform.parent = animalesPadre.transform;
         }
 
-        for (var i = 1; i < objetos.Length; i++)
+        for (var osos = 0; osos < objetosCantidad[1]; osos++)
+        {
+            randomValueX = Random.Range(xmin, xmax);
+            randomValueZ = Random.Range(zmin, zmax);
+
+            osoPengu = Instantiate(objetos[1], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+
+            osoPengu.transform.parent = animalesPadre.transform;
+        }
+
+        for (var i = 2; i < objetos.Length - 1; i++)
         {
             for (var a = 0; a < objetosCantidad[i]; a++)
             {
@@ -56,6 +69,16 @@ public class GenObjtPolo : MonoBehaviour
                 Instantiate(objetos[i], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
             }
             
+        }
+
+        for (var pengu = 0; pengu < objetosCantidad[objetos.Length - 1]; pengu++)
+        {
+            randomValueX = Random.Range(xmin, xmax);
+            randomValueZ = Random.Range(zmin, zmax);
+
+            osoPengu = Instantiate(objetos[objetos.Length - 1], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+
+            osoPengu.transform.parent = animalesPadre.transform;
         }
 
         //Primer Lado
