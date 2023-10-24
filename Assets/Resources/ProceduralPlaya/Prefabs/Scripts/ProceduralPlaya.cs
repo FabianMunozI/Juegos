@@ -7,7 +7,7 @@ public class ProceduralPlaya : MonoBehaviour
 {   
     private int left_limit = -300, right_limit = 300;
     private int up_limit = 300, down_limit = -300;
-    public int seed = -1;
+    private int seed;
 
     // Procedural Playa
     [Header("Configuracion Terreno Playa")]
@@ -67,15 +67,18 @@ public class ProceduralPlaya : MonoBehaviour
 
     public GameObject CUBOMISION;
 
+
     void Start()
     {   
         // Inicializar semilla.
-        if (seed == -1)
+        if (!PlayerPrefs.HasKey("seedPlaya"))
         {
-            seed = Random.Range(0,10000);
-            Random.seed = seed;
-        } else
-        {Random.seed = seed;}
+            seed = Random.Range(0, 10000);
+            PlayerPrefs.SetInt("seedPlaya", seed);
+            PlayerPrefs.Save();
+        } else{
+            Random.seed = PlayerPrefs.GetInt("seedPlaya");
+        }
         Debug.Log(seed);
         
 
@@ -200,46 +203,62 @@ public class ProceduralPlaya : MonoBehaviour
         if (orientation_city == 0)
         {
             Debug.Log("OR0");
-            xx = cityWidth - 4;
-            yy = Random.Range(2,cityHeight - 3);
+            xx = cityWidth - 5;
+            yy = Random.Range(3,cityHeight - 4);
             Instantiate(CUBOMISION,
-                        grid.GetCellCenter(xx, yy) + new Vector3(0,4,0),
-                        Quaternion.identity);
+                        grid.GetCellCenter(xx, yy) + new Vector3(0,6,0),
+                        Quaternion.Euler(0,90,0));
         } else if (orientation_city == 1)
         {
             Debug.Log("OR1");
-            xx = 3;
-            yy = Random.Range(2,cityHeight - 3);
+            xx = 4;
+            yy = Random.Range(3,cityHeight - 4);
             Instantiate(CUBOMISION,
-                        grid.GetCellCenter(xx, yy) + new Vector3(0,4,0),
-                        Quaternion.identity);
+                        grid.GetCellCenter(xx, yy) + new Vector3(0,6,0),
+                        Quaternion.Euler(0,270,0));
         } else if (orientation_city == 2)
         {
             Debug.Log("OR2");
-            xx = Random.Range(2,cityWidth-3);
-            yy = cityHeight - 4;
+            xx = Random.Range(3,cityWidth-4);
+            yy = cityHeight - 5;
             Instantiate(CUBOMISION,
-                        grid.GetCellCenter(xx, yy) + new Vector3(0,4,0),
+                        grid.GetCellCenter(xx, yy) + new Vector3(0,6,0),
                         Quaternion.identity);
         } else if (orientation_city == 3)
         {
             Debug.Log("OR3");
-            xx = Random.Range(2,cityWidth-3);
-            yy = 3;
+            xx = Random.Range(3,cityWidth-4);
+            yy = 4;
             Instantiate(CUBOMISION,
-                        grid.GetCellCenter(xx, yy) + new Vector3(0,4,0),
-                        Quaternion.identity);
+                        grid.GetCellCenter(xx, yy) + new Vector3(0,6,0),
+                        Quaternion.Euler(0,180,0));
         }
 
         grid.SetCellDontBuild(xx, yy);
         grid.SetCellDontBuild(xx + 1, yy);
         grid.SetCellDontBuild(xx - 1, yy);
+        grid.SetCellDontBuild(xx + 2, yy);
+        grid.SetCellDontBuild(xx - 2, yy);
         grid.SetCellDontBuild(xx, yy + 1);
         grid.SetCellDontBuild(xx + 1, yy + 1);
         grid.SetCellDontBuild(xx - 1, yy + 1);
+        grid.SetCellDontBuild(xx + 2, yy + 1);
+        grid.SetCellDontBuild(xx - 2, yy + 1);
         grid.SetCellDontBuild(xx, yy - 1);
         grid.SetCellDontBuild(xx + 1, yy - 1);
         grid.SetCellDontBuild(xx - 1, yy - 1);
+        grid.SetCellDontBuild(xx + 2, yy - 1);
+        grid.SetCellDontBuild(xx - 2, yy - 1);
+        grid.SetCellDontBuild(xx, yy - 2);
+        grid.SetCellDontBuild(xx + 1, yy - 2);
+        grid.SetCellDontBuild(xx - 1, yy - 2);
+        grid.SetCellDontBuild(xx + 2, yy - 2);
+        grid.SetCellDontBuild(xx - 2, yy - 2);
+        grid.SetCellDontBuild(xx, yy + 2);
+        grid.SetCellDontBuild(xx + 1, yy + 2);
+        grid.SetCellDontBuild(xx - 1, yy + 2);
+        grid.SetCellDontBuild(xx + 2, yy + 2);
+        grid.SetCellDontBuild(xx - 2, yy + 2);
 
         AddDetailsUp();
 
@@ -322,7 +341,19 @@ public class ProceduralPlaya : MonoBehaviour
         GameObject pl = GameObject.Find("Player");
         if (pl != null)
         {
-            pl.transform.position = SearchNotBuildableZone();
+            if(PlayerPrefs.HasKey("playaProceduralVolver"))
+            {
+                if(PlayerPrefs.GetInt("playaProceduralVolver") == 0)
+                    pl.transform.position = SearchNotBuildableZone(); // spawn pos.
+                else
+                {
+                    pl.transform.position = new Vector3( PlayerPrefs.GetFloat("playaProceduralPosx"),
+                                                         PlayerPrefs.GetFloat("playaProceduralPosy"),
+                                                         PlayerPrefs.GetFloat("playaProceduralPosz"));
+                    PlayerPrefs.SetInt("playaProceduralVolver", 0);
+                }
+            } else
+            pl.transform.position = SearchNotBuildableZone(); // spawn pos.
         }
     }
 

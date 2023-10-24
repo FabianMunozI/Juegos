@@ -3907,7 +3907,7 @@ MonoBehaviour:
   cantidadPersonas: 20
   cantidadnubes: 20
   misionBasuraPlaya: {fileID: 6730146409621711154}
-  CUBOMISION: {fileID: 2512940562987743799, guid: 54be39aa080d4a349a2b0196596f4f1b, type: 3}
+  CUBOMISION: {fileID: 7964457133157348036, guid: 8e1ef92367caaf54c9fb85a0456e4585, type: 3}
 --- !u!1 &1389154276
 GameObject:
   m_ObjectHideFlags: 0
@@ -8333,7 +8333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6730146409621711155
 Transform:
   m_ObjectHideFlags: 0
