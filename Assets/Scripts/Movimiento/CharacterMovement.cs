@@ -47,12 +47,12 @@ public class CharacterMovement : MonoBehaviour
         speedUsar=speed;
         PlayerAnimatorController = GetComponent<Animator>();
         
-        if(Equals(SceneManager.GetActiveScene().name, "TP_PlantaTratamiento")){
-            Debug.Log("entre aqui1");
+        if(Equals(SceneManager.GetActiveScene().name, "PlayaProcedural")){ //Equals(SceneManager.GetActiveScene().name, "TP_PlantaTratamiento")
+            //Debug.Log("entre aqui1");
             if (PlayerPrefs.HasKey("playaProceduralPos"))
             {
                 Debug.Log("entre aqui2");
-                transform.position = GameObject.Find("PrefabPlayaCiudadTP").transform.GetChild(9).transform.position;
+                transform.position = GameObject.Find("PrefabPlayaCiudadTP(Clone)").transform.GetChild(9).transform.position;
                 PlayerPrefs.DeleteKey("playaProceduralPos");
                 PlayerPrefs.Save();
             }

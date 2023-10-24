@@ -77,7 +77,7 @@ public class CameraInteraction : MonoBehaviour
                     } */
                 }
                 if(Input.GetKeyDown(KeyCode.F) && this.GetComponent<PickUpObjects>().PickedObject == null && this.GetComponent<PickUpObjects>().PickedObjectMascota == null && mascota.GetComponent<mascotaInteraction>().mascotita==false && !GetComponent<Mascota>().eresLaMascota){ //agarrar objeto
-                    Debug.Log(this.GetComponent<PickUpObjects>().PickedObjectMascota);
+                    //Debug.Log(this.GetComponent<PickUpObjects>().PickedObjectMascota);
                     hit2.transform.GetComponent<Interactable>().Interact();
 
                     if(this.GetComponent<PickUpObjects>().PickedObject != null)
