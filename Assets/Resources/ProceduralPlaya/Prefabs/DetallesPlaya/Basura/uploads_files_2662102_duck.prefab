@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2696835318095245282}
   - component: {fileID: 1351870418663006279}
   - component: {fileID: 3829811971349582989}
+  - component: {fileID: -3592986715076999768}
+  - component: {fileID: -8693661638520725400}
   m_Layer: 0
   m_Name: uploads_files_2662102_duck
   m_TagString: Untagged
@@ -83,3 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3592986715076999768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325562813660476760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cd544d37f40f240889cc43f1ead0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &-8693661638520725400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325562813660476760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.07999, y: 11.128773, z: 11.752449}
+  m_Center: {x: 1.9150001, y: 12.614504, z: 0.31206942}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3444084681996587260}
   - component: {fileID: 9151070749285665645}
   - component: {fileID: 4558258798400070045}
+  - component: {fileID: -8781067590487560412}
+  - component: {fileID: -8344012545711766102}
   m_Layer: 0
   m_Name: Plastic_Bottle_01_GEO
   m_TagString: Untagged
@@ -83,3 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-8781067590487560412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176587513629881303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cd544d37f40f240889cc43f1ead0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &-8344012545711766102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176587513629881303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09013882, y: 0.31326178, z: 0.09013893}
+  m_Center: {x: -0.000000059604645, y: 0.15663089, z: -0.0000000037252903}

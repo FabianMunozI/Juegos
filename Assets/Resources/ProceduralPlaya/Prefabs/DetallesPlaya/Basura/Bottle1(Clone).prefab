@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4779959564639582247}
   - component: {fileID: 7617704348165925611}
   - component: {fileID: 7336379163627931556}
+  - component: {fileID: -6228608552776637386}
+  - component: {fileID: -2706767233978973433}
   m_Layer: 0
   m_Name: Bottle1(Clone)
   m_TagString: Untagged
@@ -83,3 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-6228608552776637386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020460488580209884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cd544d37f40f240889cc43f1ead0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &-2706767233978973433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020460488580209884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18973948, y: 0.19949634, z: 0.7744074}
+  m_Center: {x: 0, y: 0, z: 0.3872037}

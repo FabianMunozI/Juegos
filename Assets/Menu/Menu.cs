@@ -53,7 +53,18 @@ public class Menu : MonoBehaviour
     }
     public void MenuButtonPlaya ()
     {
-        //TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENUCIUDAD);
+         if(!Equals(SceneManager.GetActiveScene().name, "MenuPlaya")){
+            if(!PlayerPrefs.HasKey("seedPlaya")){
+                int seed = Random.Range(0,10000);
+                PlayerPrefs.SetInt("seedPlaya", seed);
+                PlayerPrefs.Save();
+            }
+        }else { 
+            int seed = Random.Range(0,10000);
+            PlayerPrefs.SetInt("seedPlaya", seed);
+            PlayerPrefs.Save();
+        }
+
         SceneManager.LoadScene("MenuPlaya");
     }
     // Update is called once per frame
