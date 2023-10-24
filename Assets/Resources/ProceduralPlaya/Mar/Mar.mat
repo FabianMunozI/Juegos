@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mar
-  m_Shader: {fileID: -6465566751694194690, guid: e8fe4455c754a9e4db74a54618b6d56b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e616bf01531734e41a972a84eb464ff6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -121,6 +121,8 @@ Material:
     - _Normal_Stre: 5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _PerX: 0
+    - _PerY: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -139,10 +141,12 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DeepColor: {r: 0.15801886, g: 0.39867216, b: 0.5, a: 1}
-    - _DepthColor: {r: 0.2880918, g: 0.608536, b: 0.735849, a: 1}
+    - _DepthColor: {r: 0.14391243, g: 0.50295925, b: 0.6226415, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.6693218, g: 0.7904194, b: 0.8396226, a: 0.27058825}
+    - _PetroleoColor: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
+    - _ReflejosColor: {r: 0.2264151, g: 0.19117124, b: 0.19117124, a: 0}
+    - _ShadowColor: {r: 0.19188325, g: 0.61742043, b: 0.8301887, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2379804757108948251

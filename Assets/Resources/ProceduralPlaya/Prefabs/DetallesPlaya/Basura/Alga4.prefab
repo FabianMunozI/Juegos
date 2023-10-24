@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4266724499746280643}
   - component: {fileID: 7858198184283319267}
   - component: {fileID: 4357209279275455168}
+  - component: {fileID: 6948194282653045314}
   m_Layer: 0
   m_Name: Alga4
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6948194282653045314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441167408852583555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cd544d37f40f240889cc43f1ead0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
