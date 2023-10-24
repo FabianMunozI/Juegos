@@ -11,6 +11,7 @@ public class PoloGenerator : MonoBehaviour {
 	const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
 
 	[SerializeField] private GameObject teleport;
+	[SerializeField] private GameObject npcMision;
 
 	[SerializeField] private GameObject[] montanias;
 	[SerializeField] private GameObject[] trees;
@@ -52,6 +53,7 @@ public class PoloGenerator : MonoBehaviour {
 		ColocarTeleport();
 		ColocarMontañas();
 		ColocarHielo();
+		MisionPreservarFauna();
 	}
 
 	/*
@@ -70,6 +72,14 @@ public class PoloGenerator : MonoBehaviour {
 		}
 	}
 	*/
+
+	private void MisionPreservarFauna()
+    {
+		float randomValueX = Random.Range(-900, 900);
+		float randomValueZ = Random.Range(-900, 900);
+
+		Instantiate(npcMision, new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+	}
 		
 	void UpdateVisibleChunks() {
 		HashSet<Vector2> alreadyUpdatedChunkCoords = new HashSet<Vector2> ();

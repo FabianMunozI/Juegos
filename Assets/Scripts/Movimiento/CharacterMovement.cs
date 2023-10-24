@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -46,7 +47,40 @@ public class CharacterMovement : MonoBehaviour
         speedUsar=speed;
         PlayerAnimatorController = GetComponent<Animator>();
         
+        if(Equals(SceneManager.GetActiveScene().name, "TP_PlantaTratamiento")){
+            Debug.Log("entre aqui1");
+            if (PlayerPrefs.HasKey("playaProceduralPos"))
+            {
+                Debug.Log("entre aqui2");
+                transform.position = GameObject.Find("PrefabPlayaCiudadTP").transform.GetChild(9).transform.position;
+                PlayerPrefs.DeleteKey("playaProceduralPos");
+                PlayerPrefs.Save();
+            }
+        }
     }
+
+    /* private void OnEnable() {
+        Debug.Log("entre aqui5");
+        SceneManager.sceneLoaded += pruebaPosDesierto;
+    }
+
+    private void OnDisable() {
+        Debug.Log("entre aqui4");
+        SceneManager.sceneLoaded -= pruebaPosDesierto;
+    }
+
+    private void pruebaPosDesierto(Scene scene, LoadSceneMode mode){
+        if(Equals(SceneManager.GetActiveScene().name, "PlayaProcedural")){
+            Debug.Log("entre aqui1");
+            if (PlayerPrefs.HasKey("playaProceduralPos"))
+            {
+                Debug.Log("entre aqui2");
+                transform.position = GameObject.Find("PrefabPlayaCiudadTP").transform.GetChild(9).transform.position;
+                PlayerPrefs.DeleteKey("playaProceduralPos");
+                PlayerPrefs.Save();
+            }
+        }
+    } */
 
     // Update is called once per frame
     public void UpdateMovement()

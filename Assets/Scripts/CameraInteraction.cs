@@ -27,10 +27,12 @@ public class CameraInteraction : MonoBehaviour
     private GameObject Iv;
 
     static public bool interactionDialogue = false;
+
+    GameObject mascota;
     // Start is called before the first frame update
     void Start()
     {
-
+        mascota = GameObject.Find("CMascota").transform.GetChild(0).gameObject;
         cameraa = transform.Find("Camera");
         Iv = GameObject.Find("Inventario");
 
@@ -64,7 +66,7 @@ public class CameraInteraction : MonoBehaviour
             }
             ///////////////////////////////////////////////////////////////////////////////
             RaycastHit hit2;
-            if (Physics.Raycast(cameraa.position, cameraa.forward, out hit2, rayDistance, LayerMask.GetMask("grabable"))){
+            if (Physics.Raycast(cameraa.position, cameraa.forward, out hit2, rayDistance, LayerMask.GetMask("grabable")) && this.GetComponent<PickUpObjects>().PickedObjectMascota == null && !GetComponent<Mascota>().eresLaMascota){
                 Deselect2();
                 if(this.GetComponent<PickUpObjects>().PickedObject ==null){
                     SelectedObjet2(hit2.transform);
@@ -74,7 +76,8 @@ public class CameraInteraction : MonoBehaviour
                         GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
                     } */
                 }
-                if(Input.GetKeyDown(KeyCode.F) && this.GetComponent<PickUpObjects>().PickedObject == null){ //agarrar objeto
+                if(Input.GetKeyDown(KeyCode.F) && this.GetComponent<PickUpObjects>().PickedObject == null && this.GetComponent<PickUpObjects>().PickedObjectMascota == null && mascota.GetComponent<mascotaInteraction>().mascotita==false && !GetComponent<Mascota>().eresLaMascota){ //agarrar objeto
+                    Debug.Log(this.GetComponent<PickUpObjects>().PickedObjectMascota);
                     hit2.transform.GetComponent<Interactable>().Interact();
 
                     if(this.GetComponent<PickUpObjects>().PickedObject != null)
@@ -94,10 +97,12 @@ public class CameraInteraction : MonoBehaviour
                     }
                 }
                 else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
+                    Debug.Log("b");
                     GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
                     Iv.GetComponent<Inventory>().SoltarObjeto();
                 }
             }else if(Input.GetKeyDown(KeyCode.F) && GetComponent<PickUpObjects>().PickedObject != null) {  //soltar objeto
+                        Debug.Log("a");
                         GetComponent<PickUpObjects>().PickedObject.transform.GetComponent<Interactable>().Interact();
                         Deselect2();
                         Iv.GetComponent<Inventory>().SoltarObjeto();

@@ -16,6 +16,7 @@ TagManager:
   - publicoritmo
   - puebloDesierto
   - npcTala
+  - recogiblemascota
   layers:
   - Default
   - TransparentFX
