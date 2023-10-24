@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mar_Playa_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 8c61cccb420d49540ab63d5a9ee07964, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b61ca04b4f9bded4a9fd30d87451557d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -94,12 +94,17 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth: 3.2
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DistanciaEspuma: -26.18
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Espuma_Libre_En_Mar: 1
+    - _Espuma_Objetos: 0.4
     - _FlujoVelocidad: 0.1
+    - _FoamScale: 100
+    - _FoamSpeed: 0.001
     - _FuerzaFlujo: 0.0001
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -107,15 +112,21 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _PerX: 0
+    - _PerY: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.8
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Strength: 0.17
     - _Surface: 0
     - _Tama_o: 50
+    - _WaveAmplitude: 2
+    - _WaveScale: 20
+    - _WaveSpeed: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -124,7 +135,11 @@ Material:
     - _ColorAgua: {r: 0.18222678, g: 0.51292706, b: 0.8584906, a: 0}
     - _ColorClaroEspum: {r: 1, g: 1, b: 1, a: 0}
     - _ColorOscuroEspuma: {r: 0.06363473, g: 0.10515437, b: 0.24528292, a: 0}
+    - _DepthColor: {r: 0.637104, g: 0.8946312, b: 0.9716981, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 0.9058824}
+    - _ReflejosColor: {r: 0.7075471, g: 0.14351186, b: 0.14351186, a: 0}
+    - _ShadowColor: {r: 0.20518866, g: 0.8207547, b: 0.8207547, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7170703275895168852
