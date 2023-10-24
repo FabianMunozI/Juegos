@@ -182,7 +182,7 @@ public class PreservarFauna : MonoBehaviour
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
 
-        RenderSettings.fog = true;
+        //RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
         RenderSettings.fogStartDistance = 2f;
         RenderSettings.fogEndDistance = 160f;

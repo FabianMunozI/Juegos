@@ -81,7 +81,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animales: []
-  dunas: []
+  dunas:
+  - {fileID: 189700, guid: b4b640081e0baf844bf6d1fec0220e75, type: 3}
+  - {fileID: 133318, guid: d571cba16a02393479fec11fdb4c1071, type: 3}
+  - {fileID: 184458, guid: 5b02befe6f56ae94c9d35250ecd486fe, type: 3}
   dialogoInicio: {fileID: 0}
   radarPrefab: {fileID: 0}
   questTracker: {fileID: 0}
@@ -679,6 +682,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a90656b3c98bbe2428d59d6ef78e78a0, type: 3}
   m_PrefabInstance: {fileID: 1712805247955599293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1946806960550331116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a90656b3c98bbe2428d59d6ef78e78a0, type: 3}
+  m_PrefabInstance: {fileID: 1712805247955599293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5010294001292924960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946806960550331116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8cb8e88eb5733546b668cee5e2b6ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceptButton: {fileID: 0}
+  declineButton: {fileID: 0}
+  dialogoObjetivo: {fileID: 0}
+  misionAceptada: 0
 --- !u!1001 &3193963234635421423
 PrefabInstance:
   m_ObjectHideFlags: 0
