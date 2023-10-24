@@ -6,6 +6,7 @@ public class PickableMascota : Interactable//, IPunObservable
 {
     GameObject Jugador;
     GameObject mascota;
+    public int tipo;
 
     public void Start(){
         Jugador = GameObject.Find("Player");
@@ -35,7 +36,7 @@ public class PickableMascota : Interactable//, IPunObservable
 
             }
         }else{
-            Debug.Log("mascotita false");
+            //Debug.Log("mascotita false");
             if( Jugador.GetComponent<PickUpObjects>().PickedObject == null){
                 Jugador.GetComponent<PickUpObjects>().PickedObject = this.gameObject;
                 this.transform.SetParent(Jugador.transform.GetChild(1));
