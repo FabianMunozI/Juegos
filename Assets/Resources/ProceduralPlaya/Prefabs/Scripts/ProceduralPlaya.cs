@@ -135,7 +135,7 @@ public class ProceduralPlaya : MonoBehaviour
 
     void SeaTerrain()
     {
-        GameObject planoAgua = Resources.Load<GameObject>("ProceduralPlaya/Mar/PlanoAgua_R");
+        GameObject planoAgua = Resources.Load<GameObject>("ProceduralPlaya/Mar/PlanoAguaPetroleo");
         var temp = Instantiate(planoAgua, new Vector3(beachWidth/2,0,beachHeight/2), Quaternion.identity);
         Renderer rend = temp.GetComponent<Renderer> ();
         rend.material.SetFloat("_Perx", -1 * (petroleo_pos.x - temp.transform.position.x) / 1200f);

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mar
+  m_Name: MarPetroleo
   m_Shader: {fileID: -6465566751694194690, guid: e8fe4455c754a9e4db74a54618b6d56b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
