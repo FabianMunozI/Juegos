@@ -13,13 +13,12 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject jugador;
     private GameObject camara;
+    public bool inputTrue = false;
     Vector3 posCamara;
 
     [SerializeField] private GameObject[] animales;
     [SerializeField] private GameObject[] dunas;
     private List<GameObject> objetosMision;
-
-    public GameObject dialogoInicio; //dialogoObjetivo
 
     public GameObject radarPrefab;
 
@@ -33,7 +32,7 @@ public class PreservarFauna : MonoBehaviour
     int animalesAyudados = 0;
 
 
-    private float tiempoLimite = 4f;
+    private float tiempoLimite;
 
     private Vector3 playerPosition;
     private Vector3 npcPosition;
@@ -47,8 +46,8 @@ public class PreservarFauna : MonoBehaviour
     {
         jugador = GameObject.Find("Player");
         camara = GameObject.Find("Camera");
+        npcPosition = transform.position;
 
-        CambiarMapaInicio();
         questTracker.SetActive(false);
     }
 
@@ -58,13 +57,19 @@ public class PreservarFauna : MonoBehaviour
     {
 
         // Comienza mision
-        if (!questStarted && !(missionDone)) //  && questGiver.GetComponent<Quest_Starter>().misionAceptada
+        if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<Quest_Starter>().misionAceptada) //  
         {
+            OnOffPlayer();
+
             CambiarMapaInicio();
             ObjetivosPantallaON();
+            RotarCamaraEntorno();
+
+            Invoke("OnOffPlayer", 2f);
+            questTracker.SetActive(true);
+
 
             /*
-            OnOffPlayer();
 
             Vector3 pos = semillas.transform.position - Jugador.transform.position;
             pos += new Vector3(3, 4, 4);
@@ -165,6 +170,8 @@ public class PreservarFauna : MonoBehaviour
             ObjetivosPantallaOFF();
         }
 
+
+        //Camara final misión 
         /*
         if (avRotate && tiempoLimite > 0)
         {
@@ -178,9 +185,13 @@ public class PreservarFauna : MonoBehaviour
     private void CambiarMapaInicio()
     {
         questStarted = true;
+        tiempoLimite = 4f;
+
+        Vector3 posJugador = jugador.transform.position;
 
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
+        transform.gameObject.SetActive(false);
 
         //RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
@@ -196,6 +207,7 @@ public class PreservarFauna : MonoBehaviour
             for (int j = -1200; j < 1200; j = j + 100)
             {
                 aux = Instantiate(dunas[Random.Range(0,4)], new Vector3(i, 10, j), Quaternion.identity);
+                aux.transform.localScale = new Vector3(20, 25, 20);
                 objetosMision.Add(aux);
 
                 i = i + Random.Range(0, 25);
@@ -217,9 +229,7 @@ public class PreservarFauna : MonoBehaviour
 
     private void CambiarMapaFinal()
     {
-
-       
-        //OnOffPlayer();
+        OnOffPlayer();
 
         RenderSettings.fog = false;
 
@@ -264,38 +274,26 @@ public class PreservarFauna : MonoBehaviour
 
     }
 
-
-    /*
-    public override void Interact()
+    public void OnOffPlayer()
     {
-        base.Interact();
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerPosition = player.transform.position;
-        playerPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
-        npcPosition = new Vector3(transform.position.x, 1, transform.position.z);
+        inputTrue = !inputTrue;
+        jugador.GetComponent<CharacterMovement>().AnimacionOn = !inputTrue; // frezea al player mientras esta la animacion
+        jugador.GetComponent<FpsCamera>().animacionOn = !inputTrue;
 
-        /////////Rotacion del NPC al jugador//////////////////////
-        Quaternion rotation = Quaternion.LookRotation(playerPosition - transform.position);
-        rotation.x = 0f;
-        rotation.z = 0f;
-        transform.rotation = rotation;
-        //////////////////////////////////////////////////////////
+        if (inputTrue == false)
+        { // si ya se inicio la mision y se esta terminando / devolviendo controles al player
+          // hay que desactivar que la mision pueda ser tomada
+          //referenciaExclamacion.SetActive(inputTrue);
+          //controller.SetTrigger("End3");
+          //Debug.Log("volvieron los controles");
+          // referenciaExclamacion.SetActive(false);
+          //this.GetComponent<MeshRenderer>().material.color=Color.green;
 
-        ///////////Rotacion del jugador al NPC////////////////////
-        rotation = Quaternion.LookRotation(npcPosition - player.transform.position);
-        rotation.x = 0f;
-        rotation.z = 0f;
-        player.transform.rotation = rotation;
-        //////////////////////////////////////////////////////////
+            camara.transform.localPosition = new Vector3(0, 0.69f, 0);
+            camara.transform.rotation = rotOriginal;
 
-        CharacterMovement.movementDialogue = true;
-        CameraInteraction.interactionDialogue = true;
-        FpsCamera.cameraDialogue = true;
-        NpcNav.isInDialogue = true;
-        Cursor.lockState = CursorLockMode.Confined;
 
-        dialogoObjetivo.SetActive(true);
+        }
 
     }
-    */
 }
