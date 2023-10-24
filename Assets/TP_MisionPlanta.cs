@@ -38,7 +38,7 @@ public class TP_MisionPlanta : Interactable
             //Debug.Log("entre aqui3");
             PlayerPrefs.SetInt("playaProceduralPos", 1);
             PlayerPrefs.Save();
-            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_TP_PLANTA);
+            TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALPLAYA);
         }
         
     }
