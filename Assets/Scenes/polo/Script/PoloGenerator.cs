@@ -16,6 +16,7 @@ public class PoloGenerator : MonoBehaviour {
 	[SerializeField] private GameObject[] montanias;
 	[SerializeField] private GameObject[] trees;
 	[SerializeField] private GameObject hielatzo;
+	[SerializeField] private GameObject iceBaby;
 	Transform parent;
 
 	public int colliderLODIndex;
@@ -53,25 +54,8 @@ public class PoloGenerator : MonoBehaviour {
 		ColocarTeleport();
 		ColocarMontañas();
 		ColocarHielo();
-		MisionPreservarFauna();
+		//MisionPreservarFauna();
 	}
-
-	/*
-	void Update() {
-		viewerPosition = new Vector2 (viewer.position.x, viewer.position.z);
-
-		if (viewerPosition != viewerPositionOld) {
-			foreach (TerrainChunk chunk in visibleTerrainChunks) {
-				chunk.UpdateCollisionMesh ();
-			}
-		}
-
-		if ((viewerPositionOld - viewerPosition).sqrMagnitude > sqrViewerMoveThresholdForChunkUpdate) {
-			viewerPositionOld = viewerPosition;
-			UpdateVisibleChunks ();
-		}
-	}
-	*/
 
 	private void MisionPreservarFauna()
     {
@@ -326,11 +310,12 @@ public class PoloGenerator : MonoBehaviour {
 		var placePosition = position + new Vector3(.5f, .5f, .5f);
 		var element = Instantiate(prefab, placePosition, rotation);
 		element.transform.parent = parent;
-		//diccionarioObstaculos.Add(position, element);
 	}
 
 	private void ColocarHielo()
     {
+
+		GameObject hielos;
 		//float xmin;
 		//float xmax;
 		//float zmin;
@@ -358,7 +343,9 @@ public class PoloGenerator : MonoBehaviour {
 			randomValueX = prng.Next(xmin, xmax);
 			randomValueZ = prng.Next(zmin, zmax);
 
-			Instantiate(hielatzo, new Vector3(randomValueX, 16.1f, randomValueZ), Quaternion.identity);
+			hielos = Instantiate(hielatzo, new Vector3(randomValueX, 16.1f, randomValueZ), Quaternion.identity);
+
+			hielos.transform.parent = iceBaby.transform;
 		}
     }
 
