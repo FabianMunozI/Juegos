@@ -25,6 +25,7 @@ public class GenObjtPolo : MonoBehaviour
     private List<GameObject> listaNubes = new List<GameObject>();
 
     public GameObject animalesPadre;
+    public GameObject objetosAmbientePadre;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class GenObjtPolo : MonoBehaviour
 
         GameObject pajaro;
         GameObject osoPengu;
+        GameObject aux;
 
         for (var pajaros = 0 ; pajaros < objetosCantidad[0] ; pajaros++)
         {
@@ -66,7 +68,9 @@ public class GenObjtPolo : MonoBehaviour
                 randomValueX = Random.Range(xmin, xmax);
                 randomValueZ = Random.Range(zmin, zmax);
 
-                Instantiate(objetos[i], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+                aux = Instantiate(objetos[i], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             
         }
