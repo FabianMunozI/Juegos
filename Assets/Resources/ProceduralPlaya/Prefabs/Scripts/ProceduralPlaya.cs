@@ -76,9 +76,9 @@ public class ProceduralPlaya : MonoBehaviour
             seed = Random.Range(0, 10000);
             PlayerPrefs.SetInt("seedPlaya", seed);
             PlayerPrefs.Save();
-        } else{
-            Random.seed = PlayerPrefs.GetInt("seedPlaya");
         }
+        seed = PlayerPrefs.GetInt("seedPlaya");
+        Random.seed = seed;
         Debug.Log(seed);
         
 

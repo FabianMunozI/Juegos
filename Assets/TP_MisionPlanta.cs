@@ -20,12 +20,14 @@ public class TP_MisionPlanta : Interactable
             PlayerPrefs.SetFloat("playaProceduralPosx", pl.transform.position.x);
             PlayerPrefs.SetFloat("playaProceduralPosy", pl.transform.position.y);
             PlayerPrefs.SetFloat("playaProceduralPosz", pl.transform.position.z);
+            PlayerPrefs.SetInt("playaProceduralVolver", 0); // Para posicionar al jugador solo cuando sale del 
             PlayerPrefs.Save();
             TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MISIONPLANTA);
 
         }else if(tipo ==1){
             Debug.Log("entre aqui3");
             PlayerPrefs.SetInt("playaProceduralVolver", 1); // Para posicionar al jugador solo cuando sale del 
+            PlayerPrefs.Save();
             TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_PROCEDURALPLAYA);
         }
         
