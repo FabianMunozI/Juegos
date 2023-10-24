@@ -548,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f526a1eccd0b6142a165f9f145ceb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputTrue: 0
   animales:
   - {fileID: 4556490278480817884, guid: eadf2766e2740324aaac244e9a19f30f, type: 3}
   - {fileID: 2905577564650319252, guid: 4f791de9b1f025b43921862d647863c3, type: 3}
@@ -1567,6 +1568,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8681199411970317695}
   - component: {fileID: 8681199411970317680}
+  - component: {fileID: 644441058852500803}
+  - component: {fileID: 5934035536688800365}
   m_Layer: 6
   m_Name: parkamujer
   m_TagString: Untagged
@@ -1611,6 +1614,40 @@ MonoBehaviour:
   declineButton: {fileID: 0}
   dialogoObjetivo: {fileID: 0}
   misionAceptada: 0
+--- !u!95 &644441058852500803
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681199411970317694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1439e867f8bc97944a43518e56b6457c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &5934035536688800365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681199411970317694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.50206, y: 11.924382, z: 1.871114}
+  m_Center: {x: 0.09781316, y: 5.4621887, z: 0.17126505}
 --- !u!1 &8681199411996581262
 GameObject:
   m_ObjectHideFlags: 0

@@ -63,7 +63,7 @@ public class PreservarFauna : MonoBehaviour
 
             CambiarMapaInicio();
             ObjetivosPantallaON();
-            RotarCamaraEntorno();
+            //RotarCamaraEntorno();
 
             Invoke("OnOffPlayer", 2f);
             questTracker.SetActive(true);
@@ -290,7 +290,7 @@ public class PreservarFauna : MonoBehaviour
           //this.GetComponent<MeshRenderer>().material.color=Color.green;
 
             camara.transform.localPosition = new Vector3(0, 0.69f, 0);
-            camara.transform.rotation = rotOriginal;
+            //camara.transform.rotation = rotOriginal;
 
 
         }

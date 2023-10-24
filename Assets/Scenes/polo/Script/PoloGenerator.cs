@@ -54,7 +54,7 @@ public class PoloGenerator : MonoBehaviour {
 		ColocarTeleport();
 		ColocarMontañas();
 		ColocarHielo();
-		MisionPreservarFauna();
+		//MisionPreservarFauna();
 	}
 
 	private void MisionPreservarFauna()
