@@ -48,7 +48,7 @@ public class CharacterMovement : MonoBehaviour
         PlayerAnimatorController = GetComponent<Animator>();
         
         if(Equals(SceneManager.GetActiveScene().name, "TP_PlantaTratamiento")){
-            Debug.Log("entre aqui1");
+            //Debug.Log("entre aqui1");
             if (PlayerPrefs.HasKey("playaProceduralPos"))
             {
                 Debug.Log("entre aqui2");
