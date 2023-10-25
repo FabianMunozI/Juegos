@@ -25,7 +25,7 @@ public class ArbolTutorial : Interactable
                Jugador.GetComponent<PickUpObjects>().PickedObject.name == string.Format("{0}", palaPrefab.name))
             {  
                 base.Interact();
-                Instantiate(tumultoPrefab, transform.position - new Vector3(0,1.5f,0), Quaternion.identity);
+                Instantiate(tumultoPrefab, transform.position - new Vector3(0,2.5f,0), Quaternion.identity);
                 gameObject.SetActive(false);
             }
         }
