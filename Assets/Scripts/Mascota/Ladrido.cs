@@ -42,7 +42,7 @@ public class Ladrido : MonoBehaviour
     void llamarAtencion(){
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("npcTala");
         for(int i = 0; i< npcs.Length ; i++){
-            if(Vector3.Distance(transform.position, npcs[i].transform.position) <20f &&  Vector3.Distance(transform.position, npcs[i].transform.position)>5f){
+            if(Vector3.Distance(transform.position, npcs[i].transform.position) <25f &&  Vector3.Distance(transform.position, npcs[i].transform.position)>2f){
                 //Debug.Log("zi");
 
                 npcs[i].GetComponent<ControlladorNavMesh>().ActualizarPuntoDestinoNavMeshAgent(transform.position);
