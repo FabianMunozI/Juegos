@@ -13,19 +13,20 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject jugador;
     private GameObject camara;
+    private GameObject canvas;
     public bool inputTrue = false;
     Vector3 posCamara;
 
-    [SerializeField] private GameObject[] animales;
+    [SerializeField] private GameObject[] animalesMision;
     [SerializeField] private GameObject[] dunas;
     private List<GameObject> objetosMision;
 
     public GameObject radarPrefab;
 
 
-    public GameObject questTracker;
-    public TextMeshProUGUI questTitle;
-    public TextMeshProUGUI questText;
+    private GameObject questTracker;
+    private TextMeshProUGUI questTitle;
+    private TextMeshProUGUI questText;
 
 
     int asignador = 0;
@@ -39,13 +40,19 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject puntoEntorno;
 
-
-
+    private int distanciaZonas = 700;
 
     void Start()
     {
         jugador = GameObject.Find("Player");
         camara = GameObject.Find("Camera");
+        canvas = GameObject.Find("Canvas");
+
+        questTracker = canvas.transform.GetChild(7).gameObject; ;
+        questTitle = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        questText = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        
+
         npcPosition = transform.position;
 
         questTracker.SetActive(false);
@@ -59,13 +66,13 @@ public class PreservarFauna : MonoBehaviour
         // Comienza mision
         if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<Quest_Starter>().misionAceptada) //  
         {
-            OnOffPlayer();
+            //OnOffPlayer();
 
             CambiarMapaInicio();
             ObjetivosPantallaON();
             //RotarCamaraEntorno();
 
-            Invoke("OnOffPlayer", 2f);
+            //Invoke("OnOffPlayer", 2f);
             questTracker.SetActive(true);
 
 
@@ -189,16 +196,30 @@ public class PreservarFauna : MonoBehaviour
 
         Vector3 posJugador = jugador.transform.position;
 
+        Vector3 focaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+        Vector3 orcaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+        Vector3 penguPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+
+        while (!(ConfirmarDistancias(focaPos,orcaPos) || ConfirmarDistancias(focaPos, penguPos) || ConfirmarDistancias(penguPos, orcaPos)))
+        {
+            focaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+            orcaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+            penguPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+        }
+
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
         transform.gameObject.SetActive(false);
 
-        //RenderSettings.fog = true;
+        RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
         RenderSettings.fogStartDistance = 2f;
         RenderSettings.fogEndDistance = 160f;
         RenderSettings.fogDensity = 0.1f;
         //RenderSettings.fogColor = Color.blue;
+
+        jugador.transform.GetChild(6).gameObject.SetActive(false);
+        jugador.transform.GetChild(7).gameObject.SetActive(true);
 
         GameObject aux;
 
@@ -215,6 +236,20 @@ public class PreservarFauna : MonoBehaviour
             }
                 
         }
+
+        //Pengu
+        //Orca
+        //Foca
+
+        aux = Instantiate(animalesMision[0], penguPos, Quaternion.identity);
+        objetosMision.Add(aux);
+
+        aux = Instantiate(animalesMision[1], orcaPos, Quaternion.identity);
+        objetosMision.Add(aux);
+
+        aux = Instantiate(animalesMision[2], focaPos, Quaternion.identity);
+        objetosMision.Add(aux);
+
     }
 
     private void ObjetivosPantallaON()
@@ -233,6 +268,9 @@ public class PreservarFauna : MonoBehaviour
 
         RenderSettings.fog = false;
 
+        jugador.transform.GetChild(6).gameObject.SetActive(true);
+        jugador.transform.GetChild(7).gameObject.SetActive(false);
+
         missionDone = true;
         questStarted = false;
         questTitle.text = "Mision Terminada!";
@@ -241,6 +279,7 @@ public class PreservarFauna : MonoBehaviour
 
         this.gameObject.layer = LayerMask.NameToLayer("dialogable");
 
+        transform.gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(true);
 
@@ -272,6 +311,17 @@ public class PreservarFauna : MonoBehaviour
         avRotate = true;
 */
 
+    }
+
+    private bool ConfirmarDistancias(Vector3 a, Vector3 b)
+    {
+        float x = a.x - b.x;
+        float z = a.z - b.z;
+
+        if ((x * x + z * z) < distanciaZonas)
+            return false;
+
+        return true;
     }
 
     public void OnOffPlayer()

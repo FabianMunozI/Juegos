@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64687583034409796}
   - component: {fileID: 64066098400225006}
   - component: {fileID: -1943430179846262924}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: duna 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

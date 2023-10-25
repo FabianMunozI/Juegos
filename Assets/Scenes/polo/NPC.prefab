@@ -557,7 +557,7 @@ MonoBehaviour:
   - {fileID: 189700, guid: b4b640081e0baf844bf6d1fec0220e75, type: 3}
   - {fileID: 133318, guid: d571cba16a02393479fec11fdb4c1071, type: 3}
   - {fileID: 184458, guid: 5b02befe6f56ae94c9d35250ecd486fe, type: 3}
-  radarPrefab: {fileID: 0}
+  radarPrefab: {fileID: 879584510580574811, guid: e81c333d311027a408ea2e2fec718f52, type: 3}
   questTracker: {fileID: 0}
   questTitle: {fileID: 0}
   questText: {fileID: 0}
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorMask:
     serializedVersion: 2
-    m_Bits: 1048576
+    m_Bits: 1048592
   evitarAgua:
     serializedVersion: 2
     m_Bits: 16
@@ -1567,9 +1567,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8681199411970317695}
-  - component: {fileID: 8681199411970317680}
   - component: {fileID: 644441058852500803}
   - component: {fileID: 5934035536688800365}
+  - component: {fileID: 7115577604509465888}
   m_Layer: 6
   m_Name: parkamujer
   m_TagString: Untagged
@@ -1598,22 +1598,6 @@ Transform:
   m_Father: {fileID: 8681199411157954218}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -58.306, z: 0}
---- !u!114 &8681199411970317680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681199411970317694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8cb8e88eb5733546b668cee5e2b6ca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceptButton: {fileID: 0}
-  declineButton: {fileID: 0}
-  dialogoObjetivo: {fileID: 0}
-  misionAceptada: 0
 --- !u!95 &644441058852500803
 Animator:
   serializedVersion: 5
@@ -1648,6 +1632,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.50206, y: 11.924382, z: 1.871114}
   m_Center: {x: 0.09781316, y: 5.4621887, z: 0.17126505}
+--- !u!114 &7115577604509465888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681199411970317694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d058a63e66b717488585b0376d5e1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  misionAceptada: 0
 --- !u!1 &8681199411996581262
 GameObject:
   m_ObjectHideFlags: 0
