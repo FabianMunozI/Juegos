@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 612497700292207777}
   - component: {fileID: 3415118438249123947}
   - component: {fileID: -3809389889426414423}
+  - component: {fileID: 2059689298640350472}
   m_Layer: 0
   m_Name: pluma
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775155925767582142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2514, z: 0}
+  m_LocalPosition: {x: 0, y: -2513.82, z: 0}
   m_LocalScale: {x: 1500, y: 1500, z: 1500}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -106,6 +107,18 @@ MonoBehaviour:
   offSet: {x: 0, y: 0, z: 0}
   radio: 100
   centroZona: {x: 0, y: 0, z: 0}
+--- !u!114 &2059689298640350472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775155925767582142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0585b2bd9c68848b80739791446309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3782921922721729341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +181,10 @@ PrefabInstance:
     - target: {fileID: 191755639800377854, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713746874638108748, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4221147312905554668, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
       propertyPath: m_Name

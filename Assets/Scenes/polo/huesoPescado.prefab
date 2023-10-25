@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2824522053277631861}
   - component: {fileID: 8447433490284469807}
   - component: {fileID: 1838877113868007082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244425913406719396}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7378177854489501154}
   - component: {fileID: -5919624027226822887}
-  m_Layer: 0
+  - component: {fileID: 3717892303869560791}
+  - component: {fileID: 1205500654681055540}
+  m_Layer: 6
   m_Name: huesoPescado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,6 +140,31 @@ MonoBehaviour:
   offSet: {x: 0, y: 0, z: 0}
   radio: 100
   centroZona: {x: 0, y: 0, z: 0}
+--- !u!114 &3717892303869560791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867609355467638616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0585b2bd9c68848b80739791446309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1205500654681055540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867609355467638616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 18}
+  m_Center: {x: 0, y: 4, z: 0}
 --- !u!1001 &7253405612717687954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 191755639800377854, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: 0.10000001
       objectReference: {fileID: 0}
     - target: {fileID: 191755639800377854, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -201,9 +228,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1713746874638108748, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4221147312905554668, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
       propertyPath: m_Name
       value: ZonaBusqueda
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221147312905554668, guid: c118e34107e4f534e9525783e3227bb6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c118e34107e4f534e9525783e3227bb6, type: 3}

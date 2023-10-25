@@ -217,7 +217,7 @@ public class PreservarFauna : MonoBehaviour
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
         RenderSettings.fogStartDistance = 2f;
-        RenderSettings.fogEndDistance = 160f;
+        RenderSettings.fogEndDistance = 95f;
         RenderSettings.fogDensity = 0.1f;
 
         jugador.transform.GetChild(6).gameObject.SetActive(false);
@@ -230,8 +230,8 @@ public class PreservarFauna : MonoBehaviour
         {
             for (int j = -1200; j < 1200; j = j + 100)
             {
-                aux = Instantiate(dunas[Random.Range(0,3)], new Vector3(i, 20, j), Quaternion.identity);
-                aux.transform.localScale = new Vector3(20, 25, 20);
+                aux = Instantiate(dunas[Random.Range(0,3)], new Vector3(i, 30, j), Quaternion.identity);
+                aux.transform.localScale = new Vector3(30, 45, 30);
                 aux.transform.parent = ObjMision.transform;
                 objetosMision.Add(aux);
 
