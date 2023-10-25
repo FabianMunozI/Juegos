@@ -174,7 +174,7 @@ public class CameraInteraction : MonoBehaviour
     }
 
     void OnGUI() {
-        if (ultimoReconocido is not null)
+        if (TextDetectInteractable is not null)
         {
             if (ultimoReconocido)
             {
@@ -186,7 +186,7 @@ public class CameraInteraction : MonoBehaviour
             }
         }
 
-        if (ultimoReconocidoRecoger is not null)
+        if (TextDetectDragable is not null)
         {
             if (ultimoReconocidoRecoger)
             {
@@ -198,7 +198,7 @@ public class CameraInteraction : MonoBehaviour
             }
         }
 
-        if (ultimoReconocidoDialogue is not null)
+        if (TextDetectDialogue is not null)
         {
             if (ultimoReconocidoDialogue)
             {
@@ -210,7 +210,7 @@ public class CameraInteraction : MonoBehaviour
             }
         }
         
-        if (ultimoReconocidoBasura is not null)
+        if (TextDetectBasura is not null)
         {
             if (ultimoReconocidoBasura)
             {

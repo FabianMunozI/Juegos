@@ -21,7 +21,7 @@ public class PreservarFauna : MonoBehaviour
     [SerializeField] private GameObject[] dunas;
     private List<GameObject> objetosMision;
 
-    public GameObject radarPrefab;
+    private GameObject radar;
 
 
     private GameObject questTracker;
@@ -205,7 +205,6 @@ public class PreservarFauna : MonoBehaviour
         Vector3 focaPos = posicionesAnimales[1];
         Vector3 orcaPos = posicionesAnimales[2];
         Vector3 penguPos = posicionesAnimales[3];
-
 
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
