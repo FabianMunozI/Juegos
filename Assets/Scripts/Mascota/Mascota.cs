@@ -102,14 +102,14 @@ public class Mascota : MonoBehaviour
                 //desactivar scripts player, cambiar de camara habilitanto una y deshabilitando la otra
                 scriptsPlayer(false);
                 scriptsMascota(true);
-
+                
                 eresLaMascota= !eresLaMascota;
 
             }else if(eresLaMascota){
                 //habilitar scripts player, deshabilitar scripts mascota, y cambiar de camara
                 scriptsPlayer(true);
                 scriptsMascota(false);
-
+                
                 eresLaMascota= !eresLaMascota;
             }
 
@@ -122,7 +122,7 @@ public class Mascota : MonoBehaviour
             if(eresLaMascota){ // si eres la mascota te cambia automaticamente al player
                 scriptsPlayer(true);
                 scriptsMascota(false);
-
+                
                 eresLaMascota= !eresLaMascota;
             }else{  // desactiva la mascota 
                 generarAqui=null;
