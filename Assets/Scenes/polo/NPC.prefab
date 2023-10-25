@@ -550,12 +550,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputTrue: 0
-  animalesMision: []
+  animalesMision:
+  - {fileID: 4556490278480817884, guid: eadf2766e2740324aaac244e9a19f30f, type: 3}
+  - {fileID: 2905577564650319252, guid: 4f791de9b1f025b43921862d647863c3, type: 3}
+  - {fileID: 8750984899538771932, guid: 576c02a080ea26c44885558edbef8990, type: 3}
+  pistas:
+  - {fileID: 3775155925767582142, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
+  - {fileID: 1342063584497131865, guid: 234757f0a1d16214dad599415094c85a, type: 3}
+  - {fileID: 7867609355467638616, guid: 13c0d2ce1324edd46a86e257c7db6c54, type: 3}
   dunas:
   - {fileID: 189700, guid: b4b640081e0baf844bf6d1fec0220e75, type: 3}
   - {fileID: 133318, guid: d571cba16a02393479fec11fdb4c1071, type: 3}
   - {fileID: 184458, guid: 5b02befe6f56ae94c9d35250ecd486fe, type: 3}
-  radarPrefab: {fileID: 879584510580574811, guid: e81c333d311027a408ea2e2fec718f52, type: 3}
 --- !u!114 &8361362178194105116
 MonoBehaviour:
   m_ObjectHideFlags: 0

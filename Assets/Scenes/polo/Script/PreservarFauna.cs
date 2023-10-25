@@ -14,15 +14,16 @@ public class PreservarFauna : MonoBehaviour
     private GameObject jugador;
     private GameObject camara;
     private GameObject canvas;
+    private AudioSource musicaAmbiente;
     public bool inputTrue = false;
     Vector3 posCamara;
 
     [SerializeField] private GameObject[] animalesMision;
+    [SerializeField] private GameObject[] pistas;
     [SerializeField] private GameObject[] dunas;
-    private List<GameObject> objetosMision;
+    private List<GameObject> objetosMision = new List<GameObject>();
 
-    private GameObject radar;
-
+   private GameObject ObjMision;
 
     private GameObject questTracker;
     private TextMeshProUGUI questTitle;
@@ -48,6 +49,8 @@ public class PreservarFauna : MonoBehaviour
         jugador = GameObject.Find("Player");
         camara = GameObject.Find("Camera");
         canvas = GameObject.Find("Canvas");
+        ObjMision = GameObject.Find("ObjetosMision");
+        musicaAmbiente = GameObject.Find("Generador").GetComponent<AudioSource>();
 
         questTracker = canvas.transform.GetChild(7).gameObject; ;
         questTitle = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -70,7 +73,6 @@ public class PreservarFauna : MonoBehaviour
             //OnOffPlayer();
 
             CambiarMapaInicio();
-            ObjetivosPantallaON();
             //RotarCamaraEntorno();
 
             //Invoke("OnOffPlayer", 2f);
@@ -174,8 +176,8 @@ public class PreservarFauna : MonoBehaviour
         // Termina mision
         if (animalesAyudados >= 3 && missionDone)
         {
-            CambiarMapaFinal();
-            ObjetivosPantallaOFF();
+            //CambiarMapaFinal();
+            //ObjetivosPantallaOFF();
         }
 
 
@@ -194,18 +196,20 @@ public class PreservarFauna : MonoBehaviour
     {
         questStarted = true;
         tiempoLimite = 4f;
+        musicaAmbiente.enabled = false;
 
         Vector3 min = new Vector3(-1200 + radioZonas, 50, -1200 +radioZonas);
         Vector3 max = new Vector3(1200 - radioZonas, 50, 1200 - radioZonas);
 
         Vector3 posJugador = jugador.transform.position;
 
+        
         Vector3[] posicionesAnimales = SpawnFinder.GetPoints(distanciaZonas,4,posJugador,min,max);
 
         Vector3 focaPos = posicionesAnimales[1];
         Vector3 orcaPos = posicionesAnimales[2];
         Vector3 penguPos = posicionesAnimales[3];
-
+        
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
         transform.gameObject.SetActive(false);
@@ -215,10 +219,10 @@ public class PreservarFauna : MonoBehaviour
         RenderSettings.fogStartDistance = 2f;
         RenderSettings.fogEndDistance = 160f;
         RenderSettings.fogDensity = 0.1f;
-        //RenderSettings.fogColor = Color.blue;
 
         jugador.transform.GetChild(6).gameObject.SetActive(false);
         jugador.transform.GetChild(7).gameObject.SetActive(true);
+        jugador.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true); // radar
 
         GameObject aux;
 
@@ -226,8 +230,9 @@ public class PreservarFauna : MonoBehaviour
         {
             for (int j = -1200; j < 1200; j = j + 100)
             {
-                aux = Instantiate(dunas[Random.Range(0,4)], new Vector3(i, 10, j), Quaternion.identity);
+                aux = Instantiate(dunas[Random.Range(0,3)], new Vector3(i, 20, j), Quaternion.identity);
                 aux.transform.localScale = new Vector3(20, 25, 20);
+                aux.transform.parent = ObjMision.transform;
                 objetosMision.Add(aux);
 
                 i = i + Random.Range(0, 25);
@@ -240,27 +245,20 @@ public class PreservarFauna : MonoBehaviour
         //Orca
         //Foca
 
-        aux = Instantiate(animalesMision[0], penguPos, Quaternion.identity);
+        aux = Instantiate(pistas[0], penguPos, Quaternion.identity);
         objetosMision.Add(aux);
         aux.GetComponent<SpawnFloorFinderFauna>().centroZona = penguPos;
+        Radar.targets.Add(aux.transform);
 
-        aux = Instantiate(animalesMision[1], orcaPos, Quaternion.identity);
+        aux = Instantiate(pistas[1], orcaPos, Quaternion.identity);
         objetosMision.Add(aux);
         aux.GetComponent<SpawnFloorFinderFauna>().centroZona = orcaPos;
+        Radar.targets.Add(aux.transform);
 
-        aux = Instantiate(animalesMision[2], focaPos, Quaternion.identity);
+        aux = Instantiate(pistas[2], focaPos, Quaternion.identity);
         objetosMision.Add(aux);
         aux.GetComponent<SpawnFloorFinderFauna>().centroZona = focaPos;
-
-    }
-
-    private void ObjetivosPantallaON()
-    {
-
-    }
-
-    private void ObjetivosPantallaOFF()
-    {
+        Radar.targets.Add(aux.transform);
 
     }
 
@@ -272,6 +270,8 @@ public class PreservarFauna : MonoBehaviour
 
         jugador.transform.GetChild(6).gameObject.SetActive(true);
         jugador.transform.GetChild(7).gameObject.SetActive(false);
+
+        jugador.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
 
         missionDone = true;
         questStarted = false;
@@ -298,7 +298,7 @@ public class PreservarFauna : MonoBehaviour
         Invoke("OnOffPlayer", 8f);
         Invoke("desactivarTexto", 3f);
 
-
+        musicaAmbiente.enabled = true;
     }
 
     public void RotarCamaraEntorno(float orbitSpeed, float distancia, float tiempoLimite)
@@ -349,7 +349,7 @@ public static class SpawnFinder
         float x = a.x - b.x;
         float z = a.z - b.z;
 
-        if ((x * x + z * z) < distanciaZonas)
+        if ((x * x + z * z) < (distanciaZonas * distanciaZonas))
             return false;
 
         return true;
@@ -362,7 +362,7 @@ public static class SpawnFinder
             Vector3 pa = puntos[i];
             for (int j = i + 1; j < puntos.Length; j++)
             {
-                Vector3 pb = puntos[i];
+                Vector3 pb = puntos[j];
                 if (!CompareTwo(pa, pb, minDist))
                 {
                     return false;
@@ -373,17 +373,17 @@ public static class SpawnFinder
     }
 
     public static Vector3[] GetPoints(float minDist, int nOP, Vector3 player, Vector3 min, Vector3 max)
-        {
-            Vector3[] points = new Vector3[nOP];
-            points[0] = player;
+    {
+        Vector3[] points = new Vector3[nOP];
+        points[0] = player;
         
-            do 
+        do 
+        {
+            for (int i = 1; i<nOP; i++)
             {
-                for (int i = 1; i<nOP; i++)
-                {
-                    points[i] = new Vector3(Random.Range(min.x, max.x), min.y, Random.Range(min.z, max.z));
-                }
-            } while (!CompareAll(minDist, points)) ;
+                points[i] = new Vector3(Random.Range(min.x, max.x), min.y, Random.Range(min.z, max.z));
+            }
+        } while (!CompareAll(minDist, points)) ;
 
         return points;
     }
