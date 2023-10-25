@@ -43,8 +43,9 @@ public class TG : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 float t_h = (float) CalculateHeight(x, y) + CalculateDistance(x,y) * heightScale;
-                t_h = Mathf.Pow(t_h, .8f);
-                heights[x, y] = t_h > limit_h ? limit_h + Random.Range(-.005f,.005f) : t_h;
+                t_h = Mathf.Pow(t_h, .4f);
+                float test = Mathf.PerlinNoise((float) x / width * scale, (float) y / height * scale) * 0.01f;
+                heights[x, y] = t_h > limit_h ? limit_h - 0.001f + test  : t_h;
             }
         }
 
@@ -55,7 +56,7 @@ public class TG : MonoBehaviour
     {   
         float r = Mathf.Sqrt(
                         Mathf.Pow((float) (x - width/2 )/width, 2) + Mathf.Pow((float) (y - height/2 )/height, 2)
-                    ) / Mathf.Sqrt(2 * 0.5f);
+                    ) / Mathf.Sqrt(1 * 0.5f);
         return (1f) - r;
     }
 

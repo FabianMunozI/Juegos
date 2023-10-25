@@ -24,6 +24,9 @@ public class GenObjtPolo : MonoBehaviour
     private int cantidadNubes, nubesActuales;
     private List<GameObject> listaNubes = new List<GameObject>();
 
+    public GameObject animalesPadre;
+    public GameObject objetosAmbientePadre;
+
     void Start()
     {
         zmin = -1100;
@@ -33,29 +36,53 @@ public class GenObjtPolo : MonoBehaviour
 
         float randomValueX, randomValueY , randomValueZ;
 
-        //Debug.Log("zmin" + zmin);
-        //Debug.Log("xmin" + xmin);
-        //Debug.Log("zmax" + zmax);
-        //Debug.Log("xmax" + xmax);
+        GameObject pajaro;
+        GameObject osoPengu;
+        GameObject aux;
+
         for (var pajaros = 0 ; pajaros < objetosCantidad[0] ; pajaros++)
         {
             randomValueX = Random.Range(xmin, xmax);
             randomValueY = Random.Range(86, 111);
             randomValueZ = Random.Range(zmin, zmax);
 
-            Instantiate(objetos[0], new Vector3(randomValueX, randomValueY, randomValueZ), Quaternion.identity);
+            pajaro = Instantiate(objetos[0], new Vector3(randomValueX, randomValueY, randomValueZ), Quaternion.identity);
+
+            pajaro.transform.parent = animalesPadre.transform;
         }
 
-        for (var i = 1; i < objetos.Length; i++)
+        for (var osos = 0; osos < objetosCantidad[1]; osos++)
+        {
+            randomValueX = Random.Range(xmin, xmax);
+            randomValueZ = Random.Range(zmin, zmax);
+
+            osoPengu = Instantiate(objetos[1], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+
+            osoPengu.transform.parent = animalesPadre.transform;
+        }
+
+        for (var i = 2; i < objetos.Length - 1; i++)
         {
             for (var a = 0; a < objetosCantidad[i]; a++)
             {
                 randomValueX = Random.Range(xmin, xmax);
                 randomValueZ = Random.Range(zmin, zmax);
 
-                Instantiate(objetos[i], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+                aux = Instantiate(objetos[i], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             
+        }
+
+        for (var pengu = 0; pengu < objetosCantidad[objetos.Length - 1]; pengu++)
+        {
+            randomValueX = Random.Range(xmin, xmax);
+            randomValueZ = Random.Range(zmin, zmax);
+
+            osoPengu = Instantiate(objetos[objetos.Length - 1], new Vector3(randomValueX, 50, randomValueZ), Quaternion.identity);
+
+            osoPengu.transform.parent = animalesPadre.transform;
         }
 
         //Primer Lado
@@ -77,7 +104,9 @@ public class GenObjtPolo : MonoBehaviour
             randomValueX = Random.Range(xHielomin, xHielomax);
             randomValueZ = Random.Range(zHielomin, zHielomax);
 
-            Instantiate(hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux = Instantiate(hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+
+            aux.transform.parent = objetosAmbientePadre.transform;
         }
         for (var i = 0; i < cantidadGlaciarRand; i++)
         {
@@ -88,16 +117,21 @@ public class GenObjtPolo : MonoBehaviour
 
             if (auxGlaciar == 0)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             else if (auxGlaciar == 1)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             else if (auxGlaciar == 2)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
+
+            
         }
 
         //Segundo Lado
@@ -113,7 +147,8 @@ public class GenObjtPolo : MonoBehaviour
             randomValueX = Random.Range(-xHielomax, -xHielomin);
             randomValueZ = Random.Range(zHielomin, zHielomax);
 
-            Instantiate(hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux = Instantiate (hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux.transform.parent = objetosAmbientePadre.transform;
         }
         for (var i = 0; i < cantidadGlaciarRand; i++)
         {
@@ -124,15 +159,18 @@ public class GenObjtPolo : MonoBehaviour
 
             if (auxGlaciar == 0)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux = Instantiate (glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             else if (auxGlaciar == 1)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
+                aux = Instantiate (glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             else if (auxGlaciar == 2)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
+                aux = Instantiate (glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
         }
 
@@ -155,7 +193,8 @@ public class GenObjtPolo : MonoBehaviour
             randomValueX = Random.Range(xHielomin, xHielomax); 
              randomValueZ = Random.Range(zHielomin, zHielomax);
 
-            Instantiate(hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux = Instantiate (hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux.transform.parent = objetosAmbientePadre.transform;
         }
         for (var i = 0; i < cantidadGlaciarRand; i++)
         {
@@ -166,16 +205,19 @@ public class GenObjtPolo : MonoBehaviour
 
             if (auxGlaciar == 0)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
-            }
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux.transform.parent = objetosAmbientePadre.transform;
+             }
             else if (auxGlaciar == 1)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
-            }
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
+             }
             else if (auxGlaciar == 2)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
-            }
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
+             }
         }
 
         //Cuarto Lado
@@ -191,7 +233,8 @@ public class GenObjtPolo : MonoBehaviour
             randomValueX = Random.Range(xHielomin, xHielomax);
             randomValueZ = Random.Range(-zHielomax, -zHielomin);
 
-            Instantiate(hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux = Instantiate(hielos[auxHielo], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+            aux.transform.parent = objetosAmbientePadre.transform;
         }
         for (var i = 0; i < cantidadGlaciarRand; i++)
         {
@@ -202,16 +245,19 @@ public class GenObjtPolo : MonoBehaviour
 
             if (auxGlaciar == 0)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.identity);
+                aux.transform.parent = objetosAmbientePadre.transform;
             }
             else if (auxGlaciar == 1)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
-            }
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(180, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
+             }
             else if (auxGlaciar == 2)
             {
-                Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
-            }
+                aux = Instantiate(glaciares[0], new Vector3(randomValueX, 16, randomValueZ), Quaternion.Euler(220, 0, 0));
+                aux.transform.parent = objetosAmbientePadre.transform;
+             }
         }
 
         //Nubes

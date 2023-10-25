@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64687583034409796}
   - component: {fileID: 64066098400225006}
   - component: {fileID: -1943430179846262924}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: duna 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 133318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

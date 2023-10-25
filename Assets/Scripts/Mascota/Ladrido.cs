@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ladrido : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameObject audios;
+    public GameObject audios;
     GameObject Player;
     int c =0;
 
@@ -14,7 +14,7 @@ public class Ladrido : MonoBehaviour
     {
         estaDisponible = 0f;
         Player = GameObject.Find("Player");
-        audios = transform.GetChild(2).gameObject;
+        audios = transform.GetChild(3).gameObject;
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class Ladrido : MonoBehaviour
     void llamarAtencion(){
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("npcTala");
         for(int i = 0; i< npcs.Length ; i++){
-            if(Vector3.Distance(transform.position, npcs[i].transform.position) <20f &&  Vector3.Distance(transform.position, npcs[i].transform.position)>5f){
+            if(Vector3.Distance(transform.position, npcs[i].transform.position) <25f &&  Vector3.Distance(transform.position, npcs[i].transform.position)>2f){
                 //Debug.Log("zi");
 
                 npcs[i].GetComponent<ControlladorNavMesh>().ActualizarPuntoDestinoNavMeshAgent(transform.position);

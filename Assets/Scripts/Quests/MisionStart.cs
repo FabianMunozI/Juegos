@@ -46,7 +46,7 @@ public class MisionStart : MonoBehaviour
 
     public int ObjBienPuestos = 0;
 
-    int target = 2;
+    int target = 4;
 
     //////////////////////////////////////////////
 

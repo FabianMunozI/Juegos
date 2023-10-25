@@ -11,6 +11,13 @@ public class CaminarOsoPolo : MonoBehaviour
     private float angle = 0.0f; // Ángulo actual en radianes
     private Vector3 initialPosition; // Posición inicial del oso
 
+    LayerMask floorMask;
+
+    private void Awake()
+    {
+        floorMask = LayerMask.GetMask("Floor");
+    }
+
     private void Start()
     {
         initialPosition = transform.position;
@@ -39,6 +46,19 @@ public class CaminarOsoPolo : MonoBehaviour
         if (angle > Mathf.PI * 2)
         {
             angle -= Mathf.PI * 2;
+        }
+
+        //busqueda del piso
+
+        RaycastHit hitInfo;
+        Ray ray = new Ray(transform.position + Vector3.up * 10f, Vector3.down); // rayo de luz que parte 10m arriba tuyo y apunta hacia abajo
+
+        if (Physics.Raycast(ray, out hitInfo, 20f, floorMask))
+        {
+            //rayo que busca colision entre rayo y objeto que tenga layer que buscamos (suelo), fake si no encuentra el suelo
+            Vector3 pos = transform.position;
+            pos.y = hitInfo.point.y;
+            transform.position = pos;
         }
     }
 }

@@ -44,7 +44,7 @@ public class Mascota : MonoBehaviour
         camaraPlayer = GameObject.Find("Player").transform.GetChild(0).gameObject;
 
 
-        camaraMascota = mascota.transform.GetChild(1).gameObject;
+        camaraMascota = mascota.transform.GetChild(2).gameObject;
         mascotaUp = false;
 
         /////////////////////////////////////////////////////////////
@@ -70,6 +70,7 @@ public class Mascota : MonoBehaviour
                     mascota.transform.position = generarAqui.position;
                     mascota.SetActive(true);
                     mascotaUp = !mascotaUp;
+                    mascota.transform.GetChild(3).GetChild(0).GetComponent<AudioSource>().Play();
                     break;
                 }
             }
@@ -101,14 +102,14 @@ public class Mascota : MonoBehaviour
                 //desactivar scripts player, cambiar de camara habilitanto una y deshabilitando la otra
                 scriptsPlayer(false);
                 scriptsMascota(true);
-
+                
                 eresLaMascota= !eresLaMascota;
 
             }else if(eresLaMascota){
                 //habilitar scripts player, deshabilitar scripts mascota, y cambiar de camara
                 scriptsPlayer(true);
                 scriptsMascota(false);
-
+                
                 eresLaMascota= !eresLaMascota;
             }
 
@@ -121,7 +122,7 @@ public class Mascota : MonoBehaviour
             if(eresLaMascota){ // si eres la mascota te cambia automaticamente al player
                 scriptsPlayer(true);
                 scriptsMascota(false);
-
+                
                 eresLaMascota= !eresLaMascota;
             }else{  // desactiva la mascota 
                 generarAqui=null;

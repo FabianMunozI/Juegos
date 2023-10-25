@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AbrirMapa : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class AbrirMapa : MonoBehaviour
 
     public Camera referenciaCamaraMinimapa; //9.5
     public bool abrirMapaGrande = false;
+
+    float a;
+    float b;
+    float c;
+    float d;
     void Start()
     {   
         
@@ -19,16 +25,26 @@ public class AbrirMapa : MonoBehaviour
         mapaGrande = GameObject.Find("ContMinimap").transform.GetChild(1).gameObject;
         mapaChico.SetActive(!abrirMapaGrande);
         mapaGrande.SetActive(abrirMapaGrande);
-        
+    
+        a=9.5f;
+        b=150f;
+        c=9.6f;
+        d=149f;
+
+        if(Equals(SceneManager.GetActiveScene().name, "Polo")){
+            b=350;
+            d=349;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(referenciaCamaraMinimapa.orthographicSize<9.5f){
-            referenciaCamaraMinimapa.orthographicSize=9.6f;
-        }else if(referenciaCamaraMinimapa.orthographicSize>150f){
-            referenciaCamaraMinimapa.orthographicSize=149f;
+        if(referenciaCamaraMinimapa.orthographicSize<a){
+            referenciaCamaraMinimapa.orthographicSize=c;
+        }else if(referenciaCamaraMinimapa.orthographicSize>b){
+            referenciaCamaraMinimapa.orthographicSize=d;
         }
 
         if(Input.GetKeyDown(KeyCode.M)){
