@@ -20,8 +20,14 @@ public class mascotaInteraction : MonoBehaviour
         player = GameObject.Find("Player");
 
         mascotita=false;
-        if(!Equals(SceneManager.GetActiveScene().name, "PlayaProcedural") || Equals(SceneManager.GetActiveScene().name, "PlantaTratamiento")){//if(!Equals(SceneManager.GetActiveScene().name, "TP_PlantaTratamiento") || Equals(SceneManager.GetActiveScene().name, "PlantaTratamiento"))
+        if(!Equals(SceneManager.GetActiveScene().name, "PlayaProcedural")){//if(!Equals(SceneManager.GetActiveScene().name, "TP_PlantaTratamiento") || Equals(SceneManager.GetActiveScene().name, "PlantaTratamiento"))
+            
             enabled=false;
+        }
+
+        if(Equals(SceneManager.GetActiveScene().name, "PlantaTratamientoAgua")){
+            
+            enabled=true;
         }
 
         cameraa = transform.GetChild(2);

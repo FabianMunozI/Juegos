@@ -23,7 +23,7 @@ public class TumultoTutorialScript : Interactable
                 Jugador.GetComponent<PickUpObjects>().PickedObject.name == string.Format("{0}", semillaPrefab.name))
             {  
                 base.Interact();
-                Instantiate(plantaChicaPrefab, transform.position + new Vector3(0,0.6f,0), Quaternion.identity);
+                Instantiate(plantaChicaPrefab, transform.position + new Vector3(0,0.8f,0), Quaternion.identity);
                 gameObject.SetActive(false);
             }
         }
