@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Objects : MonoBehaviour
 {
+    public int tipo;
     void Start()
-    {
+    {   
         transform.position = new Vector3(transform.position.x, 100f, transform.position.z);
         Invoke("FindLand",0.5f);
         //FindLand();
@@ -26,6 +27,13 @@ public class Objects : MonoBehaviour
             {
                 transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
             }
+        }
+
+        if(tipo == 1){
+            transform.position = new Vector3(transform.position.x, transform.position.y - 10f, transform.position.z);
+        }
+        else if(tipo == 2){
+            transform.position = new Vector3(transform.position.x, transform.position.y - 2f, transform.position.z);
         }
     }
 }
