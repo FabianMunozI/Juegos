@@ -495,7 +495,8 @@ GameObject:
   - component: {fileID: 8681199411157954218}
   - component: {fileID: 8681199411157954217}
   - component: {fileID: 8681199411157954231}
-  - component: {fileID: 4006094869782399990}
+  - component: {fileID: 8361362178194105116}
+  - component: {fileID: -4596002565044218970}
   m_Layer: 8
   m_Name: NPC
   m_TagString: NPC
@@ -549,19 +550,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputTrue: 0
-  animales:
-  - {fileID: 4556490278480817884, guid: eadf2766e2740324aaac244e9a19f30f, type: 3}
-  - {fileID: 2905577564650319252, guid: 4f791de9b1f025b43921862d647863c3, type: 3}
-  - {fileID: 8750984899538771932, guid: 576c02a080ea26c44885558edbef8990, type: 3}
+  animalesMision: []
   dunas:
   - {fileID: 189700, guid: b4b640081e0baf844bf6d1fec0220e75, type: 3}
   - {fileID: 133318, guid: d571cba16a02393479fec11fdb4c1071, type: 3}
   - {fileID: 184458, guid: 5b02befe6f56ae94c9d35250ecd486fe, type: 3}
   radarPrefab: {fileID: 879584510580574811, guid: e81c333d311027a408ea2e2fec718f52, type: 3}
-  questTracker: {fileID: 0}
-  questTitle: {fileID: 0}
-  questText: {fileID: 0}
---- !u!114 &4006094869782399990
+--- !u!114 &8361362178194105116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -570,7 +565,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8681199411157954230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1daa61c460984d544aef731f9bcc3b7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d058a63e66b717488585b0376d5e1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  misionAceptada: 0
+--- !u!114 &-4596002565044218970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681199411157954230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e299bd1f2669d994c948fbe69b88466c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floorMask:

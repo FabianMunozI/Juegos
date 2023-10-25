@@ -174,29 +174,52 @@ public class CameraInteraction : MonoBehaviour
     }
 
     void OnGUI() {
-
-        if(ultimoReconocido){
-            TextDetectInteractable.SetActive(true);
-        } else{
-            TextDetectInteractable.SetActive(false);
+        if (ultimoReconocido is not null)
+        {
+            if (ultimoReconocido)
+            {
+                TextDetectInteractable.SetActive(true);
+            }
+            else
+            {
+                TextDetectInteractable.SetActive(false);
+            }
         }
 
-        if(ultimoReconocidoRecoger){
-            TextDetectDragable.SetActive(true);
-        }else{
-            TextDetectDragable.SetActive(false);
+        if (ultimoReconocidoRecoger is not null)
+        {
+            if (ultimoReconocidoRecoger)
+            {
+                TextDetectDragable.SetActive(true);
+            }
+            else
+            {
+                TextDetectDragable.SetActive(false);
+            }
         }
 
-        if(ultimoReconocidoDialogue){
-            TextDetectDialogue.SetActive(true);
-        }else{
-            TextDetectDialogue.SetActive(false);
+        if (ultimoReconocidoDialogue is not null)
+        {
+            if (ultimoReconocidoDialogue)
+            {
+                TextDetectDialogue.SetActive(true);
+            }
+            else
+            {
+                TextDetectDialogue.SetActive(false);
+            }
         }
-
-        if(ultimoReconocidoBasura){
-            TextDetectBasura.SetActive(true);
-        }else{
-            TextDetectBasura.SetActive(false);
+        
+        if (ultimoReconocidoBasura is not null)
+        {
+            if (ultimoReconocidoBasura)
+            {
+                TextDetectBasura.SetActive(true);
+            }
+            else
+            {
+                TextDetectBasura.SetActive(false);
+            }
         }
     }
 }

@@ -16,23 +16,26 @@ public class QuestStarterPolo : Interactable
 
     void Awake()
     {
-        acceptButton.onClick.AddListener(acceptButton_Action);
-        declineButton.onClick.AddListener(declineButton_Action);
-    }
-
-    private void Start()
-    {
         //los nombres de los tres objetos uno en cada linea
         //PreservFaunaTomar
         //  Tomar
         //      Text (TMP)
         //          Si
         //          No
+
         canvas = GameObject.Find("Canvas");
 
         dialogoObjetivo = canvas.transform.GetChild(8).gameObject;
         acceptButton = canvas.transform.GetChild(8).transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
         declineButton = canvas.transform.GetChild(8).transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
+
+        acceptButton.onClick.AddListener(acceptButton_Action);
+        declineButton.onClick.AddListener(declineButton_Action);
+    }
+
+    private void Start()
+    {
+        
 
     }
 

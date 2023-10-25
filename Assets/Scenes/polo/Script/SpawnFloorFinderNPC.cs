@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnFloorFinderFauna : MonoBehaviour
+public class SpawnFloorFinderNPC : MonoBehaviour
 {
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private LayerMask evitarAgua;
     [SerializeField] private Vector3 offSet;
 
-
-    public float radio = 100f;
-    public Vector3 centroZona;
 
     void Start()
     {
@@ -22,7 +19,7 @@ public class SpawnFloorFinderFauna : MonoBehaviour
         RaycastHit hitinfo;
 
         bool posicionEncontrada = false;
-        
+
         while (!posicionEncontrada)
         {
             if (Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, floorMask))
@@ -34,15 +31,11 @@ public class SpawnFloorFinderFauna : MonoBehaviour
                 }
                 else
                 {
-                    Vector3 offset = Vector3.zero;
-                    do
-                    {
-                        offset = new Vector3(Random.Range(-radio, radio), 0f, Random.Range(-radio, radio));
-                    } while (offset.sqrMagnitude >= radio * radio);
-                    transform.position = centroZona + offset;
+                    Vector3 aux = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+                    transform.position = aux;
                 }
             }
-        }       
+        }
     }
 
 }

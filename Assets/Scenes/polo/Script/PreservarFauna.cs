@@ -40,7 +40,8 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject puntoEntorno;
 
-    private int distanciaZonas = 700;
+    private float distanciaZonas = 700;
+    private float radioZonas = 100f;
 
     void Start()
     {
@@ -64,7 +65,7 @@ public class PreservarFauna : MonoBehaviour
     {
 
         // Comienza mision
-        if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<Quest_Starter>().misionAceptada) //  
+        if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<QuestStarterPolo>().misionAceptada) //  
         {
             //OnOffPlayer();
 
@@ -194,18 +195,17 @@ public class PreservarFauna : MonoBehaviour
         questStarted = true;
         tiempoLimite = 4f;
 
+        Vector3 min = new Vector3(-1200 + radioZonas, 50, -1200 +radioZonas);
+        Vector3 max = new Vector3(1200 - radioZonas, 50, 1200 - radioZonas);
+
         Vector3 posJugador = jugador.transform.position;
 
-        Vector3 focaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
-        Vector3 orcaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
-        Vector3 penguPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+        Vector3[] posicionesAnimales = SpawnFinder.GetPoints(distanciaZonas,4,posJugador,min,max);
 
-        while (!(ConfirmarDistancias(focaPos,orcaPos) || ConfirmarDistancias(focaPos, penguPos) || ConfirmarDistancias(penguPos, orcaPos)))
-        {
-            focaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
-            orcaPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
-            penguPos = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
-        }
+        Vector3 focaPos = posicionesAnimales[1];
+        Vector3 orcaPos = posicionesAnimales[2];
+        Vector3 penguPos = posicionesAnimales[3];
+
 
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
@@ -243,12 +243,15 @@ public class PreservarFauna : MonoBehaviour
 
         aux = Instantiate(animalesMision[0], penguPos, Quaternion.identity);
         objetosMision.Add(aux);
+        aux.GetComponent<SpawnFloorFinderFauna>().centroZona = penguPos;
 
         aux = Instantiate(animalesMision[1], orcaPos, Quaternion.identity);
         objetosMision.Add(aux);
+        aux.GetComponent<SpawnFloorFinderFauna>().centroZona = orcaPos;
 
         aux = Instantiate(animalesMision[2], focaPos, Quaternion.identity);
         objetosMision.Add(aux);
+        aux.GetComponent<SpawnFloorFinderFauna>().centroZona = focaPos;
 
     }
 
@@ -313,16 +316,6 @@ public class PreservarFauna : MonoBehaviour
 
     }
 
-    private bool ConfirmarDistancias(Vector3 a, Vector3 b)
-    {
-        float x = a.x - b.x;
-        float z = a.z - b.z;
-
-        if ((x * x + z * z) < distanciaZonas)
-            return false;
-
-        return true;
-    }
 
     public void OnOffPlayer()
     {
@@ -345,5 +338,54 @@ public class PreservarFauna : MonoBehaviour
 
         }
 
+    }
+}
+
+
+public static class SpawnFinder
+{
+
+    private static bool CompareTwo(Vector3 a, Vector3 b, float distanciaZonas)
+    {
+        float x = a.x - b.x;
+        float z = a.z - b.z;
+
+        if ((x * x + z * z) < distanciaZonas)
+            return false;
+
+        return true;
+    }
+
+    public static bool CompareAll(float minDist, Vector3[] puntos)
+    {
+        for (int i = 0; i < puntos.Length; i++)
+        {
+            Vector3 pa = puntos[i];
+            for (int j = i + 1; j < puntos.Length; j++)
+            {
+                Vector3 pb = puntos[i];
+                if (!CompareTwo(pa, pb, minDist))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static Vector3[] GetPoints(float minDist, int nOP, Vector3 player, Vector3 min, Vector3 max)
+        {
+            Vector3[] points = new Vector3[nOP];
+            points[0] = player;
+        
+            do 
+            {
+                for (int i = 1; i<nOP; i++)
+                {
+                    points[i] = new Vector3(Random.Range(min.x, max.x), min.y, Random.Range(min.z, max.z));
+                }
+            } while (!CompareAll(minDist, points)) ;
+
+        return points;
     }
 }
