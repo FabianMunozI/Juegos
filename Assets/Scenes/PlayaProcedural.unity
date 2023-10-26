@@ -12774,7 +12774,7 @@ PrefabInstance:
       objectReference: {fileID: 2115929716}
     - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: Runspeed
-      value: 9
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638961, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: m_Name
@@ -16132,6 +16132,16 @@ PrefabInstance:
     - target: {fileID: 946832001525253569, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
       propertyPath: m_Name
       value: ContenedorMisionTratamientoAgua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842750849540535097, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: "El pretratamiento se encarga de filtrar los elementos de gran tama\xF1o,
+        que no son \"residuales\" en si, sino desechos que los humanos botan indebidamente,
+        como ropa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881131228021609651, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
