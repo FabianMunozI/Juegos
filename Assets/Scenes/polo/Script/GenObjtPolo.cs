@@ -266,7 +266,9 @@ public class GenObjtPolo : MonoBehaviour
 
         for (int i = 0; i < cantidadNubes; i++)
         {
-            listaNubes.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-1400, 1400), Random.Range(215, 260), Random.Range(-1500, 1500)), Quaternion.identity));
+            aux = Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-1400, 1400), Random.Range(215, 260), Random.Range(-1500, 1500)), Quaternion.identity);
+            aux.transform.parent = objetosAmbientePadre.transform;
+            listaNubes.Add((GameObject)aux);
             nubesActuales++;
         }
     }
@@ -276,7 +278,9 @@ public class GenObjtPolo : MonoBehaviour
     {
         if (nubesActuales < cantidadNubes)
         {
-            listaNubes.Add((GameObject)Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-1500, -1250), Random.Range(215, 260), Random.Range(-1500, 1500)), Quaternion.identity));
+            GameObject aux = Instantiate(nubes[Random.Range(0, nubes.Length)], new Vector3(Random.Range(-1500, -1250), Random.Range(215, 260), Random.Range(-1500, 1500)), Quaternion.identity);
+            aux.transform.parent = objetosAmbientePadre.transform;
+            listaNubes.Add((GameObject)aux);
             nubesActuales++;
         }
         else
