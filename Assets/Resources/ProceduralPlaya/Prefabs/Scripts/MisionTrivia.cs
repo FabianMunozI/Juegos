@@ -72,7 +72,15 @@ public class MisionTrivia : MonoBehaviour
             missionDone = true;
             Quest_started = false;
             questTitle.text = "Mision Terminada!";
-            questText.text = "La playa se ha limpiado!";
+
+            if (intento_actual - cont_correctas == 3)
+            {
+                questText.text = "Fallaste :(";
+            } else 
+            {
+                questText.text = "Bien hecho :)";
+            }
+            
 
 
             infoSenal.SetActive(true);
