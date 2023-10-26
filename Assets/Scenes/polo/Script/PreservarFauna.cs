@@ -36,13 +36,16 @@ public class PreservarFauna : MonoBehaviour
 
     private float tiempoLimite;
 
-    private Vector3 playerPosition;
-    private Vector3 npcPosition;
-
     private GameObject puntoEntorno;
 
     private float distanciaZonas = 700;
     private float radioZonas = 100f;
+
+    private GameObject zonaOrca;
+    private GameObject zonaPengu;
+    private GameObject zonaFoca;
+
+    private bool focaOn = false, penguOn = false , orcaOn = false;
 
     void Start()
     {
@@ -56,9 +59,6 @@ public class PreservarFauna : MonoBehaviour
         questTitle = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         questText = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         
-
-        npcPosition = transform.position;
-
         questTracker.SetActive(false);
     }
 
@@ -78,9 +78,7 @@ public class PreservarFauna : MonoBehaviour
             //Invoke("OnOffPlayer", 2f);
             questTracker.SetActive(true);
 
-
             /*
-
             Vector3 pos = semillas.transform.position - Jugador.transform.position;
             pos += new Vector3(3, 4, 4);
 
@@ -89,84 +87,60 @@ public class PreservarFauna : MonoBehaviour
             CamaraO.transform.Translate(pos, Space.World);
             CamaraO.transform.LookAt(semillas.transform);
 
-            Invoke("OnOffPlayer", 2f);
-            questTracker.SetActive(true);
-
             */
         }
 
 
         // durante mision
 
+        Debug.Log(questStarted);
+
         if (questStarted)
         {
+            Debug.Log("entré");
+            zonaPengu = GameObject.Find("zonaPengu");
+            zonaOrca = GameObject.Find("zonaOrca");
+            zonaFoca = GameObject.Find("zonaFoca");
 
-            /*
-            questText.text = "¡Planta y haz crecer 3 arboles!\n Llevas " + arbolesPlantados + "/3.";
 
-            for (int i = 0; i < arbolesMision.transform.childCount; i++)
+            print(zonaPengu != null);
+
+            if (zonaPengu != null)
             {
-                if (arbolesMision.transform.GetChild(i).gameObject.GetComponent<ArbolReforestar>().to_remove)
-                {
-                    Vector3 pos = arbolesMision.transform.GetChild(i).gameObject.transform.position;
-                    pos.y = pos.y - 2;
+                Debug.Log("yes");
+                GameObject pengu;
+                Vector3 centroPengu = zonaPengu.transform.position;
+                Vector3 posPengu = new Vector3(Random.Range(centroPengu.x - 100, centroPengu.x + 100), 50, Random.Range(centroPengu.z - 100, centroPengu.z + 100));
 
-                    var tumulto = Instantiate(tumultoPrefab, pos, Quaternion.Euler(0, 0, 0));
-
-                    tumulto.GetComponent<TumultoReforestar>().semillaPrefab = semillaPrefab;
-                    tumulto.GetComponent<TumultoReforestar>().indice = asignador;
-                    tumulto.gameObject.layer = LayerMask.NameToLayer("interactable");
-                    tumulto.transform.parent = tumultoContainter.transform;
-
-
-                    asignador++;
-                    arbolesMision.transform.GetChild(i).gameObject.GetComponent<ArbolReforestar>().to_remove = false;
-                    arbolesMision.transform.GetChild(i).gameObject.SetActive(false);
-                }
-            
+                pengu = Instantiate(animalesMision[0], posPengu, Quaternion.identity);
+                //pengu.transform.parent = ObjMision.transform;
+                objetosMision.Add(pengu);
+                Radar.targets.Add(pengu.transform);
             }
 
-            for (int i = 0; i < tumultoContainter.transform.childCount; i++)
+            if (zonaOrca != null)
             {
-                if (tumultoContainter.transform.GetChild(i).gameObject.GetComponent<TumultoReforestar>().plantar)
-                {
-                    Vector3 pos = tumultoContainter.transform.GetChild(i).gameObject.transform.position;
-                    pos.y += 1.5f;
+                GameObject orca;
+                Vector3 centroOrca = zonaOrca.transform.position;
+                Vector3 posOrca = new Vector3(Random.Range(centroOrca.x - 100, centroOrca.x + 100), 50, Random.Range(centroOrca.z - 100, centroOrca.z + 100));
 
-                    var plantita = Instantiate(plantaPrefab, pos, Quaternion.Euler(0, 0, 0));
-
-                    plantita.transform.parent = plantasContainer.transform;
-                    plantita.gameObject.layer = LayerMask.NameToLayer("interactable");
-                    plantita.GetComponent<ArbolitoReforestar>().regaderaPrefab = regaderaPrefab;
-                    plantita.GetComponent<ArbolitoReforestar>().indice = tumultoContainter.transform.GetChild(i).gameObject.GetComponent<TumultoReforestar>().indice;
-
-
-                    tumultoContainter.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Default");
-                    tumultoContainter.transform.GetChild(i).gameObject.GetComponent<TumultoReforestar>().plantar = false;
-                }
-
+                orca = Instantiate(animalesMision[1], posOrca, Quaternion.identity);
+                //orca.transform.parent = ObjMision.transform;
+                objetosMision.Add(orca);
+                Radar.targets.Add(orca.transform);
             }
 
-            for (int i = 0; i < plantasContainer.transform.childCount; i++)
+            if (zonaFoca != null)
             {
-                if (plantasContainer.transform.GetChild(i).gameObject.GetComponent<ArbolitoReforestar>().to_remove)
-                {
-                    Vector3 pos = plantasContainer.transform.GetChild(i).gameObject.transform.position;
-                    pos.y -= 0.5f;
+                GameObject foca;
+                Vector3 centroFoca = zonaOrca.transform.position;
+                Vector3 posFoca = new Vector3(Random.Range(centroFoca.x - 100, centroFoca.x + 100), 50, Random.Range(centroFoca.z - 100, centroFoca.z + 100));
 
-                    Instantiate(arbolPrefab, pos, Quaternion.Euler(0, 0, 0));
-
-
-
-                    plantasContainer.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Default");
-                    plantasContainer.transform.GetChild(i).gameObject.GetComponent<ArbolitoReforestar>().to_remove = false;
-                    EliminarTumultoArbolito(plantasContainer.transform.GetChild(i).gameObject.GetComponent<ArbolitoReforestar>().indice);
-                    arbolesPlantados++;
-                    plantasContainer.transform.GetChild(i).gameObject.SetActive(false);
-                }
-
-            }*/
-
+                foca = Instantiate(animalesMision[2], posFoca, Quaternion.identity);
+                //foca.transform.parent = ObjMision.transform;
+                objetosMision.Add(foca);
+                Radar.targets.Add(foca.transform);
+            }
 
         }
 
@@ -217,7 +191,7 @@ public class PreservarFauna : MonoBehaviour
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
         RenderSettings.fogStartDistance = 2f;
-        RenderSettings.fogEndDistance = 95f;
+        RenderSettings.fogEndDistance = 110f;
         RenderSettings.fogDensity = 0.1f;
 
         jugador.transform.GetChild(6).gameObject.SetActive(false);

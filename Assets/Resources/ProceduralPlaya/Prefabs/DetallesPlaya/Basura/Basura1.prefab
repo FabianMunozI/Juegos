@@ -696,6 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9194868848389248723}
   - component: {fileID: 646592327392770876}
+  - component: {fileID: 3741659977217632388}
   m_Layer: 0
   m_Name: Basura1
   m_TagString: Untagged
@@ -742,6 +743,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2cd544d37f40f240889cc43f1ead0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3741659977217632388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698170540374101839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 1, z: 5}
+  m_Center: {x: 0, y: 0.11, z: 0}
 --- !u!1 &4895890388893807513
 GameObject:
   m_ObjectHideFlags: 0

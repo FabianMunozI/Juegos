@@ -9,12 +9,12 @@ public class PistasInteracciones : Interactable
     private Vector3 playerPosition;
     private Vector3 npcPosition;
     private GameObject player;
-    
+
+    private Vector3 centroZona;
+    [SerializeField] private GameObject zonaMiniMapa;
 
     void Start()
     {
-        
-
         if (transform.name == "ninia(Clone)")
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject;
@@ -38,7 +38,7 @@ public class PistasInteracciones : Interactable
     {
 
         base.Interact();
-        player = GameObject.FindGameObjectWithTag("ninia(Clone)");
+        player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.transform.position;
         playerPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
         npcPosition = new Vector3(transform.position.x, 1, transform.position.z);
@@ -48,10 +48,12 @@ public class PistasInteracciones : Interactable
         Quaternion rotation = Quaternion.LookRotation(playerPosition - transform.position);
         rotation.x = 0f;
         rotation.z = 0f;
-        if (transform.name == "niña")
+        
+        if (transform.name == "ninia(Clone)")
         {
             transform.rotation = rotation;
         }
+        
         
         //////////////////////////////////////////////////////////
 
@@ -70,5 +72,52 @@ public class PistasInteracciones : Interactable
 
         dialogo.SetActive(true);
 
+
+        //mi cosecha
+
+        GameObject aux;
+
+        centroZona = new Vector3(Random.Range(-1100, 1100), 0, Random.Range(-1100, 1100));
+        while (!CompareTwo(centroZona, transform.position,700))
+        {
+            centroZona = new Vector3(Random.Range(-1100, 1100), 0, Random.Range(-1100, 1100));
+        }
+
+        aux = Instantiate(zonaMiniMapa, new Vector3(centroZona.x,150f,centroZona.z), Quaternion.identity);
+        aux.transform.localScale = new Vector3(200, 200, 200);
+        //objetosMision.Add(aux);
+
+        Radar.targets.Remove(transform);
+
+        if (transform.name == "ninia(Clone)")
+        {
+            aux.name = "zonaOrca";
+            // mirar hacia la orca pero un poco ladeado, como mirar hacia la zona
+            rotation = Quaternion.LookRotation(centroZona);
+            rotation.x = 0f;
+            rotation.z = 0f;
+            transform.rotation = rotation;
+
+        }
+        else if (transform.name == "huesoPescado(Clone)")
+        {
+            aux.name = "zonaFoca";
+        }
+        else
+        {
+            aux.name = "zonaPengu";
+        }
+    }
+
+
+    private static bool CompareTwo(Vector3 a, Vector3 b, float distanciaZonas)
+    {
+        float x = a.x - b.x;
+        float z = a.z - b.z;
+
+        if ((x * x + z * z) < (distanciaZonas * distanciaZonas))
+            return false;
+
+        return true;
     }
 }
