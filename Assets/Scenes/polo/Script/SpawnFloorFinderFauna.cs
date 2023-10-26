@@ -22,7 +22,8 @@ public class SpawnFloorFinderFauna : MonoBehaviour
         RaycastHit hitinfo;
 
         bool posicionEncontrada = false;
-        
+
+
         while (!posicionEncontrada)
         {
             if (Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, floorMask))
@@ -42,7 +43,8 @@ public class SpawnFloorFinderFauna : MonoBehaviour
                     transform.position = centroZona + offset;
                 }
             }
-        }       
+        }
+
     }
 
 }

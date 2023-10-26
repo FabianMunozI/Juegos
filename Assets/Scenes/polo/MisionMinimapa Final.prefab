@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb038b1fd43f3204e9d687df7bb44581, type: 2}
+  - {fileID: 2100000, guid: de467c89173b8c84bb8a68e8c0b575c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ PrefabInstance:
     - target: {fileID: 3054788660153097323, guid: 2064ce28f3f7ddf4bb4bf74edc1b837e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fb038b1fd43f3204e9d687df7bb44581, type: 2}
+      objectReference: {fileID: 2100000, guid: de467c89173b8c84bb8a68e8c0b575c5, type: 2}
     - target: {fileID: 3076090763820862180, guid: 2064ce28f3f7ddf4bb4bf74edc1b837e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4895284850232989757, guid: 2064ce28f3f7ddf4bb4bf74edc1b837e, type: 3}
       propertyPath: m_Name
-      value: MisionMinimapa Variant 1 (1)
+      value: MisionMinimapa Final
       objectReference: {fileID: 0}
     - target: {fileID: 7565529940919727727, guid: 2064ce28f3f7ddf4bb4bf74edc1b837e, type: 3}
       propertyPath: m_RootOrder

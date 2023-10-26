@@ -61,13 +61,14 @@ public class ProceduralPlaya : MonoBehaviour
     private List<Vector2> vectorProhibido = new List<Vector2>();
 
     public GameObject misionBasuraPlaya;
+    public GameObject misionTriviaPlaya;
 
     private float beach_pos_x = 0;
     private float beach_pos_y = 0;
 
     public GameObject CUBOMISION;
 
-
+    private GameObject NpcsPlaya;
     void Start()
     {   
         // Inicializar semilla.
@@ -81,7 +82,7 @@ public class ProceduralPlaya : MonoBehaviour
         Random.seed = seed;
         Debug.Log(seed);
         
-
+        NpcsPlaya = GameObject.Find("NpcsPlaya");
         contenedorBasura = GameObject.Find("BasuraPlayaCont");
         contenedorCiudad = new GameObject("contenedorCiudad");
         contenedorAnimales = new GameObject("contenedorAnimales");
@@ -108,6 +109,9 @@ public class ProceduralPlaya : MonoBehaviour
         misionBasuraPlaya.GetComponent<BasuraPlaya>().center_x = 0;
         misionBasuraPlaya.GetComponent<BasuraPlaya>().center_y = 0;
         misionBasuraPlaya.SetActive(true);
+
+        misionTriviaPlaya.transform.position = SearchNotBuildableZone();
+        misionTriviaPlaya.SetActive(true);
     }
 
     void BeachTerrain()
@@ -146,28 +150,11 @@ public class ProceduralPlaya : MonoBehaviour
     private Vector3 petroleo_pos = new Vector3(0,0,0);
     void PetroleoZona()
     {
-        /*
-        Vector3 aaaa = new Vector3(154.7f, 300f, 86.7f);
-
-        Ray ray = new Ray( aaaa, Vector3.down);
-        if (Physics.Raycast(ray, out RaycastHit hit) )
-                {
-                    Debug.Log("AAAA "+ hit.transform.name);
-                }
-            ray_debug = aaaa;
-        */
-
-        /*
-        RaycastHit[] hits = Physics.RaycastAll(aaaa, Vector3.down, 600.0F);
-        for (int i = 0; i < hits.Length; i++)
-        {
-            RaycastHit hit = hits[i];
-            Debug.Log("AAAA "+ hit.transform.name);
-        }*/
-
 
         Vector3 posPetroleo = SearchPosDistBeach2(64);
         petroleo_pos = posPetroleo;
+
+        ray_debug = posPetroleo;
 
         var temp = Instantiate(Resources.Load<GameObject>("ProceduralPlaya/Prefabs/ArenaPetroleo"), 
                                 new Vector3(posPetroleo.x -64f,-77.6f,posPetroleo.z - 64f), 
@@ -176,6 +163,62 @@ public class ProceduralPlaya : MonoBehaviour
         temp.GetComponent<TG>().width = 128;
         temp.GetComponent<TG>().height = 128;
         temp.SetActive(true);
+
+        bool HP_posicionado = false;
+        bool MP_posicionado = false;
+
+        while(!HP_posicionado)
+        {
+            Ray ray = new Ray( new Vector3( Random.Range(posPetroleo.x - 64f, posPetroleo.x + 64f), 
+                                        100f, 
+                                        Random.Range(posPetroleo.z - 64f,  posPetroleo.z + 64f)), Vector3.down);
+
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "ArenaPetroleo(Clone)" && hit.point.y > 2.5f)
+            {
+                GameObject hombree = GameObject.Find("Prefab_HP1");
+                hombree.transform.position = hit.point + new Vector3(0,-1,0) ;
+                hombree.transform.rotation = Quaternion.Euler(0,Random.Range(0,360),0);
+                HP_posicionado = true;
+            }
+        }
+
+        while(!MP_posicionado)
+        {
+            Ray ray = new Ray( new Vector3( Random.Range(posPetroleo.x - 64f, posPetroleo.x + 64f), 
+                                        100f, 
+                                        Random.Range(posPetroleo.z - 64f,  posPetroleo.z + 64f)), Vector3.down);
+
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "ArenaPetroleo(Clone)" && hit.point.y > 2.5f)
+            {
+                GameObject mujerr = GameObject.Find("Prefab_MP1");
+                mujerr.transform.position = hit.point + new Vector3(0,-1,0) ;
+                mujerr.transform.rotation = Quaternion.Euler(0,Random.Range(0,360),0);
+                MP_posicionado = true;
+            }
+        }
+
+
+        Object[] anims_petro = Resources.LoadAll("ProceduralPlaya/Prefabs/AnimalesPetroleo");
+
+        int conttt = 0;
+
+        while(conttt < 30)
+        {
+            Ray ray = new Ray( new Vector3( Random.Range(posPetroleo.x - 64f, posPetroleo.x + 64f), 
+                                        100f, 
+                                        Random.Range(posPetroleo.z - 64f,  posPetroleo.z + 64f)), Vector3.down);
+
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "ArenaPetroleo(Clone)" && hit.point.y > 2.5f)
+            {
+                Instantiate(anims_petro[Random.Range(0,anims_petro.Length)],
+                                            hit.point , Quaternion.Euler(0,Random.Range(0,360),0));
+                conttt ++;
+
+            }
+
+        }
+
+        
     }
 
     private GameObject testtttt;
@@ -1010,7 +1053,7 @@ public class ProceduralPlaya : MonoBehaviour
                         if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
                             variarhumanos(
-                                Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,180,0))
+                                Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,180,0), NpcsPlaya.transform)
                             as GameObject);
                         } else if (Random.Range(0f,1f) < prob_basura && !grid.GetCellDontBuild(i,j))
                             Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,270,0));
@@ -1022,7 +1065,7 @@ public class ProceduralPlaya : MonoBehaviour
                         if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
                             variarhumanos(
-                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,0,0))
+                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,0,0), NpcsPlaya.transform)
                             as GameObject);
                         } else if (Random.Range(0f,1f) < prob_basura && !grid.GetCellDontBuild(i,j))
                             Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,90,0));
@@ -1034,7 +1077,7 @@ public class ProceduralPlaya : MonoBehaviour
                         if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
                             variarhumanos(
-                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,270,0))
+                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,270,0), NpcsPlaya.transform)
                             as GameObject);
                         } else if (Random.Range(0f,1f) < prob_basura && !grid.GetCellDontBuild(i,j))
                             Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,0,0));
@@ -1046,7 +1089,7 @@ public class ProceduralPlaya : MonoBehaviour
                         if (Random.Range(0f,1f) < prob_silla && !vectorProhibido.Contains(new Vector2(i,j)))
                         {
                             variarhumanos(
-                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,90,0))
+                            Instantiate(sillas[Random.Range(0, sillas.Length)], grid.GetCellCenter(i,j) + new Vector3(0,6,0), Quaternion.Euler(0,90,0), NpcsPlaya.transform)
                             as GameObject);
                         } else if (Random.Range(0f,1f) < prob_basura && !grid.GetCellDontBuild(i,j))
                             Instantiate(basureros[Random.Range(0, basureros.Length)], grid.GetCellCenter(i,j) + new Vector3(0,7,0), Quaternion.Euler(0,180,0));
@@ -1215,7 +1258,7 @@ public class ProceduralPlaya : MonoBehaviour
             // Perform a raycast using the ray.
             if  (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.name == "Terrain(Clone)" && hit.point.y > hitpoint_limit)
             {
-                Object insta = Instantiate(detallesHumanos[Random.Range(0,detallesHumanos.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0));
+                Object insta = Instantiate(detallesHumanos[Random.Range(0,detallesHumanos.Length)], hit.point, Quaternion.Euler(0, Random.Range(0,360), 0), NpcsPlaya.transform);
 
                 if (insta.name == "Sillas2(Clone)" || insta.name == "Sillas1(Clone)" || insta.name == "Sillas3(Clone)" || insta.name == "Sillas4(Clone)")
                 {

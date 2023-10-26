@@ -13,7 +13,7 @@ public class palancaMisionPlantaTrata : Interactable
     void Start() {
         msg = GameObject.Find("ContenedorMsgPuertaTratamientoAgua").transform.GetChild(0).gameObject;
         if (PlayerPrefs.HasKey("terminoJuegoElectricidad1PlantaTratamientoAgua")){
-            if(PlayerPrefs.GetInt("terminoJuegoElectricidad1PlantaTratamientoAgua")==1){
+            if(PlayerPrefs.GetInt("terminoJuegoElectricidad1PlantaTratamientoAgua")>=1){
                 bola.GetComponent<MeshRenderer>().material.color=Color.yellow;
                 //controller.SetTrigger("completa");
             }
@@ -32,7 +32,7 @@ public class palancaMisionPlantaTrata : Interactable
     {
         base.Interact();
         if (PlayerPrefs.HasKey("terminoJuegoElectricidad1PlantaTratamientoAgua")){
-            if(PlayerPrefs.GetInt("terminoJuegoElectricidad1PlantaTratamientoAgua")==1){
+            if(PlayerPrefs.GetInt("terminoJuegoElectricidad1PlantaTratamientoAgua")>=1){
                 controller.SetTrigger("completa");
                 bola.GetComponent<MeshRenderer>().material.color=Color.green;
                 GetComponent<BoxCollider>().enabled=false;

@@ -5451,6 +5451,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5784509801189386391}
+  - component: {fileID: 2377612505621132643}
+  - component: {fileID: 8681909156173136464}
   m_Layer: 0
   m_Name: Banca 2
   m_TagString: Untagged
@@ -5476,6 +5478,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2377612505621132643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847588124352895651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.161957, y: 8.643272, z: 4.46459}
+  m_Center: {x: 2.973999, y: 3.8216362, z: 0.26025772}
+--- !u!114 &8681909156173136464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847588124352895651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940d21ecf14e47741a91101ae850438b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AButton: {fileID: 0}
+  BButton: {fileID: 0}
+  CButton: {fileID: 0}
+  DButton: {fileID: 0}
+  dialogoObjetivo: {fileID: 0}
 --- !u!1 &7866468683987177753
 GameObject:
   m_ObjectHideFlags: 0

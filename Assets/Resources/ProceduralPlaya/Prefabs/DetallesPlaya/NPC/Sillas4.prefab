@@ -1394,6 +1394,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319884837746787253}
+  - component: {fileID: 7051568925563434057}
+  - component: {fileID: 5777063065253430188}
   m_Layer: 0
   m_Name: Sillas4
   m_TagString: Untagged
@@ -1419,6 +1421,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7051568925563434057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176622745025271846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3110199, y: 1.6496309, z: 1.9948616}
+  m_Center: {x: -1.2584305, y: 0.32481545, z: -0.23156166}
+--- !u!114 &5777063065253430188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176622745025271846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940d21ecf14e47741a91101ae850438b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AButton: {fileID: 0}
+  BButton: {fileID: 0}
+  CButton: {fileID: 0}
+  DButton: {fileID: 0}
+  dialogoObjetivo: {fileID: 0}
 --- !u!1 &5264412192146949182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,6 +2119,7 @@ GameObject:
   - component: {fileID: 6189060876335627811}
   - component: {fileID: 8216537533791619817}
   - component: {fileID: 2458878107089985196}
+  - component: {fileID: 82818193996581356}
   m_Layer: 0
   m_Name: sombrilla
   m_TagString: Untagged
@@ -2169,10 +2202,24 @@ BoxCollider:
   m_GameObject: {fileID: 7568296058602646332}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.021560965, y: 0.02157706, z: 0.021144176}
   m_Center: {x: -0.00004315772, y: 0.00008163201, z: 0.010572117}
+--- !u!64 &82818193996581356
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568296058602646332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: 526dac3c013549f48b63f1f3df810ec0, type: 3}
 --- !u!1 &7642196530963306561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,7 +3027,7 @@ BoxCollider:
   m_GameObject: {fileID: 9170641523514797387}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.01585731, y: 0.01721557, z: 0.008261211}
   m_Center: {x: -0.00016682594, y: -0.00015620049, z: -0.000026181804}
