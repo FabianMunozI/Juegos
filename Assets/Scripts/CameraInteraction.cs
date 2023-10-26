@@ -186,7 +186,7 @@ public class CameraInteraction : MonoBehaviour
             }
         }
 
-        if (TextDetectDragable is not null)
+        if (!(TextDetectDragable is null))
         {
             if (ultimoReconocidoRecoger)
             {

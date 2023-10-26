@@ -27,7 +27,7 @@ public class DoorMisionPlanta : Interactable
 
         if (PlayerPrefs.HasKey("terminoJuegoElectricidad1PlantaTratamientoAgua")){
             if(PlayerPrefs.GetInt("terminoJuegoElectricidad1PlantaTratamientoAgua")==1){ // ya hizo la mision 1 vez
-                Debug.Log("asdaswtf");
+                //Debug.Log("asdaswtf");
                 flag=true;
                 Destroy(candado);
                 Destroy(llave);
