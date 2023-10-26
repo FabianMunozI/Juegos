@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6016725773606502087}
   - component: {fileID: 1542379595585673180}
   - component: {fileID: 2406656900177234106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blue_Penguin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 3778581010634962022}
   - component: {fileID: 8151699899933605580}
   - component: {fileID: 8564954358169842797}
-  m_Layer: 0
+  - component: {fileID: -6444953429056703787}
+  m_Layer: 6
   m_Name: pinguino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,10 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorMask:
     serializedVersion: 2
-    m_Bits: 1179664
+    m_Bits: 1310736
   evitarAgua:
     serializedVersion: 2
-    m_Bits: 131088
+    m_Bits: 262160
   offSet: {x: 0, y: 0, z: 0}
   radio: 100
   centroZona: {x: 0, y: 0, z: 0}
@@ -151,3 +152,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 108.40337, y: 224.85664, z: 118.268166}
   m_Center: {x: 0.71753865, y: 57.43116, z: -9.082698}
+--- !u!114 &-6444953429056703787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556490278480817884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259baebe07c713e4682cbf6c4f4dff3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

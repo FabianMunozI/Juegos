@@ -43,20 +43,8 @@ public class PistasInteracciones : Interactable
         playerPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
         npcPosition = new Vector3(transform.position.x, 1, transform.position.z);
 
-        /////////Rotacion del NPC al jugador//////////////////////
-        ///
         Quaternion rotation = Quaternion.LookRotation(playerPosition - transform.position);
-        rotation.x = 0f;
-        rotation.z = 0f;
         
-        if (transform.name == "ninia(Clone)")
-        {
-            transform.rotation = rotation;
-        }
-        
-        
-        //////////////////////////////////////////////////////////
-
         ///////////Rotacion del jugador al NPC////////////////////
         rotation = Quaternion.LookRotation(npcPosition - player.transform.position);
         rotation.x = 0f;
@@ -83,6 +71,7 @@ public class PistasInteracciones : Interactable
             centroZona = new Vector3(Random.Range(-1100, 1100), 0, Random.Range(-1100, 1100));
         }
 
+
         aux = Instantiate(zonaMiniMapa, new Vector3(centroZona.x,150f,centroZona.z), Quaternion.identity);
         aux.transform.localScale = new Vector3(200, 200, 200);
         //objetosMision.Add(aux);
@@ -92,12 +81,6 @@ public class PistasInteracciones : Interactable
         if (transform.name == "ninia(Clone)")
         {
             aux.name = "zonaOrca";
-            // mirar hacia la orca pero un poco ladeado, como mirar hacia la zona
-            rotation = Quaternion.LookRotation(centroZona);
-            rotation.x = 0f;
-            rotation.z = 0f;
-            transform.rotation = rotation;
-
         }
         else if (transform.name == "huesoPescado(Clone)")
         {
@@ -107,6 +90,12 @@ public class PistasInteracciones : Interactable
         {
             aux.name = "zonaPengu";
         }
+
+        // mirar hacia la orca pero un poco ladeado, como mirar hacia la zona
+        rotation = Quaternion.LookRotation(centroZona);
+        rotation.x = 0f;
+        rotation.z = 0f;
+        transform.rotation = rotation;
     }
 
 

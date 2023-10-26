@@ -36,6 +36,9 @@ public class CameraInteraction : MonoBehaviour
         cameraa = transform.Find("Camera");
         Iv = GameObject.Find("Inventario");
 
+
+        //Debug.Log("existo");
+
         //TextDetectInteractable = transform.Find("Interactuar").gameObject;
         //TextDetectDragable = transform.Find("Recoger").gameObject;
         /*
@@ -53,9 +56,10 @@ public class CameraInteraction : MonoBehaviour
             Deselect4();
         }
         else{
-            Debug.DrawRay(cameraa.position, cameraa.forward * rayDistance, Color.red);
+            //Debug.DrawRay(cameraa.position, cameraa.forward * rayDistance, Color.red);
             RaycastHit hit1;
             if (Physics.Raycast(cameraa.position, cameraa.forward, out hit1, rayDistance, LayerMask.GetMask("interactable"))){
+                Debug.DrawRay(cameraa.position, hit1.distance * cameraa.forward, Color.red);
                 Deselect();
                 SelectedObjet(hit1.transform);
                 if(Input.GetKeyDown(KeyCode.E)){ // letra e
@@ -178,10 +182,13 @@ public class CameraInteraction : MonoBehaviour
         {
             if (ultimoReconocido)
             {
+                //Debug.Log("Reconocido");
                 TextDetectInteractable.SetActive(true);
             }
             else
             {
+
+                //Debug.Log("No Reconocido");
                 TextDetectInteractable.SetActive(false);
             }
         }
