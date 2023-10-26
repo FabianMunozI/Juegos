@@ -67,6 +67,9 @@ public class Menu : MonoBehaviour
 
         SceneManager.LoadScene("MenuPlaya");
     }
+    public void BotonTutorial (){
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_TUTORIAL);
+    }
     // Update is called once per frame
     public void OnQuitButton ()
     {
