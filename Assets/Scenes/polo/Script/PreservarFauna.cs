@@ -31,7 +31,7 @@ public class PreservarFauna : MonoBehaviour
 
 
     int logrados = 0;
-    int animalesAyudados = 0;
+    public static int animalesAyudados = 0;
 
 
     private float tiempoLimite;
@@ -65,9 +65,14 @@ public class PreservarFauna : MonoBehaviour
     }
 
 
+    GameObject pengu;
+    GameObject orca;
+    GameObject foca;
 
     void Update()
     {
+        Debug.Log(logrados);
+             = logrados;
 
         // Comienza mision
         if (!questStarted && !(missionDone) && GetComponent<QuestStarterPolo>().misionAceptada) //  
@@ -98,7 +103,11 @@ public class PreservarFauna : MonoBehaviour
 
         if (questStarted && logrados <3)
         {
-            Debug.Log("entré");
+
+            questText.text = ".- Animales asistidos: "+animalesAyudados+"/3";
+
+
+            Debug.Log("entrï¿½");
             zonaPengu = GameObject.Find("zonaPengu");
             zonaOrca = GameObject.Find("zonaOrca");
             zonaFoca = GameObject.Find("zonaFoca");
@@ -109,15 +118,8 @@ public class PreservarFauna : MonoBehaviour
             if (zonaPengu != null && !penguOn)
             {
                 penguOn = true;
-
-                if (GameObject.Find("pinguino(Clone)").transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceP)
-                {
-                    sumAnimalOnceP = true;
-                    logrados++;
-                }
-
                 Debug.Log("yes");
-                GameObject pengu;
+                
                 Vector3 centroPengu = zonaPengu.transform.position;
                 Vector3 posPengu = new Vector3(Random.Range(centroPengu.x - 100, centroPengu.x + 100), 50, Random.Range(centroPengu.z - 100, centroPengu.z + 100));
 
@@ -125,19 +127,24 @@ public class PreservarFauna : MonoBehaviour
                 //pengu.transform.parent = ObjMision.transform;
                 objetosMision.Add(pengu);
                 Radar.targets.Add(pengu.transform);
+
+            }
+
+            if(penguOn)
+            {
+                 if (pengu.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceP)
+                {
+                    sumAnimalOnceP = true;
+                    logrados++;
+                }
             }
 
             if (zonaOrca != null && !orcaOn)
             {
                 orcaOn = true;
 
-                if (GameObject.Find("orca(Clone)").transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceO)
-                {
-                    sumAnimalOnceO = true;
-                    logrados++;
-                }
 
-                GameObject orca;
+                
                 Vector3 centroOrca = zonaOrca.transform.position;
                 Vector3 posOrca = new Vector3(Random.Range(centroOrca.x - 100, centroOrca.x + 100), 50, Random.Range(centroOrca.z - 100, centroOrca.z + 100));
 
@@ -147,18 +154,20 @@ public class PreservarFauna : MonoBehaviour
                 Radar.targets.Add(orca.transform);
             }
 
+            if(orcaOn)
+            {
+                if (orca.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceO)
+                {
+                    sumAnimalOnceO = true;
+                    logrados++;
+                }
+            }
+
             if (zonaFoca != null && !focaOn)
             {
                 focaOn = true;
 
-                if (GameObject.Find("foca(Clone)").transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceF)
-                {
-                    sumAnimalOnceF = true;
-                    logrados++;
-                }
-
-                GameObject foca;
-                Vector3 centroFoca = zonaOrca.transform.position;
+                Vector3 centroFoca = zonaFoca.transform.position;
                 Vector3 posFoca = new Vector3(Random.Range(centroFoca.x - 100, centroFoca.x + 100), 50, Random.Range(centroFoca.z - 100, centroFoca.z + 100));
 
                 foca = Instantiate(animalesMision[2], posFoca, Quaternion.identity);
@@ -167,6 +176,18 @@ public class PreservarFauna : MonoBehaviour
                 Radar.targets.Add(foca.transform);
             }
 
+            if(focaOn)
+            {
+                if (foca.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceF)
+                {
+                    sumAnimalOnceF = true;
+                    logrados++;
+                }
+            }
+
+
+           
+
 
         }
 
@@ -174,14 +195,16 @@ public class PreservarFauna : MonoBehaviour
 
 
         // Termina mision
-        if (animalesAyudados >= 3 && missionDone)
+        if (animalesAyudados >= 3 && !missionDone)
         {
-            //CambiarMapaFinal();
+            missionDone = true;
+            Debug.Log("Mision terminada");
+            CambiarMapaFinal();
             //ObjetivosPantallaOFF();
         }
 
 
-        //Camara final misión 
+        //Camara final misiï¿½n 
         /*
         if (avRotate && tiempoLimite > 0)
         {

@@ -15,25 +15,30 @@ public class InteractuarAnimales : Interactable
 
     public bool animalAyudado = false;
 
+    int respuesta_correcta = 0;
+
     void Start()
     {
         if (transform.name == "pinguino(Clone)")
         {
-            dialogo = GameObject.Find("Canvas").transform.GetChild(14).transform.GetChild(0).gameObject;
+            respuesta_correcta = 0;
+            dialogo = GameObject.Find("Canvas").transform.GetChild(14).gameObject;
             op1Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             op2Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
             op3Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<Button>();
         }
         else if (transform.name == "orca(Clone)")
         {
-            dialogo = GameObject.Find("Canvas").transform.GetChild(15).transform.GetChild(1).gameObject;
+            respuesta_correcta = 0;
+            dialogo = GameObject.Find("Canvas").transform.GetChild(15).gameObject;
             op1Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             op2Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
             op3Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<Button>();
         }
         else
         {
-            dialogo = GameObject.Find("Canvas").transform.GetChild(16).transform.GetChild(2).gameObject;
+            respuesta_correcta = 1;
+            dialogo = GameObject.Find("Canvas").transform.GetChild(16).gameObject;
             op1Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             op2Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
             op3Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<Button>();
@@ -63,21 +68,59 @@ public class InteractuarAnimales : Interactable
         dialogo.SetActive(true);
 
         Radar.targets.Remove(transform);
-        animalAyudado = true;
+        
     }
 
     public void Op1()
     {
-        retake_control();
+        animalAyudado = true;
+        op1Button.GetComponent<Image>().color = Color.red;
+        if(respuesta_correcta == 0)
+        {
+            op1Button.GetComponent<Image>().color = Color.green;
+        } else if(respuesta_correcta == 1)
+        {
+            op2Button.GetComponent<Image>().color = Color.green;
+        } else if (respuesta_correcta == 2)
+        {
+            op3Button.GetComponent<Image>().color = Color.green;
+        }
+        Invoke("retake_control", 1f);
     }
 
     public void Op2()
     {
-        retake_control();
+        animalAyudado = true;
+        op2Button.GetComponent<Image>().color = Color.red;
+        if(respuesta_correcta == 0)
+        {
+            
+            op1Button.GetComponent<Image>().color = Color.green;
+        } else if(respuesta_correcta == 1)
+        {
+            op2Button.GetComponent<Image>().color = Color.green;
+        } else if (respuesta_correcta == 2)
+        {
+            op3Button.GetComponent<Image>().color = Color.green;
+        }
+        Invoke("retake_control", 1f);
     }
     public void Op3()
     {
-        retake_control();
+        animalAyudado = true;
+        op3Button.GetComponent<Image>().color = Color.red;
+        if(respuesta_correcta == 0)
+        {
+            op1Button.GetComponent<Image>().color = Color.green;
+        } else if(respuesta_correcta == 1)
+        {
+            op2Button.GetComponent<Image>().color = Color.green;
+            
+        } else if (respuesta_correcta == 2)
+        {
+            op3Button.GetComponent<Image>().color = Color.green;
+        }
+        Invoke("retake_control", 1f);
     }
 
     void retake_control()
@@ -88,6 +131,10 @@ public class InteractuarAnimales : Interactable
         dialogo.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        op1Button.GetComponent<Image>().color = Color.white;
+        op2Button.GetComponent<Image>().color = Color.white;
+        op3Button.GetComponent<Image>().color = Color.white;
     }
 
 }
