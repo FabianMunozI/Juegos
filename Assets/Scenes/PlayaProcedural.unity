@@ -22776,7 +22776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687279015226742000, guid: 15842ab44613e2747a1ad23ed3b2083c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.772
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 687279015226742000, guid: 15842ab44613e2747a1ad23ed3b2083c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23500,7 +23500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5cfc503e3d4ce947b65b8e1b24d67fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basurasARecoger: 1
+  basurasARecoger: 3
   missionDone: 0
   orbitSpeed: 20
   tiempoLimiteFinal: 6
