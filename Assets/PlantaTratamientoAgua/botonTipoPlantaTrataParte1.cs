@@ -32,7 +32,7 @@ public class botonTipoPlantaTrataParte1 : Interactable
     {
         base.Interact();
         if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
-            Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
+            //Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
             if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=1 && controllerPalancas.activarBotones){
                 controller.SetTrigger("activar");
                 controllerPalancas.presionado(gameObject);
