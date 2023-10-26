@@ -13,19 +13,21 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject jugador;
     private GameObject camara;
+    private GameObject canvas;
+    private AudioSource musicaAmbiente;
     public bool inputTrue = false;
     Vector3 posCamara;
 
-    [SerializeField] private GameObject[] animales;
+    [SerializeField] private GameObject[] animalesMision;
+    [SerializeField] private GameObject[] pistas;
     [SerializeField] private GameObject[] dunas;
-    private List<GameObject> objetosMision;
+    private List<GameObject> objetosMision = new List<GameObject>();
 
-    public GameObject radarPrefab;
+   private GameObject ObjMision;
 
-
-    public GameObject questTracker;
-    public TextMeshProUGUI questTitle;
-    public TextMeshProUGUI questText;
+    private GameObject questTracker;
+    private TextMeshProUGUI questTitle;
+    private TextMeshProUGUI questText;
 
 
     int asignador = 0;
@@ -39,13 +41,22 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject puntoEntorno;
 
-
-
+    private float distanciaZonas = 700;
+    private float radioZonas = 100f;
 
     void Start()
     {
         jugador = GameObject.Find("Player");
         camara = GameObject.Find("Camera");
+        canvas = GameObject.Find("Canvas");
+        ObjMision = GameObject.Find("ObjetosMision");
+        musicaAmbiente = GameObject.Find("Generador").GetComponent<AudioSource>();
+
+        questTracker = canvas.transform.GetChild(7).gameObject; ;
+        questTitle = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        questText = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        
+
         npcPosition = transform.position;
 
         questTracker.SetActive(false);
@@ -57,15 +68,14 @@ public class PreservarFauna : MonoBehaviour
     {
 
         // Comienza mision
-        if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<Quest_Starter>().misionAceptada) //  
+        if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<QuestStarterPolo>().misionAceptada) //  
         {
-            OnOffPlayer();
+            //OnOffPlayer();
 
             CambiarMapaInicio();
-            ObjetivosPantallaON();
             //RotarCamaraEntorno();
 
-            Invoke("OnOffPlayer", 2f);
+            //Invoke("OnOffPlayer", 2f);
             questTracker.SetActive(true);
 
 
@@ -166,8 +176,8 @@ public class PreservarFauna : MonoBehaviour
         // Termina mision
         if (animalesAyudados >= 3 && missionDone)
         {
-            CambiarMapaFinal();
-            ObjetivosPantallaOFF();
+            //CambiarMapaFinal();
+            //ObjetivosPantallaOFF();
         }
 
 
@@ -186,19 +196,33 @@ public class PreservarFauna : MonoBehaviour
     {
         questStarted = true;
         tiempoLimite = 4f;
+        musicaAmbiente.enabled = false;
+
+        Vector3 min = new Vector3(-1200 + radioZonas, 50, -1200 +radioZonas);
+        Vector3 max = new Vector3(1200 - radioZonas, 50, 1200 - radioZonas);
 
         Vector3 posJugador = jugador.transform.position;
 
+        
+        Vector3[] posicionesAnimales = SpawnFinder.GetPoints(distanciaZonas,4,posJugador,min,max);
+
+        Vector3 focaPos = posicionesAnimales[1];
+        Vector3 orcaPos = posicionesAnimales[2];
+        Vector3 penguPos = posicionesAnimales[3];
+        
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
         transform.gameObject.SetActive(false);
 
-        //RenderSettings.fog = true;
+        RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
         RenderSettings.fogStartDistance = 2f;
-        RenderSettings.fogEndDistance = 160f;
+        RenderSettings.fogEndDistance = 95f;
         RenderSettings.fogDensity = 0.1f;
-        //RenderSettings.fogColor = Color.blue;
+
+        jugador.transform.GetChild(6).gameObject.SetActive(false);
+        jugador.transform.GetChild(7).gameObject.SetActive(true);
+        jugador.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true); // radar
 
         GameObject aux;
 
@@ -206,8 +230,9 @@ public class PreservarFauna : MonoBehaviour
         {
             for (int j = -1200; j < 1200; j = j + 100)
             {
-                aux = Instantiate(dunas[Random.Range(0,4)], new Vector3(i, 10, j), Quaternion.identity);
-                aux.transform.localScale = new Vector3(20, 25, 20);
+                aux = Instantiate(dunas[Random.Range(0,3)], new Vector3(i, 30, j), Quaternion.identity);
+                aux.transform.localScale = new Vector3(30, 45, 30);
+                aux.transform.parent = ObjMision.transform;
                 objetosMision.Add(aux);
 
                 i = i + Random.Range(0, 25);
@@ -215,15 +240,25 @@ public class PreservarFauna : MonoBehaviour
             }
                 
         }
-    }
 
-    private void ObjetivosPantallaON()
-    {
+        //Pengu
+        //Orca
+        //Foca
 
-    }
+        aux = Instantiate(pistas[0], penguPos, Quaternion.identity);
+        objetosMision.Add(aux);
+        aux.GetComponent<SpawnFloorFinderFauna>().centroZona = penguPos;
+        Radar.targets.Add(aux.transform);
 
-    private void ObjetivosPantallaOFF()
-    {
+        aux = Instantiate(pistas[1], orcaPos, Quaternion.identity);
+        objetosMision.Add(aux);
+        aux.GetComponent<SpawnFloorFinderFauna>().centroZona = orcaPos;
+        Radar.targets.Add(aux.transform);
+
+        aux = Instantiate(pistas[2], focaPos, Quaternion.identity);
+        objetosMision.Add(aux);
+        aux.GetComponent<SpawnFloorFinderFauna>().centroZona = focaPos;
+        Radar.targets.Add(aux.transform);
 
     }
 
@@ -233,6 +268,11 @@ public class PreservarFauna : MonoBehaviour
 
         RenderSettings.fog = false;
 
+        jugador.transform.GetChild(6).gameObject.SetActive(true);
+        jugador.transform.GetChild(7).gameObject.SetActive(false);
+
+        jugador.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+
         missionDone = true;
         questStarted = false;
         questTitle.text = "Mision Terminada!";
@@ -241,6 +281,7 @@ public class PreservarFauna : MonoBehaviour
 
         this.gameObject.layer = LayerMask.NameToLayer("dialogable");
 
+        transform.gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(true);
 
@@ -257,7 +298,7 @@ public class PreservarFauna : MonoBehaviour
         Invoke("OnOffPlayer", 8f);
         Invoke("desactivarTexto", 3f);
 
-
+        musicaAmbiente.enabled = true;
     }
 
     public void RotarCamaraEntorno(float orbitSpeed, float distancia, float tiempoLimite)
@@ -273,6 +314,7 @@ public class PreservarFauna : MonoBehaviour
 */
 
     }
+
 
     public void OnOffPlayer()
     {
@@ -295,5 +337,54 @@ public class PreservarFauna : MonoBehaviour
 
         }
 
+    }
+}
+
+
+public static class SpawnFinder
+{
+
+    private static bool CompareTwo(Vector3 a, Vector3 b, float distanciaZonas)
+    {
+        float x = a.x - b.x;
+        float z = a.z - b.z;
+
+        if ((x * x + z * z) < (distanciaZonas * distanciaZonas))
+            return false;
+
+        return true;
+    }
+
+    public static bool CompareAll(float minDist, Vector3[] puntos)
+    {
+        for (int i = 0; i < puntos.Length; i++)
+        {
+            Vector3 pa = puntos[i];
+            for (int j = i + 1; j < puntos.Length; j++)
+            {
+                Vector3 pb = puntos[j];
+                if (!CompareTwo(pa, pb, minDist))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static Vector3[] GetPoints(float minDist, int nOP, Vector3 player, Vector3 min, Vector3 max)
+    {
+        Vector3[] points = new Vector3[nOP];
+        points[0] = player;
+        
+        do 
+        {
+            for (int i = 1; i<nOP; i++)
+            {
+                points[i] = new Vector3(Random.Range(min.x, max.x), min.y, Random.Range(min.z, max.z));
+            }
+        } while (!CompareAll(minDist, points)) ;
+
+        return points;
     }
 }
