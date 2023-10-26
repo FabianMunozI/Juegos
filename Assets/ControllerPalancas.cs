@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ControllerPalancas : MonoBehaviour
 {
+    public scriptsPlayerEnable textosAqui;
+
     public ControllerParte2PlantaTrata puzzle2;
     public IntruccionesPalancasPlantaTrata[] palancas;
     public bool activarBotones;
@@ -38,6 +40,7 @@ public class ControllerPalancas : MonoBehaviour
     GameObject player;
     void Start()
     {
+        Invoke("buscarCanvas",1f);
         player=GameObject.Find("Player");
         activarBotones=false;
 
@@ -56,6 +59,10 @@ public class ControllerPalancas : MonoBehaviour
                 a.GetComponent<BoxCollider>().enabled=false;
             }
         }
+    }
+
+    void buscarCanvas(){
+        textosAqui = GameObject.Find("ContenedorMisionTratamientoAgua").GetComponent<scriptsPlayerEnable>();
     }
 
     // Update is called once per frame
@@ -183,12 +190,22 @@ public class ControllerPalancas : MonoBehaviour
 
         PlayerPrefs.SetInt("PalancaPlantaTratamientoAgua", 2);
         PlayerPrefs.Save();
+
+        //hacer cosas aqui de canvas
+        textosAqui.textos.transform.GetChild(3).gameObject.SetActive(true);
+        
+
+
+
         /* Debug.Log("Variable PalancaPlantaTratamientoAgua = ");
         Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")); */
         puzzle2.HabilitarPuzzle();
     }
 
     void primeraParte(){
+        // desactivar canvas palancas, y en la parte final activar el de las perillas
+        textosAqui.textos.transform.GetChild(2).gameObject.SetActive(false);
+
         player.transform.position = posInicial.position;
         scriptsPlayer(false);
         player.transform.LookAt(referenciaLookAt.transform);

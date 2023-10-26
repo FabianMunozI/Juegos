@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ControllerParte2PlantaTrata : MonoBehaviour
 {
+    public scriptsPlayerEnable textosAqui;
+
+
     public ControllerPalancas puzzle1;
 
     public bool activarBotones;
@@ -38,6 +41,8 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
     public GameObject[] objetosActivarAlFinal;
     void Start()
     {
+        textosAqui = GameObject.Find("ContenedorMisionTratamientoAgua").GetComponent<scriptsPlayerEnable>();
+
         sePuedeJugar=false;
         perillasListas=false;
         botonesListos=false;
@@ -101,6 +106,10 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
                         plano.transform.GetChild(i).GetChild(0).transform.Rotate(Vector3.up, 270.0f);
                     } 
                 }
+            }else if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=2){
+                Debug.Log("here");
+                sePuedeJugar = true;
+                planoPuesto = true;
             }
         }
     }
@@ -137,9 +146,15 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
         scriptsPlayer(true);
         PlayerPrefs.SetInt("PalancaPlantaTratamientoAgua", 3);
         PlayerPrefs.Save();
+
+        //activa canvas volver con el NPC
+        textosAqui.textos.transform.GetChild(4).gameObject.SetActive(true);
     }
 
     void primeraParte(){
+        // desactiva canvas perillas
+        textosAqui.textos.transform.GetChild(3).gameObject.SetActive(false);
+
         player.transform.position = posInicial.position;
         scriptsPlayer(false);
         player.transform.LookAt(referenciaLookAt.transform);
