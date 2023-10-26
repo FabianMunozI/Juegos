@@ -13262,7 +13262,7 @@ GameObject:
   - component: {fileID: 1723602269}
   - component: {fileID: 1723602268}
   m_Layer: 5
-  m_Name: Informacion-CalidadAgua (1)
+  m_Name: Informacion-Derretimiento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13306,8 +13306,8 @@ MonoBehaviour:
   - A medida que las temperaturas aumentan, los glaciares pierden masa y volumen
   - "contribuyendo al aumento del nivel del mar y amenazando a las comunidades costeras
     con inundaciones y erosi\xF3n."
-  - "Los glaciares son vitales como fuentes de agua dulce en regiones monta\xF1osas,
-    por lo que su disminuci\xF3n afecta la disponibilidad de agua para el abastecimiento
+  - "Los glaciares son vitales como fuentes de agua dulce en regiones monta\xF1osas"
+  - "por lo que su disminuci\xF3n afecta la disponibilidad de agua para el abastecimiento
     de agua. "
   - "Este proceso tambi\xE9n perturba los ecosistemas de alta monta\xF1a y puede
     liberar sedimentos y contaminantes en cuerpos de agua cercanos. "
@@ -19179,7 +19179,7 @@ PrefabInstance:
     - target: {fileID: 495922512609833892, guid: e5df0f22345377944abcfc785fbca11e, type: 3}
       propertyPath: dialogoObjetivo
       value: 
-      objectReference: {fileID: 1642868083}
+      objectReference: {fileID: 1723602266}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5df0f22345377944abcfc785fbca11e, type: 3}
 --- !u!4 &543450653103808878 stripped
