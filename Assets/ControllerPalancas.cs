@@ -40,6 +40,22 @@ public class ControllerPalancas : MonoBehaviour
     {
         player=GameObject.Find("Player");
         activarBotones=false;
+
+        if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
+            //Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
+            if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=2){
+                tuberia.SetTrigger("activar");
+                tuberia2DentroMuros.SetTrigger("activar");
+                botonRojo.GetComponent<BoxCollider>().enabled=false;
+                botonVerde.GetComponent<BoxCollider>().enabled=false;
+                for(int i =0;i <4 ;i++){
+                    palancas[i].GetComponent<BoxCollider>().enabled=false;
+                }
+                GameObject a= GameObject.Find("plano1MisionParte1");
+                a.transform.GetChild(0).gameObject.SetActive(true);
+                a.GetComponent<BoxCollider>().enabled=false;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -90,6 +106,8 @@ public class ControllerPalancas : MonoBehaviour
                 botonVerde.GetComponent<BoxCollider>().enabled=false;
                 tuberia.SetTrigger("activar");
                 tuberia.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                tuberia.gameObject.transform.GetChild(1).gameObject.GetComponent<AudioSource>().Play();
+                tuberia.gameObject.GetComponent<AudioSource>().Play();
                 // iniciar animacion giro cañeria y elevacion del agua
                 Invoke("moverMedio",3.5f);
                 Invoke("moverMedioAnterior",7f);
@@ -136,8 +154,17 @@ public class ControllerPalancas : MonoBehaviour
 
     }
     void moverMedio(){
+        tuberia2DentroMuros.transform.parent.GetComponent<AudioSource>().Play();
+
+        Invoke("resto",0.3f);
+    }
+
+    void resto(){
         tuberia2DentroMuros.SetTrigger("activar");
         tuberia2DentroMuros.transform.parent.GetChild(1).GetChild(2).gameObject.SetActive(true);
+
+        
+
         player.transform.position = posMedio.position;
         player.transform.LookAt(referenciaLookAtMedio.transform);
     }
