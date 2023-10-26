@@ -34,6 +34,7 @@ public class TransitionManager : MonoBehaviour
     
     public const string SCENE_NAME_GAME_MISIONPLANTA = "PlantaTratamientoAgua";
     public const string SCENE_NAME_GAME_TP_PLANTA = "TP_PlantaTratamiento";
+    public const string SCENE_NAME_GAME_TP_EOLICA = "MisionEolica";
 
     //Menu
     public const string SCENE_NAME_GAME_MENU = "Menu";

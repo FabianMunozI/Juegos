@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlataTratamientoAgua/TP_PlantaTratamiento.unity
     guid: 49ddef0a6d3ce2d42a1f59f96e519200
+  - enabled: 1
+    path: Assets/Scenes/FabProcedural/MisionEolica.unity
+    guid: 14c411ab97dde1546a95b7a1b2ad10bf
   m_configObjects: {}
