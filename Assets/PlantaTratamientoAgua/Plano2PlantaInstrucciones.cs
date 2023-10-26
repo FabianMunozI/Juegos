@@ -28,11 +28,11 @@ public class Plano2PlantaInstrucciones : Interactable
         collider=this.GetComponent<BoxCollider>();
         collider.isTrigger= false;
 
-        /* if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
+        if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
             if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=3){ // ya hizo la mision 1 vez
                 flag=true;
             }
-        } */
+        } 
     }
     
     public override void Interact()

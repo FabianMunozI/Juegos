@@ -40,6 +40,10 @@ public class palancaMisionPlantaTrata : Interactable
 
                 PlayerPrefs.SetInt("PalancaPlantaTratamientoAgua", 1);
                 PlayerPrefs.Save();
+
+                GameObject a = GameObject.Find("Elmejorpjdelavidamun");
+                a.GetComponent<MisionPersePlantaTrata>().textos.transform.GetChild(1).gameObject.SetActive(false);
+                a.GetComponent<MisionPersePlantaTrata>().textos.transform.GetChild(2).gameObject.SetActive(true);
             }
         }else{
             //animacion se devuelve incompleta
