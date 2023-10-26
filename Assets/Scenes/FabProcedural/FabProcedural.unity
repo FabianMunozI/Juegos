@@ -43344,11 +43344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4700788418028502240, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.7
+      value: 40.4
       objectReference: {fileID: 0}
     - target: {fileID: 4700788418028502240, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -242.8
+      value: -285.4
       objectReference: {fileID: 0}
     - target: {fileID: 4700788418028502240, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
       propertyPath: m_LocalRotation.w
