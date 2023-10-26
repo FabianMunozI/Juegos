@@ -10,7 +10,7 @@ public class QuestStarterPolo : Interactable
 
     private Button acceptButton, declineButton;
     private GameObject dialogoObjetivo;
-    private GameObject canvas;
+    private GameObject canvas, player;
     public bool misionAceptada = false;
 
 
@@ -24,6 +24,7 @@ public class QuestStarterPolo : Interactable
         //          No
 
         canvas = GameObject.Find("Canvas");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         dialogoObjetivo = canvas.transform.GetChild(8).gameObject;
         acceptButton = canvas.transform.GetChild(8).transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
