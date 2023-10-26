@@ -12,8 +12,10 @@ public class MovimientoFlecha : MonoBehaviour
     private float timer;
     public GameObject mensajeBien;
     public GameObject mensajeMal;
+    public GameObject camaraPrincipal;
 
     public Controles scriptControles;
+    public Minijuego scriptMinijuego;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,9 @@ public class MovimientoFlecha : MonoBehaviour
                 timer -= Time.deltaTime;
             }
             if(timer <= 0){
+                if(state == 1){
+                    camaraPrincipal.transform.position += new Vector3(0,6f,0);
+                }
                 timer = timerInput;
                 direccion += 2;
                 scriptControles.detenido = false;
@@ -79,10 +84,12 @@ public class MovimientoFlecha : MonoBehaviour
         if(state == 1){
             Debug.Log("Buen trabajo!");
             MostrarMensajeBien();
+            scriptMinijuego.SoltarParte();
         }
         else{
             Debug.Log("Fallaste!");
             MostrarMensajeMal();
+            scriptMinijuego.FallarSoltarParte();
         }
         
     }

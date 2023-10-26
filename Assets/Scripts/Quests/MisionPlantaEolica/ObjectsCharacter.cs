@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Objects : MonoBehaviour
+public class ObjectsCharacter : MonoBehaviour
 {
     public int tipo;
     void Start()
     {   
-        transform.position = new Vector3(transform.position.x, 100f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, 200f, transform.position.z);
         Invoke("FindLand",0.5f);
         //FindLand();
     }
