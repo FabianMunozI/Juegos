@@ -17,8 +17,12 @@ public class SpawnFloorFinder : MonoBehaviour
     {
         RaycastHit hitinfo;
 
+
         if (Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, floorMask))
+        {
             transform.position = hitinfo.point + offSet;
+        }
+        
     }
 
 }

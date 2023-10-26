@@ -1121,7 +1121,7 @@ BoxCollider:
   m_GameObject: {fileID: 5625149742585458772}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.01585731, y: 0.01721557, z: 0.008261211}
   m_Center: {x: -0.00016682594, y: -0.00015620049, z: -0.000026181804}
@@ -1232,6 +1232,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2241741206291460925}
+  - component: {fileID: 5451293096066762961}
+  - component: {fileID: 3270911217349749972}
   m_Layer: 0
   m_Name: Sillas3
   m_TagString: Untagged
@@ -1257,6 +1259,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5451293096066762961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681996985127774382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940d21ecf14e47741a91101ae850438b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AButton: {fileID: 0}
+  BButton: {fileID: 0}
+  CButton: {fileID: 0}
+  DButton: {fileID: 0}
+  dialogoObjetivo: {fileID: 0}
+--- !u!65 &3270911217349749972
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681996985127774382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4423866, y: 1.526273, z: 1.9036026}
+  m_Center: {x: 0.22119331, y: 0.2631365, z: -0.4518013}
 --- !u!1 &6996844501648847437
 GameObject:
   m_ObjectHideFlags: 0

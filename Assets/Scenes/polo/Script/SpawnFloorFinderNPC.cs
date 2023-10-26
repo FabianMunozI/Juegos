@@ -18,8 +18,24 @@ public class SpawnFloorFinderNPC : MonoBehaviour
     {
         RaycastHit hitinfo;
 
-        if (Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, floorMask)) // && !(Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, evitarAgua))
-            transform.position = hitinfo.point + offSet;
+        bool posicionEncontrada = false;
+
+        while (!posicionEncontrada)
+        {
+            if (Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, floorMask))
+            {
+                if (!(evitarAgua == (evitarAgua | (1 << hitinfo.collider.gameObject.layer)))) // evaluar si el layer que choco el raycast es agua
+                {
+                    transform.position = hitinfo.point + offSet;
+                    posicionEncontrada = true;
+                }
+                else
+                {
+                    Vector3 aux = new Vector3(Random.Range(-1200, 1200), 50, Random.Range(-1200, 1200));
+                    transform.position = aux;
+                }
+            }
+        }
     }
 
 }
