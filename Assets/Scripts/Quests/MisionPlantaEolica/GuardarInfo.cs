@@ -8,7 +8,6 @@ public class GuardarInfo : MonoBehaviour
 
     public GameObject planicie;
     public GameObject player;
-    public Objects playerObjectScript;
     public GameObject npcMisionEolica;
     private float timer = 1.5f;
 
@@ -19,6 +18,7 @@ public class GuardarInfo : MonoBehaviour
     void Start()
     {   
         LoadDataEolica();
+        //MoverPlayer();
         Invoke("GenerarPorTipoEolica", 1f);
     }
 
@@ -40,6 +40,12 @@ public class GuardarInfo : MonoBehaviour
 
     public void LoadDataEolica(){
         tipo = PlayerPrefs.GetInt(tipoPrefName, 0);
+    }
+
+    public void MoverPlayer(){
+        if (tipo == 1){
+            player.transform.position = new Vector3(252, 100, -212);
+        }
     }
 
     public void GenerarPorTipoEolica(){
