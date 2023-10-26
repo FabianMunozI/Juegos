@@ -6,23 +6,13 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
 {
     public ControllerPalancas puzzle1;
 
-    public IntruccionesPalancasPlantaTrata[] palancas;
     public bool activarBotones;
 
     // Start is called before the first frame update
 
-    public GameObject botonRojo;
-    public GameObject botonVerde;
-
-    public GameObject terceroActivado;
-    public GameObject segundoActivado;
-    public GameObject primeroActivado;
 
     public Transform posInicial;
     public GameObject referenciaLookAt;
-
-    public Transform posMedio;
-    public GameObject referenciaLookAtMedio;
 
     public Transform posFinal;
     public GameObject referenciaLookAtFinal;
@@ -44,6 +34,8 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
     public botonTipo2[] botones;
 
     public bool sePuedeJugar;
+
+    public GameObject[] objetosActivarAlFinal;
     void Start()
     {
         sePuedeJugar=false;
@@ -53,6 +45,64 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
         planoPuesto=false;
         player=GameObject.Find("Player");
         activarBotones=false;
+
+        /* PlayerPrefs.SetInt("PalancaPlantaTratamientoAgua", 3);
+        PlayerPrefs.Save(); */
+
+        if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
+            //Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
+            if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=3){
+                //Debug.Log("entre");
+                /* tuberia.SetTrigger("activar");
+                tuberia2DentroMuros.SetTrigger("activar");
+                botonRojo.GetComponent<BoxCollider>().enabled=false;
+                botonVerde.GetComponent<BoxCollider>().enabled=false; */
+                for(int i =0;i <6 ;i++){
+                    botones[i].GetComponent<BoxCollider>().enabled=false;
+                    perillas[i].GetComponent<BoxCollider>().enabled=false;
+                }
+                for(int i =0; i< 4;i++){
+                    objetosActivarAlFinal[i].SetActive(true);
+                }
+                GameObject a= GameObject.Find("plano1MisionParte1");
+                a.transform.GetChild(0).gameObject.SetActive(true);
+                a.GetComponent<BoxCollider>().enabled=false;
+
+                objetosActivarAlFinal[0].GetComponent<Animator>().SetTrigger("activar");
+                objetosActivarAlFinal[0].GetComponent<AudioSource>().Play();
+                objetosActivarAlFinal[3].GetComponent<Animator>().SetTrigger("activar");
+
+                GameObject planee=transform.GetChild(3).gameObject;
+                planee.GetComponent<BoxCollider>().enabled=false;
+                planee.GetComponent<MeshRenderer>().enabled=false;
+
+
+                GameObject plano = transform.GetChild(3).GetChild(0).gameObject;
+                plano.SetActive(true);
+                for(int i=0; i<6;i++){
+                    plano.transform.GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(false);
+
+                    if(i==0){
+
+                        plano.transform.GetChild(i).transform.Rotate(Vector3.up, 270.0f);
+                    }else if(i==1){
+                        plano.transform.GetChild(i).GetChild(0).transform.Rotate(Vector3.up, 90f);
+                    }
+                    else if(i==2){
+                        plano.transform.GetChild(i).GetChild(0).transform.Rotate(Vector3.up, 0.0f);
+                    }
+                    else if(i==3){
+                        plano.transform.GetChild(i).GetChild(0).transform.Rotate(Vector3.up, 90.0f);
+                    }
+                    else if(i==4){
+                        plano.transform.GetChild(i).GetChild(0).transform.Rotate(Vector3.up, 0.0f);
+                    }
+                    else if(i==5){
+                        plano.transform.GetChild(i).GetChild(0).transform.Rotate(Vector3.up, 270.0f);
+                    } 
+                }
+            }
+        }
     }
 
     // Update is called once per frame
@@ -80,17 +130,13 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
 
 
     }
-    void moverMedio(){
-        tuberia2DentroMuros.SetTrigger("activar");
-        tuberia2DentroMuros.transform.parent.GetChild(1).GetChild(2).gameObject.SetActive(true);
-        player.transform.position = posMedio.position;
-        player.transform.LookAt(referenciaLookAtMedio.transform);
-    }
 
     void moverFinal(){
         player.transform.position = posFinal.position;
         player.transform.LookAt(referenciaLookAtFinal.transform);
         scriptsPlayer(true);
+        PlayerPrefs.SetInt("PalancaPlantaTratamientoAgua", 3);
+        PlayerPrefs.Save();
     }
 
     void primeraParte(){
@@ -107,6 +153,21 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
     public void chequearBotonListoPerillaLista(){
         if(perillasListas && botonesListos){
             Debug.Log("objetivoAlcanzado");
+            // primero la animacion y luego las particulas  // sonidos?
+
+
+            player.transform.position = posFinal.position;
+            player.transform.LookAt(referenciaLookAtFinal.transform);
+            
+            Invoke("primeraParte",0.1f);
+            Invoke("moverFinal",3.5f);
+
+            objetosActivarAlFinal[0].GetComponent<Animator>().SetTrigger("activar");
+            objetosActivarAlFinal[0].GetComponent<AudioSource>().Play();
+            objetosActivarAlFinal[1].SetActive(true);
+            objetosActivarAlFinal[2].SetActive(true);
+            objetosActivarAlFinal[3].GetComponent<Animator>().SetTrigger("activar");
+
 
             //cambiar de valor variable para que al salir de la planta te muestre la tuberia con agua limpia
         }
