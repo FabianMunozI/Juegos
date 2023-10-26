@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7813734227315234269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6668062097302222552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7882844265184794327}
   - component: {fileID: 2714057267625456401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KillerWhale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,8 @@ GameObject:
   - component: {fileID: 2529193171488077614}
   - component: {fileID: 2101984774143638698}
   - component: {fileID: 3883498246187070773}
-  m_Layer: 0
+  - component: {fileID: 7383140535161473990}
+  m_Layer: 6
   m_Name: orca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,10 +209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorMask:
     serializedVersion: 2
-    m_Bits: 1179664
+    m_Bits: 1310736
   evitarAgua:
     serializedVersion: 2
-    m_Bits: 131088
+    m_Bits: 262160
   offSet: {x: 0, y: 0, z: 0}
   radio: 100
   centroZona: {x: 0, y: 0, z: 0}
@@ -229,6 +230,18 @@ CapsuleCollider:
   m_Height: 9.461632
   m_Direction: 2
   m_Center: {x: 0, y: 1, z: -4.2308235}
+--- !u!114 &7383140535161473990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905577564650319252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259baebe07c713e4682cbf6c4f4dff3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5589445360454696441
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083650615026779848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8883164213135118460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4854933521811462588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434779121737433758}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4998701544666716995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535937785755727578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3923269439081308792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1095449878442299444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929444700891880426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

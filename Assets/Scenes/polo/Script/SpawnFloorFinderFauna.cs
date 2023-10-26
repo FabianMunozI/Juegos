@@ -14,7 +14,7 @@ public class SpawnFloorFinderFauna : MonoBehaviour
 
     void Start()
     {
-        Invoke("Angelo", 0.5f);
+        Invoke("Angelo", 0.65f);
     }
 
     private void Angelo()
@@ -26,7 +26,7 @@ public class SpawnFloorFinderFauna : MonoBehaviour
 
         while (!posicionEncontrada)
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out hitinfo, 1000f, floorMask))
+            if (Physics.Raycast(transform.position+Vector3.up*100, Vector3.down, out hitinfo, 2000f, floorMask))
             {
                 if (!(evitarAgua == (evitarAgua | (1 << hitinfo.collider.gameObject.layer)))) // evaluar si el layer que choco el raycast es agua
                 {

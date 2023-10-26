@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8681199410889061017}
   - component: {fileID: 8681199410889061016}
   - component: {fileID: 8681199410889061031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exclamacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,10 +379,10 @@ GameObject:
   - component: {fileID: 8681199411157954218}
   - component: {fileID: 8681199411157954217}
   - component: {fileID: 8681199411157954231}
-  - component: {fileID: 8361362178194105116}
   - component: {fileID: -4596002565044218970}
   - component: {fileID: 2166016392014844853}
-  m_Layer: 8
+  - component: {fileID: 7546760199862185230}
+  m_Layer: 6
   m_Name: NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -440,26 +440,13 @@ MonoBehaviour:
   - {fileID: 2905577564650319252, guid: 4f791de9b1f025b43921862d647863c3, type: 3}
   - {fileID: 8750984899538771932, guid: 576c02a080ea26c44885558edbef8990, type: 3}
   pistas:
-  - {fileID: 3775155925767582142, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
+  - {fileID: 205410885536944369, guid: f188a49fbdfdf304999a3c4e2c21b20f, type: 3}
   - {fileID: 1342063584497131865, guid: 234757f0a1d16214dad599415094c85a, type: 3}
   - {fileID: 7867609355467638616, guid: 13c0d2ce1324edd46a86e257c7db6c54, type: 3}
   dunas:
   - {fileID: 189700, guid: b4b640081e0baf844bf6d1fec0220e75, type: 3}
   - {fileID: 133318, guid: d571cba16a02393479fec11fdb4c1071, type: 3}
   - {fileID: 184458, guid: 5b02befe6f56ae94c9d35250ecd486fe, type: 3}
---- !u!114 &8361362178194105116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681199411157954230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d058a63e66b717488585b0376d5e1df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  misionAceptada: 0
 --- !u!114 &-4596002565044218970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +482,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &7546760199862185230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681199411157954230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d058a63e66b717488585b0376d5e1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  misionAceptada: 0
 --- !u!1 &8681199411181096959
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8681199411364529618}
   - component: {fileID: 8681199411364529619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExclaFinal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,8 +1284,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8681199411970317695}
   - component: {fileID: 644441058852500803}
-  - component: {fileID: 5934035536688800365}
-  - component: {fileID: 7115577604509465888}
   m_Layer: 6
   m_Name: parkamujer
   m_TagString: Untagged
@@ -1335,32 +1333,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &5934035536688800365
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681199411970317694}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.50206, y: 11.924382, z: 1.871114}
-  m_Center: {x: 0.09781316, y: 5.4621887, z: 0.17126505}
---- !u!114 &7115577604509465888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681199411970317694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d058a63e66b717488585b0376d5e1df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  misionAceptada: 0
 --- !u!1 &8681199411996581262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8681199412140612616}
   - component: {fileID: 8681199412140612617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExclaInicio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2050,7 @@ GameObject:
   - component: {fileID: 8681199412497109916}
   - component: {fileID: 8681199412497109915}
   - component: {fileID: 8681199412497109914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exclamacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2266,7 @@ GameObject:
   - component: {fileID: 8681199412702040568}
   - component: {fileID: 8681199412702040071}
   - component: {fileID: 8681199412702040070}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuntoExclamacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2540,7 +2512,7 @@ GameObject:
   - component: {fileID: 8681199412872952628}
   - component: {fileID: 8681199412872952627}
   - component: {fileID: 8681199412872952626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuntoExclamacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2653,9 +2625,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8681199411157954218}
     m_Modifications:
+    - target: {fileID: 4695368318821606, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1483468951238116018, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
       propertyPath: m_Name
       value: MisionMinimapa Inicio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483468951238116018, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963898430297300337, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531898807765580210, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618777656730295765, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 9063956887716008043, guid: 656c718dddc6e8e4d97d4a2d3f5a524f, type: 3}
       propertyPath: m_RootOrder
@@ -2759,13 +2751,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 742517461975559579, guid: ef51c291ccaa79a4ba52817c795f6c66, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 7501878642070198044, guid: ef51c291ccaa79a4ba52817c795f6c66, type: 3}
       propertyPath: m_Name
       value: MisionMinimapa Final
       objectReference: {fileID: 0}
     - target: {fileID: 7501878642070198044, guid: ef51c291ccaa79a4ba52817c795f6c66, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7501878642070198044, guid: ef51c291ccaa79a4ba52817c795f6c66, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978769937317900616, guid: ef51c291ccaa79a4ba52817c795f6c66, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef51c291ccaa79a4ba52817c795f6c66, type: 3}

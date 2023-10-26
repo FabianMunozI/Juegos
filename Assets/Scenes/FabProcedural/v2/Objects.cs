@@ -13,7 +13,7 @@ public class Objects : MonoBehaviour
     }
 
     public void FindLand()
-    {
+    {   
         Ray ray = new Ray(transform.position, -transform.up);
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo))

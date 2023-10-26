@@ -30,7 +30,7 @@ public class PreservarFauna : MonoBehaviour
     private TextMeshProUGUI questText;
 
 
-    int asignador = 0;
+    int logrados = 0;
     int animalesAyudados = 0;
 
 
@@ -46,6 +46,8 @@ public class PreservarFauna : MonoBehaviour
     private GameObject zonaFoca;
 
     private bool focaOn = false, penguOn = false , orcaOn = false;
+
+    private bool sumAnimalOnceP = false, sumAnimalOnceO = false, sumAnimalOnceF = false;
 
     void Start()
     {
@@ -68,7 +70,7 @@ public class PreservarFauna : MonoBehaviour
     {
 
         // Comienza mision
-        if (!questStarted && !(missionDone) && transform.GetChild(2).GetComponent<QuestStarterPolo>().misionAceptada) //  
+        if (!questStarted && !(missionDone) && GetComponent<QuestStarterPolo>().misionAceptada) //  
         {
             //OnOffPlayer();
 
@@ -93,9 +95,8 @@ public class PreservarFauna : MonoBehaviour
 
         // durante mision
 
-        Debug.Log(questStarted);
 
-        if (questStarted)
+        if (questStarted && logrados <3)
         {
             Debug.Log("entré");
             zonaPengu = GameObject.Find("zonaPengu");
@@ -105,8 +106,16 @@ public class PreservarFauna : MonoBehaviour
 
             print(zonaPengu != null);
 
-            if (zonaPengu != null)
+            if (zonaPengu != null && !penguOn)
             {
+                penguOn = true;
+
+                if (GameObject.Find("pinguino(Clone)").transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceP)
+                {
+                    sumAnimalOnceP = true;
+                    logrados++;
+                }
+
                 Debug.Log("yes");
                 GameObject pengu;
                 Vector3 centroPengu = zonaPengu.transform.position;
@@ -118,8 +127,16 @@ public class PreservarFauna : MonoBehaviour
                 Radar.targets.Add(pengu.transform);
             }
 
-            if (zonaOrca != null)
+            if (zonaOrca != null && !orcaOn)
             {
+                orcaOn = true;
+
+                if (GameObject.Find("orca(Clone)").transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceO)
+                {
+                    sumAnimalOnceO = true;
+                    logrados++;
+                }
+
                 GameObject orca;
                 Vector3 centroOrca = zonaOrca.transform.position;
                 Vector3 posOrca = new Vector3(Random.Range(centroOrca.x - 100, centroOrca.x + 100), 50, Random.Range(centroOrca.z - 100, centroOrca.z + 100));
@@ -130,8 +147,16 @@ public class PreservarFauna : MonoBehaviour
                 Radar.targets.Add(orca.transform);
             }
 
-            if (zonaFoca != null)
+            if (zonaFoca != null && !focaOn)
             {
+                focaOn = true;
+
+                if (GameObject.Find("foca(Clone)").transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceF)
+                {
+                    sumAnimalOnceF = true;
+                    logrados++;
+                }
+
                 GameObject foca;
                 Vector3 centroFoca = zonaOrca.transform.position;
                 Vector3 posFoca = new Vector3(Random.Range(centroFoca.x - 100, centroFoca.x + 100), 50, Random.Range(centroFoca.z - 100, centroFoca.z + 100));
@@ -141,6 +166,7 @@ public class PreservarFauna : MonoBehaviour
                 objetosMision.Add(foca);
                 Radar.targets.Add(foca.transform);
             }
+
 
         }
 
@@ -186,7 +212,6 @@ public class PreservarFauna : MonoBehaviour
         
         GameObject animales = GameObject.Find("Animales");
         animales.SetActive(false);
-        transform.gameObject.SetActive(false);
 
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
@@ -197,6 +222,7 @@ public class PreservarFauna : MonoBehaviour
         jugador.transform.GetChild(6).gameObject.SetActive(false);
         jugador.transform.GetChild(7).gameObject.SetActive(true);
         jugador.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true); // radar
+
 
         GameObject aux;
 
@@ -234,11 +260,25 @@ public class PreservarFauna : MonoBehaviour
         aux.GetComponent<SpawnFloorFinderFauna>().centroZona = focaPos;
         Radar.targets.Add(aux.transform);
 
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(false);
+
+        transform.GetComponent<BoxCollider>().enabled = !(transform.GetComponent<BoxCollider>().enabled);
+        GetComponent<QuestStarterPolo>().enabled = !(GetComponent<QuestStarterPolo>().enabled);
+
+
     }
 
     private void CambiarMapaFinal()
     {
-        OnOffPlayer();
+        //OnOffPlayer();
+
+        transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(true);
+        transform.GetChild(4).gameObject.SetActive(true);
+
+        transform.GetComponent<BoxCollider>().enabled = !(transform.GetComponent<BoxCollider>().enabled);
 
         RenderSettings.fog = false;
 
@@ -250,17 +290,9 @@ public class PreservarFauna : MonoBehaviour
         missionDone = true;
         questStarted = false;
         questTitle.text = "Mision Terminada!";
-        questText.text = "El bosque vuelve a la vida!";
-        Invoke("ReemplazarRestoArboles", 2f);
-
+        questText.text = "La fauna se fortalece!";
+        
         this.gameObject.layer = LayerMask.NameToLayer("dialogable");
-
-        transform.gameObject.SetActive(true);
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(true);
-
-        transform.GetChild(3).gameObject.SetActive(false);
-        transform.GetChild(4).gameObject.SetActive(true);
 
         objetosMision.Clear();
 
@@ -269,7 +301,7 @@ public class PreservarFauna : MonoBehaviour
 
 
         //RotarCamaraArboles(orbitSpeed, 15f, 8f);
-        Invoke("OnOffPlayer", 8f);
+        //Invoke("OnOffPlayer", 8f);
         Invoke("desactivarTexto", 3f);
 
         musicaAmbiente.enabled = true;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 // Script para objeto que dará la mision
 public class QuestStarterPolo : Interactable
 {
