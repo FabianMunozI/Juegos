@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 1609fb6c928ff2340ada41e0f922d43b
+  - enabled: 1
+    path: Assets/Scenes/FabProcedural/MisionEolica.unity
+    guid: 14c411ab97dde1546a95b7a1b2ad10bf
   m_configObjects: {}
