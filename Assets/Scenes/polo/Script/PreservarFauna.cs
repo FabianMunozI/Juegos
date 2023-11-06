@@ -72,7 +72,7 @@ public class PreservarFauna : MonoBehaviour
     void Update()
     {
         Debug.Log(logrados);
-             = logrados;
+             //= logrados;
 
         // Comienza mision
         if (!questStarted && !(missionDone) && GetComponent<QuestStarterPolo>().misionAceptada) //  
