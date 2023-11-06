@@ -18,22 +18,15 @@ public class ObjectsCharacter : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo))
         {
-            transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
+            transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y+5, hitInfo.point.z);
         }
         else
         {
             ray = new Ray(transform.position, transform.up);
             if (Physics.Raycast(ray, out hitInfo))
             {
-                transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
+                transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y+5, hitInfo.point.z);
             }
-        }
-
-        if(tipo == 1){
-            transform.position = new Vector3(transform.position.x, transform.position.y - 10f, transform.position.z);
-        }
-        else if(tipo == 2){
-            transform.position = new Vector3(transform.position.x, transform.position.y - 2f, transform.position.z);
         }
     }
 }
