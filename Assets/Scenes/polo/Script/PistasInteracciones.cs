@@ -23,7 +23,7 @@ public class PistasInteracciones : Interactable
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject;
         }
-        else
+        else if (transform.name == "pluma(Clone)")
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject;
         }
@@ -77,6 +77,8 @@ public class PistasInteracciones : Interactable
         //objetosMision.Add(aux);
 
         Radar.targets.Remove(transform);
+
+        //Debug.Log( Los target del radar)
 
         if (transform.name == "ninia(Clone)")
         {
