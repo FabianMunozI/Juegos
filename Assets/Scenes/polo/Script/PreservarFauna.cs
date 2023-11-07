@@ -190,11 +190,8 @@ public class PreservarFauna : MonoBehaviour
                     Destroy(zonaFoca);
                 }
             }
-
+            
         }
-
-
-
 
         // Termina mision
         if (animalesAyudados >= 3 && !missionDone)
@@ -305,7 +302,7 @@ public class PreservarFauna : MonoBehaviour
         missionDone = true;
         questStarted = false;
         questTitle.text = "Mision Terminada!";
-        animalesEncontrados.text = "La fauna se fortalece!";
+        canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "La fauna se fortalece!";
         
         this.gameObject.layer = LayerMask.NameToLayer("dialogable");
 
