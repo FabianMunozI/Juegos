@@ -29,6 +29,7 @@ public class MisionPersePlantaTrata : Interactable
     public GameObject referenciaLookAtFinal2;
 
     bool volvioMisionMapa;
+    bool banderasa;
 
     public GameObject npcActivarInfo;
     // Start is called before the first frame update
@@ -41,6 +42,8 @@ public class MisionPersePlantaTrata : Interactable
         if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
             //Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
             if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=4){
+                //Debug.Log("entre akiaaa");
+                banderasa=true;
                 // activar NPC postMision
                 enabled=false;
                 //Debug.Log("aka");
@@ -77,7 +80,8 @@ public class MisionPersePlantaTrata : Interactable
             //activar pregunta mision
             textos.transform.GetChild(0).gameObject.SetActive(true);
         } */
-        if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
+        if (!banderasa){
+            if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
             //Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
             /* if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=2){
                 textos.transform.GetChild(3).gameObject.SetActive(true); // volver con el player objetivos
@@ -98,6 +102,8 @@ public class MisionPersePlantaTrata : Interactable
                 
             } */
         }
+        }
+        
     }
 
     public override void Interact(){ // preguntar mision
