@@ -47,9 +47,6 @@ public class ProceduralPlaya : MonoBehaviour
                                     new Color(255f/255f, 219f/255f, 172f/255f, 1f)};
 
     private Object[] nubes;
-                                
-
-    private float tierraAltura = -80f;
 
     private GameObject contenedorBasura;
     private GameObject contenedorCiudad;
@@ -123,12 +120,6 @@ public class ProceduralPlaya : MonoBehaviour
         {
             centrosArena[i] = new Vector2(Random.Range(-.5f, .5f), Random.Range(-.5f, .5f));
         }
-
-        if (centrosArena.Length == 1)
-            tierraAltura=-76f;
-        else if (centrosArena.Length == 2)
-            tierraAltura=-76.6f;
-
             
         GameObject planoTierra = Resources.Load<GameObject>("ProceduralPlaya/Prefabs/Terrain");
         var temp = Instantiate(planoTierra, new Vector3(0,-77.6f,0), Quaternion.identity);
@@ -488,7 +479,6 @@ public class ProceduralPlaya : MonoBehaviour
         Vector3 pos_retn = new Vector3(0,0,0);
 
         string name_playa = "Terrain(Clone)";
-        string name_sea = "PlanoAgua_R(Clone)";
         float height_hit = 0f;
 
         while(!posicionarNuevo)

@@ -7,14 +7,14 @@ public class Door : Interactable
 {
     public Animator controller;
     public bool Open;
-    BoxCollider collider;
+    BoxCollider colaider;
 
     void Start() {
         //controller= gameObject.transform.parent.GetComponent<Animator>();
         Open=false;
         //controller.SetBool("Open",false);
-        collider=this.GetComponent<BoxCollider>();
-        collider.isTrigger= false;
+        colaider=this.GetComponent<BoxCollider>();
+        colaider.isTrigger= false;
     }
     
     public override void Interact()
@@ -22,12 +22,12 @@ public class Door : Interactable
         base.Interact();
         //Debug.Log(gameObject.transform.rotation.eulerAngles);
         if(Open){
-            collider.isTrigger= true;
+            colaider.isTrigger= true;
             controller.SetTrigger("Cerrar");
             Open=false; 
             Invoke("istriggereadoFalso",0.5f);
         }else{
-            collider.isTrigger= true;
+            colaider.isTrigger= true;
             controller.SetTrigger("Abrir");
             Open=true;
             Invoke("istriggereadoFalso",0.5f);
@@ -40,6 +40,6 @@ public class Door : Interactable
     }
 
     void istriggereadoFalso(){
-        collider.isTrigger= false;
+        colaider.isTrigger= false;
     }
 }

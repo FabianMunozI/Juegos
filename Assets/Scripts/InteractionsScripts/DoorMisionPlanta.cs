@@ -7,7 +7,7 @@ public class DoorMisionPlanta : Interactable
 {
     public Animator controller;
     public bool Open;
-    BoxCollider collider;
+    BoxCollider colaider;
     GameObject player;
     bool flag;
 
@@ -22,8 +22,8 @@ public class DoorMisionPlanta : Interactable
         //controller= gameObject.transform.parent.GetComponent<Animator>();
         Open=false;
         //controller.SetBool("Open",false);
-        collider=this.GetComponent<BoxCollider>();
-        collider.isTrigger= false;
+        colaider=this.GetComponent<BoxCollider>();
+        colaider.isTrigger= false;
 
         if (PlayerPrefs.HasKey("terminoJuegoElectricidad1PlantaTratamientoAgua")){
             if(PlayerPrefs.GetInt("terminoJuegoElectricidad1PlantaTratamientoAgua")==1){ // ya hizo la mision 1 vez
@@ -65,12 +65,12 @@ public class DoorMisionPlanta : Interactable
         //Debug.Log(gameObject.transform.rotation.eulerAngles);
         if(flag){
             if(Open){
-                collider.isTrigger= true;
+                colaider.isTrigger= true;
                 controller.SetTrigger("Cerrar");
                 Open=false; 
                 Invoke("istriggereadoFalso",0.5f);
             }else{
-                collider.isTrigger= true;
+                colaider.isTrigger= true;
                 controller.SetTrigger("Abrir");
                 Open=true;
                 Invoke("istriggereadoFalso",0.5f);
@@ -85,7 +85,7 @@ public class DoorMisionPlanta : Interactable
     }
 
     void istriggereadoFalso(){
-        collider.isTrigger= false;
+        colaider.isTrigger= false;
     }
 
     void quitarMsg1seg(){

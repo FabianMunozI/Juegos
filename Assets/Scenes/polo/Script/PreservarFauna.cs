@@ -26,10 +26,9 @@ public class PreservarFauna : MonoBehaviour
 
     private GameObject questTracker;
     private TextMeshProUGUI questTitle;
-    private TextMeshProUGUI questText;
 
 
-    int logrados = 0;
+    int pistasHayadas = 0;
     public static int animalesAyudados = 0;
 
     private GameObject puntoEntorno;
@@ -55,8 +54,6 @@ public class PreservarFauna : MonoBehaviour
 
         questTracker = canvas.transform.GetChild(7).gameObject; ;
         questTitle = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        questText = canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        
         questTracker.SetActive(false);
     }
 
@@ -69,7 +66,7 @@ public class PreservarFauna : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("logrados " + logrados);
+        Debug.Log("logrados " + animalesAyudados);
 
         // Comienza mision
         if (!questStarted && !(missionDone) && GetComponent<QuestStarterPolo>().misionAceptada) //  
@@ -84,9 +81,10 @@ public class PreservarFauna : MonoBehaviour
 
 
         // durante mision
-        if (questStarted && logrados <3)
+        if (questStarted && animalesAyudados < 3)
         {
-            questText.text = ".- Animales asistidos: " + animalesAyudados + "/3";
+            canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ".- Animales asistidos: " + animalesAyudados + "/3";
+
 
             zonaPengu = GameObject.Find("zonaPengu");
             zonaOrca = GameObject.Find("zonaOrca");
@@ -98,6 +96,9 @@ public class PreservarFauna : MonoBehaviour
 
                 borrarPistas = GameObject.Find("pluma(Clone)");
 
+                pistasHayadas++;
+                canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ".- Pistas encontradas: " + pistasHayadas + "/ 3";
+
                 Vector3 centroPengu = zonaPengu.transform.position;
                 Vector3 posPengu = new Vector3(Random.Range(centroPengu.x - 100, centroPengu.x + 100), 50, Random.Range(centroPengu.z - 100, centroPengu.z + 100));
 
@@ -108,12 +109,12 @@ public class PreservarFauna : MonoBehaviour
                 Destroy(borrarPistas, 5f);
             }
 
-            if(penguOn)
+            if(penguOn && pengu != null)
             {
                  if (pengu.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceP)
                 {
                     sumAnimalOnceP = true;
-                    logrados++;
+                    animalesAyudados++;
 
                     borrarAnimales = GameObject.Find("pinguino(Clone)");
                     Destroy(borrarAnimales);
@@ -128,6 +129,9 @@ public class PreservarFauna : MonoBehaviour
                 orcaOn = true;
 
                 borrarPistas = GameObject.Find("ninia(Clone)");
+
+                pistasHayadas++;
+                canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ".- Pistas encontradas: " + pistasHayadas + "/ 3";
 
                 Vector3 centroOrca = zonaOrca.transform.position;
                 Vector3 posOrca = new Vector3(Random.Range(centroOrca.x - 100, centroOrca.x + 100), 50, Random.Range(centroOrca.z - 100, centroOrca.z + 100));
@@ -145,7 +149,7 @@ public class PreservarFauna : MonoBehaviour
                 if (orca.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceO)
                 {
                     sumAnimalOnceO = true;
-                    logrados++;
+                    animalesAyudados++;
 
                     borrarAnimales = GameObject.Find("orca(Clone)");
                     Destroy(borrarAnimales);
@@ -160,6 +164,9 @@ public class PreservarFauna : MonoBehaviour
 
                 borrarPistas = GameObject.Find("huesoPescado(Clone)");
 
+                pistasHayadas++;
+                canvas.transform.GetChild(7).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ".- Pistas encontradas: " + pistasHayadas + "/ 3";
+
                 Vector3 centroFoca = zonaFoca.transform.position;
                 Vector3 posFoca = new Vector3(Random.Range(centroFoca.x - 100, centroFoca.x + 100), 50, Random.Range(centroFoca.z - 100, centroFoca.z + 100));
 
@@ -170,12 +177,12 @@ public class PreservarFauna : MonoBehaviour
                 Destroy(borrarPistas, 5f);
             }
 
-            if(focaOn)
+            if(focaOn && foca != null)
             {
                 if (foca.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceF)
                 {
                     sumAnimalOnceF = true;
-                    logrados++;
+                    animalesAyudados++;
 
                     borrarAnimales = GameObject.Find("foca(Clone)");
                     Destroy(borrarAnimales);
@@ -298,7 +305,7 @@ public class PreservarFauna : MonoBehaviour
         missionDone = true;
         questStarted = false;
         questTitle.text = "Mision Terminada!";
-        questText.text = "La fauna se fortalece!";
+        animalesEncontrados.text = "La fauna se fortalece!";
         
         this.gameObject.layer = LayerMask.NameToLayer("dialogable");
 
