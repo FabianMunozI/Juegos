@@ -27,7 +27,7 @@ public class MapGenerationFinal : MonoBehaviour
     [SerializeField] private int width;
     [SerializeField] private int height;
     private int townWidth = 10;
-    private int townHeight = 7;
+    //private int townHeight = 7;
     [SerializeField] private int townExit;
     private int roadStart;
     [SerializeField] private int mountainWidth;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 
 public class PreservarFauna : MonoBehaviour
 {
@@ -32,9 +31,6 @@ public class PreservarFauna : MonoBehaviour
 
     int logrados = 0;
     public static int animalesAyudados = 0;
-
-
-    private float tiempoLimite;
 
     private GameObject puntoEntorno;
 
@@ -69,57 +65,39 @@ public class PreservarFauna : MonoBehaviour
     GameObject orca;
     GameObject foca;
 
+    GameObject borrarPistas, borrarAnimales;
+
     void Update()
     {
-        Debug.Log(logrados);
-             //= logrados;
+        Debug.Log("logrados " + logrados);
 
         // Comienza mision
         if (!questStarted && !(missionDone) && GetComponent<QuestStarterPolo>().misionAceptada) //  
         {
             //OnOffPlayer();
-
             CambiarMapaInicio();
             //RotarCamaraEntorno();
 
             //Invoke("OnOffPlayer", 2f);
             questTracker.SetActive(true);
-
-            /*
-            Vector3 pos = semillas.transform.position - Jugador.transform.position;
-            pos += new Vector3(3, 4, 4);
-
-            rotOriginal = CamaraO.transform.rotation;
-
-            CamaraO.transform.Translate(pos, Space.World);
-            CamaraO.transform.LookAt(semillas.transform);
-
-            */
         }
 
 
         // durante mision
-
-
         if (questStarted && logrados <3)
         {
-
             questText.text = ".- Animales asistidos: "+animalesAyudados+"/3";
 
-
-            Debug.Log("entr�");
             zonaPengu = GameObject.Find("zonaPengu");
             zonaOrca = GameObject.Find("zonaOrca");
             zonaFoca = GameObject.Find("zonaFoca");
 
-
-            print(zonaPengu != null);
-
             if (zonaPengu != null && !penguOn)
             {
                 penguOn = true;
-                Debug.Log("yes");
-                
+
+                borrarPistas = GameObject.Find("pluma(Clone)");
+
                 Vector3 centroPengu = zonaPengu.transform.position;
                 Vector3 posPengu = new Vector3(Random.Range(centroPengu.x - 100, centroPengu.x + 100), 50, Random.Range(centroPengu.z - 100, centroPengu.z + 100));
 
@@ -127,7 +105,7 @@ public class PreservarFauna : MonoBehaviour
                 //pengu.transform.parent = ObjMision.transform;
                 objetosMision.Add(pengu);
                 Radar.targets.Add(pengu.transform);
-
+                Destroy(borrarPistas, 5f);
             }
 
             if(penguOn)
@@ -136,15 +114,21 @@ public class PreservarFauna : MonoBehaviour
                 {
                     sumAnimalOnceP = true;
                     logrados++;
+
+                    borrarAnimales = GameObject.Find("pinguino(Clone)");
+                    Destroy(borrarAnimales);
+
+                    Destroy(zonaPengu);
                 }
+
             }
 
             if (zonaOrca != null && !orcaOn)
             {
                 orcaOn = true;
 
+                borrarPistas = GameObject.Find("ninia(Clone)");
 
-                
                 Vector3 centroOrca = zonaOrca.transform.position;
                 Vector3 posOrca = new Vector3(Random.Range(centroOrca.x - 100, centroOrca.x + 100), 50, Random.Range(centroOrca.z - 100, centroOrca.z + 100));
 
@@ -152,6 +136,8 @@ public class PreservarFauna : MonoBehaviour
                 //orca.transform.parent = ObjMision.transform;
                 objetosMision.Add(orca);
                 Radar.targets.Add(orca.transform);
+
+                Destroy(borrarPistas, 5f);
             }
 
             if(orcaOn)
@@ -160,12 +146,19 @@ public class PreservarFauna : MonoBehaviour
                 {
                     sumAnimalOnceO = true;
                     logrados++;
+
+                    borrarAnimales = GameObject.Find("orca(Clone)");
+                    Destroy(borrarAnimales);
+
+                    Destroy(zonaOrca);
                 }
             }
 
             if (zonaFoca != null && !focaOn)
             {
                 focaOn = true;
+
+                borrarPistas = GameObject.Find("huesoPescado(Clone)");
 
                 Vector3 centroFoca = zonaFoca.transform.position;
                 Vector3 posFoca = new Vector3(Random.Range(centroFoca.x - 100, centroFoca.x + 100), 50, Random.Range(centroFoca.z - 100, centroFoca.z + 100));
@@ -174,6 +167,7 @@ public class PreservarFauna : MonoBehaviour
                 //foca.transform.parent = ObjMision.transform;
                 objetosMision.Add(foca);
                 Radar.targets.Add(foca.transform);
+                Destroy(borrarPistas, 5f);
             }
 
             if(focaOn)
@@ -182,12 +176,13 @@ public class PreservarFauna : MonoBehaviour
                 {
                     sumAnimalOnceF = true;
                     logrados++;
+
+                    borrarAnimales = GameObject.Find("foca(Clone)");
+                    Destroy(borrarAnimales);
+
+                    Destroy(zonaFoca);
                 }
             }
-
-
-           
-
 
         }
 
@@ -218,7 +213,7 @@ public class PreservarFauna : MonoBehaviour
     private void CambiarMapaInicio()
     {
         questStarted = true;
-        tiempoLimite = 4f;
+        //tiempoLimite = 4f;
         musicaAmbiente.enabled = false;
 
         Vector3 min = new Vector3(-1200 + radioZonas, 50, -1200 +radioZonas);
