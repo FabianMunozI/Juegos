@@ -5,7 +5,6 @@ using UnityEngine.Rendering;
 
 public class TilesMov : MonoBehaviour
 {
-    float multiplicador;
     GameObject Critmo;
 
     RitmoTeclas rtiles;
@@ -18,7 +17,6 @@ public class TilesMov : MonoBehaviour
         //audioFail = GetComponent<AudioSource>();
         Critmo = GameObject.Find("Critmo");
         rtiles = Critmo.transform.GetChild(0).GetChild(0).GetComponent<RitmoTeclas>();
-        multiplicador=2.75f;
 
         Invoke("siSeDestruyePorNoClick", 1.5f);
     }

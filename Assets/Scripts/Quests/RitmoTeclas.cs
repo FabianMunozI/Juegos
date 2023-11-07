@@ -29,9 +29,7 @@ public class RitmoTeclas : MonoBehaviour
     GameObject tileAmarilla;
     GameObject tileVerde;
     GameObject tileAzul;
-
-    int posGenerarNPC;
-    
+        
     public AudioSource Error;
 
     //384 teclas en total
@@ -480,8 +478,6 @@ public class RitmoTeclas : MonoBehaviour
     public GameObject objetivoUno;
     public GameObject objetivoDos;
 
-    bool objetivoMision;
-
     bool terminoMision;
 
     public int Pincreible, Pbien, Pmal;
@@ -505,13 +501,9 @@ public class RitmoTeclas : MonoBehaviour
         objetivoUno = transform.parent.parent.GetChild(2).GetChild(1).gameObject;
         objetivoDos = transform.parent.parent.GetChild(2).GetChild(2).gameObject;
         //////////////////////////////////////////////////////variables generar NPC
-        posGenerarNPC = 0;
         GameObject NPCStartMision = referenciaScriptIniciarMisionRitmo.gameObject;
         GameObject padrePosiciones = referenciaScriptIniciarMisionRitmo.PadrePosicionesGenerarNPCs;
         GameObject prefabNPC = referenciaScriptIniciarMisionRitmo.NpcGenerar;
-
-        objetivoMision = false;
-
         //////////////////////////////////////7
 
         musicaCiudad = GameObject.Find("MusicaCiudad").GetComponent<AudioSource>();
@@ -794,7 +786,6 @@ public class RitmoTeclas : MonoBehaviour
             textBoss.text = ".- Atrae a la autoridad:   0/1";
             return;
         }else if(publico==20){ ////////////// ESTO HAY QUE DEJARLO EN 20
-            objetivoMision = true;
             objetivoUno.SetActive(true);
             if(puntaje>=20){
                 //invocar jefe

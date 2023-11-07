@@ -86,7 +86,7 @@ public class PreservarFauna : MonoBehaviour
         // durante mision
         if (questStarted && logrados <3)
         {
-            questText.text = ".- Animales asistidos: "+animalesAyudados+"/3";
+            questText.text = ".- Animales asistidos: " + animalesAyudados + "/3";
 
             zonaPengu = GameObject.Find("zonaPengu");
             zonaOrca = GameObject.Find("zonaOrca");
@@ -140,7 +140,7 @@ public class PreservarFauna : MonoBehaviour
                 Destroy(borrarPistas, 5f);
             }
 
-            if(orcaOn)
+            if(orcaOn && orca != null)
             {
                 if (orca.transform.GetComponent<InteractuarAnimales>().animalAyudado && !sumAnimalOnceO)
                 {
@@ -197,16 +197,6 @@ public class PreservarFauna : MonoBehaviour
             CambiarMapaFinal();
             //ObjetivosPantallaOFF();
         }
-
-
-        //Camara final misi�n 
-        /*
-        if (avRotate && tiempoLimite > 0)
-        {
-            CamaraO.transform.RotateAround(centroBosque.transform.position, Vector3.up, orbitSpeed * Time.deltaTime);
-            tiempoLimite -= Time.deltaTime;
-        }
-        */
 
     }
 

@@ -23,7 +23,7 @@ public class PistasInteracciones : Interactable
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject;
         }
-        else if (transform.name == "pluma(Clone)")
+        else if (transform.name == "pluma(Clone)") 
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject;
         }
@@ -57,6 +57,8 @@ public class PistasInteracciones : Interactable
         FpsCamera.cameraDialogue = true;
         NpcNav.isInDialogue = true;
         Cursor.lockState = CursorLockMode.Confined;
+
+        Debug.Log("dialogo " + dialogo);
 
         dialogo.SetActive(true);
 

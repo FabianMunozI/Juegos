@@ -5,7 +5,6 @@ using UnityEngine;
 public class AguaSurtidor : MonoBehaviour
 {   
     public static bool misionActiva;
-    private bool surtidorAbierto;
     [HideInInspector] public bool interactuado;
     public float tiempoTimer;
     
@@ -18,7 +17,6 @@ public class AguaSurtidor : MonoBehaviour
     {
         timer = tiempoTimer;
         misionActiva = false;
-        surtidorAbierto = false;
         interactuado = false;
         positionAguaAbajo = transform.position;
         positionAguaArriba = new Vector3(positionAguaAbajo.x, positionAguaAbajo.y + 0.045f, positionAguaAbajo.z);

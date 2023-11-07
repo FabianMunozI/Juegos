@@ -5,7 +5,6 @@ using UnityEngine;
 public class GaviotaBehaviour : MonoBehaviour
 {
     Animator animator;
-    bool volando = false;
     Rigidbody rb;
 
     private float velocidadinicial = .15f;

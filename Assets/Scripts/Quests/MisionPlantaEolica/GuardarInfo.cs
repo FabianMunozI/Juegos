@@ -9,10 +9,8 @@ public class GuardarInfo : MonoBehaviour
     public GameObject planicie;
     public GameObject player;
     public GameObject npcMisionEolica;
-    private float timer = 1.5f;
 
     private string tipoPrefName = "Tipo";
-    private string alturaPrefName = "Altura";
     // Start is called before the first frame update
     
     void Start()

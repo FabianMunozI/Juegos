@@ -68,7 +68,7 @@ public class InteractuarAnimales : Interactable
         dialogo.SetActive(true);
 
         Radar.targets.Remove(transform);
-        
+
     }
 
     public void Op1()
@@ -85,8 +85,9 @@ public class InteractuarAnimales : Interactable
         {
             op3Button.GetComponent<Image>().color = Color.green;
         }
-        animalAyudado = true;
+        
         Invoke("retake_control", 1f);
+        animalAyudado = true;
     }
 
     public void Op2()
@@ -104,8 +105,9 @@ public class InteractuarAnimales : Interactable
         {
             op3Button.GetComponent<Image>().color = Color.green;
         }
-        animalAyudado = true;
+        
         Invoke("retake_control", 1f);
+        animalAyudado = true;
     }
     public void Op3()
     {
@@ -122,15 +124,18 @@ public class InteractuarAnimales : Interactable
         {
             op3Button.GetComponent<Image>().color = Color.green;
         }
-        animalAyudado = true;
+        
         Invoke("retake_control", 1f);
+        animalAyudado = true;
     }
 
-    void retake_control()
+    IEnumerator retake_control()
     {
         CharacterMovement.movementDialogue = false;
         CameraInteraction.interactionDialogue = false;
         FpsCamera.cameraDialogue = false;
+
+        yield return new WaitForSeconds(2);
         dialogo.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
