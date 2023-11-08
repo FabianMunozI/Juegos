@@ -35,7 +35,7 @@ public class InteractuarAnimales : Interactable
             op2Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
             op3Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<Button>();
         }
-        else if (transform.name == "pluma(Clone)")
+        else if (transform.name == "foca(Clone)")
         {
             respuesta_correcta = 1;
             dialogo = GameObject.Find("Canvas").transform.GetChild(16).gameObject;

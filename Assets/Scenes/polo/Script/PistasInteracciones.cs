@@ -23,8 +23,9 @@ public class PistasInteracciones : Interactable
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject;
         }
-        else if (transform.name == "pluma(Clone)") 
+        else
         {
+            transform.name = "pluma(Clone)";
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject;
         }
     }
@@ -75,7 +76,7 @@ public class PistasInteracciones : Interactable
 
 
         aux = Instantiate(zonaMiniMapa, new Vector3(centroZona.x,150f,centroZona.z), Quaternion.identity);
-        aux.transform.localScale = new Vector3(200, 200, 200);
+        aux.transform.localScale = new Vector3(250, 250, 250);
         //objetosMision.Add(aux);
 
         Radar.targets.Remove(transform);
