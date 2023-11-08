@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlanoPlantaTrataInteractuable : Interactable
 {
     public bool Open;
-    BoxCollider collider;
+    BoxCollider colaider;
     GameObject player;
     public bool flag;
 
@@ -23,8 +23,8 @@ public class PlanoPlantaTrataInteractuable : Interactable
         //controller= gameObject.transform.parent.GetComponent<Animator>();
         Open=false;
         //controller.SetBool("Open",false);
-        collider=this.GetComponent<BoxCollider>();
-        collider.isTrigger= false;
+        colaider=this.GetComponent<BoxCollider>();
+        colaider.isTrigger= false;
 
         /* if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
             if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=3){ // ya hizo la mision 1 vez
@@ -80,7 +80,7 @@ public class PlanoPlantaTrataInteractuable : Interactable
     }
 
     void istriggereadoFalso(){
-        collider.isTrigger= false;
+        colaider.isTrigger= false;
     }
 
     void quitarMsg1seg(){

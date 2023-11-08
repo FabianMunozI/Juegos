@@ -51,12 +51,16 @@ public class CharacterMovement : MonoBehaviour
             //Debug.Log("entre aqui1");
             if (PlayerPrefs.HasKey("playaProceduralPos"))
             {
-                Debug.Log("entre aqui2");
-                transform.position = GameObject.Find("PrefabPlayaCiudadTP(Clone)").transform.GetChild(9).transform.position;
-                PlayerPrefs.DeleteKey("playaProceduralPos");
-                PlayerPrefs.Save();
+                //Debug.Log("entre aqui2");
+                Invoke("posPlayer",1f);
             }
         }
+    }
+
+    void posPlayer(){
+        transform.position = GameObject.Find("PrefabPlayaCiudadTP(Clone)").transform.GetChild(9).transform.position;
+        PlayerPrefs.DeleteKey("playaProceduralPos");
+        PlayerPrefs.Save();
     }
 
     /* private void OnEnable() {

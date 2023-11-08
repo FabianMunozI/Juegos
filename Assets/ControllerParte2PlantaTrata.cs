@@ -57,7 +57,7 @@ public class ControllerParte2PlantaTrata : MonoBehaviour
         if (PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
             //Debug.Log(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua"));
             if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=3){
-                //Debug.Log("entre");
+                //Debug.Log("entreController2");
                 /* tuberia.SetTrigger("activar");
                 tuberia2DentroMuros.SetTrigger("activar");
                 botonRojo.GetComponent<BoxCollider>().enabled=false;

@@ -37,6 +37,10 @@ public class Radar : MonoBehaviour
 
         foreach (Transform target in targets)
         {
+            /*if (target == null)
+            {
+                continue;
+            }*/
             Vector3 aux = target.position - transform.position;
             float newDist = aux.magnitude;
 

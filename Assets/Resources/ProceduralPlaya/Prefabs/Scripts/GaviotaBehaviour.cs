@@ -5,13 +5,12 @@ using UnityEngine;
 public class GaviotaBehaviour : MonoBehaviour
 {
     Animator animator;
-    bool volando = false;
     Rigidbody rb;
 
     private float velocidadinicial = .15f;
     private float velocidadhorizontal = .1f;
     private AudioClip grito1, grito2;
-    private AudioSource audio;
+    private AudioSource audioGav;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -19,7 +18,7 @@ public class GaviotaBehaviour : MonoBehaviour
         Invoke("callAnimationsIdle", Random.Range(0,5));
         grito1 = Resources.Load<AudioClip>("ProceduralPlaya/Prefabs/Sonidos/Gaviota_Sonido1");
         grito2 = Resources.Load<AudioClip>("ProceduralPlaya/Prefabs/Sonidos/Gaviota_Sonida2");
-        audio = GetComponent<AudioSource>();
+        audioGav = GetComponent<AudioSource>();
     }
 
     void callAnimationsIdle()
@@ -33,12 +32,12 @@ public class GaviotaBehaviour : MonoBehaviour
 
     void reproducirgrito1()
     {
-        audio.PlayOneShot(grito1, .3f);
+        audioGav.PlayOneShot(grito1, .3f);
     }
 
     void reproducirgrito2()
     {
-        audio.PlayOneShot(grito2, .3f);
+        audioGav.PlayOneShot(grito2, .3f);
     }
 
     private void OnTriggerEnter(Collider other)

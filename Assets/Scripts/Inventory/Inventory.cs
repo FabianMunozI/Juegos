@@ -138,7 +138,7 @@ public class Inventory : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/Inventario.sav";
 
-        Debug.Log("Cargando Inventario:");
+        //Debug.Log("Cargando Inventario:");
 
         if(File.Exists(path))
         {

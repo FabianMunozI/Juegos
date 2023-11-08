@@ -63,7 +63,10 @@ public class scriptsPlayerEnable : MonoBehaviour
         if(Equals(SceneManager.GetActiveScene().name, "PlantaTratamientoAgua")){
             //Debug.Log("si my broda");
             if(PlayerPrefs.HasKey("PalancaPlantaTratamientoAgua")){
-                if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=3){
+                if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=4){
+
+                }
+                else if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=3){
                     textos.transform.GetChild(4).gameObject.SetActive(true);
                 }
                 else if(PlayerPrefs.GetInt("PalancaPlantaTratamientoAgua")>=2){

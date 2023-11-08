@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class InteractuarAnimales : Interactable
 {
     private GameObject dialogo;
+
     private Vector3 movementDirection;
-    private Vector3 playerPosition;
-    private Vector3 npcPosition;
+
     private GameObject player;
 
     private Button op1Button, op2Button, op3Button;
@@ -35,7 +35,7 @@ public class InteractuarAnimales : Interactable
             op2Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
             op3Button = dialogo.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<Button>();
         }
-        else
+        else if (transform.name == "foca(Clone)")
         {
             respuesta_correcta = 1;
             dialogo = GameObject.Find("Canvas").transform.GetChild(16).gameObject;
@@ -68,12 +68,12 @@ public class InteractuarAnimales : Interactable
         dialogo.SetActive(true);
 
         Radar.targets.Remove(transform);
-        
+
     }
 
     public void Op1()
     {
-        animalAyudado = true;
+        
         op1Button.GetComponent<Image>().color = Color.red;
         if(respuesta_correcta == 0)
         {
@@ -85,12 +85,13 @@ public class InteractuarAnimales : Interactable
         {
             op3Button.GetComponent<Image>().color = Color.green;
         }
+        
         Invoke("retake_control", 1f);
     }
 
     public void Op2()
     {
-        animalAyudado = true;
+        
         op2Button.GetComponent<Image>().color = Color.red;
         if(respuesta_correcta == 0)
         {
@@ -103,11 +104,12 @@ public class InteractuarAnimales : Interactable
         {
             op3Button.GetComponent<Image>().color = Color.green;
         }
+        
         Invoke("retake_control", 1f);
     }
     public void Op3()
     {
-        animalAyudado = true;
+        
         op3Button.GetComponent<Image>().color = Color.red;
         if(respuesta_correcta == 0)
         {
@@ -120,7 +122,8 @@ public class InteractuarAnimales : Interactable
         {
             op3Button.GetComponent<Image>().color = Color.green;
         }
-        Invoke("retake_control", 1f);
+        
+        Invoke("retake_control", 2f);
     }
 
     void retake_control()
@@ -129,6 +132,8 @@ public class InteractuarAnimales : Interactable
         CameraInteraction.interactionDialogue = false;
         FpsCamera.cameraDialogue = false;
         dialogo.SetActive(false);
+
+        animalAyudado = true;
 
         Cursor.lockState = CursorLockMode.Locked;
 
