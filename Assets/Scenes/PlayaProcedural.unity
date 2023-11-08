@@ -1169,7 +1169,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: " Mision: Difundir Informaci\xF3n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 1.1942649}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &128725653
@@ -3468,7 +3468,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '.- Arboles incendiados: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3532,7 +3532,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 1.1942649}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &387639485
@@ -3623,7 +3623,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3687,7 +3687,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &388224805
@@ -3944,8 +3944,8 @@ MonoBehaviour:
     de especies cercanas. Te propongo que me ayudes a impartir informacion que conozcas
     sobre el cuidado de la vida marina."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4005,10 +4005,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -29.716187, y: 0, z: -32.839447, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &420838418
@@ -5070,8 +5070,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5134,7 +5134,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &490873405
@@ -5181,8 +5181,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -123.01817}
-  m_SizeDelta: {x: 416.9, y: 48.4854}
+  m_AnchoredPosition: {x: 0, y: -124.37114}
+  m_SizeDelta: {x: 416.9, y: 51.1962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &498497251
 MonoBehaviour:
@@ -5262,7 +5262,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5326,7 +5326,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &517572846
@@ -5685,8 +5685,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xBFIniciar misi\xF3n \"Difundir informacion en la Playa\"?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5749,7 +5749,7 @@ MonoBehaviour:
   m_margin: {x: -94.03874, y: 0, z: -90.16081, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &550893408
@@ -5931,8 +5931,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'A:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5995,7 +5995,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &584746725
@@ -7490,10 +7490,10 @@ MonoBehaviour:
     de las playas, sino tambi\xE9n la vida marina. Animales marinos pueden ingerir
     accidentalmente estos desechos, lo que tiene graves consecuencias para su salud."
   - "Adem\xE1s, la basura en las playas afecta negativamente al turismo, una fuente
-    crucial de ingresos para muchas comunidades costeras. La limpieza de playas,
-    la concienciaci\xF3n y la promoci\xF3n de pr\xE1cticas sostenibles de gesti\xF3n
-    de residuos son esenciales para abordar este problema y preservar la belleza
-    y la salud de nuestras costas."
+    crucial de ingresos para muchas comunidades costeras. "
+  - "La limpieza de playas, la concienciaci\xF3n y la promoci\xF3n de pr\xE1cticas
+    sostenibles de gesti\xF3n de residuos son esenciales para abordar este problema
+    y preservar la belleza y la salud de nuestras costas."
   textSpeed: 0.05
 --- !u!114 &744136986
 MonoBehaviour:
@@ -7595,8 +7595,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xBFIniciar misi\xF3n \"Limpiar la Playa\"?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9858,8 +9858,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'C:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9922,7 +9922,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &989095540
@@ -10620,8 +10620,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10684,7 +10684,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1059062003
@@ -10869,9 +10869,9 @@ MonoBehaviour:
   - "Los derrames de petr\xF3leo en los mares son una amenaza seria para la vida
     marina y el medio ambiente.  Pueden ocurrir debido a accidentes en la industria
     petrolera o el transporte mar\xEDtimo, causando da\xF1os ecol\xF3gicos, econ\xF3micos
-    y sociales significativos y a veces irreparables. La prevenci\xF3n, cuidados
-    y respuestas efectivas son cruciales para mitigar los impactos del petr\xF3leo
-    en los oc\xE9anos."
+    y sociales significativos y a veces irreparables. "
+  - "La prevenci\xF3n, cuidados y respuestas efectivas son cruciales para mitigar
+    los impactos del petr\xF3leo en los oc\xE9anos."
   textSpeed: 0.05
 --- !u!114 &1061496041
 MonoBehaviour:
@@ -11224,8 +11224,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11288,7 +11288,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1107053418
@@ -11718,8 +11718,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11782,7 +11782,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 1.1942649}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1138708278
@@ -11853,8 +11853,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '.- Arboles incendiados: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11917,7 +11917,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 1.1942649}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1144984978
@@ -14516,14 +14516,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4279769112
   m_fontColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -14580,7 +14580,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1383876231
@@ -15794,8 +15794,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'B:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15858,7 +15858,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1458847204
@@ -16041,8 +16041,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1659743399}
     m_Modifications:
+    - target: {fileID: 8970644195112564, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 104432678733003780, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 391894095566545444, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606325530265752366, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 701462901035135439, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946832000930191921, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946832001500972605, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 946832001525253568, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
@@ -16133,15 +16157,136 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContenedorMisionTratamientoAgua
       objectReference: {fileID: 0}
+    - target: {fileID: 1285758507438055063, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370361915866167205, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574664436973014740, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614275209132904278, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825096806845868034, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854864216306067818, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353561961846421092, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461938484614951593, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485594749153112773, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902602810152355716, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186826802455109012, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210067012899774600, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340004528415170254, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591985072400976843, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389214786767834064, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659478490572291856, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088199605797098223, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334721332654413339, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432888690283263028, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448563108455124781, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842750849540535097, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: lines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5842750849540535097, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
       propertyPath: lines.Array.data[2]
       value: "El pretratamiento se encarga de filtrar los elementos de gran tama\xF1o,
         que no son \"residuales\" en si, sino desechos que los humanos botan indebidamente,
         como ropa."
       objectReference: {fileID: 0}
+    - target: {fileID: 5842750849540535097, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: lines.Array.data[5]
+      value: "El tratamiento terciario consiste en el a\xF1adido de compuestos generalmente
+        quimicos al agua para lograr cierta calidad, "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842750849540535097, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: lines.Array.data[6]
+      value: 'generalmente para potabilizar el agua ya sea para consumo o riego. '
+      objectReference: {fileID: 0}
     - target: {fileID: 5881131228021609651, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224697670893784204, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334357401293122092, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493429150265282059, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527417430650661523, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132479877338536717, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275068674668657213, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505204954010960538, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2ac4d1a5af4404797f669c06245fff, type: 3}
@@ -16660,8 +16805,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'D:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16724,7 +16869,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1540399103
@@ -16795,7 +16940,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16859,7 +17004,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1541538837
@@ -16931,8 +17076,8 @@ MonoBehaviour:
   m_text: "Desde el mar han llegado demasiados residuos que se han acumulado en la
     playa, pero nadie los ha retirado \xBFpodr\xEDas ayudarme?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20766,8 +20911,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20830,7 +20975,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1944799037
@@ -21499,8 +21644,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21563,7 +21708,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2027901461
@@ -22268,8 +22413,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22332,7 +22477,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2113973890

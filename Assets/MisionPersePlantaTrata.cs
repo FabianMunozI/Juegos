@@ -48,7 +48,7 @@ public class MisionPersePlantaTrata : Interactable
                 enabled=false;
                 //Debug.Log("aka");
                 npcActivarInfo.SetActive(true);
-                for(int i =0; i<19; i++){
+                for(int i =0; i<21; i++){
                     gameObject.transform.GetChild(i).gameObject.SetActive(false);
                 }
                 gameObject.GetComponent<BoxCollider>().enabled=false;
