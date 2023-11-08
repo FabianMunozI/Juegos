@@ -21,7 +21,7 @@ public class MovAutoridad : MonoBehaviour
         player=GameObject.Find("Player");
 
         GetComponent<Collider>().isTrigger = true;
-        posicionesObj = transform.parent.parent.parent.GetChild(24).GetChild(4).gameObject;
+        posicionesObj = transform.parent.parent.parent.GetChild(23).GetChild(4).gameObject;
 
         controler = GetComponent<Animator>();
         controler.SetTrigger("caminar");
