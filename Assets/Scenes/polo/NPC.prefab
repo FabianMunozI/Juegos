@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f526a1eccd0b6142a165f9f145ceb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testFinalMision: 0
+  testFinalMision: 1
   inputTrue: 0
   animalesMision:
   - {fileID: 4556490278480817884, guid: eadf2766e2740324aaac244e9a19f30f, type: 3}
@@ -1299,7 +1299,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8681199411970317694}
-  m_LocalRotation: {x: -0, y: -0.48714375, z: -0, w: 0.87332183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.21335001, y: 0.21335, z: 0.21335001}
   m_ConstrainProportionsScale: 0
@@ -1312,7 +1312,7 @@ Transform:
   - {fileID: 8681199411863264543}
   m_Father: {fileID: 8681199411157954218}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -58.306, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &644441058852500803
 Animator:
   serializedVersion: 5

@@ -23,9 +23,9 @@ public class PistasInteracciones : Interactable
         {
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject;
         }
-        else
+        else if (transform.name == "pluma(Clone)")
         {
-            transform.name = "pluma(Clone)";
+            
             dialogo = GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject;
         }
     }
@@ -46,20 +46,13 @@ public class PistasInteracciones : Interactable
 
         Quaternion rotation = Quaternion.LookRotation(playerPosition - transform.position);
         
-        ///////////Rotacion del jugador al NPC////////////////////
-        rotation = Quaternion.LookRotation(npcPosition - player.transform.position);
-        rotation.x = 0f;
-        rotation.z = 0f;
-        player.transform.rotation = rotation;
-        //////////////////////////////////////////////////////////
-
         CharacterMovement.movementDialogue = true;
         CameraInteraction.interactionDialogue = true;
         FpsCamera.cameraDialogue = true;
         NpcNav.isInDialogue = true;
         Cursor.lockState = CursorLockMode.Confined;
 
-        Debug.Log("dialogo " + dialogo);
+        //Debug.Log("dialogo " + dialogo);
 
         dialogo.SetActive(true);
 
@@ -69,7 +62,7 @@ public class PistasInteracciones : Interactable
         GameObject aux;
 
         centroZona = new Vector3(Random.Range(-1100, 1100), 0, Random.Range(-1100, 1100));
-        while (!CompareTwo(centroZona, transform.position,700))
+        while (!CompareTwo(centroZona, transform.position,900))
         {
             centroZona = new Vector3(Random.Range(-1100, 1100), 0, Random.Range(-1100, 1100));
         }
@@ -97,9 +90,11 @@ public class PistasInteracciones : Interactable
         }
 
         // mirar hacia la orca pero un poco ladeado, como mirar hacia la zona
-        rotation = Quaternion.LookRotation(centroZona);
-        rotation.x = 0f;
-        rotation.z = 0f;
+        rotation = Quaternion.LookRotation(centroZona - transform.position);
+        Vector3 r = rotation.eulerAngles;
+        r.x = 0f;
+        r.z = 0f;
+        rotation = Quaternion.Euler(r);
         transform.rotation = rotation;
     }
 
