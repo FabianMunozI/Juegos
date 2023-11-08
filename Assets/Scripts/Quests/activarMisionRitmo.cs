@@ -54,7 +54,7 @@ public class activarMisionRitmo : Interactable
         NpcsGenerados3 = new List<GameObject>();
         
         posGenerar = 0;
-        PadrePosicionesGenerarNPCs = transform.GetChild(24).gameObject;
+        PadrePosicionesGenerarNPCs = transform.GetChild(23).gameObject;
 
 
         referenciaInicioRitmo = GameObject.Find("PosPlayerInicialRitmo");
@@ -277,7 +277,7 @@ public class activarMisionRitmo : Interactable
     public void llamarAutoridad(){
 
         if(!sellamoAutoridad){
-            GameObject Autoridad = transform.GetChild(25).GetChild(0).GetChild(0).gameObject;
+            GameObject Autoridad = transform.GetChild(24).GetChild(0).GetChild(0).gameObject;
             Autoridad.GetComponent<MovAutoridad>().enabled = true;
 
             sellamoAutoridad = true;

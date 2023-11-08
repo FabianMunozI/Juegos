@@ -621,8 +621,8 @@ public class RitmoTeclas : MonoBehaviour
             terminoMision = true;
             seguirAvanzando2=false;
             //desactiva tomar la mision, activa exclamacion rojo y desactiva el amarillo
-            referenciaScriptIniciarMisionRitmo.gameObject.transform.GetChild(20).GetChild(1).gameObject.SetActive(false);
-            referenciaScriptIniciarMisionRitmo.gameObject.transform.GetChild(20).GetChild(2).gameObject.SetActive(true);
+            referenciaScriptIniciarMisionRitmo.gameObject.transform.GetChild(25)/* .GetChild(1) */.gameObject.SetActive(false);
+            referenciaScriptIniciarMisionRitmo.gameObject.transform.GetChild(26)/* .GetChild(2) */.gameObject.SetActive(true);
             //referenciaScriptIniciarMisionRitmo.gameObject.GetComponent<postMisionRitmo>().enabled = true;
             referenciaScriptIniciarMisionRitmo.gameObject.GetComponent<activarMisionRitmo>().panelesPostMision = true;
             DesactivarScriptsPlayer(true);
