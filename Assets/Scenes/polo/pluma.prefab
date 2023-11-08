@@ -59,8 +59,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.0782504, y: 0.838915, z: 13.368307}
+  m_Center: {x: 0.18085903, y: -0.08054221, z: 6.974988}
 --- !u!114 &4551959581935923522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +89,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7486110017025726503}
     m_Modifications:
+    - target: {fileID: 2059689298640350472, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3775155925767582142, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
       propertyPath: m_Name
       value: pluma
@@ -107,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553100725561207556, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.93
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4553100725561207556, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -141,7 +145,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6750363674783745383, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3809389889426414423, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b153faa55d14fb44da6cbc8d2a803b86, type: 3}
 --- !u!4 &3132126124231651465 stripped
 Transform:

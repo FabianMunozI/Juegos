@@ -45,6 +45,13 @@ public class QuestStarterPolo : Interactable
         
         base.Interact();
 
+        Quaternion rotation = Quaternion.LookRotation(player.transform.position - transform.position);
+        Vector3 r = rotation.eulerAngles;
+        r.x = 0f;
+        r.z = 0f;
+        rotation = Quaternion.Euler(r);
+        transform.rotation = rotation;
+
         CharacterMovement.movementDialogue = true;
         CameraInteraction.interactionDialogue = true;
         FpsCamera.cameraDialogue = true;
