@@ -210,9 +210,7 @@ public class PreservarFauna : MonoBehaviour
         if (animalesAyudados >= 3 && !missionDone)
         {
             missionDone = true;
-            Debug.Log("Mision terminada");
             CambiarMapaFinal();
-            //ObjetivosPantallaOFF();
         }
 
     }
@@ -270,7 +268,6 @@ public class PreservarFauna : MonoBehaviour
         //Orca
         //Foca
 
-
         aux = Instantiate(pistas[0], penguPos, Quaternion.identity);
         objetosMision.Add(aux);
         aux.GetComponent<SpawnFloorFinderFauna>().centroZona = penguPos;
@@ -291,9 +288,6 @@ public class PreservarFauna : MonoBehaviour
         transform.GetChild(3).gameObject.SetActive(false);
 
         transform.GetComponent<BoxCollider>().enabled = !(transform.GetComponent<BoxCollider>().enabled);
-        GetComponent<QuestStarterPolo>().enabled = !(GetComponent<QuestStarterPolo>().enabled);
-
-
     }
 
     private void CambiarMapaFinal()
@@ -305,8 +299,6 @@ public class PreservarFauna : MonoBehaviour
         transform.GetChild(4).gameObject.SetActive(true); // excla final minimapa
 
         transform.GetComponent<BoxCollider>().enabled = !(transform.GetComponent<BoxCollider>().enabled);
-
-        
 
         RenderSettings.fog = false;
 
@@ -335,33 +327,8 @@ public class PreservarFauna : MonoBehaviour
 
         questTracker.SetActive(false);
         transform.GetComponent<PreservarFauna>().enabled = !(transform.GetComponent<PreservarFauna>().enabled); // apaga el escript de la misión 
-
-        
     }
 
-
-    public void OnOffPlayer()
-    {
-        inputTrue = !inputTrue;
-        jugador.GetComponent<CharacterMovement>().AnimacionOn = !inputTrue; // frezea al player mientras esta la animacion
-        jugador.GetComponent<FpsCamera>().animacionOn = !inputTrue;
-
-        if (inputTrue == false)
-        { // si ya se inicio la mision y se esta terminando / devolviendo controles al player
-          // hay que desactivar que la mision pueda ser tomada
-          //referenciaExclamacion.SetActive(inputTrue);
-          //controller.SetTrigger("End3");
-          //Debug.Log("volvieron los controles");
-          // referenciaExclamacion.SetActive(false);
-          //this.GetComponent<MeshRenderer>().material.color=Color.green;
-
-            camara.transform.localPosition = new Vector3(0, 0.69f, 0);
-            //camara.transform.rotation = rotOriginal;
-
-
-        }
-
-    }
 }
 
 
