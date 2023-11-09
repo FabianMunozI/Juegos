@@ -5364,15 +5364,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452517882734525012, guid: 6537e852081ecb84b95c317c81bf340a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.89
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: 5452517882734525012, guid: 6537e852081ecb84b95c317c81bf340a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.49
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 5452517882734525012, guid: 6537e852081ecb84b95c317c81bf340a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.84
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: 5452517882734525012, guid: 6537e852081ecb84b95c317c81bf340a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5419,20 +5419,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5452517882734525013, guid: 6537e852081ecb84b95c317c81bf340a, type: 3}
   m_PrefabInstance: {fileID: 8722891202939133816}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &9072816188240322530
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649837049211135277}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.67853546
-  m_Height: 8.39
-  m_Direction: 1
-  m_Center: {x: 0, y: -2.8399997, z: 12.278536}
 --- !u!114 &17624057823997570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5449,3 +5435,17 @@ MonoBehaviour:
   declineButton: {fileID: 0}
   dialogoObjetivo: {fileID: 0}
   misionAceptada: 0
+--- !u!136 &8705772509921625863
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649837049211135277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 8.74118
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.8705902, z: 0}
