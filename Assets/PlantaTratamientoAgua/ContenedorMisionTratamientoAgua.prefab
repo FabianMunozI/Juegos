@@ -562,7 +562,7 @@ MonoBehaviour:
   m_text: "Hola, acabamos de abrir una planta de tratamiento de agua, la cual es
     muy relevante en el cuidado medioambiental \xBFme ayudarias a ponerla en marcha?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.29827115, z: 3.0752258, w: 3.0970306}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &946832000383294434
@@ -925,7 +925,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xA1\xA1Necesitas una llave!!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1097,7 +1097,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Debo hacer algo antes...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1366,7 +1366,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3170,7 +3170,7 @@ MonoBehaviour:
     Busca la forma de activar el sistema\n     ( hint: la mascota puede ser util
     )\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4018,7 +4018,7 @@ MonoBehaviour:
   m_text: "Misi\xF3n: \"poner en marcha la planta de tratamiento de aguas residuales
     \""
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4082,7 +4082,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.29827115, z: 3.0752258, w: 1.5782623}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5113173264797235995
@@ -4352,7 +4352,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Presiona F para Recoger
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4533,7 +4533,7 @@ MonoBehaviour:
   m_text: "Hola, acabamos de abrir una planta de tratamiento de agua, la cual es
     muy relevante en el cuidado medioambiental \xBFme ayudarias a ponerla en marcha?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4597,7 +4597,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.29827115, z: 3.0752258, w: 3.0970306}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6008644115731662204
@@ -4673,7 +4673,7 @@ MonoBehaviour:
     Busca la forma de activar el sistema\n     ( hint: el objetivo anterior puede
     ser muy util )\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4890,7 +4890,7 @@ MonoBehaviour:
     muy relevante en el cuidado y reutilizacion de las agua residuales que contaminan
     los rios y mares \xBFme ayudarias a ponerla en marcha?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4954,7 +4954,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.29827115, z: 3.0752258, w: 3.0970306}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6419553767733168585
@@ -6699,7 +6699,7 @@ MonoBehaviour:
   m_text: "Objetivos: \n.- Busca una forma de acceder a la planta\n     (patio cercado).\n.-
     Busca una forma de activar la puerta y \n    entra en la planta de tratamiento."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6969,7 +6969,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Click para avanzar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7033,7 +7033,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8611216084981407434
@@ -7411,7 +7411,7 @@ MonoBehaviour:
   m_text: "Misi\xF3n:  poner en marcha la planta de tratamiento \n              
     de aguas residuales\r\nObjetivos:\n.- Vuelve con el Npc Inicial."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

@@ -1169,7 +1169,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: " Mision: Difundir Informaci\xF3n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3468,7 +3468,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '.- Arboles incendiados: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3623,7 +3623,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3944,7 +3944,7 @@ MonoBehaviour:
     de especies cercanas. Te propongo que me ayudes a impartir informacion que conozcas
     sobre el cuidado de la vida marina."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5070,7 +5070,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5262,7 +5262,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5685,7 +5685,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xBFIniciar misi\xF3n \"Difundir informacion en la Playa\"?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5931,7 +5931,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'A:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7595,7 +7595,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xBFIniciar misi\xF3n \"Limpiar la Playa\"?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7659,7 +7659,7 @@ MonoBehaviour:
   m_margin: {x: -94.03874, y: 0, z: -90.16081, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &752017413
@@ -9858,7 +9858,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'C:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10620,7 +10620,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11224,7 +11224,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11718,7 +11718,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11853,7 +11853,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '.- Arboles incendiados: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14516,7 +14516,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15794,7 +15794,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'B:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16805,7 +16805,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'D:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16940,7 +16940,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17076,7 +17076,7 @@ MonoBehaviour:
   m_text: "Desde el mar han llegado demasiados residuos que se han acumulado en la
     playa, pero nadie los ha retirado \xBFpodr\xEDas ayudarme?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17140,7 +17140,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1565218209
@@ -20911,7 +20911,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -21644,7 +21644,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -22413,7 +22413,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto de Ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 198572991663422774, guid: 2d05d645e4bbd1c4b84f2020b93d3022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
