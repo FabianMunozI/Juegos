@@ -3357,7 +3357,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 416354029172773390}
         m_TargetAssemblyTypeName: MenuEscape, Assembly-CSharp
-        m_MethodName: BackToGame
+        m_MethodName: BackToOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

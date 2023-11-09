@@ -60,9 +60,7 @@ public class MenuEscape : MonoBehaviour
             GameObject.Find("Player").GetComponent<FpsCamera>().enabled = false;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && menuAbierto){
-            menuAbierto=false;
-            escapeMenu.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
+            BackToGame();
         }
     }
 
@@ -86,6 +84,12 @@ public class MenuEscape : MonoBehaviour
     public void BackToMenu(){
         //GameObject.Find("EventSystem").GetComponent<EventSystem>().enabled=false;;
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_NAME_GAME_MENU);
+    }
+
+    public void BackToOptions(){
+        menuAbierto=true;
+        graficas.SetActive(false);
+        escapeMenu.SetActive(true);
     }
 
     public void SetVolume(float volume)
