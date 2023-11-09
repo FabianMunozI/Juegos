@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f526a1eccd0b6142a165f9f145ceb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testFinalMision: 1
+  testFinalMision: 0
   inputTrue: 0
   animalesMision:
   - {fileID: 4556490278480817884, guid: eadf2766e2740324aaac244e9a19f30f, type: 3}
