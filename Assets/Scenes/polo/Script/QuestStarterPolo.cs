@@ -12,6 +12,8 @@ public class QuestStarterPolo : Interactable
     private GameObject canvas, player;
     public bool misionAceptada = false;
 
+    private bool segundoDialogo = false;
+
 
     void Awake()
     {
@@ -56,6 +58,16 @@ public class QuestStarterPolo : Interactable
         CameraInteraction.interactionDialogue = true;
         FpsCamera.cameraDialogue = true;
         dialogoObjetivo.SetActive(true);
+
+        if (!segundoDialogo)
+        {
+            segundoDialogo = true;
+            dialogoObjetivo = canvas.transform.GetChild(18).gameObject;
+        }
+        else
+        {
+            misionAceptada = false;
+        }
 
     }
 
