@@ -69,7 +69,7 @@ public class PistasInteracciones : Interactable
 
 
         aux = Instantiate(zonaMiniMapa, new Vector3(centroZona.x,150f,centroZona.z), Quaternion.identity);
-        aux.transform.localScale = new Vector3(250, 250, 250);
+        aux.transform.localScale = new Vector3(280, 280, 280);
         //objetosMision.Add(aux);
 
         Radar.targets.Remove(transform);

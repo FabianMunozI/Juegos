@@ -116,7 +116,7 @@ public class PreservarFauna : MonoBehaviour
                 Vector3 posPengu = new Vector3(Random.Range(centroPengu.x - 100, centroPengu.x + 100), 50, Random.Range(centroPengu.z - 100, centroPengu.z + 100));
 
                 pengu = Instantiate(animalesMision[0], posPengu, Quaternion.identity);
-                //pengu.transform.parent = ObjMision.transform;
+                pengu.GetComponent<SpawnFloorFinderFauna>().centroZona = centroPengu;
                 objetosMision.Add(pengu);
                 Radar.targets.Add(pengu.transform);
                 Destroy(borrarPistas, 5f);
@@ -150,7 +150,7 @@ public class PreservarFauna : MonoBehaviour
                 Vector3 posOrca = new Vector3(Random.Range(centroOrca.x - 100, centroOrca.x + 100), 50, Random.Range(centroOrca.z - 100, centroOrca.z + 100));
 
                 orca = Instantiate(animalesMision[1], posOrca, Quaternion.identity);
-                //orca.transform.parent = ObjMision.transform;
+                orca.GetComponent<SpawnFloorFinderFauna>().centroZona = centroOrca;
                 objetosMision.Add(orca);
                 Radar.targets.Add(orca.transform);
 
@@ -184,7 +184,7 @@ public class PreservarFauna : MonoBehaviour
                 Vector3 posFoca = new Vector3(Random.Range(centroFoca.x - 100, centroFoca.x + 100), 50, Random.Range(centroFoca.z - 100, centroFoca.z + 100));
 
                 foca = Instantiate(animalesMision[2], posFoca, Quaternion.identity);
-                //foca.transform.parent = ObjMision.transform;
+                foca.GetComponent<SpawnFloorFinderFauna>().centroZona = centroFoca;
                 objetosMision.Add(foca);
                 Radar.targets.Add(foca.transform);
                 Destroy(borrarPistas, 5f);
@@ -210,9 +210,7 @@ public class PreservarFauna : MonoBehaviour
         if (animalesAyudados >= 3 && !missionDone)
         {
             missionDone = true;
-            Debug.Log("Mision terminada");
             CambiarMapaFinal();
-            //ObjetivosPantallaOFF();
         }
 
     }
@@ -229,7 +227,7 @@ public class PreservarFauna : MonoBehaviour
         Vector3 posJugador = jugador.transform.position;
 
         
-        Vector3[] posicionesAnimales = SpawnFinder.GetPoints(distanciaZonas,4,posJugador,min,max);
+        Vector3[] posicionesAnimales = SpawnFinder.GetPoints(distanciaZonas,4,posJugador,min,max); // busqueda de posiciones para las pistas
 
         Vector3 focaPos = posicionesAnimales[1];
         Vector3 orcaPos = posicionesAnimales[2];
@@ -270,7 +268,6 @@ public class PreservarFauna : MonoBehaviour
         //Orca
         //Foca
 
-
         aux = Instantiate(pistas[0], penguPos, Quaternion.identity);
         objetosMision.Add(aux);
         aux.GetComponent<SpawnFloorFinderFauna>().centroZona = penguPos;
@@ -291,9 +288,6 @@ public class PreservarFauna : MonoBehaviour
         transform.GetChild(3).gameObject.SetActive(false);
 
         transform.GetComponent<BoxCollider>().enabled = !(transform.GetComponent<BoxCollider>().enabled);
-        GetComponent<QuestStarterPolo>().enabled = !(GetComponent<QuestStarterPolo>().enabled);
-
-
     }
 
     private void CambiarMapaFinal()
@@ -305,8 +299,6 @@ public class PreservarFauna : MonoBehaviour
         transform.GetChild(4).gameObject.SetActive(true); // excla final minimapa
 
         transform.GetComponent<BoxCollider>().enabled = !(transform.GetComponent<BoxCollider>().enabled);
-
-        
 
         RenderSettings.fog = false;
 
@@ -333,36 +325,16 @@ public class PreservarFauna : MonoBehaviour
             Destroy(dunita);
         }
 
-        questTracker.SetActive(false);
+        Invoke("DesactivarTracker", 10f);
         transform.GetComponent<PreservarFauna>().enabled = !(transform.GetComponent<PreservarFauna>().enabled); // apaga el escript de la misión 
-
-        
     }
 
-
-    public void OnOffPlayer()
+    private void DesactivarTracker()
     {
-        inputTrue = !inputTrue;
-        jugador.GetComponent<CharacterMovement>().AnimacionOn = !inputTrue; // frezea al player mientras esta la animacion
-        jugador.GetComponent<FpsCamera>().animacionOn = !inputTrue;
-
-        if (inputTrue == false)
-        { // si ya se inicio la mision y se esta terminando / devolviendo controles al player
-          // hay que desactivar que la mision pueda ser tomada
-          //referenciaExclamacion.SetActive(inputTrue);
-          //controller.SetTrigger("End3");
-          //Debug.Log("volvieron los controles");
-          // referenciaExclamacion.SetActive(false);
-          //this.GetComponent<MeshRenderer>().material.color=Color.green;
-
-            camara.transform.localPosition = new Vector3(0, 0.69f, 0);
-            //camara.transform.rotation = rotOriginal;
-
-
-        }
-
+        questTracker.SetActive(false);
     }
 }
+
 
 
 public static class SpawnFinder
