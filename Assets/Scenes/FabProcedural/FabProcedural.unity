@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31693,7 +31693,7 @@ AudioSource:
   m_GameObject: {fileID: 1571639759}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5934566426984218304, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: a1f1eb32d581e5949b7f35aa1f1924a4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.03
@@ -38336,6 +38336,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8127773732219803477, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     - target: {fileID: 8219856956785922309, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -38344,6 +38348,14 @@ PrefabInstance:
       propertyPath: dialogoObjetivo
       value: 
       objectReference: {fileID: 1488412265}
+    - target: {fileID: 9102034210365686800, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
+    - target: {fileID: 9102034210365686800, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.711
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8889176400914168878, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ed0b698bc1aa824fb2fdb81b062eef6, type: 3}
