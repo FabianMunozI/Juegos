@@ -94,9 +94,16 @@ public class MenuEscape : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("VolumeMusic", volume);
         currentVolume = volume;
     }
+
+    public void SetVolumeSounds(float volume)
+    {
+        audioMixer.SetFloat("VolumeSounds", volume);
+        currentVolume = volume;
+    }
+
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
@@ -171,6 +178,9 @@ public class MenuEscape : MonoBehaviour
                 Convert.ToInt32(Screen.fullScreen));
         PlayerPrefs.SetFloat("VolumePreference", 
                 currentVolume); 
+        PlayerPrefs.SetFloat("VolumeSoundPreference", 
+                currentVolume); 
+            
     }
     public void LoadSettings(int currentResolutionIndex)
     {
@@ -205,5 +215,11 @@ public class MenuEscape : MonoBehaviour
         else
             volumeSlider.value = 
                         PlayerPrefs.GetFloat("VolumePreference");
+        if (PlayerPrefs.HasKey("VolumeSoundPreference"))
+            volumeSlider.value = 
+                        PlayerPrefs.GetFloat("VolumeSoundPreference");
+        else
+            volumeSlider.value = 
+                        PlayerPrefs.GetFloat("VolumeSoundPreference");
     }
 }
