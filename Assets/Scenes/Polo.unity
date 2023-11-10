@@ -1047,7 +1047,7 @@ AudioSource:
   m_GameObject: {fileID: 233911736}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5934566426984218304, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2c893a117f5557d47b370c3beee57264, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.03
@@ -4728,7 +4728,7 @@ AudioSource:
   m_GameObject: {fileID: 634204441}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: d851a52cacc2a7f4ab98f98c19044a5c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4829,7 +4829,7 @@ AudioSource:
   m_GameObject: {fileID: 642973875}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7cc16e07942e5ae4daf02ea7d11912ed, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
@@ -7726,6 +7726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icosphere.007 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5980739857113811565, guid: 9651705b02d390b40a8d05406d57756d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9651705b02d390b40a8d05406d57756d, type: 3}
 --- !u!4 &991812102 stripped
@@ -14011,7 +14015,7 @@ AudioSource:
   m_GameObject: {fileID: 1271194416}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: a48ecb0ee3840794ba09f17f5d9bd3e4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
@@ -14686,7 +14690,7 @@ AudioSource:
   m_GameObject: {fileID: 1360395425}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: d851a52cacc2a7f4ab98f98c19044a5c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -17024,7 +17028,7 @@ AudioSource:
   m_GameObject: {fileID: 1677345910}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: d851a52cacc2a7f4ab98f98c19044a5c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -17542,7 +17546,7 @@ AudioSource:
   m_GameObject: {fileID: 1709118818}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
   m_audioClip: {fileID: 8300000, guid: d851a52cacc2a7f4ab98f98c19044a5c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -17862,6 +17866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icosphere.007 Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5980739857113811565, guid: 9651705b02d390b40a8d05406d57756d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9651705b02d390b40a8d05406d57756d, type: 3}
 --- !u!4 &1741018125 stripped
