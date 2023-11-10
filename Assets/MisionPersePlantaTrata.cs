@@ -192,7 +192,7 @@ public class MisionPersePlantaTrata : Interactable
         /* npcActivarInfo.GetComponent<ActivarDialogo>().dialogoObjetivo.SetActive(true); */
 
         /* gameObject.GetComponent<MeshRenderer>().enabled=false; */
-        for(int i =0; i<19; i++){
+        for(int i =0; i<21; i++){
             gameObject.transform.GetChild(i).gameObject.SetActive(false);
         }
         gameObject.GetComponent<BoxCollider>().enabled=false;
