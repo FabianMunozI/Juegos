@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1768881376878384651, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     - target: {fileID: 2121799639517293254, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -51,6 +55,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2801343906476639845, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     - target: {fileID: 4168437363309153186, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
       propertyPath: m_Name
       value: Mascota
@@ -63,6 +71,10 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 87797
       objectReference: {fileID: 0}
+    - target: {fileID: 5682319949008593405, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     - target: {fileID: 9015719785142643737, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -107,6 +119,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9021671186770834009, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7516734548545119427, guid: bbd4c7a12b6750c44bc1d4ca541a4b42, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c46b60898b0e424a90f34d0a9c32e3b, type: 3}
 --- !u!4 &4890003211265152533 stripped
