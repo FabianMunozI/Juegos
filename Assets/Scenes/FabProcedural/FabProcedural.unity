@@ -29281,11 +29281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: Runspeed
-      value: 53.39
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: jumpforce
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3753369507926638960, guid: 24907e1e5ef453f41bfe5eb934e72111, type: 3}
       propertyPath: speedUsar
