@@ -6787,7 +6787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575437900}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.356201, y: 56, z: 34.3795}
+  m_LocalPosition: {x: -22.356201, y: 28.3, z: 34.3795}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6884,7 +6884,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-220412
+  m_Name: pb_Mesh162294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11710,7 +11710,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-220414
+  m_Name: pb_Mesh162464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14366,13 +14366,6 @@ MonoBehaviour:
   - {fileID: 957837237}
   - {fileID: 668756610}
   - {fileID: 312893619}
-  - {fileID: 970400650}
-  - {fileID: 913642520}
-  - {fileID: 670189490}
-  - {fileID: 2020238861}
-  - {fileID: 1472924880}
-  - {fileID: 1717496085}
-  - {fileID: 911028571}
   - {fileID: 575437900}
   canvasFinal: {fileID: 1320435384}
   abrirTextoScript: {fileID: 1320435386}
@@ -16496,7 +16489,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-220420
+  m_Name: pb_Mesh162582
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16712,7 +16705,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-220416
+  m_Name: pb_Mesh162760
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
