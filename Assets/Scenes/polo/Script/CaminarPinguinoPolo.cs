@@ -103,4 +103,5 @@ public class CaminarPinguinoPolo : MonoBehaviour
         isMovingForward = true;
         targetRotation = Quaternion.Euler(0, 180, 0); // Al comienzo, rotación objetivo de 180 grados en el eje Y
     }
+    //probando
 }
